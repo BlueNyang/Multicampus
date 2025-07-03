@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이미지맵</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      img {
+        width: auto;
+        height: 500px;
+        border: 1px solid #000;
+      }
+
+      div {
+        margin: 0 auto;
+        width: 1200px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img id="main_img" src="image/메인.png" usemap="#imagemap" />
+      <map name="imagemap">
+        <area id="area_newyork" coords="62,85,256,148" href="뉴욕.html" />
+        <area id="area_paris" coords="311,85,505,149" href="파리.html" />
+        <area id="area_rome" coords="559,85,753,149" href="로마.html" />
+        <area id="area_beijing" coords="808,83,1002,147" href="베이징.html" />
+      </map>
+    </div>
+    <script>
+      const image = document.getElementById("main_img");
+
+      // 이미지가 로드될 때까지 기다린 후 실행
+      function onLoadImage() {
+        // 원본 이미지의 실제 크기
+        const imgOriginW = image.naturalWidth;
+        const imgOriginH = image.naturalHeight;
+
+        // 현재 표시되는 이미지 크기
+        const imgW = image.width;
+        const imgH = image.height;
+
+        // 이미지맵의 각 영역에 대해 좌표를 조정
+        const areas = document.querySelectorAll("area");
+
+        areas.forEach((area) => {
+          // coords 속성에서 좌표를 가져와서 쉼표로 분리
+          const coords = area.getAttribute("coords").split(",");
+          // 좌표를 현재 이미지 크기에 맞게 조정
+          // 원본 이미지 크기와 현재 이미지 크기를 비교하여 비율을 계산
+          const newCoords = coords.map((coord, index) => {
+            if (index % 2 === 0) {
+              // x 좌표
+              return Math.round((parseInt(coord) * imgW) / imgOriginW);
+            } else {
+              // y 좌표
+              return Math.round((parseInt(coord) * imgH) / imgOriginH);
+            }
+          });
+          area.setAttribute("coords", newCoords.join(","));
+        });
+      }
+
+      image.onload = onLoadImage;
+    </script>
+  </body>
+</html>

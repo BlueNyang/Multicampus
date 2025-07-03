@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>입력 양식 태그</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form method="post" action="newMember.jsp">
+      <!-- label tag를 사용하지 않고 사용 -->
+      label tag 사용하지 않음 <br />
+      성명:
+      <input type="text" id="name" name="name" size="10" autofocus /><br />
+      <input type="text" name="prdNo" hidden />
+      <hr />
+      <!-- label tag를 사용하지 않고 사용 -->
+
+      <!-- label tag를 사용하지 않고 힌트 사용 -->
+      label tag 사용하지 않고 힌트 출력 <br />
+      성명:
+      <input
+        type="text"
+        id="name_wHint"
+        name="name"
+        size="10"
+        autofocus
+        placeholder="아이디"
+      /><br />
+      <hr />
+      <!-- label tag를 사용하지 않고 힌트 사용 -->
+
+      <!-- label tag를 사용 -->
+      label tag 사용 <br />
+      <label>
+        성명:
+        <input type="text" id="name_wLabel" name="name2" size="10" />
+      </label>
+      <br /><br />
+
+      <label>
+        아이디:
+        <input type="text" id="id" name="id" size="10" maxlength="8" />
+      </label>
+      <br /><br />
+
+      <label>
+        우편번호:
+        <input type="text" id="addrNo" name="addrNo" value="12345" readonly />
+      </label>
+      <br /><br />
+
+      <label>
+        주소:
+        <input type="text" id="addr" name="addr" size="10" required />
+      </label>
+      <br /><br />
+      <hr />
+      <!-- label tag를 사용 -->
+
+      <!-- password -->
+      <label>
+        비밀번호:
+        <input type="password" id="pwd" name="pwd" size="10" required />
+      </label>
+      <br /><br />
+      <hr />
+      <!-- password -->
+
+      <!-- radio -->
+      학년:
+      <label><input type="radio" name="year" value="1" />1학년</label>
+      <label><input type="radio" name="year" value="2" />2학년</label>
+      <label><input type="radio" name="year" value="3" />3학년</label>
+      <label><input type="radio" name="year" value="4" checked />4학년</label>
+      <br /><br />
+      <hr />
+      <!-- radio -->
+
+      <!-- checkbox -->
+      <input type="checkbox" name="game" value="game" checked />게임
+      <label> <input type="checkbox" name="movie" value="movie" />영화 </label>
+      <label>
+        <input type="checkbox" name="reading" value="reading" />독서
+      </label>
+      <label>
+        <input type="checkbox" name="sports" value="sports" />운동
+      </label>
+      <br /><br />
+      <hr />
+      <!-- checkbox -->
+
+      <!-- textarea -->
+      자기소개 <br />
+      <textarea name="comment" cols="50" rows="10"></textarea>
+      <br /><br />
+      <!-- textarea -->
+
+      <!-- file -->
+      첨부파일 선택: <input type="file" size="30" /> <br /><br />
+      <!-- file -->
+
+      <!-- other type -->
+      <input id="check_id" type="button" value="아이디 중복 확인" />
+      <br /><br />
+
+      <input type="image" id="orderImg" src="image/cart.jpg" />
+      <br /><br />
+
+      <!-- script없는 이미지 input == Submit이 됨 -->
+      <label> 이메일: <input type="email" /> </label>
+      <br /><br />
+      <!-- other type -->
+
+      <!-- submit button -->
+      <input type="submit" value="회원 가입" />
+      <input type="reset" value="초기화" />
+      <br /><br />
+      <!-- submit button -->
+    </form>
+
+    <hr />
+
+    <form method="get" action="newWrite.jsp">
+      <!-- select(dropdown) -->
+      여행하고 싶은 나라:
+      <select name="nation" id="nation">
+        <option value="us">미국</option>
+        <option value="china">중국</option>
+        <option value="australia" selected>호주</option>
+        <option value="japan">일본</option>
+        <option value="brazil">브라질</option>
+        <option value="etc">기타</option>
+      </select>
+      <br /><br />
+      <!-- select(dropdown) -->
+
+      <input type="submit" value="추가정보 전송" />
+    </form>
+
+    <script type="text/javascript">
+      // JavaScript를 사용하여 폼의 유효성 검사나 이벤트 처리를 추가할 수 있습니다.
+      document.querySelector("#check_id").addEventListener("click", (event) => {
+        // 예시: 필수 입력 필드가 비어 있는지 확인
+        const idField = document.querySelector("#id");
+        if (idField.value.trim() === "") {
+          alert("아이디를 입력해주세요.");
+          idField.focus();
+        } else {
+          alert("아이디가 입력되었습니다: " + idField.value);
+        }
+      });
+    </script>
+  </body>
+</html>

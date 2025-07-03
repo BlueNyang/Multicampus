@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Input Ex 안규태</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+      body {
+        width: 100%;
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .myforms {
+        width: 300px;
+        margin: 0 auto;
+      }
+
+      input {
+        padding: 0;
+        margin: 0;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 80%;
+        height: 25px;
+        border: 1px solid #999;
+        border-radius: 3px;
+      }
+
+      label {
+        display: inline-block;
+        text-align: left;
+        padding: 0;
+        margin: 0;
+        margin-right: 10px;
+      }
+
+      label#error-msg {
+        color: red;
+        font-size: 0.7em;
+      }
+
+      .form-row {
+        margin-bottom: 10px;
+      }
+
+      .verical-align {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="myforms" action="join_ex.html" method="post">
+      <div class="form-row verical-align">
+        <label for="first-name">First name:</label>
+        <input
+          type="text"
+          id="first-name"
+          name="first-name"
+          placeholder="이름을 입력하세요."
+          required
+          autofocus
+        />
+      </div>
+
+      <div class="form-row verical-align">
+        <label for="last-name">Last name:</label>
+        <input
+          type="text"
+          id="last-name"
+          name="last-name"
+          placeholder="성을 입력하세요."
+          required
+        />
+      </div>
+
+      <div class="form-row verical-align">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="이메일을 입력하세요."
+          required
+        />
+      </div>
+
+      <div class="form-row verical-align">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="비밀번호"
+          required
+        />
+      </div>
+
+      <div class="form-row verical-align">
+        <label for="password">Password Check:</label>
+        <input
+          type="password"
+          id="password-check"
+          placeholder="비밀번호 확인"
+          required
+        />
+        <label for="error-msg" id="error-msg" style="color: red"></label>
+      </div>
+
+      <div class="form-row">
+        <label for="gender">Gender: </label>
+        <input type="radio" value="male" name="gender" />
+        <label for="gender-male">Male</label>
+        <input type="radio" value="female" name="gender" />
+        <label for="gender-female">Female</label>
+        <input type="radio" value="none" name="gender" checked />
+        <label for="gender-None">None</label>
+      </div>
+
+      <div class="form-row">
+        <label for="favorite">Favorite:</label>
+        <input type="checkbox" value="html" name="favorite" checked />
+        <label for="favorite-html">HTML</label>
+        <input type="checkbox" value="java" name="favorite" />
+        <label for="favorite-css">Java</label>
+        <input type="checkbox" value="php" name="favorite" />
+        <label for="favorite-js">PHP</label>
+      </div>
+
+      <div class="form-row">
+        <label for="university">University:</label>
+        <select id="university" name="university">
+          <option value="seoul" selected>Seoul University</option>
+          <option value="korea">Korea University</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="color">Color:</label>
+        <input type="color" id="color" name="color" />
+      </div>
+
+      <div class="form-row">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" />
+      </div>
+
+      <input type="submit" value="Registration" />
+    </form>
+    <script>
+      const password = document.getElementById("password");
+      const passwordCheck = document.getElementById("password-check");
+      const errorMsg = document.getElementById("error-msg");
+
+      function checkPasswordMatch() {
+        if (password.value !== passwordCheck.value) {
+          errorMsg.textContent = "비밀번호가 일치하지 않습니다.";
+          passwordCheck.style.borderColor = "red";
+        } else {
+          errorMsg.textContent = "";
+          passwordCheck.style.borderColor = "#999";
+        }
+      }
+
+      // passwordCheck 필드의 값이 바뀔 때마다 확인 (실시간)
+      passwordCheck.addEventListener("input", checkPasswordMatch);
+
+      // password 필드가 변경될 때도 확인 (이미 입력된 passwordCheck와 비교)
+      password.addEventListener("input", () => {
+        if (passwordCheck.value) {
+          checkPasswordMatch();
+        }
+      });
+    </script>
+  </body>
+</html>

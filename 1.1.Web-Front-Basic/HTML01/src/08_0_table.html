@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>table 태그</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      table {
+        border-collapse: collapse;
+        text-align: center;
+        border: 1px solid black;
+      }
+
+      tr {
+        height: 30px;
+      }
+
+      th {
+        width: 100px;
+        background-color: #fc0;
+        border: 1px solid black;
+      }
+
+      td {
+        width: 100px;
+        background-color: #0c3;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1">
+      <caption>
+        테이블1
+      </caption>
+      <tr>
+        <td>a</td>
+        <td>b</td>
+        <td>c</td>
+        <td>d</td>
+      </tr>
+      <tr>
+        <td>a1</td>
+        <td>b1</td>
+        <td>c1</td>
+        <td>d1</td>
+      </tr>
+      <tr>
+        <td>a2</td>
+        <td>b2</td>
+        <td>c2</td>
+        <td>d2</td>
+      </tr>
+      <tr>
+        <td>a3</td>
+        <td>b3</td>
+        <td>c3</td>
+        <td>d3</td>
+      </tr>
+      <tr>
+        <td>a4</td>
+        <td>b4</td>
+        <td>c4</td>
+        <td>d4</td>
+      </tr>
+    </table>
+    <br /><br />
+    <table>
+      <caption>
+        테이블2
+      </caption>
+      <tr>
+        <th colspan="2">a & b</th>
+        <th>c</th>
+        <th>d</th>
+      </tr>
+      <tr>
+        <td rowspan="2">a1 & a2</td>
+        <td>b1</td>
+        <td>c1</td>
+        <td>d1</td>
+      </tr>
+      <tr>
+        <td>b2</td>
+        <td>c2</td>
+        <td>d2</td>
+      </tr>
+      <tr>
+        <td>a3</td>
+        <td>b3</td>
+        <td>c3</td>
+        <td>d3</td>
+      </tr>
+      <tr>
+        <td>a4</td>
+        <td>b4</td>
+        <td>c4</td>
+        <td>d4</td>
+      </tr>
+    </table>
+  </body>
+</html>

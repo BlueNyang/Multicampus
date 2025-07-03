@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <style>
+      /*
+      body h1 {
+        color: blue;
+      }
+
+      body div {
+        color: red;
+      }*/
+
+      /*
+      #header h1 {
+        color: #ffee00;
+      }
+
+      #header h2 {
+        color: #ff00ee;
+      }*/
+
+      #section h1 {
+        color: #ffbb55;
+      }
+
+      /* header 내의 모든 h1과 문서 냉 모든 h2 */
+      #header h1,
+      h2 {
+        color: red;
+      }
+
+      /* header 내의 모든 h1과 h2 */
+      #header h1,
+      #header h2 {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1 class="title">header - h1 제목</h1>
+      <div id="nav">
+        <h1>header-nav-h1제목</h1>
+        <h2>header-nav-h2제목</h2>
+      </div>
+    </div>
+
+    <div id="section">
+      <h2 class="title">section-h2 제목</h2>
+    </div>
+  </body>
+</html>

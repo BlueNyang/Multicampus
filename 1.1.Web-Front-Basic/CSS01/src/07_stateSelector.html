@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>상태 선택자</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style type="text/css">
+      input:enabled {
+        background-color: white;
+      }
+
+      input:disabled {
+        background-color: skyblue;
+      }
+
+      input:focus {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>사용 가능</h2>
+    비밀번호 : <input type="password" size="10" autofocus />
+    <!-- 디폴트 : 사용 가능 -->
+
+    <h2>사용 불가능</h2>
+    비밀번호 : <input type="text" size="10" value="abcd" disabled />
+    <!-- 사용 불가능으로 설정 -->
+  </body>
+</html>

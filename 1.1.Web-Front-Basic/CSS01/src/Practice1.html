@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css practice1 안규태</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+      body {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .container {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      .container h1 {
+        width: fit-content;
+        background-color: black;
+        color: white;
+        padding: 10px;
+      }
+
+      .container ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0 0 15px 0;
+      }
+
+      .container ul li {
+        color: blue;
+        flex: 1;
+        text-align: center;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>웹 기술 - 기본</h1>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript 기초</li>
+      </ul>
+    </div>
+  </body>
+</html>

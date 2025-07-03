@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Position 속성</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <style type="text/css">
+      * {
+        margin: 0; /* 모든 요소의 기본 margin 제거 */
+      }
+
+      body {
+        margin: 0; /* body의 기본 margin 제거 */
+      }
+
+      #parent {
+        /* position: static; /* default. top, bottom, right and left are ignored */
+        position: relative;
+        width: 200px;
+        height: 300px;
+        border: 5px solid black;
+        margin: 50px 0 0 50px;
+      }
+
+      #boxA,
+      #boxB,
+      #boxC {
+        font-weight: bold;
+        width: 80px;
+        height: 80px;
+      }
+
+      #boxA {
+        background-color: #f77;
+      }
+
+      #boxB {
+        background-color: #7f7;
+        /* position: relative; /* static에 해당하는 위치를 기준으로 함 */
+        position: absolute; /* parent tag === static : based on browser; */
+        top: 20px;
+        left: 30px;
+      }
+
+      #boxC {
+        background-color: #77f;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      <div id="boxA">A</div>
+      <div id="boxB">B</div>
+      <div id="boxC">C</div>
+    </div>
+  </body>
+</html>

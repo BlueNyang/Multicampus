@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>테이블 thead, tbody, tfoot 구분</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+      body {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      table {
+        width: 600px;
+        height: 200px;
+        border: 1px solid black;
+      }
+
+      th {
+        width: 100px;
+        border: 1px solid black;
+      }
+
+      td {
+        width: 100px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        Table2
+      </caption>
+      <thead aligin="center">
+        <tr>
+          <th>a</th>
+          <th>b</th>
+          <th>c</th>
+          <th>d</th>
+        </tr>
+      </thead>
+      <tfoot aligin="center">
+        <tr>
+          <td rowspan="4">a1</td>
+          <td colspan="3">b1</td>
+        </tr>
+        <tr>
+          <td>b2</td>
+          <td>c2</td>
+          <td>d2</td>
+        </tr>
+        <tr>
+          <td rowspan="2">b3</td>
+          <td>c3</td>
+          <td rowspan="2">d3</td>
+        </tr>
+        <tr>
+          <td>c4</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

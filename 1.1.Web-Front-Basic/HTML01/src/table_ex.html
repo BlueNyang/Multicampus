@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Table EX 안규태</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+      body {
+        width: 100%;
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        align-items: center;
+      }
+      table {
+        margin: 0 auto;
+        width: 250px;
+        height: 250px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td rowspan="2">3</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="2">5</td>
+        <td rowspan="2">6</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td colspan="2">8</td>
+      </tr>
+    </table>
+  </body>
+</html>

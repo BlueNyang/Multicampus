@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>iframe</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #bigBox {
+        margin: 0 auto;
+        width: 1024px;
+        text-align: center;
+      }
+
+      #box2 {
+        position: absolute;
+        margin-left: 250px;
+        top: 270px;
+      }
+
+      iframe {
+        width: 580px;
+        height: 480px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bigBox">
+      <div id="box1">
+        <img id="main_img" src="image/메인.png" usemap="#imagemap" />
+        <map name="imagemap">
+          <area
+            id="area_newyork"
+            coords="62,85,256,148"
+            href="뉴욕.html"
+            target="iFrameArea"
+          />
+          <area
+            id="area_paris"
+            coords="311,85,505,149"
+            href="파리.html"
+            target="iFrameArea"
+          />
+          <area
+            id="area_rome"
+            coords="559,85,753,149"
+            href="로마.html"
+            target="iFrameArea"
+          />
+          <area
+            id="area_beijing"
+            coords="808,83,1002,147"
+            href="베이징.html"
+            target="iFrameArea"
+          />
+        </map>
+      </div>
+      <div id="box2">
+        <iframe name="iFrameArea"></iframe>
+      </div>
+    </div>
+  </body>
+</html>

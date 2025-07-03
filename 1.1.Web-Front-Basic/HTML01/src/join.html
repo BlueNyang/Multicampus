@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>회원 가입 폼</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      h2 {
+        text-align: center;
+      }
+
+      table {
+        margin: 0 auto;
+        text-align: left;
+      }
+
+      #submitBtn {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>회원가입</h2>
+    <hr />
+    <form method="post" action="join.jsp">
+      <table>
+        <tr>
+          <td><label for="name">성명</label></td>
+          <td>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="이름을 입력하세요."
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="id">아이디</label></td>
+          <td>
+            <input
+              type="text"
+              id="id"
+              name="id"
+              required
+              placeholder="아이디를 입력하세요."
+            />
+            <button type="button">중복 확인</button>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="pwd">비밀번호</label></td>
+          <td>
+            <input
+              type="password"
+              id="pwd"
+              name="pwd"
+              minlength="10"
+              maxlength="20"
+              pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[\W_]).{10,20}$"
+              required
+              placeholder="비밀번호를 입력하세요."
+            />
+            (영문자 + 숫자 + 특수문자: 10~20자)
+          </td>
+        </tr>
+        <tr>
+          <td><label for="pwdCheck">비밀번호 확인</label></td>
+          <td>
+            <input
+              type="password"
+              id="pwdCheck"
+              name="pwdCheck"
+              required
+              placeholder="비밀번호를 다시 입력하세요."
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label>생년월일</label></td>
+          <td>
+            <input
+              type="text"
+              id="birthYear"
+              name="birthYear"
+              maxlength="4"
+              size="4"
+              placeholder="YYYY"
+              required
+            />
+            년
+            <select id="birthMonth" name="birthMonth" required>
+              <option value="01">1</option>
+              <option value="02">2</option>
+              <option value="03">3</option>
+              <option value="04">4</option>
+              <option value="05">5</option>
+              <option value="06">6</option>
+              <option value="07">7</option>
+              <option value="08">8</option>
+              <option value="09">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            월
+            <select id="birthDay" name="birthDay" required>
+              <option value="01">1</option>
+              <option value="02">2</option>
+              <option value="03">3</option>
+              <option value="04">4</option>
+              <option value="05">5</option>
+              <option value="06">6</option>
+              <option value="07">7</option>
+              <option value="08">8</option>
+              <option value="09">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+            일
+            <input type="radio" name="birthType" value="양력" checked /> 양력
+            <input type="radio" name="birthType" value="음력" /> 음력
+          </td>
+        </tr>
+        <tr>
+          <td><label>전화번호</label></td>
+          <td>
+            <select id="call-first-num" name="CallFirstNum">
+              <option value="02">02</option>
+              <option value="031">031</option>
+              <option value="032">032</option>
+              <option value="033">033</option>
+              <option value="041">041</option>
+              <option value="042">042</option>
+              <option value="043">043</option>
+              <option value="044">044</option>
+              <option value="051">051</option>
+              <option value="052">052</option>
+              <option value="053">053</option>
+              <option value="054">054</option>
+              <option value="055">055</option>
+              <option value="061">061</option>
+              <option value="062">062</option>
+              <option value="063">063</option>
+              <option value="064">064</option>
+              <option value="070">070</option>
+            </select>
+            -
+            <input
+              type="tel"
+              id="call-second-num"
+              name="CallSecondNum"
+              maxlength="4"
+              size="6"
+              required
+            />
+            -
+            <input
+              type="tel"
+              id="call-third-num"
+              name="CallThirdNum"
+              maxlength="4"
+              size="6"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label>휴대폰번호</label></td>
+          <td>
+            <select id="first-num" name="phoneFirstNum">
+              <option value="010" selected>010</option>
+            </select>
+            -
+            <input
+              type="tel"
+              id="second-num"
+              name="phoneSecondNum"
+              maxlength="4"
+              size="6"
+              required
+            />
+            -
+            <input
+              type="tel"
+              id="third-num"
+              name="phoneThirdNum"
+              maxlength="4"
+              size="6"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="3"><label>주소</label></td>
+          <td>
+            <input
+              type="text"
+              id="zipCode"
+              name="zipCode"
+              maxlength="6"
+              size="8"
+              required
+              placeholder="우편번호"
+            />
+            <button id="postNoBtn" type="button">우편번호 찾기</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="text"
+              id="address1"
+              name="address1"
+              required
+              placeholder="주소를 입력하세요."
+              size="40"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              type="text"
+              id="address2"
+              name="address2"
+              placeholder="상세 주소를 입력하세요."
+              size="40"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="gender">성별</label></td>
+          <td>
+            <input type="radio" value="남성" />
+            <label for="male">남성</label>
+            <input type="radio" value="여성" />
+            <label for="female">여성</label>
+            <input type="radio" value="선택안함" checked />
+            <label for="none">선택안함</label>
+          </td>
+        </tr>
+        <tr>
+          <td><label>직업</label></td>
+          <td>
+            <select id="job" name="job">
+              <option value="학생">프로그래머</option>
+              <option value="직장인">프론트엔드</option>
+              <option value="자영업">백엔드</option>
+              <option value="기타">다자이너</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label>이메일</label></td>
+          <td>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="이메일을 입력하세요."
+            />
+            @
+            <select id="emailDomain" name="emailDomain">
+              <option value="naver.com">naver.com</option>
+              <option value="gmail.com">gmail.com</option>
+              <option value="daum.net">daum.net</option>
+              <option value="직접입력">직접입력</option>
+            </select>
+            <input
+              type="text"
+              id="emailCustom"
+              name="emailCustom"
+              placeholder="직접 입력"
+              style="display: none"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label>이메일 수신 여부</label></td>
+          <td>
+            <input type="radio" name="emailReceive" value="yes" /> 예
+            <input type="radio" name="emailReceive" value="no" checked /> 아니오
+          </td>
+        </tr>
+        <tr>
+          <td><label for="interests">관심분야</label></td>
+          <td>
+            <input type="checkbox" name="interests" value="Frontend" />
+            프론트엔드
+            <input type="checkbox" name="interests" value="Backend" /> 백엔드
+            <input type="checkbox" name="interests" value="Fullstack" /> 풀스택
+            <input type="checkbox" name="interests" value="Java" /> 자바
+            프로그래밍
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" id="submitBtn">
+            <input type="submit" value="가입하기" />
+            <input
+              type="button"
+              value="취  소"
+              onclick="location.href='index.html'"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script>
+      document.getElementById("emailDomain").addEventListener("change", () => {
+        const emailCustom = document.getElementById("emailCustom");
+        if (this.value === "직접입력") {
+          emailCustom.style.display = "inline";
+          emailCustom.required = true;
+        } else {
+          emailCustom.style.display = "none";
+          emailCustom.required = false;
+        }
+      });
+
+      const checkPW = document.getElementById("pwdCheck");
+      const pwd = document.getElementById("pwd");
+      checkPW.addEventListener("input", () => {
+        if (checkPW.value !== pwd.value) {
+          checkPW.setCustomValidity("비밀번호가 일치하지 않습니다.");
+        } else {
+          checkPW.setCustomValidity("");
+        }
+      });
+
+      const postNoBtn = document.getElementById("postNoBtn");
+      postNoBtn.addEventListener("click", () => {
+        // 다음 주소로 새 창 열기
+        window.open(
+          "https://www.epost.go.kr/search.RetrieveIntegrationNewZipCdList.comm",
+          "우편번호 찾기",
+          "width=600,height=700,scrollbars=yes"
+        );
+      });
+
+      const birthYear = document.getElementById("birthYear");
+      const birthMonth = document.getElementById("birthMonth");
+
+      // 생년월일의 일(day) 선택 옵션을 월(month)과 년(year)에 따라 동적으로 조정
+      function setDaysOnSelect() {
+        const birthDay = document.getElementById("birthDay");
+
+        // 현재 선택된 월(month)을 가져옴
+        const month = parseInt(birthMonth.value, 10);
+        // 최대 날짜를 계산
+        let maxDays;
+        // 2월의 경우 윤년을 고려
+        if (month === 2) {
+          // year 필드의 값을 가져옴
+          const year = parseInt(birthYear.value, 10);
+
+          if (isNaN(year) || year < 1) {
+            maxDays = 28; // 유효하지 않은 년도는 28일로 설정
+          } else if (year < 1000) {
+            maxDays = 28; // 3자리 이하의 년도는 윤년 계산을 하지 않음
+          } else {
+            // 윤년 계산: 4로 나누어 떨어지고, 100으로 나누어 떨어지지 않거나, 400으로 나누어 떨어지는 경우
+            // 윤년이면 29일, 아니면 28일
+            maxDays =
+              (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
+                ? 29
+                : 28;
+          }
+        } else if ([4, 6, 9, 11].includes(month)) {
+          maxDays = 30; // 4, 6, 9, 11월은 30일
+        } else {
+          maxDays = 31; // 나머지 월은 31일
+        }
+
+        // option 요소를 조정
+        while (birthDay.options.length > 0) {
+          birthDay.remove(0);
+        }
+
+        // 최대 날짜에 따라 option 요소 추가
+        for (let day = 1; day <= maxDays; day++) {
+          const option = document.createElement("option");
+          option.value = day < 10 ? `0${day}` : day.toString();
+          option.textContent = day;
+          birthDay.appendChild(option);
+        }
+
+        // 현재 선택된 날짜가 새로운 최대 날짜보다 크면, 선택을 1로
+        if (parseInt(birthDay.value, 10) > maxDays) {
+          birthDay.value = maxDays < 10 ? `0${maxDays}` : maxDays.toString();
+        }
+      }
+
+      // 년 필드에 숫자만 최대 4개 입력할 수 있도록 제한
+      birthYear.addEventListener("input", () => {
+        birthYear.value = birthYear.value.replace(/[^0-9]/g, ""); // 숫자만 허용
+
+        // 년도 길이가 4를 초과하면 잘라냄
+        if (birthYear.value.length > 4) {
+          birthYear.value = birthYear.value.slice(0, 4);
+        }
+        // 생년월일의 일(day) 선택 옵션을 업데이트
+        setDaysOnSelect();
+      });
+
+      // 월(month) 선택 시 일(day) 옵션 업데이트
+      birthMonth.addEventListener("change", setDaysOnSelect);
+    </script>
+  </body>
+</html>

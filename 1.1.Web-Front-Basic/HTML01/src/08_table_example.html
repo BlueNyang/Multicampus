@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>테이블 thead, tbody, tfoot 구분</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+      body {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      table {
+        width: 600px;
+        height: 200px;
+        text-align: center;
+        border: 1px solid black;
+      }
+
+      thead {
+        background-color: #0c3;
+      }
+
+      tfoot {
+        background-color: #fc0;
+      }
+
+      th {
+        width: 100px;
+        border: 1px solid black;
+      }
+
+      td {
+        width: 100px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        휴양림 객실 정보
+      </caption>
+      <thead>
+        <tr>
+          <th>방 이름</th>
+          <th>대상</th>
+          <th>크기</th>
+          <th>가격</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>종달새방</th>
+          <td>여성</td>
+          <td>2인실</td>
+          <td rowspan="4">1인 30,000원</td>
+        </tr>
+        <tr>
+          <th rowspan="2">진달래방</th>
+          <td>남성</td>
+          <td rowspan="3">4인실</td>
+        </tr>
+        <tr>
+          <td>가족</td>
+        </tr>
+        <tr>
+          <th>무궁화방</th>
+          <td>전체</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">휴가철 성수기 기준</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>
