@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>let과 const</title>
+    <script type="text/javascript">
+      var name = "홍길동";
+      var name = "김철수"; // var는 재선언 가능
+      console.log(name); // 김철수
+
+      let name = "홍길동"; // let은 재선언 불가
+      console.log(name); // ReferenceError: name is not defined
+
+      let name2 = "홍길동";
+      // let name2 = "김철수"; // let은 재선언 불가
+      name2 = "김철수"; // let은 재할당 가능
+      console.log(name2); // 김철수
+
+      const pi = 3.14; // 상수 선언
+      // const pi = 3.14159; // const는 재선언 불가
+      // pi = 3.14159; // const는 재할당 불가
+      console.log(pi); // 3.14
+    </script>
+  </head>
+  <body></body>
+</html>

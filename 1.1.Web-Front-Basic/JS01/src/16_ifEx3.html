@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16 ifEx3</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+      body {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+    <script>
+      function inputAndCheck(correctStr, initStr, type) {
+        const input = prompt(`${type}을 입력하세요`, initStr);
+
+        if (input === null) {
+          alert("로그인 취소");
+          return -1; // 취소
+        } else if (input.trim() === "") {
+          alert(`${type}을(를) 입력하지 않았습니다.`);
+          return -2; // 입력하지 않음
+        } else if (input === correctStr) {
+          return 1; // 성공
+        } else {
+          return 0; // 실패
+        }
+      }
+
+      function checkLogin() {
+        const id = "abcd";
+        const pw = "1234";
+
+        const idResult = inputAndCheck(id, id, "ID");
+        if (idResult === -1 || idResult === -2) {
+          return false; // 로그인 실패
+        }
+
+        const pwResult = inputAndCheck(pw, pw, "비밀번호");
+        if (pwResult === -1 || pwResult === -2) {
+          return false; // 로그인 실패
+        }
+
+        if (idResult && pwResult) {
+          alert("로그인 성공");
+          return true;
+        }
+
+        alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+        return false;
+      }
+
+      function question() {
+        const correct = ["서울", "SEOUL", "seoul", "서울특별시", "Seoul"];
+        const answer = prompt("대한민국의 수도는?", "OOOOO");
+
+        if (answer === null) {
+          alert("취소되었습니다.");
+        } else if (correct.includes(answer)) {
+          document.write("<h1>정답입니다!</h1><p>대한민국의 수도는 서울입니다.</p>");
+        } else {
+          document.write("<h1>오답입니다!</h1><p>대한민국의 수도는 서울입니다.</p>");
+        }
+      }
+
+      if (checkLogin()) {
+        question();
+      } else {
+        document.write("<h1>로그인 실패</h1><p>다시 시도해주세요.</p>");
+      }
+    </script>
+  </head>
+  <body>
+    <span id="result"></span>
+  </body>
+</html>

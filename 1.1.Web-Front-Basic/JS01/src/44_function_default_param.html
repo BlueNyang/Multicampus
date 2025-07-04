@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>디폴트 매개변수</title>
+		<script type="text/javascript">
+
+			
+			console.log(rect());   // 값을 전달하지 않으면 디폴트 매개변수 width, height 로 사용
+			console.log(rect(30));   // 값을 1개 전달하면 첫 번째 매개변수가 받고, 두번째는 디폴트 매개변수 사용
+			console.log(rect(100, 200)); // 값을 2개 다 전달하면 전달받은 값으로 사용 (디폴트 매개변수 사용 안 함)
+			
+			
+			// 일반 매개변수와 디폴트 매개변수를 섞어서 사용
+
+			console.log(showInfo());  // name은 값이 없고, year은 디폴트 매개변수 사용, score는 값이 없음(undefined)
+			console.log(showInfo("홍길동"));  // name은 전달된 값, year은 디폴트 매개변수 사용, score 값 없음
+			console.log(showInfo("홍길동", 80));  
+			// name 전달된 값, year도 전달된 값 (두번째 매개변수가 두 번째 값을 받음 (디폴트 값 사용하지 않음)), score 값 어음
+			// 주의 : 두 번재 매개변수 year 가 디폴트 값이 있더라도 순서대로 받기 때문에 year가 디폴트 매개변수르 사용하지 않고 전달된 값 사용
+			// --> 디폴트 매개변수는 맨 뒤에 위치시킴
+			
+			document.write("<hr>");
+			
+	
+						
+			console.log(showInfo());  // name은 값이 없고, year은 디폴트 매개변수 사용, score는 값이 없음(undefined)
+			console.log(showInfo("홍길동"));  // name은 전달된 값, year은 디폴트 매개변수 사용, score 값 없음
+			console.log(showInfo("홍길동", 80));  // year은 디폴트 매개변수 값 사용
+			console.log(showInfo("홍길동", 80, 1));  // year도 전달된 값 사용	
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>미디어 쿼리</title>
-		<style>
+  <head>
+    <meta charset="UTF-8" />
+    <title>미디어 쿼리</title>
+    <style>
+      @media all and (min-width: 320px) {
+        body {
+          background: #f77;
+        }
+      }
 
+      @media all and (min-width: 768px) {
+        body {
+          background: #7f7;
+        }
+      }
 
+      @media all and (min-width: 960px) {
+        body {
+          background: #ff7;
+        }
+      }
 
-			
-			* { margin:0; padding:0; }
-			
-			div {
-				margin:0 auto;
-				width:50%;
-				max-width:420px; 
-				max-height:420px; 
-			} 
-			
-			img {
-				width:100%;
-				height:auto;
-				border:solid 1px black;
-			} 
-		 
-		</style>
-	</head>
-	<body>
-			<div>
-				<img src="image/사진.jpg">
-			</div>
-	</body>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      div {
+        margin: 0 auto;
+        width: 50%;
+        max-width: 420px;
+        max-height: 420px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border: solid 1px black;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="image/사진.jpg" />
+    </div>
+  </body>
 </html>

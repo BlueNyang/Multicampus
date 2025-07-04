@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+body {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#wrap {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#mainMenuBox {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+}
+
+#menuItem {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+#menuItem li {
+  flex: 1; /* flex-grow: 1; */
+  text-align: center;
+}
+
+#menuItem li a {
+  color: white;
+  text-decoration: none;
+}
+
+#menuItem li a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+#productBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+#productBox img:hover {
+  opacity: 0.6;
+}
+
+#productBox div {
+  text-align: center;
+  width: 200px;
+}
+
+#productBox h3 {
+  color: blue;
+}
+
+#productBox h3:hover {
+  color: green;
+}
+
+#productBox p {
+  color: red;
+}
+
+#infoBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+#infoBox .box:first-child a:hover {
+  color: red;
+}
+
+#infoBox .box a:hover {
+  color: #001b66;
+}
+
+.box {
+  width: 45%;
+  padding: 10px;
+  padding-bottom: 50px;
+  border: 1px solid #777;
+  border-radius: 5px;
+}
+
+.box h4 {
+  color: black;
+  margin: 10px 0 0 10px;
+}
+
+.box hr {
+  margin: 10px 10px;
+  border: 1px solid #0000;
+}
+
+.box a {
+  color: #005bff;
+  text-decoration: underline;
+  margin-left: 10px;
+}

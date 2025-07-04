@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      th {
+        background: #ff7;
+      }
+
+      td {
+        width: 100px;
+        text-align: center;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+    <script>
+      function createTable() {
+        let sum = 0;
+
+        const body = document.body;
+        const table = document.createElement("table");
+        if (table) {
+          const tr = document.createElement("tr");
+          const th1 = document.createElement("th");
+          th1.textContent = "i";
+          tr.appendChild(th1);
+
+          const th2 = document.createElement("th");
+          th2.textContent = "i=sum";
+          tr.appendChild(th2);
+
+          table.appendChild(tr);
+        }
+
+        for (let i = 0; i < 10; i++) {
+          sum += ++i;
+
+          if (table) {
+            const tr = document.createElement("tr");
+            const td1 = document.createElement("td");
+            td1.textContent = i;
+            tr.appendChild(td1);
+
+            const td2 = document.createElement("td");
+            td2.textContent = sum;
+            tr.appendChild(td2);
+
+            table.appendChild(tr);
+          }
+        }
+
+        if (table) {
+          body.appendChild(table);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wrapper"></div>
+    <script>
+      createTable();
+    </script>
+  </body>
+</html>

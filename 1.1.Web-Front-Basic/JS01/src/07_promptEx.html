@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07 Prompt 안규태</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+      body {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+    <script>
+      if (confirm("카드 결제를 하시겠습니까?")) {
+        const cardNumber = prompt("카드 번호를 입력하세요:", "xxxx-xxxx-xxxx-xxxx");
+
+        if (cardNumber) {
+          document.write(`<p>결제 완료: 카드 번호 ${cardNumber}</p>`);
+        } else {
+          alert("카드 번호가 입력되지 않았습니다.");
+          document.write("<p>결제 취소</p>");
+        }
+      } else {
+        alert("카드 결제가 선택되지 않았습니다.");
+        document.write("<p>카드로 결제하지 않습니다.</p>");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

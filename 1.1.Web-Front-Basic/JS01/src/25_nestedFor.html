@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>중첩 for 문</title>
+    <script>
+      function nestedFor() {
+        for (let i = 0; i < 4; i++) {
+          for (let j = 0; j < 7; j++) {
+            const img = document.createElement("img");
+            img.src = `./image/apple.png`;
+
+            document.body.appendChild(img);
+          }
+          const br = document.createElement("br");
+          document.body.appendChild(br);
+        }
+      }
+
+      function nestedFor2() {
+        document.body.appendChild(document.createElement("hr")); // 구분선 추가
+
+        const ROWS = 4; // 행의 개수
+        const COLS = 7; // 열의 개수
+        // 이미지 경로 배열
+        const images = ["./image/apple.png", "./image/bomb.png"];
+
+        // 이중 for문을 사용하여 이미지 출력
+        for (let i = 0; i < ROWS; i++) {
+          for (let j = 0; j < COLS; j++) {
+            const img = document.createElement("img"); // 이미지 요소 생성
+            img.src = images[j % 2]; // 짝수는 사과, 홀수는 폭탄
+            document.body.appendChild(img); // 이미지 추가
+          }
+          document.body.appendChild(document.createElement("br")); // 줄바꿈 추가
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      nestedFor();
+      nestedFor2();
+    </script>
+  </body>
+</html>

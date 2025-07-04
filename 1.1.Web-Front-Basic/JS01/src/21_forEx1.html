@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>21 forEx1</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+      body {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+    <script>
+      // 유효한 정수 입력을 받는 함수
+      function inputInteger(seq) {
+        while (true) {
+          const input = prompt(`${seq}번째 숫자를 입력하세요`);
+
+          // 입력 취소 처리
+          if (input === null) {
+            alert("입력을 취소했습니다.");
+            return null;
+          }
+
+          // 빈 문자열 처리
+          const trimmedInput = input.trim();
+          if (trimmedInput === "") {
+            alert("숫자를 입력해주세요.");
+            continue;
+          }
+
+          // 숫자 변환 및 유효성 검사
+          const num = parseInt(trimmedInput, 10);
+          if (isNaN(num)) {
+            alert("올바른 숫자를 입력해주세요.");
+            continue;
+          }
+
+          return num;
+        }
+      }
+
+      // 양수, 음수, 0의 개수를 세는 함수
+      function countNumbers() {
+        let positive = 0;
+        let negative = 0;
+        let zero = 0;
+
+        const TOTAL_COUNT = 10;
+
+        for (let i = 1; i <= TOTAL_COUNT; i++) {
+          const num = inputInteger(i);
+
+          // 입력 취소 시 함수 종료
+          if (num === null) {
+            document.write("<p>입력이 취소되었습니다.</p>");
+            return;
+          }
+
+          // 숫자 분류
+          if (num > 0) {
+            positive++;
+          } else if (num < 0) {
+            negative++;
+          } else {
+            zero++;
+          }
+        }
+
+        // 결과 출력
+        displayResults(positive, negative, zero);
+      }
+
+      // 결과를 화면에 출력하는 함수
+      function displayResults(positive, negative, zero) {
+        document.write(`
+            <p>양수의 개수: ${positive}</p>
+            <p>음수의 개수: ${negative}</p>
+            <p>0의 개수: ${zero}</p>
+        `);
+      }
+
+      // 페이지 로드 시 실행
+      countNumbers();
+    </script>
+  </head>
+  <body></body>
+</html>

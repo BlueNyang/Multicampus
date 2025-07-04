@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>플렉서블 박스</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 300px;
+        height: 200px;
+        border: 1px solid #000;
+        margin: 5px;
+      }
+
+      /* 플렉서블 박스 설정 */
+      .container {
+        /*display: flex; /* 자식 요소들끼리의 배치 형태 조정. block과 배치 형태는 동일 */
+        display: inline-flex; /* line-block과 배치 형태는 같음 */
+        justify-content: space-between; /* 자식 요소 사이에 균등하게 공간 배분 */
+        align-items: center; /* 자식 요소를 수직 중앙 정렬 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="container">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>

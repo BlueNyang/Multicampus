@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>var와 let : scope 차이</title>
+    <script type="text/javascript">
+      function test() {
+        var x = 10;
+        if (x === 10) {
+          var a = 100;
+        }
+        console.log("x:", x); // 10
+        console.log("a:", a); // 100, var는 함수 스코프이므로 if 블록 밖에서도 접근 가능
+      }
+
+      test();
+
+      function test2() {
+        let y = 20;
+        if (y === 20) {
+          let b = 200;
+        }
+        console.log("y:", y); // 20
+        // console.log("b:", b); // ReferenceError: b is not defined, let은 블록 스코프이므로 if 블록 밖에서는 접근 불가
+      }
+
+      test2();
+    </script>
+  </head>
+  <body></body>
+</html>
