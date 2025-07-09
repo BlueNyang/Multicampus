@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>같은 객체에 동일한 이벤트 여러 번 사용 불가</title>
+    <script type="text/javascript">
+      // 동일한 window에 객체에 대해 이벤트 핸들러 여러 개 사용
+      // 마지막 하나만 적용
+      function show1() {
+        alert("실행1");
+      }
+
+      function show2() {
+        alert("실행2");
+      }
+
+      window.onload = show1;
+      window.onload = show2; // show1은 무시됨
+    </script>
+  </head>
+  <body></body>
+</html>

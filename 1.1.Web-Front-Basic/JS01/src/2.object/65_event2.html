@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>이벤트 처리 : 고전 방식</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script type="text/javascript">
+      window.onload = function () {
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click", () => {
+          alert("클릭 이벤트 발생");
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <button id="btn">클릭</button>
+  </body>
+</html>

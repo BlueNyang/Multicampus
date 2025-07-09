@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>함수 매개변수</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script type="text/javascript">
+      function calInterest(deposit, rate) {
+        if (isNaN(deposit) || isNaN(rate)) {
+          return "잘못된 입력입니다.";
+        }
+        const interest = deposit * (rate / 100);
+        return `예금액: ${deposit}원, 이자율: ${rate}%, 이자: ${interest.toFixed(2)}원`;
+      }
+
+      function input() {
+        const deposit = parseInt(prompt("예금액 입력"));
+        const rate = Number(prompt("이자율 입력"));
+      }
+    </script>
+  </head>
+  <body onLoad="input()"></body>
+</html>

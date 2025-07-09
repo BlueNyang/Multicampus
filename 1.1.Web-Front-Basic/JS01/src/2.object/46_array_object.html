@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Array 객체</title>
+    <script type="text/javascript">
+      function showArray(text, arr) {
+        document.write(text + ": <br>&nbsp;&nbsp;&nbsp;&nbsp;[");
+
+        for (var i = 0; i < arr.length; i++) {
+          document.write(arr[i] + " ");
+        }
+        document.write("]<br>");
+      }
+
+      let fruits = ["사과", "복숭아", "포도"]; // 결과 동일
+
+      showArray("fruits 배열 전체", fruits);
+
+      console.log(fruits.shift()); // 첫 번째 요소를 반환하고 다른 요소를 왼쪽으로 이동
+      showArray("shift() - 첫 번째 요소 제거", fruits);
+
+      fruits.unshift("배");
+      showArray("unshift() - 맨 앞에 요소(배) 추가", fruits);
+
+      console.log(fruits.pop()); // 마지막 요소 반환하고 제거
+      showArray("pop() - 마지막 요소(포도) 제거", fruits);
+
+      fruits.push("딸기", "수박"); // 마지막에 요소 추가
+      showArray("push() - 마지막에 요소(딸기, 수박) 추가", fruits);
+
+      fruits.reverse(); // 역순으로 변경
+      showArray("reverse() - 역순으로 변경", fruits);
+
+      fruits.sort(); // 오름차순 정렬
+      showArray("sort() - 오름차순 정렬", fruits);
+
+      fruits.splice(2, 1, "망고", "오렌지"); // [2]위치 요소 1개(복숭아) 삭제하고 '망고', '오렌지' 추가
+      showArray("splice() - [2]위치 요소 1개(복숭아) 삭제하고 '망고 오렌지' 추가", fruits);
+
+      let newFruits = fruits.slice(1, 4); // [1] ~ [3] 요소 추출하여 새로운 배열 생성
+      showArray("slice() - [1] ~[3] 요소 추출하여 배열 생성", newFruits);
+    </script>
+  </head>
+  <body></body>
+</html>

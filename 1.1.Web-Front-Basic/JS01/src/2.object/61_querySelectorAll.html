@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>querySelectorAll()</title>
+    <script type="text/javascript">
+      window.onload = () => {
+        const headers = document.querySelectorAll("h1");
+
+        headers.forEach((header) => {
+          header.style.color = "orange";
+          header.style.background = "red";
+          header.style.width = "50%";
+          header.innerHTML = "from JavaScript";
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+  </body>
+</html>

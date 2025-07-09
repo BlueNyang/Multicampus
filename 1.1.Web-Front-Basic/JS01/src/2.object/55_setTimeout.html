@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>setTimeout() 예제</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <script></script>
+  </head>
+  <body>
+    부모창입니다.
+    <script>
+      document.body.onload = () => {
+        const win = window.open("msgWindow.html", "setTimeout", "width=300, height=200");
+        win.onload = () => {
+          setTimeout(() => {
+            win.close();
+            win.window.opener.focus();
+          }, 3000);
+        };
+      };
+      window.onfocus = () => {
+        const p = document.createElement("p");
+        p.textContent = "부모창이 포커스를 받았습니다.";
+        document.body.appendChild(p);
+      };
+    </script>
+  </body>
+</html>

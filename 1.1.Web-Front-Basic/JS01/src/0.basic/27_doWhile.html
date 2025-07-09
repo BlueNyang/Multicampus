@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>do~while 문</title>
+    <script type="text/javascript">
+      let count = 0;
+      let answer;
+      do {
+        answer = confirm(`경고창을 출력하시겠습니까? (${count++})`, "확인", "취소");
+      } while (answer);
+
+      document.write("경고창 출력 횟수 : " + count);
+    </script>
+  </head>
+  <body></body>
+</html>

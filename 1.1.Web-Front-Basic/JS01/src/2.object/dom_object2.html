@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Caution</title>
+    <script>
+      // script 코드를 html tag가 생성된 후에 실행되도록 코드를 구성
+      // window는 브라우저 창 표현 객체는 load 이벤트를 발생시킴
+      // -> 태그 해석 완료 이후 창을 생성하고 표현할 때 발생함
+      window.onload = () => {
+        const box = document.getElementById("box");
+        box.innerHTML = "변경";
+      };
+    </script>
+  </head>
+  <body>
+    <div id="box">box</div>
+  </body>
+</html>

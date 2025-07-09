@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Date 객체</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script>
+      function showDate() {
+        const now = new Date();
+
+        let day = now.getDay(); // 요일 (0: 일요일, 1: 월요일, ..., 6: 토요일)
+
+        // 요일 설정
+        switch (day) {
+          case 0:
+            day = "일";
+            break;
+          case 1:
+            day = "월";
+            break;
+          case 2:
+            day = "화";
+            break;
+          case 3:
+            day = "수";
+            break;
+          case 4:
+            day = "목";
+            break;
+          case 5:
+            day = "금";
+            break;
+          default:
+            day = "토";
+        }
+
+        const year = now.getFullYear(); // 연도
+        const month = now.getMonth() + 1; // 월 (0부터 시작하므로 +1)
+        const date = now.getDate(); // 날짜
+
+        const p1 = document.getElementById("date");
+        p1.innerText = `오늘은 ${year}년 ${month}월 ${date}일 ${day}요일입니다.`;
+
+        const hours = now.getHours(); // 시
+        const minutes = now.getMinutes(); // 분
+        const seconds = now.getSeconds(); // 초
+
+        const p2 = document.getElementById("time");
+        p2.innerText = `지금은 ${hours}시 ${minutes}분 ${seconds}초 입니다.`;
+      }
+    </script>
+  </head>
+  <body>
+    <p id="date">현재 날짜와 시간</p>
+    <p id="time">현재 시간</p>
+    <script>
+      setInterval(showDate, 1000); // 1초마다 현재 시간 갱신
+    </script>
+  </body>
+</html>

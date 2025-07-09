@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>charAt()</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script type="text/javascript">
+      // 입력
+      function inputNum() {
+        let num = prompt("숫자 입력");
+
+        if (num === null || num === "") {
+          alert("입력값이 없습니다.");
+          return;
+        }
+
+        for (let i = 0; i < num.length; i++) {
+          if ("0" > num.charAt(i) || num.charAt(i) > "9") {
+            alert("숫자가 아닙니다.");
+            break;
+          }
+          document.write(num.charAt(i) + "<br>");
+        }
+        document.write("<hr>");
+        document.write(`입력문자: ${num}<br>`);
+
+        for (let i = 0; i < num.length; i++) {
+          document.write(`문자열의 ${i}번째 문자 ASCii 값: ${num.charCodeAt(i)}<br>`);
+        }
+
+        return;
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      inputNum();
+    </script>
+  </body>
+</html>

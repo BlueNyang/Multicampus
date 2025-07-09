@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>createElement('h3') 예제</title>
+  </head>
+  <body>
+    <script>
+      {
+        const h3 = document.createElement("h3");
+        const text = document.createTextNode("출력할 텍스트: 홀길동, 동적 생성 문자열");
+        h3.appendChild(text);
+        document.body.appendChild(h3);
+      }
+    </script>
+  </body>
+</html>

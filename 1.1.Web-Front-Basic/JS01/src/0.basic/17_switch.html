@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>switch 문</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script type="text/javascript">
+      const input = prompt("다음의 숫자를 입력하세요.");
+      if (input === null) {
+        alert("취소");
+      } else if (input.trim() === "") {
+        alert("입력하지 않았습니다.");
+      } else {
+        switch (input) {
+          case "1":
+            document.write("<img src='image/lizard.png' alt='도마뱀' />");
+            break;
+          case "2":
+            document.write("<img src='image/lizardon.png' alt='리자돈' />");
+            break;
+            1;
+          case "3":
+            document.write("<img src='image/megalizardon.png' alt='메갈리자돈' />");
+            break;
+          default:
+            alert("1, 2, 3 중 하나를 입력하세요.");
+        }
+      }
+    </script>
+  </head>
+
+  <body></body>
+</html>

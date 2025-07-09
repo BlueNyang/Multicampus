@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05 Confirm Input</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script>
+      // Confirm input example
+      function confirmInput() {
+        const userInput = prompt("Please enter your name:");
+        if (userInput) {
+          const confirmation = confirm(`Is your name ${userInput}?`);
+          if (confirmation) {
+            document.body.innerHTML = `<h1>Welcome, ${userInput}!</h1>`;
+          } else {
+            document.body.innerHTML = "<h1>Input was not confirmed.</h1>";
+          }
+        } else {
+          document.body.innerHTML = "<h1>No input provided.</h1>";
+        }
+      }
+      // Call the function to execute on page load
+      window.onload = confirmInput;
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>마우스 이벤트</title>
+    <script type="text/javascript">
+      window.onload = function () {
+        const birdImg = document.getElementById("birdImg");
+
+        birdImg.onmouseover = () => {
+          birdImg.style.opacity = 0.5;
+        };
+
+        birdImg.onmouseout = () => {
+          birdImg.style.opacity = 1;
+        };
+      };
+
+      document.oncontextmenu = (e) => {
+        e.preventDefault();
+      };
+
+      // 문서 상에서 오른쪽 마우스 클릭했을 때 이벤트 처리 : contextmenu
+    </script>
+  </head>
+  <body>
+    <img id="birdImg" src="../image/bird.jpg" />
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setIntervalEx1</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+      body {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+      }
+
+      #countDownH1 {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="countDownH1">10</h1>
+      <img id="countDownImg" src="../image/bomb1.jpg" alt="bomb" />
+      <button id="startButton">카운트 다운 시작</button>
+      <button id="resetButton" hidden>초기화</button>
+    </div>
+    <script>
+      {
+        // 전역 변수 오염 방지
+        const countDownH1 = document.getElementById("countDownH1");
+        const countDownImg = document.getElementById("countDownImg");
+        const startButton = document.getElementById("startButton");
+        const resetButton = document.getElementById("resetButton");
+
+        const intervalId = null;
+
+        function setElements(count, imgName) {
+          countDownH1.textContent = count;
+          countDownImg.src = `../image/${imgName}.jpg`;
+        }
+
+        function startCountDown() {
+          let count = 10;
+
+          setElements(count--, "bomb1");
+
+          intervalId = setInterval(() => {
+            if (count > 0) {
+              setElements(count--, `bomb${10 - count}`);
+            } else {
+              clearInterval(intervalId);
+              setElements("BOOM!", "bomb11");
+              startButton.hidden = true;
+              resetButton.hidden = false;
+            }
+          }, 1000);
+        }
+
+        startButton.addEventListener("click", () => {
+          startButton.disabled = true;
+          startCountDown();
+        });
+
+        resetButton.addEventListener("click", () => {
+          location.reload();
+        });
+      }
+    </script>
+  </body>
+</html>

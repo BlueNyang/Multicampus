@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>setInterval() 예제</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <script>
+      function showTime() {
+        const date = new Date();
+
+        const hour = (date.getHours() % 12 || 12).toString().padStart(2, "0"); // 12시간제로 변환
+        const minute = date.getMinutes().toString().padStart(2, "0");
+        const second = date.getSeconds().toString().padStart(2, "0");
+        const amPm = date.getHours() >= 12 ? "오후" : "오전"; // 오전/오후 설정
+
+        //const time = amPm + " " + hour + "시 " + minute + "분 " + second + "초 ";
+        const time = `${amPm} ${hour}시 ${minute}분 ${second}초`;
+
+        const clockElement = document.getElementById("clock");
+        clockElement.textContent = time;
+      }
+
+      function init() {
+        const startBtn = document.getElementById("startBtn");
+        let intervalId;
+
+        startBtn.addEventListener("click", () => {
+          const clockElement = document.getElementById("clock");
+          clockElement.textContent = "시간 출력 중...";
+          intervalId = setInterval(showTime, 1000);
+        });
+
+        const stopBtn = document.getElementById("stopBtn");
+        stopBtn.addEventListener("click", () => {
+          const clockElement = document.getElementById("clock");
+          clockElement.textContent = "시간 정지됨";
+          clearInterval(intervalId);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <button id="startBtn">시간 출력</button>
+    <button id="stopBtn">시간 정지</button>
+    <h1 id="clock">시간 출력</h1>
+    <script>
+      document.addEventListener("DOMContentLoaded", init);
+      // 페이지가 로드된 후 init 함수를 호출하여 이벤트 리스너를 설정합니다.
+    </script>
+  </body>
+</html>

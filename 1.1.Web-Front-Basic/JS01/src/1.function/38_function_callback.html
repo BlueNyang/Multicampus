@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Callback</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script>
+      const callback = () => {
+        alert("Callback function executed!");
+      };
+
+      function show(callback) {
+        callback();
+      }
+
+      function show2(cb) {
+        cb();
+      }
+
+      show(callback);
+      show2(callback);
+    </script>
+  </head>
+  <body></body>
+</html>

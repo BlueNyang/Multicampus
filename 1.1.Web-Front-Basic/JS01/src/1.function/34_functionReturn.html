@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>함수의 반환 값</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script type="text/javascript">
+      //숫자 2개를 입력 받아서 두 수의 합을 구하여 반환하는 함수
+      function input() {
+        const a = 10;
+        return;
+        const b = 10;
+      }
+
+      function input2() {
+        const a = 10;
+        return a;
+      }
+
+      function input3() {
+        const a = prompt("첫 번째 숫자 입력");
+        const b = prompt("두 번째 숫자 입력");
+        return sum(Number(a), Number(b));
+      }
+
+      function sum(a, b) {
+        return a + b;
+      }
+    </script>
+  </head>
+
+  <body>
+    <script>
+      (function () {
+        const p = document.createElement("p");
+        p.innerText = "두 수의 합 : " + input3();
+        document.body.appendChild(p);
+      })();
+    </script>
+  </body>
+</html>

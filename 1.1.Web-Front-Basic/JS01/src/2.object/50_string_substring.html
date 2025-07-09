@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>substring()</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script>
+      function inputBirth() {
+        const birth = prompt("생년월일 입력 (예 : 19980125/010125)");
+
+        if (birth === null || birth === "") {
+          alert("입력값이 없습니다.");
+          return;
+        }
+
+        let yearPos;
+
+        if (birth.length == 8) {
+          yearPos = 4;
+        } else if (birth.length == 6) {
+          yearPos = 2;
+        } else {
+          alert("잘못된 입력입니다.");
+          return;
+        }
+
+        const year = birth.substring(0, yearPos); // 0부터 4번째 문자까지
+        const month = birth.substring(yearPos, yearPos + 2); // 4부터 6번째 문자까지
+        const date = birth.substring(yearPos + 2, yearPos + 4); // 6부터 8번째 문자까지
+
+        if (isNaN(year) || isNaN(month) || isNaN(date)) {
+          alert("숫자가 아닙니다.");
+          return;
+        }
+
+        if (month < 1 || month > 12) {
+          alert("잘못된 월입니다.");
+          return;
+        }
+
+        if (date < 1 || date > 31) {
+          alert("잘못된 일입니다.");
+          return;
+        }
+
+        document.write(year + " 년 " + month + " 월 " + date + " 일에 태어나셨군요");
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      inputBirth();
+    </script>
+  </body>
+</html>

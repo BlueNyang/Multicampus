@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function returnEx</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+      body {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+    <script>
+      function input() {
+        const SCORE_SIZE = 3;
+        const subject = ["국어", "영어", "수학"];
+        let scores = new Array(SCORE_SIZE);
+
+        for (let i = 0; i < SCORE_SIZE; i++) {
+          scores[i] = prompt(subject[i] + " 점수를 입력하세요.");
+        }
+
+        const avg = scores.reduce((sum, score) => sum + Number(score), 0) / SCORE_SIZE;
+
+        return avg;
+      }
+
+      function start() {
+        const avg = input();
+        //const p = document.createElement("p");
+        //p.innerText = `평균 점수: ${avg.toFixed(2)}`;
+        //document.body.appendChild(p);
+        document.write(`<p>평균 점수: ${avg.toFixed(2)}</p>`); // Using document.write for simplicity in this example
+      }
+    </script>
+  </head>
+  <body>
+    <button id="avgBtn">평균 점수 계산</button>
+    <script>
+      const avgBtn = document.getElementById("avgBtn");
+      avgBtn.addEventListener("click", start);
+    </script>
+  </body>
+</html>

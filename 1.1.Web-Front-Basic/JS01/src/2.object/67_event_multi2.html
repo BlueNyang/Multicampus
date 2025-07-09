@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>addEventListener() : 동일 이벤트 여러 번 적용 가능</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script type="text/javascript">
+      window.onload = function () {
+        const btn = document.getElementById("btn");
+
+        // 동일한 객체에 대해 동일한 이벤트를 여러 번 적용 가능
+        btn.addEventListener("click", show1);
+        btn.addEventListener("click", show2);
+      };
+
+      function show1() {
+        alert("실행1");
+      }
+
+      function show2() {
+        alert("실행2");
+      }
+    </script>
+  </head>
+  <body>
+    <button id="btn">클릭</button>
+  </body>
+</html>

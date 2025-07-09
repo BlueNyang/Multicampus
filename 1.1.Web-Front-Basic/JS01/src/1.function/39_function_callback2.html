@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Callback2</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script>
+      function endFunction() {
+        console.log("end");
+      }
+
+      function showName(name, func) {
+        console.log(`이름: ${name}`);
+        func();
+      }
+
+      showName("홍길동", endFunction);
+    </script>
+  </head>
+  <body></body>
+</html>

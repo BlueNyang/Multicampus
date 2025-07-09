@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>지역변수</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <script type="text/javascript">
+      const f1 = () => {
+        const local1 = 100;
+      };
+
+      let local2 = 0;
+      function f2() {
+        local2 = 100;
+      }
+
+      f1();
+      f2();
+
+      document.write("local2 : " + local2 + "<br>");
+
+      function f3() {
+        let local3 = 300;
+      }
+      f3();
+
+      document.write("local3 : " + local3 + "<br>");
+    </script>
+  </head>
+  <body></body>
+</html>

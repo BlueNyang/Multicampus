@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setIntervalEx1</title>
+    <script>
+      function showImg() {
+        const MAX_COUNT = 10;
+        const INTERVAL_TIME = 1000; // 1초
+        const images = ["apple.png", "bomb.png"];
+
+        // 카운터
+        let count = 0;
+
+        // 인터벌 + 이미지 생성
+        const intervalId = setInterval(() => {
+          // count가 MAX_COUNT보다 작을 때만 이미지 생성
+          if (count < MAX_COUNT) {
+            createImage(images[count++ % 2]);
+          } else {
+            clearInterval(intervalId);
+          }
+        }, INTERVAL_TIME);
+      }
+
+      // 이미지 생성 함수
+      function createImage(imageName) {
+        // 이미지 요소 생성
+        const img = document.createElement("img");
+        img.src = `../image/${imageName}`;
+        document.body.appendChild(img);
+      }
+
+      // 페이지가 로드되면 자동으로 실행
+      function start() {
+        alert("이미지 10개를 1초 간격으로 생성합니다.");
+        showImg();
+      }
+
+      document.addEventListener("DOMContentLoaded", start);
+    </script>
+  </head>
+  <body></body>
+</html>

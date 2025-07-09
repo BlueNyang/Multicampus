@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arrayEx1</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+      body {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+    </style>
+    <script>
+      function arrayEx1() {
+        const ARR_SIZE = 4;
+        let colors = new Array(ARR_SIZE);
+
+        for (let i = 0; i < ARR_SIZE; i++) {
+          colors[i] = prompt(`색상을 입력하세요 (${i + 1}/${ARR_SIZE}):`);
+        }
+
+        let ol = document.createElement("ol");
+        ol.type = "A";
+
+        colors.forEach((color, index) => {
+          const li = document.createElement("li");
+          li.textContent = `${color}`;
+          ol.appendChild(li);
+        });
+
+        document.body.appendChild(ol);
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      arrayEx1();
+    </script>
+  </body>
+</html>

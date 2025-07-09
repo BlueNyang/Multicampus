@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>querySelectorAll()</title>
+    <script type="text/javascript">
+      window.onload = () => {
+        const headers = document.querySelectorAll("h3, #h1Id2, .h2Class2");
+
+        headers.forEach((header) => {
+          header.style.color = "orange";
+          header.style.background = "red";
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1 id="h1Id1">Header</h1>
+    <h1 id="h1Id2">H1Id2</h1>
+    <h2 class="h2Class1">Header</h2>
+    <h2 class="h2Class1">Header</h2>
+    <h2 class="h2Class2">H2Class2</h2>
+    <h2 class="h2Class2">H2Class2</h2>
+    <h3>h3</h3>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>함수 예제2</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script type="text/javascript">
+      function changeColor() {
+        const color = prompt("색상을 입력하세요 (red/blue/green):");
+        const p = document.createElement("p");
+        p.textContent = `입력한 색상: ${color}`;
+        document.body.appendChild(p);
+
+        document.bgColor = color;
+      }
+
+      function start() {
+        const answer = confirm("배경색을 변경하시겠습니까? (yes/no)");
+        if (answer) {
+          if (answer) {
+            changeColor();
+          } else {
+            alert("배경색 변경을 취소했습니다.");
+          }
+        } else {
+          alert("입력이 취소되었습니다.");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      start();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>querySelector()</title>
+    <script type="text/javascript">
+      window.onload = () => {
+        const headers = document.querySelector("h1");
+        if (headers) {
+          headers.style.color = "orange";
+          headers.style.background = "red";
+          headers.style.width = "50%";
+          headers.innerHTML = "from JavaScript";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+  </body>
+</html>

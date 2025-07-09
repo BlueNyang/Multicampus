@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arrayEx2</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+      body {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      table {
+        border: 1px solid black;
+        margin: 0 auto;
+        width: 200px;
+        text-align: center;
+      }
+
+      th,
+      td {
+        width: 100px;
+        border: 1px solid black;
+      }
+    </style>
+    <script>
+      function namePrint() {
+        const ARR_SIZE = 4;
+        let names = new Array(ARR_SIZE);
+
+        for (let i = 0; i < ARR_SIZE; i++) {
+          names[i] = prompt(`이름을 입력하세요 (${i + 1}/${ARR_SIZE}):`);
+        }
+
+        let table = document.createElement("table");
+        names.forEach((name, index) => {
+          const tr = document.createElement("tr");
+          const td1 = document.createElement("td");
+          const td2 = document.createElement("td");
+          td1.textContent = `${index + 1}`;
+          td2.textContent = `${name}`;
+          tr.appendChild(td1);
+          tr.appendChild(td2);
+          table.appendChild(tr);
+        });
+
+        document.body.appendChild(table);
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      namePrint();
+    </script>
+  </body>
+</html>

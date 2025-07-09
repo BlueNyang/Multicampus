@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>window.open()2</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <script>
+      function createElementHead(window, tag, attributeList, text = "") {
+        const element = window.document.createElement(tag);
+
+        for (const [key, value] of Object.entries(attributeList)) {
+          element.setAttribute(key, value);
+        }
+
+        if (text !== undefined && text !== null) {
+          element.textContent = text;
+        }
+
+        window.document.head.appendChild(element);
+      }
+
+      function createAndOpenWindow() {
+        const newWindow = window.open("", "_blank", "width=669,height=800,top=50");
+
+        if (!newWindow) return;
+
+        //const meta = newWindow.document.createElement("meta");
+        //meta.setAttribute("charset", "UTF-8");
+        //newWindow.document.head.appendChild(meta);
+        createElementHead(newWindow, "meta", { charset: "UTF-8" });
+
+        newWindow.document.title = "고흐의 그림";
+
+        createElementHead(newWindow, "link", {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "../style.css",
+        });
+
+        createElementHead(newWindow, "style", {}, `.container { text-align: center; }`);
+
+        const div = newWindow.document.createElement("div");
+        div.className = "container";
+
+        const img = newWindow.document.createElement("img");
+        img.src = "/image/고흐.jpg";
+        img.alt = "고흐의 그림";
+
+        div.appendChild(img);
+        newWindow.document.body.appendChild(div);
+
+        for (let i = 0; i < 2; i++) {
+          const br = newWindow.document.createElement("br");
+          div.appendChild(br);
+        }
+
+        const button = newWindow.document.createElement("button");
+        button.textContent = "닫기";
+        button.addEventListener("click", () => newWindow.window.close());
+        div.appendChild(button);
+      }
+    </script>
+  </head>
+  <body>
+    <button id="bigWin">Big Image 열기</button>
+    <button id="newWin">새창 열기</button>
+    <script>
+      const bigWinButton = document.getElementById("bigWin");
+      bigWinButton.addEventListener("click", function () {
+        window.open("./bigImage.html", "bigWin", "width=699,height=800,top=50");
+      });
+
+      const newWinButton = document.getElementById("newWin");
+      newWinButton.addEventListener("click", createAndOpenWindow);
+    </script>
+  </body>
+</html>
