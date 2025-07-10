@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>윈도우 이벤트 - 윈도우 크기 변경</title>
-		<script src="jquery-3.6.0.min.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
+  <head>
+    <meta charset="UTF-8" />
+    <title>윈도우 이벤트 - 윈도우 크기 변경</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // 윈도우 크기 변경 이벤트 핸들러
+        $(window).resize(function () {
+          // 현재 윈도우의 너비와 높이를 가져옴
+          var width = $(window).width();
+          var height = $(window).height();
 
-			});
-		</script>
-	</head>
-	<body>
-		<h3> 윈도우 크기 : 윈도우 크기를 변경해보세요.</h3>
-	</body>
+          // 콘솔에 출력
+          console.log("윈도우 크기: " + width + "x" + height);
+
+          // 페이지에 표시
+          $("h3").text("윈도우 크기: " + width + "x" + height);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h3>윈도우 크기 : 윈도우 크기를 변경해보세요.</h3>
+  </body>
 </html>

@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<script src= "jquery-3.7.1.min.js"></script>
-		<title>jQuery 클래스 선택자</title>
-		<script type="text/javascript">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>jQuery 클래스 선택자</title>
+    <script type="text/javascript">
+      $(document).ready(() => {
+        $(".group1").css({
+          float: "left",
+          color: "white",
+          background: "blue",
+          width: "90%",
+          height: "30px",
+        });
 
-		</script>
-	</head>
-	<body>
-		<div id="box1">
-			<div class="group1">A</div>
-			<div class="group2">A</div>
-			<div class="group1">B</div>
-			<div class="group2">B</div>
-			<div class="group1">C</div>
-			<div class="group2">C</div>
-		</div>
-	</body>
+        $(".group2").css({
+          float: "right",
+          color: "black",
+          background: "yellow",
+          width: "90%",
+          height: "30px",
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="box1">
+      <div class="group1">A</div>
+      <div class="group2">A</div>
+      <div class="group1">B</div>
+      <div class="group2">B</div>
+      <div class="group1">C</div>
+      <div class="group2">C</div>
+    </div>
+  </body>
 </html>

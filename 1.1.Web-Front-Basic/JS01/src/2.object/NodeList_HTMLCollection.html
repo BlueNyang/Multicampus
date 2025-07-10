@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTMLCollection</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+      // querySelectorAll() - 배열 현태로 반환 - 브라우저 자체 객체인 NoseList로 처리
+      // fot, forEach()로 순회 가능
+      document.addEventListener("DOMContentLoaded", () => {
+        const headersH1 = document.querySelectorAll("h1");
+
+        console.log(headersH1); // NodeList 객체 출력
+
+        headersH1.forEach((header) => {
+          header.style.color = "red";
+        });
+
+        const headersH2 = document.getElementsByTagName("h2");
+
+        console.log(headersH2); // HTMLCollection 객체 출력
+
+        //headersH2.forEach((header) => {
+        //  header.style.color = "red";
+        //}); // HTMLCollection은 forEach를 지원하지 않음
+
+        const h2array = Array.from(headersH2); // HTMLCollection을 배열로 변환
+
+        console.log(h2array); // 배열로 변환된 HTMLCollection 출력
+
+        h2array.forEach((header) => {
+          header.style.color = "blue"; // HTMLCollection은 forEach를 지원하지 않으므로 배열로 변환 후 사용
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h2>Header</h2>
+    <h2>Header</h2>
+    <h2>Header</h2>
+  </body>
+</html>

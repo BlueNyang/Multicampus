@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>태그 선택자</title>
-		<script src="jquery-3.7.1.min.js"></script>
-		<script type="text/javascript">
+  <head>
+    <meta charset="UTF-8" />
+    <title>태그 선택자</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // 모든 <h1> 태그를 선택하여 배경색을 변경
+        $("h1").css("background-color", "lightblue");
 
-		</script>
-	</head>
-	<body>
-		<h1>Header</h1>
-		<h1>Header</h1>
-		<h1>Header</h1>
-		
-	</body>
+        // 모든 <h1> 태그의 텍스트를 변경
+        $("h1").text("변경된 헤더 텍스트");
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+  </body>
 </html>

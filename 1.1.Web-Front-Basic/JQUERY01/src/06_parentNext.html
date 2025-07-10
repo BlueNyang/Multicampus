@@ -1,72 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>조상/부모/형제 요소 선택자</title> 
-        <style type="text/css">
-			div {
-				border:1px solid #000000;
-				padding:10px;
-				display:inline-block;
-			}
-		</style>
-        <script src= "jquery-3.7.1.min.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
- 				// 모든 조상
-				
- 				// 조상 area
-				
- 				// 조상 c1, c2
-				
-				 //p의 부모
-				
-				// 바로 다음 요소 : next()
-				
-				// 다음 모든 요소 : nextAll()
-				
-				// 이전 모든 요소
-				
-				// c1 다음 c4 이전 : c2, c3
+  <head>
+    <meta charset="UTF-8" />
+    <title>조상/부모/형제 요소 선택자</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style type="text/css">
+      div {
+        border: 1px solid #000000;
+        padding: 10px;
+        display: inline-block;
+      }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // 모든 조상
+        $("p").parents().css("backgroundColor", "yellow");
 
-				
-				// c3 이전 c1 다음 : c2
+        // 조상 area
+        $("p").parents("#area").css("backgroundColor", "white");
 
-			});	
-		</script>               
-	</head>
-	<body>		
-        <h3>조상/부모/형제 요소 선택자</h3>      
-        <div id="area">  
-        	area 영역 
-            <div id="c1">
-            	c1영역
-                <div id="s1">
-                	s1 영역
-                    <p>p</p>
-            	</div>
-            </div>	 
-            <div id="c2">
-            	c2영역
-                <div id="s2">
-                	s2 영역
-                	<p>p</p>
-            	</div>
-            </div>
-            <div id="c3">
-            	c3영역
-                <div id="s3">
-                	s3 영역
-                	<p>p</p>
-            	</div>
-            </div>
-            <div id="c4">
-            	c4영역
-                <div id="s4">
-                	s4 영역
-                	<p>p</p>
-            	</div>
-            </div>
-         </div>   	
-	</body>
+        // 조상 c1, c2
+        $("p").parents("#c1, #c2").css("backgroundColor", "darkred");
+
+        //p의 부모
+        $("p").parent().css("backgroundColor", "green");
+
+        // 바로 다음 요소 : next()
+        $("#c1").next().css("backgroundColor", "pink");
+
+        // 다음 모든 요소 : nextAll()
+        $("#c2").nextAll().css("backgroundColor", "orange");
+
+        // 이전 모든 요소
+        $("#c4").prevAll().css("color", "blue");
+        $("#c4").prevAll().css("fontWeight", "bold");
+
+        // c1 다음 c4 이전 : c2, c3 rounded
+        $("#c1").nextUntil("#c4").css("border-radius", "20px");
+
+        // c3 이전 c1 다음 : c2
+        $("#c3").prevUntil("#c1").css("border", "5px solid red");
+      });
+    </script>
+  </head>
+  <body>
+    <h3>조상/부모/형제 요소 선택자</h3>
+    <div id="area">
+      area 영역
+      <div id="c1">
+        c1영역
+        <div id="s1">
+          s1 영역
+          <p>p</p>
+        </div>
+      </div>
+      <div id="c2">
+        c2영역
+        <div id="s2">
+          s2 영역
+          <p>p</p>
+        </div>
+      </div>
+      <div id="c3">
+        c3영역
+        <div id="s3">
+          s3 영역
+          <p>p</p>
+        </div>
+      </div>
+      <div id="c4">
+        c4영역
+        <div id="s4">
+          s4 영역
+          <p>p</p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

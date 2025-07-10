@@ -1,27 +1,46 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Insert title here</title>
-		<style>
-			div {
-				width:100px;
-				height:50px;
-				line-height:50px;
-				text-align:center;
-				color:white;
-				background-color:teal;
-				border-radius:20px;
-			} 
-		</style>
-		<script src="jquery-3.7.1.min.js"></script>
-		<script type="text/javascript">			
-			$(document).ready(function(){
-				
-			});
-		</script>			
-	</head>
-	<body>
-		<div>버튼</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      div {
+        width: 100px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: white;
+        background-color: teal;
+        border-radius: 20px;
+      }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(() => {
+        const $btn = $("div");
+
+        // $("div").hover(
+        //   () => {
+        //     // 마우스가 div 위에 올라갔을 때
+        //     $btn.css("opacity", "0.5");
+        //   },
+        //   () => {
+        //     // 마우스가 div 밖으로 나갔을 때
+        //     $btn.css("opacity", "1");
+        //   }
+        // );
+        $btn
+          .on("mouseover", () => {
+            $btn.css("opacity", "0.5");
+          })
+          .on("mouseout", () => {
+            $btn.css("opacity", "1");
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <div>버튼</div>
+  </body>
 </html>

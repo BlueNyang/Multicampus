@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>jQuery 변수</title>
-		<script src="jquery-3.7.1.min.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				// jQuery 변수 :  $ 붙임
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery 변수</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // jQuery 변수 :  $ 붙임
+        const $box1 = $("#box1");
 
-				// jQuery 메소드 사용 가능
+        // jQuery 메소드 사용 가능
+        $box1.css({
+          color: "red",
+        });
 
-				//box1.innerHTML = typeof $box1; // 자바스크립트 id=box1인 것
-				
-				
-				// $ 안 붙인 변수
- 				// jQuery 선택자
+        //box1.innerHTML = typeof $box1; // 자바스크립트 id=box1인 것
+        $box1.text(`typeof $box1: ${typeof $box1}`);
 
- 				// jQuery 메소드 사용 가능
+        // $ 안 붙인 변수
+        // jQuery 선택자
+        const box3 = $("#box3");
 
-				
-				// 자바스크립트 사용 DOM 요소 찾아서 jQuery 메소드 사용할 경우
-				
-				 // jQeury 메소드 사용할 수 없음 (불가)				
-				
-			});
-		</script>
-	</head>
-	<body>
-		<div id="box1">box1</div>
-		<div id="box2">box2</div>
-		<div id="box3">box3</div>
-	</body>
+        // jQuery 메소드 사용 가능
+        box3.css({
+          color: "green",
+        });
+
+        // 자바스크립트 사용 DOM 요소 찾아서 jQuery 메소드 사용할 경우
+        const box2 = document.getElementById("box2");
+
+        // jQeury 메소드 사용할 수 없음 (불가)
+        //box2.css({
+        //  color: "blue",
+        //});
+      });
+    </script>
+  </head>
+  <body>
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
+    <div id="box3">box3</div>
+  </body>
 </html>

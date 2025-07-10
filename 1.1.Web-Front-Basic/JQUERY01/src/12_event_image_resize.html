@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>윈도우 이벤트 : 이미지 크기 동적 변경</title>
-		<script src="jquery-3.6.0.min.js"></script>
-		<style>
-			* {margin:0;}
-			/* img { width:100%;}  */
-		</style>
-		<script type="text/javascript">
-			$(document).ready(function() {
-
-			});
-		</script>
-	</head>
-	<body>
-		<div id="topImgBox"><img src="image/topImg.jpg" id="topImg"></div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>윈도우 이벤트 : 이미지 크기 동적 변경</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // 이미지 크기 변경 이벤트 핸들러
+        $("#topImg").on("load", function () {
+          // 이미지가 로드된 후에 크기를 조정
+          var width = $(this).width();
+          var height = $(this).height();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="topImgBox"><img src="image/topImg.jpg" id="topImg" /></div>
+  </body>
 </html>
