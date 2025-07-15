@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>canvas 태그</title>
+    <link rel="icon" type="image/png" href="#" />
+    <style>
+      canvas {
+        width: 800px;
+        height: 600px;
+        background-color: yellow;
+      }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+      // 문서(document)가 준비 완료되면 함수 실행
+      $(document).ready(function () {
+        let canvas = document.getElementById("rectCanvas");
+        let context = canvas.getContext("2d");
+
+        $("#drawRectBtn").on("click", () => {
+          // context에 사각형 그리기
+          // context 속성 설정
+          context.fillStyle = "green";
+
+          // 테두리만 있는 사각형
+          context.strokeRect(10, 10, 50, 50); // x, y, width, height
+
+          // 색이 채워진 사각형 그림
+          context.fillRect(220, 10, 50, 50); // x, y, width, height
+
+          // 색상 변경
+          context.fillStyle = "pink";
+          context.fillRect(220, 70, 50, 50); // x, y, width, height
+
+          // 특정 영역 지움
+          context.clearRect(230, 80, 30, 30);
+        });
+
+        // canvas 지우기
+        $("#clearCanvas").on("click", () => {
+          context.clearRect(0, 0, 800, 600);
+        });
+
+        // 이미지 출력
+        $("#drawImageBtn").on("click", () => {
+          let image = new Image(); // 이미지 객체 생성
+          image.src = "image/apple.png"; // src 속성 설정
+          image.width = 50;
+          image.height = 50;
+
+          image.onload = function () {
+            context.drawImage(image, 0, 0, image.width, image.height);
+            context.drawImage(image, canvas.width / 2 - 15, canvas.height / 2 - 15, 30, 30);
+          };
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="drawRectBtn">사각형 그리기</button>
+    <button id="clearCanvas">canvas 지우기</button>
+    <button id="drawImageBtn">이미지 출력</button> <br /><br />
+    <canvas id="rectCanvas"></canvas>
+  </body>
+</html>

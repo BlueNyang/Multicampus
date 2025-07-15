@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>each() 메소드</title>
-		<link rel="icon" type="image/png" href="#" />
-		<script src="jquery-3.7.1.min.js"></script>
-		<script type="text/javascript">
-			// 문서(document)가 준비 완료되면 함수 실행 
-			$(document).ready(function() {
-				// $(선택자).each(콜백함수); 
-				
-				
-				// $.each(배열, 콜백함수)
-							
-				// 사용자 정의 객체
-				let car = {
-						no : '11가1111',
-						name:'소나타',
-						maker:'현대',
-						cc:2000,
-						year:2022
-				};
-				
-				//  $.each(객체, 콜백함수)
+  <head>
+    <meta charset="UTF-8" />
+    <title>each() 메소드</title>
+    <link rel="icon" type="image/png" href="#" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+      // 문서(document)가 준비 완료되면 함수 실행
+      $(document).ready(function () {
+        // $(선택자).each(콜백함수);
+        $("div").each((_, el) => {
+          console.log($(el).text());
+        });
 
-				
-			});
-		</script>
-	</head>
-	<body>
-		<div>a</div>
-		<div>b</div>
-		<div>c</div>
-	</body>
+        // $.each(배열, 콜백함수)
+        const arr = $("div");
+        $.each(arr, (idx, el) => {
+          console.log($(el).text(idx));
+        });
+
+        // 사용자 정의 객체
+        let car = {
+          no: "11가1111",
+          name: "소나타",
+          maker: "현대",
+          cc: 2000,
+          year: 2022,
+        };
+
+        //  $.each(객체, 콜백함수)
+        $.each(car, (k, v) => {
+          // k: key, v: value
+          console.log(`${k} : ${v}`);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>a</div>
+    <div>b</div>
+    <div>c</div>
+  </body>
 </html>

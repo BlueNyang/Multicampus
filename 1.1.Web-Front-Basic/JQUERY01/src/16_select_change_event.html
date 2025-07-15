@@ -6,7 +6,12 @@
     <link rel="stylesheet" href="./style.css" />
     <script src="jquery-3.7.1.min.js"></script>
     <script type="text/javascript">
-      $(document).ready(function () {});
+      $(document).ready(function () {
+        $("#department").on("change", function () {
+          const value = $(this).val();
+          $("span").text(value);
+        });
+      });
     </script>
   </head>
   <body>

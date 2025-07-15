@@ -19,13 +19,42 @@
     <script type="text/javascript">
       $(document).ready(function () {
         // <img> 태그 내용을 img 변수에 저장
+        const img = '<img src="image/banana.png" />';
         // [prepend] 버튼 클릭했을 때
+        $("#prepend").click(function () {
+          $("#box").prepend(img);
+        });
+
         // [append] 버튼 클릭했을 때
+        $("#append").click(function () {
+          $("#box").append(img);
+        });
+
         // [before] 버튼 클릭했을 때
+        $("#before").click(function () {
+          $("#box").before(img);
+        });
+
         // [after] 버튼 클릭했을 때
+        $("#after").click(function () {
+          $("#box").after(img);
+        });
+
         // [empty] 버튼 클릭했을 때
+        $("#empty").click(function () {
+          $("#box").empty();
+        });
+
         // [remove] 버튼 클릭했을 때
+        $("#remove").click(function () {
+          $("img").remove();
+        });
+
         // [초기화] 버튼 클릭했을 때
+        $("#initiate").click(function () {
+          $("img").remove();
+          $("#box").html('div 내부 <img src="image/apple.png" />');
+        });
       });
     </script>
   </head>

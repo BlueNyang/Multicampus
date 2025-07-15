@@ -15,17 +15,16 @@
     <script src="jquery-3.7.1.min.js"></script>
     <script type="text/javascript">
       $(document).ready(() => {
-        const $menuItems = $(".menuItem");
         const $indexSpan = $("#indexSpan");
 
-        $menuItems.each((item) => {
+        $(".menuItem").each(function (item) {
           $(this).hover(
-            () => {
-              $menuItems.css("background", "yellow");
+            function () {
+              $(this).css("background", "yellow");
               $indexSpan.text(item);
             },
-            () => {
-              $menuItems.css("background", "green");
+            function () {
+              $(this).css("background", "green");
               $indexSpan.text("");
             }
           ); //hover() 종료

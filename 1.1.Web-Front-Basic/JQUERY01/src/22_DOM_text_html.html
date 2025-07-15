@@ -8,8 +8,14 @@
     <script type="text/javascript">
       $(document).ready(function () {
         //1. text() 	: <div> 태그 내의 문자열만 반환 (태그 제외)
+        alert($("#a").text()); // A
+
         // 2. html() : <div> 태그 내의 문자열만 반환 (태그 포함)
+        alert($("#b").html()); // <h3>B</h3>
+
         // 괄호에 값이 있는 경우 (태그에 값을 적용) : Setter 의미
+        $("#a").text("<h1>jQuery</h1>");
+        $("#b").html("<h1>jQuery</h1>");
       });
     </script>
   </head>

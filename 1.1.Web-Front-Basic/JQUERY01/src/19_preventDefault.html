@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>preventDefault()</title>
-		<link rel="icon" type="image/png" href="#" />
-		<script src="jquery-3.7.1.min.js"></script>
-		<script type="text/javascript">
-			// 문서(document)가 준비 완료되면 함수 실행 
-			$(document).ready(function() {
+  <head>
+    <meta charset="UTF-8" />
+    <title>preventDefault()</title>
+    <link rel="icon" type="image/png" href="#" />
+    <script src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+      // 문서(document)가 준비 완료되면 함수 실행
+      $(document).ready(function () {
+        // a 태그 클릭 시 기본 동작인 링크 이동 차단
+        $("#link").on("click", function (e) {
+          e.preventDefault(); // 기본 동작 차단
+          alert("일시적 이동 정지");
+        });
 
-				
-				// 문서 상에서 오른쪽 마우스 클릭했을 때 기본으로 출력되는 팝업메뉴 차단 
-
-				};
-			});
-		</script>
-	</head>
-	<body>
-		<!--  <a> 태그는 클릭하면 다른 문서(사이트)로 이동하는 기본 동작이 있음 (href) -->
-		<a href="https:www.naver.com" id="link">네이버로 이동</a>
-	</body>
+        // 문서 상에서 오른쪽 마우스 클릭했을 때 기본으로 출력되는 팝업메뉴 차단
+        $(document).on("contextmenu", function (e) {
+          e.preventDefault(); // 기본 동작 차단
+          alert("오른쪽 마우스 클릭은 금지되어 있습니다.");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!--  <a> 태그는 클릭하면 다른 문서(사이트)로 이동하는 기본 동작이 있음 (href) -->
+    <a href="https:www.naver.com" id="link">네이버로 이동</a>
+  </body>
 </html>

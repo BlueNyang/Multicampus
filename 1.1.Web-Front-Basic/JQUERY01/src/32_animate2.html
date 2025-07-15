@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>animate() 효과</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style type="text/css">
+      div {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        background-color: rgb(0, 176, 240);
+        position: relative;
+      }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#startBtn").click(function () {
+          $("div").each(function (index) {
+            $(this)
+              .delay(index * 500)
+              .animate({ left: 500 }, "slow");
+          });
+        });
+
+        $("#backBtn").click(function () {
+          $("div").each(function (index) {
+            $(this)
+              .delay(index * 500)
+              .animate({ left: 0 }, "slow");
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="startBtn">이동</button>
+    <button id="backBtn">원위치</button>
+    <p></p>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </body>
+</html>

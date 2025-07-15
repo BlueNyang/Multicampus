@@ -7,21 +7,19 @@
     <script src="jquery-3.7.1.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
-        const $btn = $("#btn");
-
         // btn 버튼 클릭했을 때
         $("#btn")
-          .on("click", () => {
+          .on("click", function () {
             alert("버튼을 클릭했습니다.");
           })
           // 2개의 이벤트 처리 : 방법1
 
-          .on("mouseover", () => {
-            $btn.css("background-color", "yellow");
+          .on("mouseover", function () {
+            $(this).css("background-color", "yellow");
           })
 
-          .on("mouseleave", () => {
-            $btn.css("background-color", "green");
+          .on("mouseleave", function () {
+            $(this).css("background-color", "green");
           });
         // 2개의 이벤트 처리 : 방법2
       });

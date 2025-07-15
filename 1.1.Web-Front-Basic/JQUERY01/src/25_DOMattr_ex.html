@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <title>DOM : attr() : 속성 변경</title>
-    <link rel="stylesheet" href="./style.css" />
     <style type="text/css">
       div {
+        display: flex;
         margin: 0 auto;
         width: 800px;
       }
@@ -14,17 +14,35 @@
         height: 100px;
       }
     </style>
-
     <script src="jquery-3.7.1.min.js"></script>
     <script type="text/javascript">
-      $(document).ready(function () {});
+      $(document).ready(function () {
+        $("img").hover(
+          function () {
+            // src의 속성 값의 문자열에서 "img1"을 "img2"로 변경
+            $(this).attr("src", (_, v) => v.replace("img1", "img2"));
+          },
+          function () {
+            $(this).attr("src", (_, v) => v.replace("img2", "img1"));
+          }
+        );
+        //.mouseover(function () {
+        //  // 문자열 "img1"을 "img2"로 변경
+        //  $(this).attr("src", $(this).attr("src").replace("img1", "img2"));
+        //})
+        //.mouseout(function () {
+        //  // 문자열 "img2"을 "img1"로 변경
+        //  $(this).attr("src", $(this).attr("src").replace("img2", "img1"));
+        //});
+      });
     </script>
   </head>
   <body>
     <div>
-      <img src="image/img1-1.jpg" /><img src="image/img1-2.jpg" /><img src="image/img1-3.jpg" /><img
-        src="image/img1-4.jpg"
-      />
+      <img src="image/img1-1.jpg" />
+      <img src="image/img1-2.jpg" />
+      <img src="image/img1-3.jpg" />
+      <img src="image/img1-4.jpg" />
     </div>
   </body>
 </html>

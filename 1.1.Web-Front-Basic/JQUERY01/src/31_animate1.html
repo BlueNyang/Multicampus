@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>animate() 효과</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style type="text/css">
+      div {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        background-color: rgb(0, 176, 240);
+        /* position: relative; */
+        position: absolute;
+      }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+      // 객체.animate({css속성: 값, ...}, 시간, 이징함수, 콜백함수) => 콜백 함수에 화살표 함수를 사용할 수 없음
+      // 애니메이터 대상객체.stop(); => 대상 객체 애니메이션 중지
+      // 애니메이터 대상객체.stop(true); => 대상 객체 애니메이션 중지 후 현재 상태 유지 (예약된 애니메이션을 취소)
+      // 애니메이터 대상객체.stop(false); => 대상 객체 애니메이션 중지 후 현재 상태 유지하지 않음
+      // 대기열 운영 -> 애니메이터 대상객체.queue(); => 현재 대기열 반환
+      $(document).ready(function () {
+        $("div").hover(
+          function () {
+            $(this).animate(
+              {
+                left: 500,
+              },
+              1000
+            );
+          },
+          function () {
+            $(this).animate(
+              {
+                left: 0,
+              },
+              4000
+            );
+          }
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </body>
+</html>

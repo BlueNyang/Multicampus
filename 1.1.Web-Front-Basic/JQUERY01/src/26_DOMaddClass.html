@@ -23,7 +23,24 @@
     </style>
     <script src="jquery-3.7.1.min.js"></script>
     <script type="text/javascript">
-      $(document).ready(function () {});
+      $(document).ready(function () {
+        // 이미지에 마우스를 올리면 hidden 클래스 추가
+        $("img").hover(function () {
+          $("h1")
+            .toggleClass("h1Css")
+            .text(function () {
+              return $(this).hasClass("h1Css")
+                ? "여러 CSS 효과 동적으로 적용"
+                : "이미지에 마우스를 올려보세요.";
+            });
+          $("img").toggleClass("imgCss");
+        });
+
+        // toggleClass() 메서드를 사용하여 클래스 속성 추가/해제
+        $("#toggle").click(function () {
+          $("img").toggle("hidden");
+        });
+      });
     </script>
   </head>
   <body>

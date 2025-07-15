@@ -6,7 +6,18 @@
     <link rel="stylesheet" href="./style.css" />
     <script src="jquery-3.7.1.min.js"></script>
     <script type="text/javascript">
-      $(document).ready(function () {});
+      $(document).ready(function () {
+        // attr(<attributeName>, <value>) 메서드를 사용하여 속성 추가
+        // removeAttr(<attributeName>) 메서드를 사용하여 속성 제거
+
+        $("#img")
+          .mouseover(function () {
+            $(this).attr("src", "image/apple.png");
+          })
+          .mouseout(function () {
+            $(this).attr("src", "image/heart.png");
+          });
+      });
     </script>
   </head>
   <body>

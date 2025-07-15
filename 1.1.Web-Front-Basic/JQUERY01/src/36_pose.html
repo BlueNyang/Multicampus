@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>포즈 인식 결과</title>
+		<link rel="icon" type="image/png" href="#" />
+		<style>
+			#poseCanvas {
+				border: 2px solid #333;
+				margin: 10px 0;
+			}
+			#resultDivBox {
+				margin-top: 20px;
+				padding: 15px;
+				border: 1px solid #ddd;
+				background-color: #f9f9f9;
+			}
+			#resultDivBox ul {
+				columns: 2;
+				column-gap: 30px;
+			}
+		</style>
+		<script src="jquery-3.7.1.min.js"></script>
+		<script src="pose.js"></script>
+	</head>
+	<body>
+		<h2>포즈 인식</h2>
+		<button id="showBtn">결과 확인</button><br><br>
+		<h3>포즈 인식 결과를 image/run.jpg 위에 좌표로 표시</h3>
+		<p><em>주의: image/run.jpg 파일이 필요합니다.</em></p>
+		<canvas id="poseCanvas" width="600" height="600"></canvas>
+		
+		<div id="resultDivBox"></div> <!--  신체 부위 좌표 -->
+	</body>
+</html>

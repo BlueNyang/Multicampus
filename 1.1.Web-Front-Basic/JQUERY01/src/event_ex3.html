@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+      body {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      div {
+        width: 100px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: white;
+        background-color: teal;
+        border-radius: 20px;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // div 클릭 시
+        $("div").on("click", function () {
+          // div 뒤에 버튼 추가
+          // 버튼은 동적으로 생성됨
+          $(this).after(
+            "<p><button type='button' id='newBtn1'>새 버튼1</button></p>\n<p><button type='button' id='newBtn2'>새 버튼2</button></p>"
+          );
+
+          // 새로 추가된 버튼1에 이벤트 연결
+          $("#newBtn1")
+            .on("click", function () {
+              // 새 버튼1 클릭 시
+              window.open("https://www.bluenyang.kr", "_blank");
+            })
+            //hover 이벤트로 변경
+            .hover(
+              function () {
+                $(this).css("background-color", "green");
+              },
+              function () {
+                $(this).css("background-color", "yellow");
+              }
+            );
+        });
+
+        // 동적으로 추가된 버튼2에 이벤트 연결
+        $(this).on("click", "#newBtn2", function () {
+          // 새 버튼2 클릭 시
+          window.open("https://www.naver.com", "_blank");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>버튼</div>
+  </body>
+</html>

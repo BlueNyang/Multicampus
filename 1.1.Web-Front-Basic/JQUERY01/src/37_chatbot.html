@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>챗봇 대화창</title>
+    <link rel="icon" type="image/png" href="#" />
+    <link href="./style.css" rel="stylesheet" />
+    <link href="chatbot.css" rel="stylesheet" />
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="chatbot.js"></script>
+  </head>
+  <body>
+    <div id="chatbotBox">
+      <!-- Header -->
+      <div id="chatHeader">
+        <span>챗봇</span>
+        <button id="closeBtn">X</button>
+      </div>
+
+      <!-- 대화 내용 출력되는 영역 -->
+      <div id="chatBox"></div>
+
+      <!-- 질문 입력하기 위한 폼 -->
+      <form id="chatForm" method="post">
+        <input
+          type="text"
+          id="message"
+          name="message"
+          size="30"
+          placeholder="질문을 입력하세요"
+          autofocus
+        />
+        <input type="submit" id="submitBtn" value="전송" />
+      </form>
+    </div>
+  </body>
+</html>

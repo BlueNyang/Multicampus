@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fading 효과</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style type="text/css">
+      div {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+
+      h2 {
+        width: 300px;
+        height: 40px;
+        padding: 10px;
+        background-color: red;
+        color: yellow;
+        display: none;
+      }
+
+      ul {
+        list-style: none;
+      } /* type 없음 */
+
+      li {
+        display: inline-block;
+        margin-right: 30px;
+      }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#fadeIn").click(function () {
+          $("h2").fadeIn(1000);
+        });
+
+        $("#fadeOut").click(function () {
+          $("h2").fadeOut(1000);
+        });
+
+        $("#fadeToggle").click(function () {
+          $("h2").fadeToggle(1000);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <h1>Fading 효과</h1>
+      <ul>
+        <li><a href="#" id="fadeIn">fadeIn</a></li>
+        <li><a href="#" id="fadeOut">fadeOut</a></li>
+        <li><a href="#" id="fadeToggle">fadeToggle</a></li>
+      </ul>
+      <hr />
+      <h2>Have a Nice Day!</h2>
+      <h3>난 어디에 놓일까?</h3>
+    </div>
+  </body>
+</html>

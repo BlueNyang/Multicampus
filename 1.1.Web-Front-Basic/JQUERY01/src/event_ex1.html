@@ -3,8 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <title>Insert title here</title>
-    <link rel="stylesheet" href="./style.css" />
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+      body {
+        font-family: "Nanum Gothic", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
       div {
         width: 100px;
         height: 50px;
@@ -17,25 +24,23 @@
     </style>
     <script src="jquery-3.7.1.min.js"></script>
     <script type="text/javascript">
-      $(document).ready(() => {
-        const $btn = $("div");
-
-        // $("div").hover(
-        //   () => {
+      $(document).ready(function () {
+        // $(this).hover(
+        //   function () {
         //     // 마우스가 div 위에 올라갔을 때
-        //     $btn.css("opacity", "0.5");
+        //     $(this).css("opacity", "0.5");
         //   },
-        //   () => {
+        //   function () {
         //     // 마우스가 div 밖으로 나갔을 때
-        //     $btn.css("opacity", "1");
+        //     $(this).css("opacity", "1");
         //   }
         // );
-        $btn
-          .on("mouseover", () => {
-            $btn.css("opacity", "0.5");
+        $(this)
+          .on("mouseover", function () {
+            $(this).css("opacity", "0.5");
           })
-          .on("mouseout", () => {
-            $btn.css("opacity", "1");
+          .on("mouseout", function () {
+            $(this).css("opacity", "1");
           });
       });
     </script>
