@@ -1,0 +1,12 @@
+#content2 {
+  width: 80%;
+  margin: 20px auto;
+}
+
+#productBox {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 20px;
+  column-gap: 20px;
+  row-gap: 30px;
+}

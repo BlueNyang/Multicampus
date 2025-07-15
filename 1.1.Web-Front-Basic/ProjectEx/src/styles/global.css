@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/* 전역 스타일 설정 */
+* {
+  font-family: "Nanum Gothic", sans-serif; /* 폰트 설정 */
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  margin: 0 auto; /* 중앙 정렬 */
+  width: 1280px;
+  background-color: #eeeeee; /* 전체 배경색 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+  position: relative; /* 자식 요소의 절대 위치 지정 가능 */
+}
+
+img {
+  border: 0;
+  margin: 0;
+}

@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+ul {
+  margin-top: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* main menu */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#mainMenuBox {
+  display: flex;
+  flex-direction: row;
+  width: 1280px;
+  height: 35px;
+  background-color: #ffffff; /* 메뉴 배경색 */
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+#mainMenuBox ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin: 0;
+}
+
+#mainMenuBox li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+#mainMenuBox li:first-child {
+  border: 3px solid black; /* 첫 번째 메뉴 강조 */
+  box-sizing: border-box;
+}
+
+#mainMenuBox li a {
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: black; /* 메뉴 텍스트 색상 */
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#mainMenuBox ul li a:hover {
+  color: #ff0000; /* 메뉴 hover 시 색상 변경 */
+}
+
+/* submenu */
+
+#showAllMenu {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#showAllMenu.fade-out {
+  opacity: 0;
+}
+
+#subMenuBox {
+  display: flex;
+  overflow: hidden;
+  height: 0px; /* to 160px */
+  opacity: 0; /* 서브메뉴 숨김 */
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  padding-bottom: 0;
+  position: absolute;
+  z-index: 999;
+  transition: all 0.3s ease-in-out; /* 서브메뉴 열릴 때 애니메이션 */
+}
+
+#subMenuBox.show {
+  height: 160px; /* 서브메뉴가 열릴 때 높이 */
+  opacity: 1; /* 서브메뉴가 열릴 때 보이도록 */
+}
+
+.subMenuItem {
+  flex: 1;
+  background-color: white;
+  margin-top: 10px;
+  height: 100%;
+}
+
+.subMenuItem:not(:last-child) {
+  border-inline-start: 0px;
+  border-inline-end: 1px solid #ccc; /* 서브메뉴 아이템 사이에 경계선 */
+}
+
+.subMenuItem ul {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100%;
+}
+
+.subMenuItem ul li {
+  height: 35px;
+  flex: 1;
+}
+
+.subMenuItem ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.subMenuItem ul li a:hover {
+  background-color: white;
+  text-decoration: underline; /* 서브메뉴 hover 시 밑줄 */
+  color: black;
+}
