@@ -14,6 +14,10 @@ nav {
   z-index: 1000;
 }
 
+.isSticky {
+  box-shadow: 0 3px 5px gray;
+}
+
 #mainMenuBox {
   display: flex;
   flex-direction: row;
@@ -73,9 +77,8 @@ nav {
   opacity: 0; /* 서브메뉴 숨김 */
   width: 100%;
   background-color: white;
-  text-align: center;
   padding-bottom: 0;
-  position: absolute;
+  top: 35px; /* 메인 메뉴 아래에 위치 */
   z-index: 999;
   transition: all 0.3s ease-in-out; /* 서브메뉴 열릴 때 애니메이션 */
 }
@@ -118,4 +121,45 @@ nav {
   background-color: white;
   text-decoration: underline; /* 서브메뉴 hover 시 밑줄 */
   color: black;
+}
+
+/* footer menu */
+
+#footerBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: #333;
+}
+
+#bottomMenuBox {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+#bottomMenuItem {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #333;
+  list-style: none;
+}
+
+#bottomMenuItem li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+#bottomMenuItem li a:hover {
+  color: #ff9800;
 }

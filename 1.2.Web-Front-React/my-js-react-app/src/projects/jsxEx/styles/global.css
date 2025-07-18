@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+#headerArea {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+#navArea {
+  background-color: #f0f0b0;
+  padding: 10px;
+  text-align: center;
+}
+
+#contentArea {
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+#footerArea {
+  background-color: #282c34;
+  padding: 10px;
+  color: white;
+  text-align: center;
+}

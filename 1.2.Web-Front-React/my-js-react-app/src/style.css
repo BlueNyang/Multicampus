@@ -1,0 +1,14 @@
+body {
+  font-family:
+    Arial,
+    sans-serif,
+    맑은 고딕;
+  text-align: center;
+}
+
+.routerPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
