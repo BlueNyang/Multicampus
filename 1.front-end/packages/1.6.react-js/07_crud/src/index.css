@@ -1,0 +1,17 @@
+body {
+  font-family:
+    Arial,
+    sans-serif,
+    맑은 고딕;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  justify-content: start;
+  text-align: start;
+}
+
+.actions {
+}

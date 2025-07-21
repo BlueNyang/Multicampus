@@ -1,0 +1,40 @@
+body {
+  font-family:
+    Arial,
+    sans-serif,
+    맑은 고딕;
+}
+
+.app * {
+  margin: 0;
+  padding: 0;
+}
+
+.app table {
+  margin: 20px auto 60px auto;
+}
+
+.app table,
+.app th,
+.app td {
+  border: 1px solid #000;
+}
+
+.app td {
+  padding: 5px;
+}
+
+.app {
+  margin: 0 auto;
+  padding: 0 0 60px 0;
+  text-align: center;
+  width: 80%;
+  background-color: #ecece9;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 0 10px 0;
+  padding: 10px;
+}

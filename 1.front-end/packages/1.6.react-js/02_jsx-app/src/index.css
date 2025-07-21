@@ -1,0 +1,13 @@
+body {
+  font-family:
+    Arial,
+    sans-serif,
+    맑은 고딕;
+}
+
+.rect {
+  margin: 0 auto;
+  width: 50%;
+  fontsize: 36px;
+  fontweight: bold;
+}

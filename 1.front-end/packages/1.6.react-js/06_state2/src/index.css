@@ -1,0 +1,15 @@
+body {
+  font-family:
+    Arial,
+    sans-serif,
+    맑은 고딕;
+  text-align: center;
+}
+
+.colorBtns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
