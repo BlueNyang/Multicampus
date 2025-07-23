@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -19,14 +19,13 @@
         // (1) 동적 연결 방식 아님 - 이미 존재하는 버튼에만 이벤트 연결
         // 새로 추가된 버튼에는 이벤트가 연결되지 않음
         $("#newBtn1").on("click", function () {
-          alert("새 버튼1 클릭");
+          console.log("버튼1 클릭");
         });
 
         // (2) 동적 연결 방식 - 새로 추가된 버튼에도 이벤트 연결
         // document 전체에 이벤트를 연결하고, #newBtn2가 클릭되면 처리
         $(this).on("click", "#newBtn2", function () {
-          console.log(this);
-          alert("새 버튼2 클릭");
+          console.log("버튼2 클릭");
         });
       });
     </script>

@@ -1,0 +1,17 @@
+* {
+  transition: all 0.5s ease-in-out;
+}
+
+body {
+  font-family:
+    Arial,
+    sans-serif,
+    맑은 고딕;
+}
+
+.app,
+.app div {
+  border: 10px solid gray;
+  margin: 10px;
+  padding: 10px;
+}

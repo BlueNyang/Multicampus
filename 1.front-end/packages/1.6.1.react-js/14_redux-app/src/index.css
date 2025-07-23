@@ -1,0 +1,18 @@
+body {
+  font-family:
+    Arial,
+    sans-serif,
+    맑은 고딕;
+}
+
+.App,
+.container div {
+  border: solid 5px blue;
+  margin: 20px;
+  padding: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
