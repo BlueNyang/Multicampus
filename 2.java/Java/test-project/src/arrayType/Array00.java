@@ -2,7 +2,7 @@ package arrayType;
 
 import java.util.Arrays;
 
-public class Array1 {
+public class Array00 {
     public static void main(String[] ignoredArgs) {
         // 배열 기본 문법
         // 배열 선언 - 사용불가
