@@ -1,4 +1,4 @@
-package oopInheritance.sec07;
+package oopInheritance.ex01;
 
 public class CarAutomobile {
     public static void main(String[] ignoredArgs) {
