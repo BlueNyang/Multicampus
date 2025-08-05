@@ -1,4 +1,4 @@
-package oopException.sec02;
+package oopException.sec04;
 
 import java.util.Scanner;
 
