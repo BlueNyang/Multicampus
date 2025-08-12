@@ -1,28 +1,38 @@
 -- 실습을 위한 product table 생성
 CREATE TABLE product (
-    prdNo VARCHAR2(10) NOT NULL ,
-    prdName VARCHAR2(30) NOT NULL,
-    prdPrice NUMBER(8),
-    prdCompany VARCHAR2(30),
-    CONSTRAINT pk_product2_prdNo PRIMARY KEY (prdNo),
-    CONSTRAINT chk_product_prdNo CHECK (prdNo IS NOT NULL),
-    CONSTRAINT chk_product_prdName CHECK (prdName IS NOT NULL)
+   prd_no      VARCHAR2(10) NOT NULL,
+   prd_name    VARCHAR2(30) NOT NULL,
+   prd_price   NUMBER(8),
+   prd_company VARCHAR2(30),
+   CONSTRAINT pk_product2_prd_no PRIMARY KEY ( prd_no ),
+   CONSTRAINT chk_product_prd_no CHECK ( prd_no IS NOT NULL ),
+   CONSTRAINT chk_product_prd_name CHECK ( prd_name IS NOT NULL )
 );
 
 -- 실습을 위한 publisher table 생성
 CREATE TABLE publisher (
-    pubNo VARCHAR2(10),
-    pubName VARCHAR2(30),
-    CONSTRAINT pk_publisher_pubNo PRIMARY KEY (pubNo),
-    CONSTRAINT chk_publisher_pubNo CHECK (pubNo IS NOT NULL),
-    CONSTRAINT chk_publisher_pubName CHECK (pubName IS NOT NULL)
+   pub_no   VARCHAR2(10),
+   pub_name VARCHAR2(30),
+   CONSTRAINT pk_publisher_pub_no PRIMARY KEY ( pub_no ),
+   CONSTRAINT chk_publisher_pub_no CHECK ( pub_no IS NOT NULL ),
+   CONSTRAINT chk_publisher_pub_name CHECK ( pub_name IS NOT NULL )
 );
 
--- product table에 숫자값을 갖는 prdStock, 날짜값을 갖는 prdDate 컬럼 추가
-ALTER TABLE product ADD (prdStock NUMBER(12), prdDate DATE);
--- product table의 prdCompany 컬럼을 NOT NULL로 변경
-ALTER TABLE product MODIFY prdCompany NOT NULL;
--- publisher table에 pubPhone, pubAddress 컬럼 추가
-ALTER TABLE publisher ADD (pubPhone VARCHAR2(15), pubAddress VARCHAR2(100));
--- publisher table의 pubPhone 컬럼을 삭제
-ALTER TABLE publisher DROP COLUMN pubPhone;
+-- product table에 숫자값을 갖는 prd_stock, 날짜값을 갖는 prd_date 컬럼 추가
+ALTER TABLE product ADD (
+   prd_stock NUMBER(12),
+   prd_date  DATE
+);
+
+-- product table의 prd_company 컬럼을 NOT NULL로 변경
+ALTER TABLE product MODIFY
+   prd_company NOT NULL;
+
+-- publisher table에 pub_phone, pub_address 컬럼 추가
+ALTER TABLE publisher ADD (
+   pub_phone   VARCHAR2(15),
+   pub_address VARCHAR2(100)
+);
+
+-- publisher table의 pub_phone 컬럼을 삭제
+ALTER TABLE publisher DROP COLUMN pub_phone;
