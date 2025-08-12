@@ -97,7 +97,7 @@ SELECT client_name,
 
 -- -----------------------------------------------------
 -- 중첩 서브 쿼리
--- 도서명이 '안드로이드 프로그래밍인' 도서를 구매한 고객의 고객명
+-- 도서명이 '안드로이드 프로그래밍'인 도서를 구매한 고객의 고객명
 SELECT client_name
   FROM client
  WHERE client_no IN (
@@ -109,3 +109,108 @@ SELECT client_name
        WHERE book_name = '안드로이드 프로그래밍'
    )
 );
+
+-- -----------------------------------------------------
+-- 다중 행 서브 쿼리 연산자 (EXISTS, NOT EXISTS)
+-- EXISTS: 서브 쿼리의 결과가 행을 반환하면 참이 되는 연산자
+-- 도서를 구매한 적이 있는 고객
+SELECT client_no,
+       client_name
+  FROM client c
+ WHERE EXISTS (
+   SELECT *
+     FROM book_sale bs
+    WHERE c.client_no = bs.client_no
+);
+
+-- -----------------------------------------------------
+-- ALL/ANY
+-- 관계 연산자와 같이 사용
+-- ALL: 서브쿼리의 결과가 모두 참인 경우에만 참
+-- ANY: 서브쿼리의 결과 중 하나라도 참이면 참
+
+-- 2번 고객이 주문한 도서의 최고 주문 수량보다 더 많은 도서를 구입한 고객의 고객번호, 주문번호, 주문 수량
+SELECT client_no,
+       bs_no,
+       bs_qty
+  FROM book_sale
+ WHERE bs_qty > (
+   SELECT MAX(bs_qty)
+     FROM book_sale
+    WHERE client_no = '2'
+);
+
+-- 2번 고객이 주문한 도서의 최소 주문 수량보다 더 많은 도서를 구입한 고객의 고객번호, 주문번호, 주문 수량
+SELECT client_no,
+       bs_no,
+       bs_qty
+  FROM book_sale
+ WHERE bs_qty > ANY (
+   SELECT bs_qty
+     FROM book_sale
+    WHERE client_no = '2'
+);
+
+SELECT client_no,
+       bs_no,
+       bs_qty
+  FROM book_sale
+ WHERE bs_qty > (
+   SELECT MIN(bs_qty)
+     FROM book_sale
+    WHERE client_no = '2'
+);
+
+-- 2번 고객이 주문한 최소 주문 수량보다 많이 주문한 고객의 주문정보
+SELECT client_no,
+       bs_no,
+       bs_qty
+  FROM book_sale
+ WHERE bs_qty > ANY (
+   SELECT bs_qty
+     FROM book_sale
+    WHERE client_no = '2'
+)
+   AND client_no <> '2';
+
+-- 스칼라 서브쿼리 사용
+-- 상관서브 쿼리
+SELECT client_no,
+       (
+         -- WHERE 절에는 비교되는 client_no가 GROUP 기준이므로 반환되는 client_name은 그룹별로 반환됨
+          SELECT client_name
+            FROM client
+           WHERE client.client_no = book_sale.client_no
+       ) AS 고객명,
+       SUM(bs_qty) AS "총주문수량"
+  FROM book_sale
+ GROUP BY client_no
+ ORDER BY client_no;
+
+/* VIEW 객체
+ * 한 개의 릴레이션에 모든 정보가 저장되지는 않음
+ * 필요한 정보를 얻기 위해 join이나 subquery를 사용
+ * 많은 연산 수행이 동반됨
+ * View는 한 번 연산 해놓은 결과를 다시 동일한 데이터를 사용하려고 할 때 빠른 연산을 위해 연산의 순서를 기록
+ * 개발 중에 view가 필요한 경우 view를 생성하면 관리 문제나 성능 문제 발생 가능
+ * 가상의 view, inline view 등을 사용하여 해결
+ */
+
+-- Inline View: 반환되는 데이터는 다중 행, 다중 열이어도 상관 없음
+SELECT book_name,
+       book_price,
+       COUNT(*) AS order_count,
+       SUM(bs_qty) AS total_sale_qty,
+       SUM(book_price * bs_qty) AS total_sale_price
+  FROM book_sale bs,
+       (
+          SELECT book_no,
+                 book_name,
+                 book_price
+            FROM book
+           WHERE book_price > 25000
+       ) book
+ WHERE book.book_no = bs.book_no
+ GROUP BY book.book_no,
+          book.book_name,
+          book.book_price;
