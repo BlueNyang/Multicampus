@@ -109,4 +109,4 @@ project/plugins/project/
 # Application specific
 config/local.properties
 *.env
-.env
+jdbc-project/.env
