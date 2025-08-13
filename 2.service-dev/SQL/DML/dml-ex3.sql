@@ -115,8 +115,11 @@ ON bs.client_no = c.client_no
 -- 1.1. 빌트인 함수로 풀기
 SELECT book_author
   FROM book
- WHERE REGEXP_LIKE ( book_author,
-                     '^손' );
+ WHERE substr(
+   book_author,
+   1,
+   1
+) = '손';
 
 -- 2. 저자 중에서 같은 성을 가진 사람이 몇 몇이나 되는지 알아보기 위해 그룹지어 인원수 출력
 SELECT substr(
