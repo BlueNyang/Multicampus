@@ -34,74 +34,72 @@ ALTER TABLE product1 DROP COLUMN prd_stock;
 ALTER TABLE product1 DROP ( prd_company,
                             prd_price );
 
--- declaration of department table
+-- 학과 테이블
 CREATE TABLE department (
-   dept_no   VARCHAR2(4),
-   dept_name VARCHAR2(50) NOT NULL,
-    -- primary key constraint
-   CONSTRAINT pk_department_dept_no PRIMARY KEY ( dept_no )
+   dept_no   VARCHAR2(10) NOT NULL PRIMARY KEY,
+   dept_name VARCHAR2(30) NOT NULL,
+   dept_tel  VARCHAR2(13) NOT NULL
 );
 
--- declaration of student table
+-- 학생 테이블
 CREATE TABLE student (
-   s_no    VARCHAR2(8),
-   s_name  VARCHAR2(30) NOT NULL,
-   dept_no VARCHAR2(4) NOT NULL,
-   s_year  NUMBER(4) DEFAULT 4 NOT NULL,
-    -- primary key constraint
-   CONSTRAINT pk_student_s_no PRIMARY KEY ( s_no ),
-    -- foreign key constraint
-   CONSTRAINT fk_student_dept_no FOREIGN KEY ( dept_no )
-      REFERENCES department ( dept_no ),
-    -- check constraint for year
-   CONSTRAINT chk_student_s_year CHECK ( s_year BETWEEN 1 AND 4 )
+   std_no      VARCHAR2(10) NOT NULL PRIMARY KEY,
+   std_name    VARCHAR2(30) NOT NULL,
+   std_year    INT DEFAULT 4 CHECK ( std_year >= 1
+      AND std_year <= 4 ),
+   std_address VARCHAR2(30),
+   std_birth   DATE,
+   dept_no     VARCHAR2(10) NOT NULL,
+   FOREIGN KEY ( dept_no )
+      REFERENCES department ( dept_no )
 );
 
 -- insert sample data into department
-INSERT INTO department (
-   dept_no,
-   dept_name
-)
+INSERT INTO department
    SELECT *
      FROM (
       SELECT '001',
-             'Computer Science'
+             'Computer Science',
+             '000-1111-2222'
         FROM dual
       UNION ALL
       SELECT '002',
-             'Electrical Engineering'
+             'Electrical Engineering',
+             '000-2222-3333'
         FROM dual
       UNION ALL
       SELECT '003',
-             'Mechanical Engineering'
+             'Mechanical Engineering',
+             '000-3333-4444'
         FROM dual
    );
 
 -- insert sample data into student
-INSERT INTO student (
-   s_no,
-   s_name,
-   dept_no,
-   s_year
-)
+INSERT INTO student
    SELECT *
      FROM (
       SELECT 'S001',
              'Alice',
-             '001',
-             2
+             2,
+             'address1',
+             TO_DATE('2000-01-01','YYYY-MM-DD'),
+             '001'
         FROM dual
       UNION ALL
       SELECT 'S002',
              'Bob',
-             '002',
-             3
+             3,
+             'address2',
+             TO_DATE('2001-02-02','YYYY-MM-DD'),
+             '002'
         FROM dual
       UNION ALL
       SELECT 'S003',
              'Charlie',
-             '003',
-             1
+             1,
+             'address3',
+             TO_DATE('2002-03-03','YYYY-MM-DD'),
+             '003'
         FROM dual
    );
 
@@ -110,39 +108,36 @@ COMMIT;
 
 -- 교수 테이블
 CREATE TABLE professor (
-   prof_no       VARCHAR2(10),
+   prof_no       VARCHAR2(10) NOT NULL PRIMARY KEY,
    prof_name     VARCHAR2(30) NOT NULL,
    prof_position VARCHAR2(30),
    prof_tel      VARCHAR2(13),
-   dept_no       VARCHAR2(4) NOT NULL,
-   CONSTRAINT pk_professor_prof_no PRIMARY KEY ( prof_no ),
-   CONSTRAINT fk_professor_dept_no FOREIGN KEY ( dept_no )
+   dept_no       VARCHAR2(10) NOT NULL,
+   FOREIGN KEY ( dept_no )
       REFERENCES department ( dept_no )
 );
 
 -- 과목 테이블
 CREATE TABLE course (
-   course_id     VARCHAR2(10),
-   course_name   VARCHAR2(30) NOT NULL,
-   course_credit NUMBER(3),
-   prof_no       VARCHAR2(10) NOT NULL,
-   CONSTRAINT pk_course_course_id PRIMARY KEY ( course_id ),
-   CONSTRAINT fk_course_prof_no FOREIGN KEY ( prof_no )
+   course_id     VARCHAR(10) NOT NULL PRIMARY KEY,
+   course_name   VARCHAR(30) NOT NULL,
+   course_credit INT,
+   prof_no       VARCHAR(10) NOT NULL,
+   FOREIGN KEY ( prof_no )
       REFERENCES professor ( prof_no )
 );
 
 CREATE TABLE scores (
-   s_no      VARCHAR2(8),
+   std_no    VARCHAR2(10) NOT NULL,
    course_id VARCHAR2(10) NOT NULL,
    score     NUMBER(3),
    grade     VARCHAR2(2),
-   CONSTRAINT pk_scores PRIMARY KEY ( s_no,
-                                      course_id ),
-   CONSTRAINT fk_scores_student FOREIGN KEY ( s_no )
-      REFERENCES student ( s_no ),
+   CONSTRAINT pk_scores_stdno_courseid PRIMARY KEY ( std_no,
+                                                     course_id ),
+   CONSTRAINT fk_scores_student FOREIGN KEY ( std_no )
+      REFERENCES student ( std_no ),
    CONSTRAINT fk_scores_course FOREIGN KEY ( course_id )
-      REFERENCES course ( course_id ),
-   CONSTRAINT chk_scores_score CHECK ( score BETWEEN 0 AND 100 )
+      REFERENCES course ( course_id )
 );
 
 -- 기본키 삭제: 기본키는 반드시 있어야 하는 건 아님.

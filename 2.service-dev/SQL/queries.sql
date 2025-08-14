@@ -1,0 +1,2 @@
+DROP TABLE student CASCADE CONSTRAINTS;
+DROP TABLE department;
