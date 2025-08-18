@@ -61,4 +61,6 @@ public interface IUserDAO {
      * @return An Optional containing the UserDTO if login is successful, or empty if login fails.
      */
     User login(String userId, String password);
+
+    void commitTransaction();
 }

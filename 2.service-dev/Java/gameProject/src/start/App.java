@@ -188,6 +188,9 @@ public class App {
                 UserDTO user = userService.getUserById(currentUserId);
                 if (user != null) {
                     System.out.println("User Profile: " + user.getUsername());
+                    System.out.println("User ID: " + user.getUserId());
+                    System.out.println("Username: " + user.getUsername());
+                    System.out.println("Email: " + user.getUserEmail());
                 } else {
                     System.out.println("User not found.");
                 }

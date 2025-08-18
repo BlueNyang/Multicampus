@@ -8,7 +8,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 /**
  * UserDAO is responsible for managing user data operations.
@@ -115,30 +114,41 @@ public class UserDAO implements IUserDAO {
 
     @Override
     public boolean updateUser(User user) {
+        int result = 0;
+        String sql = "UPDATE users SET username = ?, password = ?, user_email = ? WHERE user_id = ?";
         try {
-            User existingUserOpt = getUserById(user.getUserId());
-            if (existingUserOpt == null) {
-                return false;
-            }
-        } catch (UserNotFoundException e) {
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, user.getUsername());
+            pstmt.setString(2, user.getPassword());
+            pstmt.setString(3, user.getUserEmail());
+            pstmt.setString(4, user.getUserId());
+
+            result = pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println("User update failed: " + e.getMessage());
             return false;
+        } finally {
+            DBConnect.close(pstmt);
         }
-        return true;
+        return (result > 0);
     }
 
     @Override
     public boolean deleteUser(User user) {
+        int result = 0;
+        String sql = "DELETE FROM users WHERE user_id = ?";
         try {
-            User existingUserOpt = getUserById(user.getUserId());
-            if (existingUserOpt == null) {
-                System.out.println("User deletion failed: User does not exist.");
-                return false;
-            }
-        } catch (UserNotFoundException e) {
+            pstmt = con.prepareStatement(sql);
+            pstmt.setString(1, user.getUserId());
+            result = pstmt.executeUpdate();
+        } catch (SQLException e) {
             System.out.println("User deletion failed: " + e.getMessage());
             return false;
+        } finally {
+            DBConnect.close(pstmt);
         }
-        return true;
+        return (result > 0);
     }
 
     @Override
@@ -151,6 +161,17 @@ public class UserDAO implements IUserDAO {
             }
         }
         return null;
+    }
+
+    @Override
+    public void commitTransaction() {
+        try {
+            if (con != null) {
+                con.commit();
+            }
+        } catch (SQLException e) {
+            System.out.println("Transaction commit failed: " + e.getMessage());
+        }
     }
 
     private List<User> getListFromResultSet(ResultSet rs) throws SQLException {

@@ -16,6 +16,7 @@ public class UserService implements IUserService {
         UserDTO user = new UserDTO(userId, username, password, email);
         if (userDAO.createUser(user.toEntity())) {
             System.out.println("User registered successfully: " + username);
+            userDAO.commitTransaction();
         } else {
             System.out.println("User registration failed: User already exists.");
         }
@@ -59,6 +60,7 @@ public class UserService implements IUserService {
             user.setUserEmail(email);
             if (userDAO.updateUser(user)) {
                 System.out.println("User information updated successfully.");
+                userDAO.commitTransaction();
                 return true;
             } else {
                 System.out.println("Failed to update user information.");
@@ -76,6 +78,7 @@ public class UserService implements IUserService {
         if (user != null) {
             if (userDAO.deleteUser(user)) {
                 System.out.println("User deleted successfully.");
+                userDAO.commitTransaction();
                 return true;
             } else {
                 System.out.println("Failed to delete user.");
