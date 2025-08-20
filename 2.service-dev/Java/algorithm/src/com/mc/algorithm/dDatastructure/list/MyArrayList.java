@@ -1,4 +1,4 @@
-package com.mc.algorithm.dDatastructure;
+package com.mc.algorithm.dDatastructure.list;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -86,11 +86,11 @@ public class MyArrayList<E> implements Iterable<E> {
     @Override
     public Iterator<E> iterator() {
         return new Iterator<>() {
-            private int currentIndex = 0;
+            private int ptr = 0;
 
             @Override
             public boolean hasNext() {
-                return currentIndex < size;
+                return ptr < size;
             }
 
             @Override
@@ -99,12 +99,12 @@ public class MyArrayList<E> implements Iterable<E> {
                 if (!hasNext()) {
                     throw new IndexOutOfBoundsException("No more elements to iterate.");
                 }
-                return (E) elementsData[currentIndex++];
+                return (E) elementsData[ptr++];
             }
 
             @Override
             public void remove() {
-                MyArrayList.this.remove(currentIndex);
+                MyArrayList.this.remove(ptr);
             }
         };
     }
