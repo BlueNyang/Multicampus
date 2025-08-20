@@ -1,4 +1,4 @@
-package com.mc.algorithm.aOT;
+package com.mc.algorithm.bStar;
 
 import java.util.Scanner;
 
