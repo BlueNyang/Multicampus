@@ -1,10 +1,15 @@
-package com.mc.algorithm.dDatastructure.list;
+package com.mc.algorithm.d_datastructure.list;
 
 import java.util.Iterator;
 
 public class MyLinkedList<E> implements Iterable<E> {
     private Node<E> head;
     private int size;
+
+    public MyLinkedList() {
+        this.head = null;
+        this.size = 0;
+    }
 
     public int size() {
         return size;

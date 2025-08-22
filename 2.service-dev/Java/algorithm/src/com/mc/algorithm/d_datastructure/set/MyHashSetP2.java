@@ -1,8 +1,7 @@
-package com.mc.algorithm.dDatastructure.set;
+package com.mc.algorithm.d_datastructure.set;
 
-import com.mc.algorithm.dDatastructure.list.Node;
+import com.mc.algorithm.d_datastructure.list.Node;
 
-import java.util.Arrays;
 import java.util.Iterator;
 
 public class MyHashSetP2<E> implements Iterable<E> {
@@ -73,12 +72,12 @@ public class MyHashSetP2<E> implements Iterable<E> {
         this.size = 0;
 
         for (E e : (E[]) oldTable) {
-            if (e != null) {
-                Node<E> current = (Node<E>) e;
-                while (current != null) {
-                    addNode(current.getData());
-                    current = current.getNext();
-                }
+            if (e == null) continue;
+            Node<E> current = (Node<E>) e;
+            while (current != null) {
+                // add each element to rehash
+                addNode(current.getData());
+                current = current.getNext();
             }
         }
     }
@@ -144,45 +143,38 @@ public class MyHashSetP2<E> implements Iterable<E> {
     public Iterator<E> iterator() {
         return new Iterator<>() {
             private int index = 0;
-            private Node<E> pointer = null;
+            private int rowIndex = -1;
+            private Node<E> prev = new Node<>(null);
 
             @Override
             public boolean hasNext() {
-                if (pointer == null) {
-                    while (index < arraySize) {
-                        if (table[index] != null) {
-                            pointer = (Node<E>) table[index];
-                            return true;
-                        }
-                        index++;
-                    }
-                    return false;
-                }
-
-                if (pointer.getNext() != null) {
-                    return true;
-                }
-
-                int tempIndex = index;
-                while (++tempIndex < arraySize) {
-                    if (table[tempIndex] != null) {
-                        return true;
-                    }
-                }
-                return false;
+                return index < size;
             }
 
             @Override
             public E next() {
-                if (pointer == null || pointer.getNext() == null) {
-                    while (index < arraySize && (table[index] == null || ((Node<E>) table[index]).getNext() == null)) {
-                        index++;
+                if (prev.getNext() != null) {
+                    E data = prev.getNext().getData();
+                    if (prev.getNext() != null) {
+                        prev = prev.getNext();
                     }
-                    pointer = (Node<E>) table[index];
-                } else {
-                    pointer = pointer.getNext();
+                    index++;
+                    return data;
                 }
-                return pointer.getData();
+
+                do {
+                    rowIndex++;
+                } while (table[rowIndex] == null);
+
+                prev = (Node<E>) table[rowIndex];
+                E data = prev.getData();
+
+                if (prev.getNext() != null) {
+                    prev = prev.getNext();
+                }
+
+                index++;
+                return data;
             }
         };
     }

@@ -1,4 +1,4 @@
-package com.mc.algorithm.aOT;
+package com.mc.algorithm.a_ot;
 
 public class Run {
     public static void main(String[] args) {

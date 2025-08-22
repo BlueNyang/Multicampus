@@ -1,4 +1,4 @@
-package com.mc.algorithm.dDatastructure.dto;
+package com.mc.algorithm.d_datastructure.dto;
 
 import java.util.Objects;
 

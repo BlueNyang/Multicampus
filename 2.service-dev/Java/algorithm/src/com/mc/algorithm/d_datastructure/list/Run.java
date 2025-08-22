@@ -1,6 +1,6 @@
-package com.mc.algorithm.dDatastructure.list;
+package com.mc.algorithm.d_datastructure.list;
 
-import com.mc.algorithm.dDatastructure.dto.School;
+import com.mc.algorithm.d_datastructure.dto.School;
 
 import java.util.ArrayList;
 import java.util.Collections;

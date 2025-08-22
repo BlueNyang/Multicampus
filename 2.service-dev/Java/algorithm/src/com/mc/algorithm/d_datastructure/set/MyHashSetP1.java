@@ -1,4 +1,4 @@
-package com.mc.algorithm.dDatastructure.set;
+package com.mc.algorithm.d_datastructure.set;
 
 import java.util.Arrays;
 

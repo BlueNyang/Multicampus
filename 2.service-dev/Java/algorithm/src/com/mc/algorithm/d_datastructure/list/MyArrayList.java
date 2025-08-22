@@ -1,4 +1,4 @@
-package com.mc.algorithm.dDatastructure.list;
+package com.mc.algorithm.d_datastructure.list;
 
 import java.util.Arrays;
 import java.util.Iterator;

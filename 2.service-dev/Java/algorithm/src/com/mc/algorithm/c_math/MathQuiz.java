@@ -1,4 +1,4 @@
-package com.mc.algorithm.cMath;
+package com.mc.algorithm.c_math;
 
 public class MathQuiz {
     public static void main(String[] args) {
