@@ -3,6 +3,7 @@ package com.mc.algorithm.f_bruteforce.quiz;
 public class Quiz {
     public static void main(String[] args) {
         q1(20);
+        q1(6);
     }
 
     private static void q1(int n) {
