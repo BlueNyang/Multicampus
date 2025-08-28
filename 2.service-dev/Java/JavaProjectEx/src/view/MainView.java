@@ -2,8 +2,6 @@ package view;
 
 import controller.Controller;
 
-import java.util.Scanner;
-
 public class MainView {
     private static final Controller controller = Controller.getInstance();
 
