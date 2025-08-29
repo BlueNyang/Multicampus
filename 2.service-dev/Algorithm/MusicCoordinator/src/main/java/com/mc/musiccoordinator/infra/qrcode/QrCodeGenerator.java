@@ -2,7 +2,6 @@ package com.mc.musiccoordinator.infra.qrcode;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
-import com.google.zxing.client.j2se.MatrixToImageConfig;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
@@ -12,13 +11,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class QrCodeGenerator {
-    public void generate(QrCodeDto qrCodeDto) {
-        try (FileOutputStream fileOutputStream = new FileOutputStream(qrCodeDto.fileName());) {
-            QRCodeWriter qrCodeWriter = new QRCodeWriter();
 
-            MatrixToImageConfig config = new MatrixToImageConfig(
-                    qrCodeDto.color(), MatrixToImageConfig.BLACK
-            );
+    public void generate(QrCodeDto qrCodeDto) {
+        try (FileOutputStream fos = new FileOutputStream(qrCodeDto.fileName() + "." + qrCodeDto.format())) {
+            QRCodeWriter qrCodeWriter = new QRCodeWriter();
 
             BitMatrix bitMatrix = qrCodeWriter.encode(
                     qrCodeDto.text(), BarcodeFormat.QR_CODE,
@@ -26,9 +22,7 @@ public class QrCodeGenerator {
             );
 
             MatrixToImageWriter.writeToStream(
-                    bitMatrix, qrCodeDto.format(),
-                    fileOutputStream,
-                    config
+                    bitMatrix, qrCodeDto.format(), fos
             );
 
             System.out.println("QR 코드가 성공적으로 생성되었습니다. 파일명: " + qrCodeDto.fileName());

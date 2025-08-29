@@ -1,6 +1,6 @@
-package com.mc.musiccoordinator;
+package com.mc.studyhelper;
 
-import com.mc.musiccoordinator.presentation.Menu;
+import com.mc.studyhelper.presentation.Menu;
 
 public class Run {
     public static void main(String[] args) {

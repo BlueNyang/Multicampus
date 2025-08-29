@@ -17,8 +17,6 @@ dependencies {
     implementation("com.google.zxing:javase:3.5.3")
     implementation("io.github.cdimascio:dotenv-java:3.2.0")
     implementation("com.google.code.gson:gson:2.13.1")
-    implementation("kr.bluenyang:LLMInfra")
-
 }
 
 tasks.test {
@@ -37,4 +35,3 @@ tasks.withType<Test> {
     jvmArgs("-Dfile.encoding=UTF-8")
     useJUnitPlatform()
 }
-
