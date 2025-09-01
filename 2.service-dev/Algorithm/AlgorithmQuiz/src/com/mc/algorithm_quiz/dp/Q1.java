@@ -20,6 +20,9 @@ public class Q1 {
         dp[0] = arr[0];
         dp[1] = Math.max(arr[0] + arr[1], arr[1]);
 
+        // 접근 방식: 각 index에 이전 값들과의 덧셈을 저장
+        // 이전 값까지 더한 값이 음수라면 현재 값만 저장
+        // => 이전 값이 음수라면 현재 값만 저장하는게 더 크기 때문
         int max = dp[0];
         for (int i = 2; i < n; i++) {
             if (dp[i - 1] < 0) {

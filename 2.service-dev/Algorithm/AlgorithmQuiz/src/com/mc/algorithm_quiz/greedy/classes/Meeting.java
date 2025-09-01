@@ -1,6 +1,6 @@
 package com.mc.algorithm_quiz.greedy.classes;
 
-public class Meeting {
+public class Meeting implements Comparable<Meeting> {
     int idx;
     int start;
     int end;
@@ -21,6 +21,11 @@ public class Meeting {
 
     public int getEnd() {
         return end;
+    }
+
+    @Override
+    public int compareTo(Meeting o) {
+        return Integer.compare(this.end, o.end);
     }
 
     @Override

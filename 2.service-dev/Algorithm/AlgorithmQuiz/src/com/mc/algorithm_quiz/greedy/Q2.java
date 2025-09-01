@@ -3,10 +3,7 @@ package com.mc.algorithm_quiz.greedy;
 import com.mc.algorithm_quiz.greedy.classes.Meeting;
 import com.mc.algorithm_quiz.util.SortUtil;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class Q2 {
     public static void main(String[] args) {
@@ -28,7 +25,8 @@ public class Q2 {
     private static Meeting[] q2_greedy2(Meeting[] meetings) {
         List<Meeting> list = Arrays.asList(meetings);
 
-        list.sort(Comparator.comparing(Meeting::getEnd));
+//        list.sort(Comparator.comparing(Meeting::getEnd));
+        Collections.sort(list);
 
         Stack<Meeting> stack = new Stack<>();
 
