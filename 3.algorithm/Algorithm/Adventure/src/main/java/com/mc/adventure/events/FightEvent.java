@@ -20,7 +20,9 @@ public class FightEvent implements Event {
     @Override
     public EventResult startEvent(Player player) {
         System.out.println("[Event] Fight Event Started: " + this.desc);
-        Character monster = this.getRandomMonster(player);
+        Character monster;
+
+        monster = this.getRandomMonster(player);
 
         System.out.println("[Event] " + player.getName() + " is fighting " + monster.getName());
 
@@ -44,10 +46,14 @@ public class FightEvent implements Event {
         }
     }
 
+    private Character getBossMonster() {
+        return Monsters.DRAGON.create();
+    }
+
     private Character getRandomMonster(Player player) {
         int level = player.getLevel();
         Monsters[] monsters = Monsters.values();
-        int idx = new Random().nextInt(level, Math.min(level + 1, monsters.length));
+        int idx = new Random().nextInt(level, Math.min(level + 1, monsters.length - 1));
         return monsters[idx].create();
     }
 
