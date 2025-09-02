@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JavaSecure.iml" filepath="$PROJECT_DIR$/JavaSecure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JavaSecure.main.iml" filepath="$PROJECT_DIR$/.idea/modules/JavaSecure.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JavaSecure.test.iml" filepath="$PROJECT_DIR$/.idea/modules/JavaSecure.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SecureCoding.iml" filepath="$PROJECT_DIR$/SecureCoding.iml" />
+    </modules>
+  </component>
+</project>

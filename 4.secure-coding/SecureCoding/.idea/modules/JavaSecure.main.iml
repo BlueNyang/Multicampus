@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="JavaSecure:main" external.linked.project.path="$MODULE_DIR$/../../JavaSecure" external.root.project.path="$MODULE_DIR$/../../JavaSecure" external.system.id="GRADLE" external.system.module.group="kr.bluenyang" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_21">
+    <output url="file://$MODULE_DIR$/../../JavaSecure/build/classes/java/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../JavaSecure/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../JavaSecure/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../JavaSecure/src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: com.oracle.database.jdbc:ojdbc17:23.9.0.25.07" level="project" />
+    <orderEntry type="library" name="Gradle: io.github.cdimascio:dotenv-java:3.2.0" level="project" />
+  </component>
+</module>
