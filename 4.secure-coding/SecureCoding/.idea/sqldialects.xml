@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/SecureCSRF/src/main/webapp/login_action.jsp" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_modify.jsp" dialect="GenericSQL" />
+  </component>
+</project>

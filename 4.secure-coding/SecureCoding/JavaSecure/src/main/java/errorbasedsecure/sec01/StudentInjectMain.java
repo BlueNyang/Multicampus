@@ -25,7 +25,7 @@ public class StudentInjectMain {
 
             //sql 쿼리문 작성 - 플레이스홀더 사용하지 않고 변수 이용해서 코딩(전체컬럼 추출)
             //preapredstatement를 사용하지만 바인딩 하고 있지 않음 - 인젝션 취약점
-            String sql = "select * from student where stdNo='" + studentNo + "'";
+            String sql = "select * from student where std_no='" + studentNo + "'";
             System.out.println(sql);
             pstmt = con.prepareStatement(sql); //하드코딩된 쿼리 구문 그대로 적용 가능
             rs = pstmt.executeQuery();

@@ -9,6 +9,8 @@
       <list>
         <option value="$PROJECT_DIR$/SecureRefXSS/pom.xml" />
         <option value="$PROJECT_DIR$/SecureXSS/pom.xml" />
+        <option value="$PROJECT_DIR$/SecureCSRF/pom.xml" />
+        <option value="$PROJECT_DIR$/AttackerCSRF/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

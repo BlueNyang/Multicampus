@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="SecureXSS:war exploded" />
+      <artifact name="AttackerCSRF:war exploded" />
+      <artifact name="SecureCSRF:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,65 +11,75 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8af5995d-9027-4f26-b2e5-1ffc4a5ee2f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gradle_wrapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/errorbasedsecure/sec01/StudentInjectMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/errorbasedsecure/sec01/StudentInjectMainSecure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/errorbasedsecure/util/DBConnect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/main.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/main2.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/main3.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/main4.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/reflected.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/reflected2.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/reflected3.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureOCMXSS/domXSS.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureOCMXSS/domXss.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureOCMXSS/first.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureOCMXSS/second.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/StoredXSS/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/StoredXSS/post_delete_send.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/StoredXSS/post_list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/StoredXSS/post_modify.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/StoredXSS/post_modify_send.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/StoredXSS/post_new.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/StoredXSS/post_new_send.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/StoredXSS/post_read.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AttackerCSRF/src/main/webapp/attack.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AttackerCSRF/src/main/webapp/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec01/MemberJoin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec01/MemberLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec01/StudentInjectMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec02_md5/MemberJoinMD5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec02_md5/MemberLoginMD5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec02_md5/StudentInjectMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec03_sha256/MemberJoinSHA256.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec03_sha256/MemberLoginSHA256.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec03_sha256/StudentInjectMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec04_sha256/MemberJoinSHA256.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec04_sha256/MemberLoginSHA256.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec04_sha256/StudentInjectMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec05_keysalt/MemberJoinKeySalt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec05_keysalt/MemberLoginKeySalt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec05_keysalt/StudentInjectMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/util/DBConnect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/SecureCSRF.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/META-INF/context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/login_action.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/login_action_csrf.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/login_main.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/logout.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_delete_send.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_modify.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_modify_send.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_new.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_new_send.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_read.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/f1cfbff5-2460-4d6a-af8e-e6e3add52eb7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f1cfbff5-2460-4d6a-af8e-e6e3add52eb7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_oracle_database_jdbc_ojdbc17_23_9_0_25_07.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_github_cdimascio_dotenv_java_3_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_5_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_api_5_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_engine_5_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_params_5_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_platform_junit_platform_commons_1_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_platform_junit_platform_engine_1_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_platform_junit_platform_launcher_1_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_opentest4j_opentest4j_1_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/JavaSecure.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/JavaSecure.test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure/build/classes/java/main/secure/sec01/a_statement/StudentInjectMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/build/classes/java/main/secure/sec01/a_statement/StudentInjectMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSecure/build/classes/java/main/errorbasedsecure/sec01/StudentInjectMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/build/classes/java/main/errorbasedsecure/sec01/StudentInjectMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaSecure/build/tmp/compileJava/compileTransaction/stash-dir/StudentInjectMain.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/build/tmp/compileJava/compileTransaction/stash-dir/StudentInjectMain.class.uniqueId0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaSecure/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaSecure/src/main/java/errorbasedsecure/sec01/StudentInjectMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/errorbasedsecure/sec01/StudentInjectMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/main2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/main2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureOCMXSS/domXSS.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureDOMXSS/domXSS.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureOCMXSS/domXss.html" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureDOMXSS/domXss.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureOCMXSS/first.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureDOMXSS/first.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureOCMXSS/second.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureDOMXSS/second.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/RefXSS/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/RefXSS/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/RefXSS/main2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/RefXSS/main2.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/SecureOCMXSS/domXSS.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/SecureOCMXSS/domXss.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/SecureOCMXSS/first.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/SecureOCMXSS/second.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +96,17 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="JavaSecure" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="JavaSecure" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -106,7 +127,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$/JavaSecure" gradleHome="C:\Users\xpsj2\.gradle\wrapper\dists\gradle-8.14-bin\38aieal9i53h9rfe7vjup95b9\gradle-8.14" javaHome="C:\Program Files\Java\jdk-21" gradleVersion="8.14" />
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$/JavaSecure" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-8.14-bin/38aieal9i53h9rfe7vjup95b9/gradle-8.14" javaHome="/usr/lib/jvm/java" gradleVersion="8.14" />
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -128,6 +149,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build JavaSecure.executor": "Run",
+    "Gradle.JavaSecure [:errorbasedsecure.sec01.StudentInjectMain.main()].executor": "Run",
     "Gradle.JavaSecure [:secure.sec01.StudentInjectMain.main()].executor": "Run",
     "Gradle.JavaSecure [:secure.sec01.a_statement.StudentInjectMain.main()].executor": "Run",
     "Gradle.JavaSecure [:secure.sec01.b_placeholder.StudentInjectMain.main()].executor": "Run",
@@ -136,12 +158,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 9.0.106-attacker.executor": "Run",
     "Tomcat Server.Tomcat 9.0.106.executor": "Run",
     "Tomcat Server.index.jsp.executor": "Run",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "W:/MyWorks/JAVA_Dev_Full-Stack-Academy/4.secure-coding/SecureCoding/SecureXSS/src/main/webapp/SecureOCMXSS",
+    "last_opened_file_path": "W:/MyWorks/JAVA_Dev_Full-Stack-Academy/4.secure-coding/SecureCoding/AttackerCSRF/src/main/webapp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -150,10 +173,10 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "W:/MyWorks/JAVA_Dev_Full-Stack-Academy/4.secure-coding/SecureCoding/JavaSecure/src/main/java/kr/bluenyang/Main.java",
-    "project.structure.last.edited": "Problems",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "editing.templates",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
   },
@@ -165,18 +188,21 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\SecureXSS\src\main\webapp\SecureOCMXSS" />
-      <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\SecureXSS\src\main\webapp\StoredXSS" />
-      <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\SecureXSS\src\main\webapp\RefXSS" />
-      <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\SecureXSS" />
-      <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\SecureXSS\src\main\webapp" />
+      <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\AttackerCSRF\src\main\webapp" />
+      <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\SecureCSRF\src\main\webapp" />
+      <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\SecureCSRF\src\main\resources\META-INF" />
+      <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\SecureCSRF\src\main\resources" />
+      <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\SecureXSS\src\main\webapp\META-INF" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\SecureCSRF\src\main\resources" />
+      <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\SecureCSRF\src\main\webapp\META-INF" />
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\SecureXSS\src\main\resources" />
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\SecureXSS\src\main\webapp" />
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\SecureRefXSS\src\main\webapp\RefXSS" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="encryption.util" />
       <recent name="errorbasedsecure.util" />
       <recent name="secure.sec01.b_placeholder" />
     </key>
@@ -188,32 +214,40 @@
           <value>
             <map>
               <entry key="Tomcat 9.0.106" value="STOPPED" />
+              <entry key="Tomcat 9.0.106-attacker" value="STOPPED" />
             </map>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Tomcat 9.0.106" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.106" ALTERNATIVE_JRE_ENABLED="false">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.106-attacker">
+    <configuration name="Tomcat 9.0.106-attacker" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.106" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="21">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/csrf/" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
-        <artifact name="SecureXSS:war exploded">
+        <artifact name="AttackerCSRF:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/xss" />
+            <option name="CONTEXT_PATH" value="/attacker" />
+          </settings>
+        </artifact>
+        <artifact name="SecureCSRF:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/csrf" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="56004987-1b36-44b1-bb3b-6f67b053b24a" />
+        <option name="BASE_DIRECTORY_NAME" value="2454dd5f-37ca-4613-9f70-fe9e8cee5695" />
       </server-settings>
+      <output_file path="%IDEA_RUN:TOMCAT_HOME%/logs/attacker.log" is_save="true" />
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="59633" />
+        <option name="DEBUG_PORT" value="51936" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -278,10 +312,109 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
+          <artifact name="AttackerCSRF:war exploded" />
+          <artifact name="SecureCSRF:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.106" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.106" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="SecureCSRF:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/csrf" />
+          </settings>
+        </artifact>
+        <artifact name="SecureXSS:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/xss" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="eef2efa2-7d82-41b4-a19a-af50edcc4f15" />
+      </server-settings>
+      <output_file path="%IDEA_RUN:TOMCAT_HOME%/logs/attack.log" />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="55390" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="SecureCSRF:war exploded" />
           <artifact name="SecureXSS:war exploded" />
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.Tomcat 9.0.106" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.106-attacker" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -306,6 +439,8 @@
       <workItem from="1756951279051" duration="645000" />
       <workItem from="1756952074464" duration="423000" />
       <workItem from="1756952530721" duration="18289000" />
+      <workItem from="1757260312103" duration="5930000" />
+      <workItem from="1757289129847" duration="17872000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,80 @@
+package encryption.sec02_md5;
+
+import encryption.util.DBConnect;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class MemberJoinMD5 {
+    private static String md5(String pass) {
+        StringBuilder encData = new StringBuilder();
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] bytes = pass.getBytes();
+            md.update(bytes);
+
+            byte[] digest = md.digest();
+            System.out.println(Arrays.toString(digest));
+            for (byte b : digest) {
+                String hex = Integer.toHexString(b & 0xFF);
+                if (hex.length() == 1) {
+                    hex = "0" + hex;
+                }
+                encData.append(hex);
+            }
+        } catch (NoSuchAlgorithmException e) {
+            System.out.println("MD5 algorithm not found.");
+            return null;
+        }
+        return encData.toString();
+    }
+
+    public static void main(String[] args) {
+        DBConnect dbcon = new DBConnect();
+        Connection conn = dbcon.getConnection();
+        PreparedStatement pstmt = null;
+
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Enter the ID: ");
+            String memId = sc.nextLine();
+            System.out.print("Enter the Password: ");
+            String memPass = md5(sc.nextLine());
+            System.out.print("Enter the Name: ");
+            String memName = sc.nextLine();
+            System.out.print("Enter the email: ");
+            String memMail = sc.nextLine();
+
+            LocalDate ld = LocalDate.now();
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+            String memJoinDate = ld.format(dtf);
+
+            String sql = "INSERT INTO member VALUES (?, ?, ?, ?, ?, null)";
+
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, memId);
+            pstmt.setString(2, memPass); // binding 되는 password == plain text;
+            pstmt.setString(3, memName);
+            pstmt.setString(4, memMail);
+            pstmt.setString(5, memJoinDate);
+
+            int result = pstmt.executeUpdate();
+
+            if (result > 0) {
+                System.out.println("Member registration successful.");
+            } else {
+                System.out.println("Member registration failed.");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            DBConnect.close(conn, pstmt, null);
+        }
+    }
+}
