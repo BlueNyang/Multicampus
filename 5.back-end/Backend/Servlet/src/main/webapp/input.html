@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>여러 가지 input 타입 표시창</title>
+</head>
+<body>
+<form name="frmInput" method="post" action="input">
+    <label for="user_id">ID: </label>
+    <input type="text" name="user_id" id="user_id"/>
+    <br/>
+    <label for="user_pw">PW: </label>
+    <input type="password" name="user_pw" id="user_pw"/>
+    <br/>
+    <label>이메일 수신 여부 :</label>
+    <input type="radio" name="emailRcv" value="yes" checked id="emailYes"/>
+    <label for="emailYes">예</label>
+    <input type="radio" name="emailRcv" value="no" id="emailNo"/>
+    <label for="emailNo">아니오</label>
+    <br/>
+    <input type="checkbox" name="subject" value="java" checked id="subjectJava"/>
+    <label for="subjectJava">자바</label>
+    <input type="checkbox" name="subject" value="C언어" id="subjectC"/>
+    <label for="subjectC">C언어</label>
+    <input type="checkbox" name="subject" value="JSP" id="subjectJSP"/>
+    <label for="subjectJSP">JSP</label>
+    <input type="checkbox" name="subject" value="안드로이드" id="subjectAndroid"/>
+    <label for="subjectAndroid">안드로이드</label>
+    <br/>
+    <br/>
+    <input type="submit" value="전송"/>
+    <input type="reset" value="초기화"/>
+</form>
+</body>
+</html>

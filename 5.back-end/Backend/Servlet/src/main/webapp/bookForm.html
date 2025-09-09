@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>도서 정보 등록</title>
+</head>
+<body>
+<form name="frmbook" method="post" action="bookInsert">
+    <h2>도서 정보 등록</h2>
+    <table>
+        <tr>
+            <td>
+                <label for="bookNo">도서번호</label>
+            </td>
+            <td>
+                <input type="text" name="bookNo" id="bookNo">
+            <td>
+        <tr>
+        <tr>
+            <td>
+                <label for="bookName">도서명</label>
+            </td>
+            <td>
+                <input type="text" name="bookName" id="bookName">
+            <td>
+        <tr>
+        <tr>
+            <td>
+                <label for="bookAuthor">저자</label>
+            </td>
+            <td>
+                <input type="text" name="bookAuthor" id="bookAuthor">
+            <td>
+        <tr>
+        <tr>
+            <td>
+                <label for="bookPrice">가격</label>
+            </td>
+            <td>
+                <input type="text" name="bookPrice" id="bookPrice">
+            <td>
+        <tr>
+        <tr>
+            <td>
+                발행일
+            </td>
+            <td>
+                <input type="text" size="4" name="bookYear" id="bookYear">
+                <label for="bookYear">년</label>
+                <input type="text" size="2" name="bookMonth" id="bookMonth">
+                <label for="bookMonth">월</label>
+                <input type="text" size="2" name="bookDate" id="bookDate">
+                <label for="bookDate">일</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="bookStock">재고</label>
+            </td>
+            <td>
+                <input type="text" name="bookStock" id="bookStock">
+            <td>
+        <tr>
+        <tr>
+            <td>
+                <label for="pubNo">출판사번호</label>
+            </td>
+            <td>
+                <input type="text" name="pubNo" id="pubNo">
+            <td>
+        <tr>
+    </table>
+    <input type="submit" value="등록">
+    <input type="reset" value="취소">
+</form>
+</body>
+</html>

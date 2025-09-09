@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+body {
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a {
+    color: #005bff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    text-decoration: underline !important;
+}

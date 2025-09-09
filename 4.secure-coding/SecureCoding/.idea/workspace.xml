@@ -11,75 +11,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8af5995d-9027-4f26-b2e5-1ffc4a5ee2f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AttackerCSRF/src/main/webapp/attack.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AttackerCSRF/src/main/webapp/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec01/MemberJoin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec01/MemberLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec01/StudentInjectMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec02_md5/MemberJoinMD5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec02_md5/MemberLoginMD5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec02_md5/StudentInjectMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec03_sha256/MemberJoinSHA256.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec03_sha256/MemberLoginSHA256.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec03_sha256/StudentInjectMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec04_sha256/MemberJoinSHA256.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec04_sha256/MemberLoginSHA256.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec04_sha256/StudentInjectMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec05_keysalt/MemberJoinKeySalt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec05_keysalt/MemberLoginKeySalt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/sec05_keysalt/StudentInjectMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/encryption/util/DBConnect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/SecureCSRF.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/META-INF/context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/login_action.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/login_action_csrf.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/login_main.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/logout.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_delete_send.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_modify.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_modify_send.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_new.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_new_send.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/post_read.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SecureCSRF/src/main/webapp/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f1cfbff5-2460-4d6a-af8e-e6e3add52eb7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f1cfbff5-2460-4d6a-af8e-e6e3add52eb7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/ApidogFastRequestProjectSetting.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/copilot.data.migration.agent.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/copilot.data.migration.edit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/dictionaries/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Backend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/src/main/java/com/example/sec01/FirstServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/src/main/java/com/example/sec01/SecondServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/src/main/java/com/example/sec01/ThirdServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/src/main/java/com/example/sec02/BookServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/src/main/java/com/example/sec02/JoinServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/src/main/java/com/example/sec02/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/src/main/webapp/bookForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/src/main/webapp/joinForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/src/main/webapp/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/src/main/webapp/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/8.14/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure/build/classes/java/main/errorbasedsecure/sec01/StudentInjectMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/build/classes/java/main/errorbasedsecure/sec01/StudentInjectMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure/build/tmp/compileJava/compileTransaction/stash-dir/StudentInjectMain.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/build/tmp/compileJava/compileTransaction/stash-dir/StudentInjectMain.class.uniqueId0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaSecure/src/main/java/errorbasedsecure/sec01/StudentInjectMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaSecure/src/main/java/errorbasedsecure/sec01/StudentInjectMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/main2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/RefXSS/main2.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureOCMXSS/domXSS.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureDOMXSS/domXSS.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureOCMXSS/domXss.html" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureDOMXSS/domXss.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureOCMXSS/first.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureDOMXSS/first.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureOCMXSS/second.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/src/main/webapp/SecureDOMXSS/second.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/RefXSS/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/RefXSS/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/RefXSS/main2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/RefXSS/main2.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/SecureOCMXSS/domXSS.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/SecureOCMXSS/domXss.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/SecureOCMXSS/first.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SecureXSS/target/SecureXSS-1.0-SNAPSHOT/SecureOCMXSS/second.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,46 +110,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build JavaSecure.executor": "Run",
-    "Gradle.JavaSecure [:errorbasedsecure.sec01.StudentInjectMain.main()].executor": "Run",
-    "Gradle.JavaSecure [:secure.sec01.StudentInjectMain.main()].executor": "Run",
-    "Gradle.JavaSecure [:secure.sec01.a_statement.StudentInjectMain.main()].executor": "Run",
-    "Gradle.JavaSecure [:secure.sec01.b_placeholder.StudentInjectMain.main()].executor": "Run",
-    "Gradle.JavaSecure [:secure.sec01.c_regax.StudentInjectMain.main()].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.Tomcat 9.0.106-attacker.executor": "Run",
-    "Tomcat Server.Tomcat 9.0.106.executor": "Run",
-    "Tomcat Server.index.jsp.executor": "Run",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "W:/MyWorks/JAVA_Dev_Full-Stack-Academy/4.secure-coding/SecureCoding/AttackerCSRF/src/main/webapp",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "W:/MyWorks/JAVA_Dev_Full-Stack-Academy/4.secure-coding/SecureCoding/JavaSecure/src/main/java/kr/bluenyang/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editing.templates",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build JavaSecure.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JavaSecure [:errorbasedsecure.sec01.StudentInjectMain.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JavaSecure [:secure.sec01.StudentInjectMain.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JavaSecure [:secure.sec01.a_statement.StudentInjectMain.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JavaSecure [:secure.sec01.b_placeholder.StudentInjectMain.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.JavaSecure [:secure.sec01.c_regax.StudentInjectMain.main()].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 9.0.106-attacker.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Tomcat 9.0.106.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.index.jsp.executor&quot;: &quot;Run&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;W:/MyWorks/JAVA_Dev_Full-Stack-Academy/4.secure-coding/SecureCoding/AttackerCSRF/src/main/webapp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;W:/MyWorks/JAVA_Dev_Full-Stack-Academy/4.secure-coding/SecureCoding/JavaSecure/src/main/java/kr/bluenyang/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "oracle"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;oracle&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\4.secure-coding\SecureCoding\AttackerCSRF\src\main\webapp" />
@@ -213,16 +178,16 @@
         <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
           <value>
             <map>
-              <entry key="Tomcat 9.0.106" value="STOPPED" />
-              <entry key="Tomcat 9.0.106-attacker" value="STOPPED" />
+              <entry key="Tomcat 11.0.11" value="STOPPED" />
+              <entry key="Tomcat 11.0.11-attacker" value="STOPPED" />
             </map>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.106-attacker">
-    <configuration name="Tomcat 9.0.106-attacker" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.106" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="21">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 11.0.11">
+    <configuration name="Tomcat 11.0.11-attacker" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.11" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="21">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/csrf/" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
@@ -317,8 +282,8 @@
         </option>
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.106" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.106" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
+    <configuration name="Tomcat 11.0.11" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.11" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="21">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="SecureCSRF:war exploded">
           <settings>
@@ -412,8 +377,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Tomcat Server.Tomcat 9.0.106" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.106-attacker" />
+      <item itemvalue="Tomcat Server.Tomcat 11.0.11-attacker" />
+      <item itemvalue="Tomcat Server.Tomcat 11.0.11" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -441,6 +406,8 @@
       <workItem from="1756952530721" duration="18289000" />
       <workItem from="1757260312103" duration="5930000" />
       <workItem from="1757289129847" duration="17872000" />
+      <workItem from="1757392617967" duration="73000" />
+      <workItem from="1757408320042" duration="1000" />
     </task>
     <servers />
   </component>
