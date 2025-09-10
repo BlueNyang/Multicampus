@@ -28,6 +28,8 @@ public class JoinServlet extends HttpServlet {
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+
         String phone = request.getParameter("phonF") + "-" + request.getParameter("phonS") + "-" + request.getParameter("phonT");
 
         System.out.println("name: " + request.getParameter("name"));
