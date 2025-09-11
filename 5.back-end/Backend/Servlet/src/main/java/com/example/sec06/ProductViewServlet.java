@@ -37,18 +37,25 @@ public class ProductViewServlet extends HttpServlet {
         var productList = (List<ProductVO>) request.getAttribute("productList");
 
         var out = response.getWriter();
-        out.println("<!DOCTYPE html>"
-                + "<html><head><meta charset='UTF-8' />"
-                + "<title>Product List</title>"
-                + " <link rel=\"stylesheet\" href=\"style.css\" />"
-                + " <style>"
-                + " table, th, td { border: 1px solid black; }"
-                + "th, td { padding: 4px 8px; }"
-                + "</style></head>"
-                + "<body>"
-                + "<span> Product List </span>"
-                + "<table>"
-                + "<tr><th>Product ID</th><th>Name</th><th>Price</th><th>Stock</th><th>Delete</th></tr>"
+        out.println("""
+                <!DOCTYPE html>"
+                <html>
+                <head>
+                  <meta charset='UTF-8' />
+                  <title>Product List</title>
+                  <link rel="stylesheet" href="style.css" />
+                </head>
+                <body>
+                  <span> Product List </span>
+                  <table>
+                    <tr>
+                      <th>Product ID</th>
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Stock</th>
+                      <th>Delete</th>
+                    </tr>
+                """
         );
         for (ProductVO vo : productList) {
             out.println("<tr><td>" + vo.getProductId()

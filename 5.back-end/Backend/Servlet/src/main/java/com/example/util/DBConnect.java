@@ -2,15 +2,13 @@ package com.example.util;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DBConnect {
     private final String url;
     private final String username;
     private final String password;
+    private final String driver;
 
     public DBConnect() {
         final Dotenv dotenv = Dotenv.load();
@@ -18,13 +16,20 @@ public class DBConnect {
         this.url = dotenv.get("DB_URL");
         this.username = dotenv.get("DB_USERNAME");
         this.password = dotenv.get("DB_PASSWORD");
+        this.driver = dotenv.get("DB_DRIVER");
     }
 
     public Connection getConnection() {
         try {
-            return java.sql.DriverManager.getConnection(url, username, password);
+            Class.forName(driver);
+            Connection conn = DriverManager.getConnection(url, username, password);
+            System.out.println("DB 연결 성공");
+            return conn;
         } catch (java.sql.SQLException e) {
             System.out.println("DB 연결 실패: " + e.getMessage());
+            return null;
+        } catch (ClassNotFoundException e) {
+            System.out.println("JDBC 드라이버 로드 실패: " + e.getMessage());
             return null;
         }
     }

@@ -33,5 +33,9 @@
 <hr />
 <a href="prodBinding" > 6. Product Binding</a ><br />
 <hr />
+<a href="memSelectView" > 7. Member Select</a ><br />
+<hr />
+<a href="prdSelect" > 8. Product Select</a ><br />
+<hr />
 </body >
 </html >

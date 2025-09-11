@@ -16,3 +16,14 @@ a {
 a:hover {
     text-decoration: underline !important;
 }
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+th,
+td {
+    padding: 4px 8px;
+}
