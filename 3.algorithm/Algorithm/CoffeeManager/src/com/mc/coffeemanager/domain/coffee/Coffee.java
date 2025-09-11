@@ -57,7 +57,6 @@ public class Coffee {
                 System.out.println("system : Successfully purchased to secure safety stock.");
                 return;
             }
-            ;
 
             System.out.println("system : Failed to purchase to secure safety stock.");
         }
