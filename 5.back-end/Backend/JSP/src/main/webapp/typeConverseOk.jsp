@@ -6,9 +6,9 @@
 <meta charset="UTF-8">
 <title>사각형의 넓이는?!</title>
 </head>
-<body>	
-	
-	
+<body>
+
+
 	사각형의 넓이는 입니다.
 </body>
 </html>
