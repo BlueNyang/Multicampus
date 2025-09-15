@@ -28,8 +28,7 @@ public class MergeSort {
         int[] left = mergeSort(Arrays.copyOfRange(arr, 0, mid));
         int[] right = mergeSort(Arrays.copyOfRange(arr, mid, arr.length));
 
-        int[] res = merge(left, right);
-        return res;
+        return merge(left, right);
     }
 
     private static int[] merge(int[] a, int[] b) {

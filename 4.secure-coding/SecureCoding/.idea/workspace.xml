@@ -11,61 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8af5995d-9027-4f26-b2e5-1ffc4a5ee2f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/java/kr/bluenyang/practice/jsp/HelloServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/bottom.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/bottom2.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/fail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/forForm.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/forResult.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/includeAction1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/includeAction2.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/join.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/joinOk.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/joinOk2.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/jsp_include.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/jsp_include2.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/loginForwardResult.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/loginOk.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/loginParamResult.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/login_forward.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/login_param.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/memberForm.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/method.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/newMemberOk.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/newStudentOk.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/pass.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/request.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/response.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/responseOk.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/responseOk2.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/start.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/studentBean.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/studentForm.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/top.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/top2.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/typeConverse.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/typeConverseOk.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/typeConversion.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/typeConversionOk.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../5.back-end/Backend/JSP/src/main/webapp/variable.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/dictionaries/project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../5.back-end/Backend/.idea/prettier.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../5.back-end/Backend/Servlet/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f1cfbff5-2460-4d6a-af8e-e6e3add52eb7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f1cfbff5-2460-4d6a-af8e-e6e3add52eb7.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -431,6 +377,7 @@
       <workItem from="1757392617967" duration="73000" />
       <workItem from="1757408320042" duration="1000" />
       <workItem from="1757559996786" duration="1402000" />
+      <workItem from="1757791360075" duration="325000" />
     </task>
     <servers />
   </component>
