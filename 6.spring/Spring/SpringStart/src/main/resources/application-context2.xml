@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="speaker" class="kr.bluenyang.practice.spring.di2_xml_constructor_ex.Speaker"/>
-    <bean id="tv" class="kr.bluenyang.practice.spring.di2_xml_constructor_ex.Tv">
+    <bean id="tv" class="kr.bluenyang.practice.spring.di2_xml_constructor_ex.TV">
         <constructor-arg ref="speaker"/>
     </bean>
 
