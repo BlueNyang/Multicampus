@@ -20,8 +20,6 @@
       <%= "Hello JSP!" %>
     </h1>
     <div class="container">
-      <a href="ex/main.jsp">Member Main</a>
-      <hr/>
       <a href="sec01/start.jsp">1.1. start.jsp</a><br/>
       <a href="sec01/variable.jsp">1.2. variable.jsp</a>
       <hr/>
@@ -66,6 +64,9 @@
       <hr/>
       <a href="sec13/fmt_format.jsp">13.1. fmt_format.jsp</a><br/>
       <a href="sec13/fn_functions.jsp">13.2. fn_functions.jsp</a><br/>
+      <hr/>
+      <a href="sec14/main.jsp">14. Member Main</a>
+      <hr/>
     </div>
   </body>
 </html>

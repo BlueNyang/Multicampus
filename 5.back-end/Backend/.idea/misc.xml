@@ -7,8 +7,9 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/Servlet/pom.xml" />
         <option value="$PROJECT_DIR$/JSP/pom.xml" />
+        <option value="$PROJECT_DIR$/Servlet/pom.xml" />
+        <option value="$PROJECT_DIR$/MemberControl/pom.xml" />
       </list>
     </option>
   </component>

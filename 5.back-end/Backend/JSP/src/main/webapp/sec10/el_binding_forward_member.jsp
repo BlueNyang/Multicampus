@@ -1,4 +1,4 @@
-<%@ page import="kr.bluenyang.practice.jsp.sec10.MemberVO"%>
+<%@ page import="kr.bluenyang.practice.jsp.sec14.domain.MemberVO"%>
 <%@ page import="java.time.LocalDate"%><%--
   Created by IntelliJ IDEA.
   User: xpsj20
@@ -15,7 +15,7 @@
   </head>
   <body>
     <%
-      MemberVO mem = new MemberVO("honggd", "1234", "홍길동", "hong@example.com");
+      MemberVO mem = new MemberVO("honggd", "1234", "홍길동", "hong@example.com", null);
       request.setAttribute("mem", mem);
     %>
     <jsp:forward page="el_binding_result_member.jsp"/>

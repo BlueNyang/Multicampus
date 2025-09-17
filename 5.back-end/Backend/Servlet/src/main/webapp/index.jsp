@@ -11,6 +11,8 @@
     </h1>
     <a onclick="goJsp()">JSP Project</a>
     <hr/>
+    <a onclick="goMemberControl()">Member Control</a>
+    <hr/>
     <a onclick="goWebGame()">WebGame Project</a>
     <hr/>
     <br/>
@@ -48,6 +50,10 @@
 
       function goWebGame() {
         location.href = "/WebGame";
+      }
+
+      function goMemberControl() {
+        location.href = "/MemberControl";
       }
     </script>
   </body>

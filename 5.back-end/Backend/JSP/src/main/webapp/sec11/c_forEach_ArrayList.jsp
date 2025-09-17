@@ -1,4 +1,4 @@
-<%@ page import="kr.bluenyang.practice.jsp.sec10.MemberVO"%>
+<%@ page import="kr.bluenyang.practice.jsp.sec14.domain.MemberVO"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%><%--
   Created by IntelliJ IDEA.
@@ -9,9 +9,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%
-  MemberVO m1 = new MemberVO("john", "1234", "John Doe", "jd@example.com");
-  MemberVO m2 = new MemberVO("jane", "5678", "Jane Smith", "js@example.com");
-  MemberVO m3 = new MemberVO("alice", "abcd", "Alice Johnson", "aj@example.com");
+  MemberVO m1 = new MemberVO("john", "1234", "John Doe", "jd@example.com", null);
+  MemberVO m2 = new MemberVO("jane", "5678", "Jane Smith", "js@example.com", null);
+  MemberVO m3 = new MemberVO("alice", "abcd", "Alice Johnson", "aj@example.com", null);
 
   List<MemberVO> memberList = new ArrayList<>();
   memberList.add(m1);

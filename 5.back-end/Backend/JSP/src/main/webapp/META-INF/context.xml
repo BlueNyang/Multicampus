@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Context>
+    <Resource name="jdbc/OracleXE"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxTotal="20"
+              maxIdle="10"
+              maxWaitMillis="-1"
+              username="${DB_USERNAME}"
+              password="${DB_PASSWORD}"
+              driverClassName="${DB_DRIVER}"
+              url="${DB_URL}"
+    />
+</Context>

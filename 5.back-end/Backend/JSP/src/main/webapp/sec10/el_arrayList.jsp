@@ -1,4 +1,4 @@
-<%@ page import="kr.bluenyang.practice.jsp.sec10.MemberVO"%><%--
+<%@ page import="kr.bluenyang.practice.jsp.sec14.domain.MemberVO"%><%--
   Created by IntelliJ IDEA.
   User: xpsj20
   Date: 15/09/2025
@@ -19,8 +19,8 @@
     <jsp:useBean id="member" class="kr.bluenyang.practice.jsp.sec09.MemberBean"/>
     <jsp:useBean id="membersList" class="java.util.ArrayList"/>
     <%
-      MemberVO mem1 = new MemberVO("honggd", "1234", "홍길동", "hong@example.com");
-      MemberVO mem2 = new MemberVO("sonhm", "5678", "손흥민", "son@example.com");
+      MemberVO mem1 = new MemberVO("honggd", "1234", "홍길동", "hong@example.com", null);
+      MemberVO mem2 = new MemberVO("sonhm", "5678", "손흥민", "son@example.com", null);
 
       membersList.add(mem1);
       membersList.add(mem2);
