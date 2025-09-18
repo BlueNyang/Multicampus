@@ -9,6 +9,6 @@
 >
     <context:annotation-config/>
 
-    <context:component-scan base-package="kr.bluenyang.practice.spring.sec04_annotation_autowired"/>
+    <context:component-scan base-package="kr.bluenyang.practice.spring.sec04_annotation_component"/>
 
 </beans>
