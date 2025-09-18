@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="SpringMvcBasic" />
         <module name="springstart" />
       </profile>
     </annotationProcessing>
@@ -16,8 +17,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SpringMvcBasic" options="-Xlint:all" />
       <module name="TestModule" options="" />
-      <module name="springstart" options="-Xlint:all" />
+      <module name="springstart" options="" />
       <module name="test" options="" />
     </option>
   </component>

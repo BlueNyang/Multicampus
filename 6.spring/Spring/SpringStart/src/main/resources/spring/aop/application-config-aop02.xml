@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="perfomanceAspect" class="kr.bluenyang.practice.aop.sec02.PerformanceAspect"/>
+
+    <bean id="circle" class="kr.bluenyang.practice.aop.sec02.Circle">
+        <property name="radius" value="3"/>
+    </bean>
+    <bean id="evaluation" class="kr.bluenyang.practice.aop.sec02.Evaluation">
+        <property name="korean" value="88"/>
+        <property name="english" value="90"/>
+        <property name="math" value="95"/>
+    </bean>
+
+    <aop:config>
+        <aop:aspect id="performanceAspect" ref="perfomanceAspect">
+            <aop:pointcut id="mesures" expression="within(kr.bluenyang.practice.aop.sec02.*)"/>
+            <aop:around pointcut-ref="mesures" method="measure"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
