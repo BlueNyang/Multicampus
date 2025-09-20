@@ -1,12 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Multicampus - WebGame</title>
-    <link rel="stylesheet" href="css/common.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="<c:url value='/resources/css/common.css'/>"/>
+    <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>"/>
   </head>
   <body>
     <div id="app">
@@ -14,11 +15,11 @@
         <div class="title">
           <div class="logo">
             <div class="icon">
-              <%@ include file="assets/controller.svg"%>
+              <img src="<c:url value="/resources/images/controller.svg"/>" alt="Controller Icon"/>
             </div>
             <h1>멀티캠퍼스 WebGame</h1>
             <div class="icon">
-              <%@ include file="assets/controller-outline.svg"%>
+              <img src="<c:url value="/resources/images/controller-outline.svg"/>" alt="Controller Outline Icon"/>
             </div>
           </div>
           <p>JAVA 풀스택 개발자 아카데미 6회차_안규태</p>
@@ -33,6 +34,6 @@
         </div>
       </div>
     </div>
-    <script src="js/app.js"></script>
+    <script src="<c:url value="/resources/js/app.js"/>"></script>
   </body>
 </html>

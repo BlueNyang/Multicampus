@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const numBaseballBtn = document.getElementById('numBaseballBtn');
 
   hangmanBtn.addEventListener('click', () => {
-    window.location.href = 'hangman/start';
+    window.location.href = '/WebGame2/hangman/start';
   });
 
   numBaseballBtn.addEventListener('click', () => {
-    window.location.href = 'num-baseball/start';
+    window.location.href = '/WebGame2/num-baseball/start';
   });
 })
