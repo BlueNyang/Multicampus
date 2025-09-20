@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<c:url value='/resources/css/common.css'/>"/>
     <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>"/>
-    <title>Error: 500</title>
+    <title>Error::500</title>
   </head>
   <body>
     <div id="app">
@@ -37,6 +37,5 @@
         </div>
       </div>
     </div>
-
   </body>
 </html>

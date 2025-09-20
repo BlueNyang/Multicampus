@@ -11,12 +11,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="core: workspace.xml">
+    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="refactor: 404 page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/hangman/HangmanGuessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/hangman/HangmanGuessServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/hangman/HangmanStartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/hangman/HangmanStartServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/HangmanGameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/HangmanGameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/wordgen/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/wordgen/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/wordgen/WordGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/wordgen/WordGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/err/error_500.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/err/error_500.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/hangman/play.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/hangman/play.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/js/hangmanApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/js/hangmanApp.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,6 +304,9 @@
       </set>
     </attachedChunks>
   </component>
+  <component name="StructureViewState">
+    <option name="selectedTab" value="JSP" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="" />
@@ -320,7 +329,7 @@
       <workItem from="1758366300059" duration="48000" />
       <workItem from="1758366388992" duration="1121000" />
       <workItem from="1758373422961" duration="4000" />
-      <workItem from="1758373745888" duration="19326000" />
+      <workItem from="1758373745888" duration="20164000" />
     </task>
     <task id="LOCAL-00001" summary="chore: webgame2">
       <option name="closed" value="true" />
@@ -354,7 +363,23 @@
       <option name="project" value="LOCAL" />
       <updated>1758393092855</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactor: enhancement logger">
+      <option name="closed" value="true" />
+      <created>1758393499830</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1758393499830</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactor: 404 page">
+      <option name="closed" value="true" />
+      <created>1758393742759</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1758393742759</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,11 +397,25 @@
     <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
     <option featureType="dependencySupport" implementationName="java:jakarta.faces:jakarta.faces-api" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore: webgame2" />
     <MESSAGE value="refactor: index page&#10;&#10;- Using Main Controller to redirect(dispatching) index.jsp because of the all of jsp pages were moved to WEB-INF/views" />
     <MESSAGE value="refactor: adjusted to MVC&#10;&#10;- Separate a few concepts with DTO/record&#10;- hangman/play.jsp is no longer using HangmanGame instance. THe HangmanGame class has been changed to &quot;Service&quot; and communication with views handling by controller" />
-    <MESSAGE value="core: workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="core: workspace.xml" />
+    <MESSAGE value="chore: workspace.xml" />
+    <MESSAGE value="chore: workspace.xml" />
+    <MESSAGE value="refactor: enhancement logger" />
+    <MESSAGE value="refactor: 404 page" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: 404 page" />
   </component>
 </project>

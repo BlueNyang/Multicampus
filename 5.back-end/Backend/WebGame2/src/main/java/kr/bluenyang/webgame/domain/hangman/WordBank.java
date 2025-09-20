@@ -1,4 +1,4 @@
-package kr.bluenyang.webgame.service.hangman.wordgen;
+package kr.bluenyang.webgame.domain.hangman;
 
 import java.util.*;
 
