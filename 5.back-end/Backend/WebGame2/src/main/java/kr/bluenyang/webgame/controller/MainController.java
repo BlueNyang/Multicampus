@@ -24,7 +24,12 @@ public class MainController extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.info("WebGame2 main page");
-        request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
-        log.info("Dispatched to index.jsp");
+        var dispatcher = request.getRequestDispatcher("/WEB-INF/views/index.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException | IOException e) {
+            log.error("Error forwarding to index.jsp", e);
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Internal server error");
+        }
     }
 }

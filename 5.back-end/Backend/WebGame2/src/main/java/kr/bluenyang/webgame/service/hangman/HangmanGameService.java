@@ -35,6 +35,7 @@ public class HangmanGameService {
     }
 
     public static HangmanGameInfo createNewGame() {
+        log.info("Creating a new Hangman game...");
         // Random word generator
         Word randomWord = WordGenerator.getRandomWord();
         String wordToGuess = randomWord.word();
@@ -59,7 +60,7 @@ public class HangmanGameService {
      * @return GuessResult (CORRECT, WRONG, ALREADY_USED, ALREADY_ENDED)
      */
     public HangmanGameResult guessLetter(char letter) {
-        log.info("Processing guess: {}", letter);
+        log.info("Guessing letter...");
         if (this.getGameStatus() != HangmanGameStatus.ONGOING) {
             log.info("The game has already ended.");
             return new HangmanGameResult(HangmanGuessResult.ALREADY_ENDED, hangmanDTO);
@@ -97,7 +98,6 @@ public class HangmanGameService {
 
         }
 
-        log.info("The player guessed correctly with letter '{}'.", letter);
         StringBuilder current = new StringBuilder(hangmanDTO.getCurrentWordState());
         for (int i = 0; i < wordToGuess.length(); i++) {
             if (wordToGuess.charAt(i) == letter) {
@@ -112,6 +112,7 @@ public class HangmanGameService {
             return new HangmanGameResult(HangmanGuessResult.CORRECT, hangmanDTO);
         }
 
+        log.info("The player guessed correctly.");
         return new HangmanGameResult(HangmanGuessResult.CORRECT, hangmanDTO);
     }
 

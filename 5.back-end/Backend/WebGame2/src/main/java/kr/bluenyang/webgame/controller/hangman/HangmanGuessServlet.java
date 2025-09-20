@@ -32,7 +32,6 @@ public class HangmanGuessServlet extends HttpServlet {
         } catch (Exception e) {
             log.error("Error forwarding to play.jsp", e);
         }
-        log.info("Forwarded to play.jsp");
     }
 
     /**
@@ -77,6 +76,5 @@ public class HangmanGuessServlet extends HttpServlet {
         } catch (Exception e) {
             log.error("Error redirecting to play.jsp", e);
         }
-        log.info("Redirected to play.jsp");
     }
 }

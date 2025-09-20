@@ -60,13 +60,11 @@ public class HangmanStartServlet extends HttpServlet {
 
         log.info("Hangman game dispatch to play.jsp");
         var dispatcher = request.getRequestDispatcher("/WEB-INF/views/hangman/play.jsp");
-        log.info("Dispatcher: {}", dispatcher);
         try {
             dispatcher.forward(request, response);
         } catch (Exception e) {
             log.error("Error during forwarding: {}", e.getMessage());
-            throw e; // Rethrow the exception after logging
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Internal server error");
         }
-        log.info("test");
     }
 }
