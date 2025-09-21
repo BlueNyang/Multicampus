@@ -16,11 +16,12 @@ public class NumberBaseballGameService {
 
     private final List<Integer> secretNumber;
     private final List<NumberBaseballTry> attempts;
-    private boolean isSolved = false;
+    private NumberBaseballStatus status;
 
-    public NumberBaseballGameService(List<Integer> secretNumber, List<NumberBaseballTry> attempts) {
+    public NumberBaseballGameService(List<Integer> secretNumber, List<NumberBaseballTry> attempts, NumberBaseballStatus status) {
         this.secretNumber = secretNumber;
         this.attempts = attempts;
+        this.status = status;
     }
 
     public static List<Integer> createNewGame(int length) {
@@ -41,20 +42,15 @@ public class NumberBaseballGameService {
      */
     public NumberBaseballGuessResult makeGuess(String guess) {
         log.info("Attempting to guess number baseball game...");
-        if (isSolved) {
+        if (status == NumberBaseballStatus.SOLVED) {
             System.out.println("Game already solved.");
-            return new NumberBaseballGuessResult(
-                    attempts,
-                    NumberBaseballStatus.SOLVED
-            );
+            return new NumberBaseballGuessResult(attempts, status);
         }
 
         if (guess.length() != secretNumber.size()) {
             log.info("Guess number length not equal to secret number.");
-            return new NumberBaseballGuessResult(
-                    attempts,
-                    NumberBaseballStatus.INVALID_LENGTH
-            );
+            status = NumberBaseballStatus.INVALID_LENGTH;
+            return new NumberBaseballGuessResult(attempts, status);
         }
 
         int strikes = 0;
@@ -62,11 +58,9 @@ public class NumberBaseballGameService {
 
         for (int i = 0; i < secretNumber.size(); i++) {
             if (guess.charAt(i) < '0' || guess.charAt(i) > '9') {
-                log.info("Invalid character in guess: " + guess.charAt(i) + " at index " + i);
-                return new NumberBaseballGuessResult(
-                        attempts,
-                        NumberBaseballStatus.INVALID_INPUT
-                );
+                log.info("Invalid character in guess: {} at index {}", guess.charAt(i), i);
+                status = NumberBaseballStatus.INVALID_INPUT;
+                return new NumberBaseballGuessResult(attempts, status);
             }
             int digit = Integer.parseInt(guess.charAt(i) + "");
 
@@ -78,20 +72,14 @@ public class NumberBaseballGameService {
         }
 
         log.info("Guess result - Strikes: {}, Balls: {}", strikes, balls);
-        attempts.add(new NumberBaseballTry(guess, strikes, balls));
+        attempts.addFirst(new NumberBaseballTry(guess, strikes, balls));
 
         if (strikes == secretNumber.size()) {
             log.info("Game solved!");
-            isSolved = true;
-            return new NumberBaseballGuessResult(
-                    attempts,
-                    NumberBaseballStatus.SOLVED
-            );
+            status = NumberBaseballStatus.SOLVED;
+            return new NumberBaseballGuessResult(attempts, status);
         }
-        
-        return new NumberBaseballGuessResult(
-                attempts,
-                NumberBaseballStatus.ONGOING
-        );
+
+        return new NumberBaseballGuessResult(attempts, status);
     }
 }

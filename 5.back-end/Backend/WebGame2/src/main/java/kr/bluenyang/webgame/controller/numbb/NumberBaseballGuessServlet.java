@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import kr.bluenyang.webgame.dto.numbb.NumberBaseballTry;
 import kr.bluenyang.webgame.service.numbb.NumberBaseballGameService;
+import kr.bluenyang.webgame.service.numbb.NumberBaseballStatus;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
@@ -49,6 +50,7 @@ public class NumberBaseballGuessServlet extends HttpServlet {
         var secret = (List<Integer>) session.getAttribute("secret");
         @SuppressWarnings("unchecked")
         var attempts = (List<NumberBaseballTry>) session.getAttribute("attempts");
+        var status = (NumberBaseballStatus) session.getAttribute("status");
 
         if (secret == null) {
             log.info("Secret number not found in session. Redirecting to start a new game.");
@@ -67,16 +69,17 @@ public class NumberBaseballGuessServlet extends HttpServlet {
         }
 
         log.info("Starting game service...");
-        var game = new NumberBaseballGameService(secret, attempts);
+        var game = new NumberBaseballGameService(secret, attempts, status);
 
         var result = game.makeGuess(guess);
 
         log.info("Setting attributes and redirecting...");
         // 결과를 속성으로 설정
-        session.setAttribute("result", result.status());
+        session.setAttribute("status", result.status());
 
         // 이미 객체가 있지만, 명시적으로 다시 설정
         session.setAttribute("attempts", result.attempts());
+        session.setAttribute("attemptCount", result.attempts().size());
 
         log.info("Redirecting to guess page...");
         response.sendRedirect(request.getContextPath() + "/num-baseball/guess");

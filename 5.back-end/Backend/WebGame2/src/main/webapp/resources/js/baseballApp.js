@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const resetBtn = document.getElementById("resetBtn");
 
   prevBtn.addEventListener("click", () => {
-    window.location.href = "/WebGame";
+    window.location.href = "/WebGame2";
   });
 
   resetBtn.addEventListener("click", () => {
-    window.location.href = "/WebGame/num-baseball/start";
+    window.location.href = "/WebGame2/num-baseball/start";
   });
 })

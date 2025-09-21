@@ -1,7 +1,9 @@
-<%@ page import="kr.bluenyang.practice.webgame.domain.numbb.NumberBaseballGame"%>
-<%@ page import="kr.bluenyang.practice.webgame.domain.numbb.NumberBaseballResult"%>
-<%@ page import="java.util.List"%>
-<%@ page import="kr.bluenyang.practice.webgame.domain.numbb.NumberBaseballStatus"%><%--
+<%--@elvariable id="attempts" type="java.util.List"--%>
+<%--@elvariable id="secret" type="java.util.List"--%>
+<%--@elvariable id="status" type="kr.bluenyang.webgame.service.numbb.NumberBaseballStatus"--%>
+<%--@elvariable id="statusList" type="java.util.Map"--%>
+<%--@elvariable id="attemptCount" type="java.lang.Integer"--%>
+<%--
   Created by IntelliJ IDEA.
   User: xpsj20
   Date: 12/09/2025
@@ -9,24 +11,21 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8"%>
-<%!
-  NumberBaseballGame game;
-  NumberBaseballStatus result;
-%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WebGame::NumberBaseball</title>
-    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/game.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/numbb.css"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/common.css"/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/game.css"/> "/>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/numbb.css"/>"/>
   </head>
   <body>
-    <%
+    <%--
       game = (NumberBaseballGame) session.getAttribute("game");
       result = (NumberBaseballStatus) session.getAttribute("result");
-    %>
+    --%>
     <div id="app">
       <div class="container">
         <div class="navbar">
@@ -48,7 +47,7 @@
           </div>
           <div class="input-section">
             <div class="input-container">
-              <form method="POST" action="guess">
+              <form method="POST" action="${pageContext.request.contextPath}/num-baseball/guess">
                 <label for="guessInput"></label>
                 <input
                    id="guessInput"
@@ -62,71 +61,68 @@
                 <input type="submit" id="guessBtn" class="guess-btn btn" value="Guess"/>
               </form>
             </div>
-            <p class="attempts">tries: <%=game.getAttempts()%>
+            <p class="attempts">tries: ${attempts.size()}
             </p>
           </div>
         </div>
-        <%
-          if (result != null) {
-            if (result == NumberBaseballStatus.INVALID_INPUT) {
-        %>
-        <div class="alert alert-warning">
-          Invalid input! Please enter a 5-digit number with all different digits.
-        </div>
-        <%
-        } else if (result == NumberBaseballStatus.INVALID_LENGTH) {
-        %>
-        <div class="alert alert-warning">
-          Invalid input! Please enter a 5-digit number.
-        </div>
-        <%
-        } else if (result == NumberBaseballStatus.SOLVED) {
-        %>
-        <div class="alert alert-success">
-          Congratulations! You've guessed the correct number: <%=game.getSecretNumber()%>
-        </div>
-        <%
-            }
-          }
-        %>
+        <c:choose>
+          <c:when test="${status == statusList.INVALID_INPUT}">
+
+            <div class="alert alert-warning">
+              Invalid input! Please enter a 5-digit number with all different digits.
+            </div>
+          </c:when>
+          <c:when test="${status == statusList.INVALID_LENGTH}">
+            <div class="alert alert-warning">
+              Invalid input! Please enter a 5-digit number.
+            </div>
+          </c:when>
+          <c:when test="${status == statusList.SOLVED}">
+            <div class="alert alert-success">
+              Congratulations! You've guessed the correct number: ${secret}
+            </div>
+          </c:when>
+          <c:otherwise>
+            <div></div>
+          </c:otherwise>
+        </c:choose>
         <div class="result-container">
           <div class="result-area">
             <h3 class="result-title">Result</h3>
             <div class="result-list">
-              <%
-                if (game.getAttempts() != 0) {
-                  int len = game.getAttempts();
-                  List<NumberBaseballResult> history = game.getResults();
-                  for (int i = len - 1; i >= 0; i--) {
-                    NumberBaseballResult r = history.get(i);
-                    String res = "";
-                    if (r.strikes() == 0 && r.balls() == 0) {
-                      res = "out";
-                    } else {
-                      if (r.strikes() > 0) {
-                        res += r.strikes() + "S ";
-                      }
-                      if (r.balls() > 0) {
-                        res += r.balls() + "B";
-                      }
-                    }
-              %>
-              <div class="result-item">
-                <div class="result-input">
-                  <span class="index badge"><%=i%></span>
-                  <span class="guess-number"><%=r.input()%></span>
-                </div>
-                <span class="result badge"><%=res%></span>
-              </div>
-              <%
-                  }
-                }
-              %>
+              <c:if test="${not empty attempts}">
+
+                <c:forEach var="attempt" items="${attempts}" varStatus="status">
+                  <div class="result-item">
+                    <div class="result-input">
+                      <span class="index badge">${attemptCount - status.index}</span>
+                      <span class="guess-number">
+                          ${attempt.input}
+                      </span>
+                    </div>
+                    <c:choose>
+                      <c:when test="${attempt.strikes == 0 && attempt.balls == 0}">
+                        <span class="result badge">out</span>
+                      </c:when>
+                      <c:otherwise>
+                          <span class="result badge">
+                            <c:if test="${attempt.strikes > 0}">
+                              ${attempt.strikes}S
+                            </c:if>
+                            <c:if test="${attempt.balls > 0}">
+                              ${attempt.balls}B
+                            </c:if>
+                          </span>
+                      </c:otherwise>
+                    </c:choose>
+                  </div>
+                </c:forEach>
+              </c:if>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="../js/baseballApp.js"></script>
+    <script src="<c:url value="/resources/js/baseballApp.js"/>"></script>
   </body>
 </html>

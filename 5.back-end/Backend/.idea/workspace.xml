@@ -11,11 +11,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="comment|rename: commenting and remove unused class and rename in wrong placed classes">
+    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="fix: remove Unused import statement">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/err/error_404.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/err/error_404.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/err/error_500.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/err/error_500.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/hangman/play.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/hangman/play.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/hangman/HangmanStartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/hangman/HangmanStartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/numbb/NumberBaseballGuessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/numbb/NumberBaseballGuessServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/numbb/NumberBaseballStartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/numbb/NumberBaseballStartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/numbb/NumberBaseballGameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/numbb/NumberBaseballGameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/META-INF/context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/num-baseball/play.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/num-baseball/play.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/js/baseballApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/js/baseballApp.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +88,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -100,7 +108,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Security Analysis" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -114,42 +122,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build WebGame.executor": "Run",
-    "Gradle.Build WebGame2.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.Tomcat 10.1.46.executor": "Run",
-    "Tomcat Server.Tomcat 11.0.11.executor": "Run",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Rebasing feat/WebGame2",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "W:/MyWorks/JAVA_Dev_Full-Stack-Academy/5.back-end/Backend/WebGame2/src/main/java/kr/bluenyang/webgame/controller",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.39655173",
-    "settings.editor.selected.configurable": "ssh.settings",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build WebGame.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build WebGame2.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.46.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Tomcat 11 Linux.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Tomcat 11.0.11.executor&quot;: &quot;Run&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/WebGame2&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;W:/MyWorks/JAVA_Dev_Full-Stack-Academy/5.back-end/Backend/WebGame2/src/main/java/kr/bluenyang/webgame/controller&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.39655173&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ssh.settings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "oracle"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;oracle&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\WebGame2\src\main\java\kr\bluenyang\webgame\controller" />
@@ -159,11 +168,11 @@
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\WebGame2\src\main\webapp\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/WebGame2/src/main/webapp" />
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\WebGame2\src\main\webapp\WEB-INF" />
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\WebGame\src\main\resources" />
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\MemberControl\src\main\webapp" />
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\MemberControl\src\main\webapp\err" />
-      <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\MemberControl\src\main\webapp\member" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -172,6 +181,7 @@
         <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
           <value>
             <map>
+              <entry key="Tomcat 11 Linux" value="STOPPED" />
               <entry key="Tomcat 11.0.11" value="STOPPED" />
             </map>
           </value>
@@ -528,7 +538,8 @@
       <workItem from="1758396081563" duration="58000" />
       <workItem from="1758396151937" duration="24000" />
       <workItem from="1758396187842" duration="919000" />
-      <workItem from="1758427263216" duration="2478000" />
+      <workItem from="1758427263216" duration="4655000" />
+      <workItem from="1758431942598" duration="3964000" />
     </task>
     <task id="LOCAL-00001" summary="chore: webgame2">
       <option name="closed" value="true" />
@@ -586,15 +597,31 @@
       <option name="project" value="LOCAL" />
       <updated>1758394380301</updated>
     </task>
-    <task id="LOCAL-00008" summary="fix: remove Unused import statement&#10;&#10;# Conflicts:&#10;#&#9;5.back-end/Backend/.idea/workspace.xml">
+    <task id="LOCAL-00008" summary="refactor: adjust to MVC for number baseball game service">
       <option name="closed" value="true" />
-      <created>1758451232010</created>
+      <created>1758429933100</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1758451232010</updated>
+      <updated>1758429933100</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix: remove Unused import statement">
+      <option name="closed" value="true" />
+      <created>1758430030768</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1758430030768</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix: remove Unused import statement">
+      <option name="closed" value="true" />
+      <created>1758430070154</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1758430070154</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +659,9 @@
     <MESSAGE value="refactor: enhancement logger" />
     <MESSAGE value="refactor: 404 page" />
     <MESSAGE value="comment|rename: commenting and remove unused class and rename in wrong placed classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="comment|rename: commenting and remove unused class and rename in wrong placed classes" />
+    <MESSAGE value="refactor: adjust to MVC for number baseball game service" />
+    <MESSAGE value="fix: remove Unused import statement" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: remove Unused import statement" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

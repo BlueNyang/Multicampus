@@ -39,6 +39,7 @@ public class HangmanStartServlet extends HttpServlet {
 
         log.info("Hangman game start");
         var gameInfo = HangmanGameService.createNewGame();
+        log.info("New game created successfully");
 
         // Enum은 jstl에서 바로 사용이 안되므로, Map으로 변환
         var statuses = new HashMap<String, HangmanGameStatus>();
