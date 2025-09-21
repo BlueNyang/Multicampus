@@ -11,40 +11,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="refactor: singleton to listener">
-      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/model/SecretWordVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/model/NumberBaseballTryVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/main/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/hangman/HangmanGuessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/controller/HangmanGuessServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/hangman/HangmanStartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/controller/HangmanStartServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/numbb/NumberBaseballGuessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/controller/NumberBaseballGuessServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/numbb/NumberBaseballStartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/controller/NumberBaseballStartServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/user/UserLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/controller/UserLoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dao/user/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dao/user/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/dao/UserDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/domain/hangman/SecretWord.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/domain/hangman/WordBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/util/WordBank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/domain/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/hangman/HangmanDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/dto/HangmanDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/hangman/HangmanGameInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/dto/HangmanGameInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/hangman/HangmanGameResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/dto/HangmanGameResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/numbb/NumberBaseballGuessResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/dto/NumberBaseballGuessResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/numbb/NumberBaseballTry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/user/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/filter/EncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/filter/EncodingFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/listener/hangman/HangmanInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/listener/hangman/HangmanInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/listener/user/UserInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/listener/user/UserInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/HangmanGameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/service/HangmanGameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/HangmanGameServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/service/HangmanGameServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/HangmanGameStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/model/HangmanGameStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/HangmanGuessResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/model/HangmanGuessResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/wordgen/WordGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/util/WordGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/numbb/NumberBaseballGameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/service/NumberBaseballGameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/numbb/NumberBaseballStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/model/NumberBaseballStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/util/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/util/DBConnect.java" afterDir="false" />
+    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="refactor: Restructure packages by domain&#10;&#10;The previous package structure was organized by layer (controller, service, model... etc.)&#10;So, the files for single feature are scattered across multiple directories.&#10;&#10;- Grouped related components into their respective feature packages&#10;- Created a 'common' package for shared util, config, and features">
+      <change afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/listener/NumberBaseballInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/service/NumberBaseballGameServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/controller/UserRegisterServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/model/DAOResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/model/UserServiceResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/service/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/user/loginForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/user/registerForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/css/users.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/filter/EncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/filter/EncodingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/listener/hangman/HangmanInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/listener/HangmanInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/listener/user/UserInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/listener/UserInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/controller/HangmanGuessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/controller/HangmanGuessServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/controller/HangmanStartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/controller/HangmanStartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/service/HangmanGameServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/service/HangmanGameServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/controller/NumberBaseballGuessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/controller/NumberBaseballGuessServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/controller/NumberBaseballStartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/controller/NumberBaseballStartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/service/NumberBaseballGameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/service/NumberBaseballGameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/controller/UserLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/controller/UserLoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/dao/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/dao/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/hangman/play.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/hangman/play.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/num-baseball/play.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/num-baseball/play.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/css/game.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/css/game.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,11 +95,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Record" />
-        <option value="New Servlet" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="Enum" />
+        <option value="CSS File" />
+        <option value="Jsp File" />
+        <option value="New Servlet" />
       </list>
     </option>
   </component>
@@ -144,44 +144,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build WebGame.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build WebGame2.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.1.46.executor&quot;: &quot;Run&quot;,
-    &quot;Tomcat Server.Tomcat 11 Linux.executor&quot;: &quot;Run&quot;,
-    &quot;Tomcat Server.Tomcat 11.0.11.executor&quot;: &quot;Run&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat/WebGame2&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;W:/MyWorks/JAVA_Dev_Full-Stack-Academy/5.back-end/Backend/WebGame2/src/main/java/kr/bluenyang/webgame/controller&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.39655173&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ssh.settings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build WebGame.executor": "Run",
+    "Gradle.Build WebGame2.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 10.1.46.executor": "Run",
+    "Tomcat Server.Tomcat 11 Linux.executor": "Run",
+    "Tomcat Server.Tomcat 11.0.11.executor": "Run",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "feat/WebGame2",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "W:/MyWorks/JAVA_Dev_Full-Stack-Academy/5.back-end/Backend/WebGame2/src/main/java/kr/bluenyang/webgame/controller",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.39655173",
+    "settings.editor.selected.configurable": "ssh.settings",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;oracle&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "oracle"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\WebGame2\src\main\java\kr\bluenyang\webgame\controller" />
@@ -670,7 +671,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758460088171</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="refactor: Restructure packages by domain&#10;&#10;The previous package structure was organized by layer (controller, service, model... etc.)&#10;So, the files for single feature are scattered across multiple directories.&#10;&#10;- Grouped related components into their respective feature packages&#10;- Created a 'common' package for shared util, config, and features">
+      <option name="closed" value="true" />
+      <created>1758461843756</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1758461843756</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -713,7 +722,8 @@
     <MESSAGE value="refactor: number baseball mvc" />
     <MESSAGE value="feat: user login" />
     <MESSAGE value="refactor: singleton to listener" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: singleton to listener" />
+    <MESSAGE value="refactor: Restructure packages by domain&#10;&#10;The previous package structure was organized by layer (controller, service, model... etc.)&#10;So, the files for single feature are scattered across multiple directories.&#10;&#10;- Grouped related components into their respective feature packages&#10;- Created a 'common' package for shared util, config, and features" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: Restructure packages by domain&#10;&#10;The previous package structure was organized by layer (controller, service, model... etc.)&#10;So, the files for single feature are scattered across multiple directories.&#10;&#10;- Grouped related components into their respective feature packages&#10;- Created a 'common' package for shared util, config, and features" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

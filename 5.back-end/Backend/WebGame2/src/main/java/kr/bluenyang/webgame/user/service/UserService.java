@@ -1,16 +1,18 @@
 package kr.bluenyang.webgame.user.service;
 
-import kr.bluenyang.webgame.user.dao.UserDAOImpl;
 import kr.bluenyang.webgame.user.dto.UserDTO;
+import kr.bluenyang.webgame.user.model.UserServiceResult;
 
-public class UserService {
-    private final UserDAOImpl userDAO;
+import java.util.List;
 
-    public UserService(UserDAOImpl userDAO) {
-        this.userDAO = userDAO;
-    }
+public interface UserService {
+    UserDTO login(String username, String password);
 
-    public void registerUser(UserDTO userDto) {
+    UserServiceResult registerUser(UserDTO userDTO);
 
-    }
+    UserServiceResult updateUser(UserDTO userDTO);
+
+    UserServiceResult removeUser(String userId, String verifyPassword);
+
+    List<UserDTO> searchAllUsers();
 }

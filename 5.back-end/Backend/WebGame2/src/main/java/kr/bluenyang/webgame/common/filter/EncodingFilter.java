@@ -11,7 +11,6 @@ import java.io.IOException;
 public class EncodingFilter implements Filter {
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain fc) throws IOException, ServletException {
-        log.info("EncodingFilter...");
         req.setCharacterEncoding("UTF-8");
         fc.doFilter(req, res);
     }

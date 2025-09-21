@@ -1,5 +1,6 @@
 package kr.bluenyang.webgame.user.dao;
 
+import kr.bluenyang.webgame.user.model.DAOResult;
 import kr.bluenyang.webgame.user.model.User;
 
 import java.util.List;
@@ -29,23 +30,23 @@ public interface UserDAO {
      * Add a new user to the database.
      *
      * @param user the User object to add
-     * @return true if the user was added successfully, otherwise false
+     * @return DAOResult if the user was added successfully, otherwise false
      */
-    boolean addUser(User user);
+    DAOResult addUser(User user);
 
     /**
      * Update an existing user's information.
      *
      * @param user the User object with updated information
-     * @return true if the user was updated successfully, otherwise false
+     * @return DAOResult if the user was updated successfully, otherwise false
      */
-    boolean updateUser(User user);
+    DAOResult updateUser(User user);
 
     /**
      * Delete a user by their ID.
      *
      * @param userId the ID of the user to delete
-     * @return true if the user was deleted successfully, otherwise false
+     * @return DAOResult if the user was deleted successfully, otherwise false
      */
-    boolean deleteUser(String userId);
+    DAOResult deleteUser(String userId);
 }

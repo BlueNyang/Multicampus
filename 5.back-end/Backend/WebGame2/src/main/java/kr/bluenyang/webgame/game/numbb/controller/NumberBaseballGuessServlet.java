@@ -1,13 +1,14 @@
 package kr.bluenyang.webgame.game.numbb.controller;
 
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import kr.bluenyang.webgame.game.numbb.model.NumberBaseballStatus;
 import kr.bluenyang.webgame.game.numbb.model.NumberBaseballTryVo;
 import kr.bluenyang.webgame.game.numbb.service.NumberBaseballGameService;
-import kr.bluenyang.webgame.game.numbb.model.NumberBaseballStatus;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
@@ -20,6 +21,14 @@ import java.util.List;
 public class NumberBaseballGuessServlet extends HttpServlet {
     @Serial
     private static final long serialVersionUID = 1L;
+    private NumberBaseballGameService gameService;
+
+    @Override
+    public void init(ServletConfig cfg) throws ServletException {
+        super.init();
+        this.gameService = (NumberBaseballGameService) cfg.getServletContext().
+                getAttribute("numberBaseballGameService");
+    }
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -67,12 +76,10 @@ public class NumberBaseballGuessServlet extends HttpServlet {
         }
 
         log.info("Starting game service...");
-        var game = new NumberBaseballGameService(secret, attempts, status);
+        var result = this.gameService.makeGuess(secret, attempts, status, guess);
 
-        var result = game.makeGuess(guess);
-
-        log.info("Setting attributes and redirecting...");
         // 결과를 속성으로 설정
+        log.info("Setting attributes and redirecting...");
         session.setAttribute("status", result.status());
 
         // 이미 객체가 있지만, 명시적으로 다시 설정

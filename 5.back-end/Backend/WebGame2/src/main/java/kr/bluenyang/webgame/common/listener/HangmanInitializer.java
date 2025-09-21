@@ -1,4 +1,4 @@
-package kr.bluenyang.webgame.common.listener.hangman;
+package kr.bluenyang.webgame.common.listener;
 
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;

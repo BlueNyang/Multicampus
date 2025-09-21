@@ -1,6 +1,5 @@
 <%--@elvariable id="attempts" type="java.util.List"--%>
 <%--@elvariable id="secret" type="java.util.List"--%>
-<%--@elvariable id="status" type="kr.bluenyang.webgame.game.numbb.model.NumberBaseballStatus"--%>
 <%--@elvariable id="statusList" type="java.util.Map"--%>
 <%--@elvariable id="attemptCount" type="java.lang.Integer"--%>
 <%--
@@ -12,6 +11,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="status" value="${sessionScope.status}"/>
+<c:if test="${not empty status}">
+  <c:remove var="status" scope="session"/>
+</c:if>
 <html>
   <head>
     <meta charset="utf-8">
@@ -67,7 +70,6 @@
         </div>
         <c:choose>
           <c:when test="${status == statusList.INVALID_INPUT}">
-
             <div class="alert alert-warning">
               Invalid input! Please enter a 5-digit number with all different digits.
             </div>
@@ -91,7 +93,6 @@
             <h3 class="result-title">Result</h3>
             <div class="result-list">
               <c:if test="${not empty attempts}">
-
                 <c:forEach var="attempt" items="${attempts}" varStatus="status">
                   <div class="result-item">
                     <div class="result-input">

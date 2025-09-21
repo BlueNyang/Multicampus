@@ -16,29 +16,6 @@
     justify-content: space-between;
 }
 
-.btn {
-    background-color: #000;
-    color: #fff;
-    border: 1px solid #d0d0d0;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem 0;
-    font-weight: bold;
-}
-
-.btn:hover {
-    background-color: #555;
-}
-
-.prev {
-    background-color: #fff;
-    color: #000;
-}
-
-.prev:hover {
-    background-color: #f0f0f0;
-}
-
 .navbar > h1 {
     font-size: 1.5rem;
     font-weight: bold;
@@ -68,13 +45,13 @@
     border-radius: 0.5rem;
     box-sizing: border-box;
     background-color: #ececf0;
+    outline: none;
     transition: all 0.3s ease;
     padding: 0.5rem 1rem;
 }
 
 .guess-input:focus {
-    outline: none;
-    border: 0.2rem solid #a0a0a0;
+    outline: 0.2rem solid #a0a0a0;
 }
 
 .badge {
@@ -84,21 +61,4 @@
     padding: 0.25rem 0.75rem;
     font-size: 0.875rem;
     font-weight: bold;
-}
-
-.alert {
-    padding: 0.5rem 1.5rem;
-    border: 1px solid #d0d0d0;
-    border-radius: 0.75rem;
-    margin-block: 1rem;
-    font-weight: bold;
-    color: #fff;
-}
-
-.alert-warning {
-    background-color: #f55;
-}
-
-.alert-success {
-    background-color: #4caf50;
 }

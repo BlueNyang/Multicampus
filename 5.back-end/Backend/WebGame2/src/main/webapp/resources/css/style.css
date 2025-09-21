@@ -42,11 +42,16 @@
 
 .navbar {
     display: flex;
-    justify-content: end;
-    gap: 1rem;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
     border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .content {

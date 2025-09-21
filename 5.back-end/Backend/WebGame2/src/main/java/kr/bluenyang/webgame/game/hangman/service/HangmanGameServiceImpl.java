@@ -38,7 +38,7 @@ public class HangmanGameServiceImpl implements HangmanGameService {
      */
     @Override
     public HangmanGameInfo createNewGame() {
-        log.info("Creating a new Hangman game...");
+        log.info("HangmanGameServiceImpl.createNewGame - Creating a new Hangman game...");
         // Random word generator
         SecretWordVO secretWord = WordGenerator.getRandomWord();
 
@@ -65,15 +65,15 @@ public class HangmanGameServiceImpl implements HangmanGameService {
         var hangmanDTO = hangmanGameInfo.dto();
         var wordToGuess = hangmanGameInfo.secretWord().word();
 
-        log.info("Guessing letter...");
+        log.info("HangmanGameServiceImpl.guessLetter - Guessing letter...");
         if (this.getGameStatus(hangmanDTO, wordToGuess) != HangmanGameStatus.ONGOING) {
-            log.info("The game has already ended.");
+            log.info("HangmanGameServiceImpl.guessLetter - The game has already ended.");
             return new HangmanGameResult(HangmanGuessResult.ALREADY_ENDED, hangmanDTO);
         }
 
         // 사용자 입력 유효성 검사
         if (letter < 'a' || letter > 'z') {
-            log.info("Invalid input: {}", letter);
+            log.info("HangmanGameServiceImpl.guessLetter - Invalid input: {}", letter);
             return new HangmanGameResult(HangmanGuessResult.INVALID_INPUT, hangmanDTO);
         }
 
@@ -81,7 +81,7 @@ public class HangmanGameServiceImpl implements HangmanGameService {
         Set<Character> usedLetters = hangmanDTO.getUsedLetters();
         letter = Character.toLowerCase(letter);
         if (usedLetters.contains(letter)) {
-            log.info("Letter '{}' has already been used.", letter);
+            log.info("HangmanGameServiceImpl.guessLetter - Letter '{}' has already been used.", letter);
             return new HangmanGameResult(HangmanGuessResult.ALREADY_USED, hangmanDTO);
         }
 
@@ -94,21 +94,21 @@ public class HangmanGameServiceImpl implements HangmanGameService {
         int chancesLeft = hangmanDTO.getChancesLeft();
         if (wordToGuess.indexOf(letter) == -1) {
             // 틀린 경우
-            log.info("Letter '{}' is not in the word.", letter);
+            log.info("HangmanGameServiceImpl.guessLetter - Letter '{}' is not in the word.", letter);
             // 화면의 행맨 그림 업데이트
             hangmanDTO.setHangmanVisual(HANGMAN_STAGES.get(--chancesLeft));
             hangmanDTO.setChancesLeft(chancesLeft);
 
             // 더이상 기회가 없는지 확인
             if (this.getGameStatus(hangmanDTO, wordToGuess) == HangmanGameStatus.LOST) {
-                log.info("The player has lost the game.");
+                log.info("HangmanGameServiceImpl.guessLetter - The player has lost the game.");
                 hangmanDTO.setHangmanGameStatus(HangmanGameStatus.LOST);
                 hangmanDTO.setCurrentWordState(wordToGuess);
                 return new HangmanGameResult(HangmanGuessResult.WRONG, hangmanDTO);
 
             }
             // 남은 기회가 있으면 계속 진행
-            log.info("Decreasing chances left.");
+            log.info("HangmanGameServiceImpl.guessLetter - Decreasing chances left.");
             return new HangmanGameResult(HangmanGuessResult.WRONG, hangmanDTO);
 
         }
@@ -126,13 +126,13 @@ public class HangmanGameServiceImpl implements HangmanGameService {
         hangmanDTO.setCurrentWordState(current.toString());
         // 게임이 끝났는지 확인
         if (this.getGameStatus(hangmanDTO, wordToGuess) == HangmanGameStatus.WON) {
-            log.info("The player has won the game!");
+            log.info("HangmanGameServiceImpl.guessLetter - The player has won the game!");
             hangmanDTO.setHangmanGameStatus(HangmanGameStatus.WON);
             return new HangmanGameResult(HangmanGuessResult.CORRECT, hangmanDTO);
         }
 
         // 아직 게임이 끝나지 않았으면 계속 진행
-        log.info("The player guessed correctly.");
+        log.info("HangmanGameServiceImpl.guessLetter - The player guessed correctly.");
         return new HangmanGameResult(HangmanGuessResult.CORRECT, hangmanDTO);
     }
 

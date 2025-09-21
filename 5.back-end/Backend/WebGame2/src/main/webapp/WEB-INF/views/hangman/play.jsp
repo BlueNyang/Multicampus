@@ -1,6 +1,5 @@
 <%--@elvariable id="hangmanGame" type="kr.bluenyang.webgame.game.hangman.dto.HangmanDTO"--%>
 <%--@elvariable id="secretWord" type="kr.bluenyang.webgame.game.hangman.model.SecretWordVO"--%>
-<%--@elvariable id="result" type="kr.bluenyang.webgame.game.hangman.dto.HangmanGameResult"--%>
 <%--@elvariable id="statusList" type="java.uril.Map"--%>
 <%--@elvariable id="resultList" type="java.uril.Map"--%>
 <%--
@@ -12,6 +11,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="result" value="${sessionScope.result}"/>
+<c:if test="${not empty result}">
+  <c:remove var="result" scope="session"/>
+</c:if>
 <html>
   <head>
     <meta charset="utf-8">

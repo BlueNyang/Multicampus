@@ -52,9 +52,9 @@ public class HangmanStartServlet extends HttpServlet {
     }
 
     private void doProcess(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        log.info("Hangman game start");
+        log.info("HangmanStartServlet.doProcess - Hangman game start");
         var gameInfo = this.gameService.createNewGame();
-        log.info("New game created successfully");
+        log.info("HangmanStartServlet.doProcess - New game created successfully");
 
         // Enum은 jstl에서 바로 사용이 안되므로, Map으로 변환
         var statuses = new HashMap<String, HangmanGameStatus>();
@@ -68,7 +68,6 @@ public class HangmanStartServlet extends HttpServlet {
 
         // Session 객체
         var session = request.getSession();
-        log.info("Session ID: {}", session.getId());
 
         // 세션에 게임 정보와 단어, Enum 맵을 저장
         session.setAttribute("hangmanGame", gameInfo.dto());
@@ -76,13 +75,13 @@ public class HangmanStartServlet extends HttpServlet {
         session.setAttribute("statusList", statuses);
         session.setAttribute("resultList", resultList);
 
-        log.info("Hangman game dispatch to play.jsp");
+        log.info("HangmanStartServlet.doProcess - Hangman game dispatch to play.jsp");
         // 게임 플레이 페이지로 포워드
         var dispatcher = request.getRequestDispatcher("/WEB-INF/views/hangman/play.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (Exception e) {
-            log.error("Error during forwarding: {}", e.getMessage());
+            log.error("HangmanStartServlet.doProcess - Error during forwarding: {}", e.getMessage());
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Internal server error");
         }
     }

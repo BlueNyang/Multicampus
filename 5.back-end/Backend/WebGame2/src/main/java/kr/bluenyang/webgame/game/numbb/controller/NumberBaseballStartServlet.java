@@ -1,13 +1,14 @@
 package kr.bluenyang.webgame.game.numbb.controller;
 
 
+import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import kr.bluenyang.webgame.game.numbb.service.NumberBaseballGameService;
 import kr.bluenyang.webgame.game.numbb.model.NumberBaseballStatus;
+import kr.bluenyang.webgame.game.numbb.service.NumberBaseballGameService;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
@@ -19,6 +20,14 @@ import java.util.HashMap;
 public class NumberBaseballStartServlet extends HttpServlet {
     @Serial
     private static final long serialVersionUID = 1L;
+    private NumberBaseballGameService gameService;
+
+    @Override
+    public void init(ServletConfig cfg) throws ServletException {
+        super.init();
+        this.gameService = (NumberBaseballGameService) cfg.getServletContext().
+                getAttribute("numberBaseballGameService");
+    }
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,7 +50,7 @@ public class NumberBaseballStartServlet extends HttpServlet {
         var session = request.getSession();
 
         // create secret number
-        var secret = NumberBaseballGameService.createNewGame(5);
+        var secret = this.gameService.createNewGame(5);
         log.info("Secret number generated successfully");
 
         var statusList = new HashMap<String, NumberBaseballStatus>();
