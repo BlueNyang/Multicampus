@@ -1,50 +1,37 @@
 package kr.bluenyang.webgame.service.numbb;
 
+import kr.bluenyang.webgame.dto.numbb.NumberBaseballGuessResult;
+import kr.bluenyang.webgame.dto.numbb.NumberBaseballTry;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 /**
  * The NumberBaseballGame class
  */
+@Slf4j
 public class NumberBaseballGameService {
 
     private final List<Integer> secretNumber;
-    private final List<NumberBaseballResult> Attempts;
+    private final List<NumberBaseballTry> attempts;
     private boolean isSolved = false;
 
-    public NumberBaseballGameService() {
-        // Length of the secret number
-        int NUMBER_LENGTH = 5;
+    public NumberBaseballGameService(List<Integer> secretNumber, List<NumberBaseballTry> attempts) {
+        this.secretNumber = secretNumber;
+        this.attempts = attempts;
+    }
 
-        // Generate a random number with the specified length
-        int bound = (int) Math.pow(10, NUMBER_LENGTH - 1);
+    public static List<Integer> createNewGame(int length) {
+        log.info("Creating a new Number Baseball game...");
+        int bound = (int) Math.pow(10, length - 1);
         int randomNum = new Random().nextInt(bound, bound * 10);
-        this.secretNumber = String.valueOf(randomNum)
+        return String.valueOf(randomNum)
                 .chars()
                 .map(Character::getNumericValue)
                 .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
 
-        this.Attempts = new ArrayList<>();
-        System.out.println("Secret Number: " + Arrays.toString(secretNumber.toArray()));
-    }
-
-    // Getters
-    public int getAttempts() {
-        return Attempts.size();
-    }
-
-    public List<NumberBaseballResult> getResults() {
-        return Attempts;
-    }
-
-    public boolean isSolved() {
-        return isSolved;
-    }
-
-    public List<Integer> getSecretNumber() {
-        return secretNumber;
     }
 
     /**
@@ -52,14 +39,22 @@ public class NumberBaseballGameService {
      *
      * @param guess The player's guess
      */
-    public NumberBaseballStatus makeGuess(String guess) {
+    public NumberBaseballGuessResult makeGuess(String guess) {
+        log.info("Attempting to guess number baseball game...");
         if (isSolved) {
-            return NumberBaseballStatus.SOLVED;
+            System.out.println("Game already solved.");
+            return new NumberBaseballGuessResult(
+                    attempts,
+                    NumberBaseballStatus.SOLVED
+            );
         }
 
         if (guess.length() != secretNumber.size()) {
-            System.out.println("Invalid guess length: " + guess.length());
-            return NumberBaseballStatus.INVALID_LENGTH;
+            log.info("Guess number length not equal to secret number.");
+            return new NumberBaseballGuessResult(
+                    attempts,
+                    NumberBaseballStatus.INVALID_LENGTH
+            );
         }
 
         int strikes = 0;
@@ -67,8 +62,11 @@ public class NumberBaseballGameService {
 
         for (int i = 0; i < secretNumber.size(); i++) {
             if (guess.charAt(i) < '0' || guess.charAt(i) > '9') {
-                System.out.println("Invalid character in guess: " + guess.charAt(i));
-                return NumberBaseballStatus.INVALID_INPUT;
+                log.info("Invalid character in guess: " + guess.charAt(i) + " at index " + i);
+                return new NumberBaseballGuessResult(
+                        attempts,
+                        NumberBaseballStatus.INVALID_INPUT
+                );
             }
             int digit = Integer.parseInt(guess.charAt(i) + "");
 
@@ -79,15 +77,21 @@ public class NumberBaseballGameService {
             }
         }
 
-        System.out.println("Guess: " + guess + ", Strikes: " + strikes + ", Balls: " + balls);
-
-        Attempts.add(new NumberBaseballResult(guess, strikes, balls));
+        log.info("Guess result - Strikes: {}, Balls: {}", strikes, balls);
+        attempts.add(new NumberBaseballTry(guess, strikes, balls));
 
         if (strikes == secretNumber.size()) {
+            log.info("Game solved!");
             isSolved = true;
-            return NumberBaseballStatus.SOLVED;
+            return new NumberBaseballGuessResult(
+                    attempts,
+                    NumberBaseballStatus.SOLVED
+            );
         }
-
-        return NumberBaseballStatus.ONGOING;
+        
+        return new NumberBaseballGuessResult(
+                attempts,
+                NumberBaseballStatus.ONGOING
+        );
     }
 }
