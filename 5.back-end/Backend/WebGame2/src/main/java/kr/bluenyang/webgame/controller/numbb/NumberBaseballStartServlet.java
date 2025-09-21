@@ -6,12 +6,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import kr.bluenyang.webgame.dto.numbb.NumberBaseballTry;
 import kr.bluenyang.webgame.service.numbb.NumberBaseballGameService;
 
 import java.io.IOException;
 import java.io.Serial;
-import java.util.ArrayList;
 
 @WebServlet("/num-baseball/start")
 public class NumberBaseballStartServlet extends HttpServlet {
@@ -21,18 +19,18 @@ public class NumberBaseballStartServlet extends HttpServlet {
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         this.doProcess(request, response);
     }
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         this.doProcess(request, response);
     }
 
-    private void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void doProcess(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
         log("Start a Number Baseball Game");
 
@@ -44,6 +42,12 @@ public class NumberBaseballStartServlet extends HttpServlet {
 
         // store secret number in session
         session.setAttribute("secret", secret);
-        request.getRequestDispatcher("WEB-INF/views/num-baseball/play.jsp").forward(request, response);
+        var dispatcher = request.getRequestDispatcher("WEB-INF/views/num-baseball/play.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException | IOException e) {
+            log("Error forwarding to play.jsp: " + e.getMessage());
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An internal error occurred.");
+        }
     }
 }
