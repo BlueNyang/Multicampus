@@ -31,12 +31,8 @@ public class HangmanGameServiceImpl implements HangmanGameService {
     public HangmanGameServiceImpl() {
     }
 
-    /**
-     * Create a new Hangman game
-     *
-     * @return HangmanGameInfo (SecretWordVO, HangmanDTO)
-     */
     @Override
+    // game 데이터를 생성하고, info를 초기화하여 return
     public HangmanGameInfo createNewGame() {
         log.info("HangmanGameServiceImpl.createNewGame - Creating a new Hangman game...");
         // Random word generator
@@ -54,13 +50,8 @@ public class HangmanGameServiceImpl implements HangmanGameService {
         return new HangmanGameInfo(secretWord, hangmanDTO);
     }
 
-    /**
-     * Process a guessed letter
-     *
-     * @param letter The letter to guess
-     * @return GuessResult (CORRECT, WRONG, ALREADY_USED, ALREADY_ENDED)
-     */
     @Override
+    // 글자를 추측하고, 결과를 반환
     public HangmanGameResult guessLetter(HangmanGameInfo hangmanGameInfo, char letter) {
         var hangmanDTO = hangmanGameInfo.dto();
         var wordToGuess = hangmanGameInfo.secretWord().word();

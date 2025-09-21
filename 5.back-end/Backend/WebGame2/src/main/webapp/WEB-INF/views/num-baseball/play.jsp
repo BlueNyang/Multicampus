@@ -31,6 +31,7 @@
     --%>
     <div id="app">
       <div class="container">
+        <%--Navigation Bar--%>
         <div class="navbar">
           <button id="prevBtn" class="prev btn">
             &lt; Back
@@ -42,12 +43,14 @@
             New Game
           </button>
         </div>
+        <%-- 컨텐츠 --%>
         <div class="content">
           <div class="title-area">
             <div class="title">Guessing different 5-digit number</div>
             <p class="subtitle">When the same number is in the same position, it's a strike.</p>
             <p class="subtitle">When the same number is in a different position, it's a ball.</p>
           </div>
+          <%--숫자 입력--%>
           <div class="input-section">
             <div class="input-container">
               <form method="POST" action="${pageContext.request.contextPath}/num-baseball/guess">
@@ -64,10 +67,12 @@
                 <input type="submit" id="guessBtn" class="guess-btn btn" value="Guess"/>
               </form>
             </div>
+            <%-- 시도 횟수 표기--%>
             <p class="attempts">tries: ${attempts.size()}
             </p>
           </div>
         </div>
+        <%-- 상태 메시지 출력 --%>
         <c:choose>
           <c:when test="${status == statusList.INVALID_INPUT}">
             <div class="alert alert-warning">
@@ -88,14 +93,17 @@
             <div></div>
           </c:otherwise>
         </c:choose>
+        <%-- 시도한 목록 출력 --%>
         <div class="result-container">
           <div class="result-area">
             <h3 class="result-title">Result</h3>
             <div class="result-list">
               <c:if test="${not empty attempts}">
+                <%-- 역순으로 출력하기 위해 varStatus 사용 --%>
                 <c:forEach var="attempt" items="${attempts}" varStatus="status">
                   <div class="result-item">
                     <div class="result-input">
+                        <%-- index는 0부터 시작하므로, 시도 횟수에서 index를 빼서 표시 --%>
                       <span class="index badge">${attemptCount - status.index}</span>
                       <span class="guess-number">
                           ${attempt.input}
@@ -122,6 +130,7 @@
             </div>
           </div>
         </div>
+        <%-- result-container --%>
       </div>
     </div>
     <script src="<c:url value="/resources/js/baseballApp.js"/>"></script>

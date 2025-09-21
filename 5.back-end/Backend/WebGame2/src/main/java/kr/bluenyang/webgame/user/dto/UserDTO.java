@@ -6,6 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+// User 정보를 전달하기 위한 DTO 클래스
 public class UserDTO {
     private String userId;
     private String password;
@@ -19,6 +20,7 @@ public class UserDTO {
         this.userEmail = userEmail;
     }
 
+    // User Entity를 UserDTO로 변환하는 생성자
     public UserDTO(User user) {
         this.userId = user.userId();
         this.password = user.password();
@@ -26,6 +28,7 @@ public class UserDTO {
         this.userEmail = user.userEmail();
     }
 
+    // UserDTO를 User Entity로 변환하는 메서드
     public User toEntity() {
         return new User(userId, password, username, userEmail);
     }

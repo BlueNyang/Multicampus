@@ -51,6 +51,7 @@ public class HangmanStartServlet extends HttpServlet {
         this.doProcess(request, response);
     }
 
+    // GET, POST 공통 처리 메서드
     private void doProcess(HttpServletRequest request, HttpServletResponse response) throws IOException {
         log.info("HangmanStartServlet.doProcess - Hangman game start");
         var gameInfo = this.gameService.createNewGame();

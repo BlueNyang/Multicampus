@@ -25,21 +25,24 @@
           <p>JAVA 풀스택 개발자 아카데미 6회차_안규태</p>
         </div>
         <div class="navbar">
-          <div></div>
-          <div class="navbar-content">
-            <c:choose>
-              <c:when test="${empty sessionScope.user}">
-                <a href="<c:url value="/user/login"/>" class="nav-link">Login</a>
-                <a
-                   href="<c:url value='/user/register'/>" class="nav-link"
-                >Register</a>
-              </c:when>
-              <c:otherwise>
-                <span class="nav-user">Welcome, ${sessionScope.user.username}!</span>
-                <a href="<c:url value='${pageContext.request.contextPath}/user/logout'/>" class="nav-link">Logout</a>
-              </c:otherwise>
-            </c:choose>
-          </div>
+          <c:choose>
+            <c:when test="${empty sessionScope.user}">
+              <div></div>
+              <div class="navbar-content">
+                <a href="${pageContext.request.contextPath}/user/login" class="nav-link">Login</a>
+                <a href="${pageContext.request.contextPath}/user/register" class="nav-link">
+                  Register
+                </a>
+              </div>
+            </c:when>
+            <c:otherwise>
+              <span class="nav-user">Welcome, ${sessionScope.user.username}!</span>
+              <div class="navbar-content">
+                <a href="${pageContext.request.contextPath}/user/manage" class="nav-link">Edit</a>
+                <a href="${pageContext.request.contextPath}/user/logout" class="nav-link">Logout</a>
+              </div>
+            </c:otherwise>
+          </c:choose>
         </div>
         <div class="content">
           <button id="hangmanBtn" class="hangman-btn btn">

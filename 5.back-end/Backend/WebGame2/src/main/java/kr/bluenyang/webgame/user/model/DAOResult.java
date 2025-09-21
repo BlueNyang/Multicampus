@@ -1,5 +1,6 @@
 package kr.bluenyang.webgame.user.model;
 
+// Enum to represent the result of DAO operations
 public enum DAOResult {
     SUCCESS,
     FAILURE,

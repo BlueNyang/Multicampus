@@ -2,6 +2,7 @@ package kr.bluenyang.webgame.game.hangman.util;
 
 import kr.bluenyang.webgame.game.hangman.model.SecretWordVO;
 
+// WordGenerator class to generate a random word and its category
 public class WordGenerator {
     public static SecretWordVO getRandomWord() {
         WordBank wordBank = new WordBank();

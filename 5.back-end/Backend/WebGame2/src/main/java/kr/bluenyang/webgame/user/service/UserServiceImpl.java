@@ -30,63 +30,83 @@ public record UserServiceImpl(UserDAO dao) implements UserService {
 
     @Override
     public UserServiceResult registerUser(UserDTO userDTO) {
-        log.info("UserServiceImple.registerUser - userId: {}", userDTO.getUserId());
+        log.info("UserServiceImpl.registerUser - userId: {}", userDTO.getUserId());
         var result = dao.addUser(userDTO.toEntity());
 
         if (result == DAOResult.SUCCESS) {
-            log.info("UserServiceImple.registerUser - user successfully added: {}", userDTO.getUserId());
+            log.info("UserServiceImpl.registerUser - user successfully added: {}", userDTO.getUserId());
             return UserServiceResult.SUCCESS;
         } else if (result == DAOResult.DUPLICATED) {
-            log.info("UserServiceImple.registerUser - duplicated userId: {}", userDTO.getUserId());
+            log.info("UserServiceImpl.registerUser - duplicated userId: {}", userDTO.getUserId());
             return UserServiceResult.DUPLICATED;
         } else {
-            log.info("UserServiceImple.registerUser - failed to add user: {}", userDTO.getUserId());
+            log.info("UserServiceImpl.registerUser - failed to add user: {}", userDTO.getUserId());
             return UserServiceResult.FAIL;
         }
     }
 
     @Override
-    public UserServiceResult updateUser(UserDTO userDTO) {
-        log.info("UserServiceImple.updateUser - userId: {}", userDTO.getUserId());
+    public UserServiceResult updateUser(UserDTO userDTO, String verifyPassword) {
+        // First, verify the existing password
+        var existingUser = dao.findById(userDTO.getUserId());
+
+        // User 검색
+        if (existingUser == null) {
+            log.info("UserServiceImpl.updateUser - user not found: {}", userDTO.getUserId());
+            return UserServiceResult.NOT_FOUND;
+        }
+        // Password 검증
+        if (!existingUser.password().equals(verifyPassword)) {
+            log.info("UserServiceImpl.updateUser - invalid password for user: {}", userDTO.getUserId());
+            return UserServiceResult.INVALID_ID_OR_PASSWORD;
+        }
+
+        // Proceed to update user information
+        log.info("UserServiceImpl.updateUser - userId: {}", userDTO.getUserId());
         var result = dao.updateUser(userDTO.toEntity());
+
         if (result == DAOResult.SUCCESS) {
-            log.info("UserServiceImple.updateUser - user successfully updated: {}", userDTO.getUserId());
+            log.info("UserServiceImpl.updateUser - user successfully updated: {}", userDTO.getUserId());
             return UserServiceResult.SUCCESS;
         } else if (result == DAOResult.NOT_FOUND) {
-            log.info("UserServiceImple.updateUser - user not found: {}", userDTO.getUserId());
+            log.info("UserServiceImpl.updateUser - user not found: {}", userDTO.getUserId());
             return UserServiceResult.NOT_FOUND;
         } else {
-            log.info("UserServiceImple.updateUser - failed to update user: {}", userDTO.getUserId());
+            log.info("UserServiceImpl.updateUser - failed to update user: {}", userDTO.getUserId());
             return UserServiceResult.FAIL;
         }
     }
 
     @Override
     public UserServiceResult removeUser(String userId, String verifyPassword) {
-        log.info("UserServiceImple.removeUser - userId: {}", userId);
+        // First, verify the existing password
+        log.info("UserServiceImpl.removeUser - userId: {}", userId);
+        // User 검색
         var user = dao.findById(userId);
         if (user == null) {
-            log.info("UserServiceImple.removeUser - user not found: {}", userId);
+            log.info("UserServiceImpl.removeUser - user not found: {}", userId);
             return UserServiceResult.NOT_FOUND;
         }
+        // Password 검증
         if (!user.password().equals(verifyPassword)) {
-            log.info("UserServiceImple.removeUser - invalid password for user: {}", userId);
+            log.info("UserServiceImpl.removeUser - invalid password for user: {}", userId);
             return UserServiceResult.INVALID_ID_OR_PASSWORD;
         }
 
+        // Proceed to delete user
         var result = dao.deleteUser(userId);
         if (result == DAOResult.SUCCESS) {
-            log.info("UserServiceImple.removeUser - user successfully removed: {}", userId);
+            log.info("UserServiceImpl.removeUser - user successfully removed: {}", userId);
             return UserServiceResult.SUCCESS;
         } else {
-            log.info("UserServiceImple.removeUser - failed to remove user: {}", userId);
+            log.info("UserServiceImpl.removeUser - failed to remove user: {}", userId);
             return UserServiceResult.FAIL;
         }
     }
 
     @Override
     public List<UserDTO> searchAllUsers() {
-        log.info("UserServiceImple.searchAllUsers - fetching all users");
+        log.info("UserServiceImpl.searchAllUsers - fetching all users");
         var users = dao.findAll();
         return users.stream().map(UserDTO::new).toList();
     }

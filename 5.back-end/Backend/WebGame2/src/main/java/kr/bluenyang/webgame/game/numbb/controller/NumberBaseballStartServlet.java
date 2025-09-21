@@ -43,15 +43,18 @@ public class NumberBaseballStartServlet extends HttpServlet {
         this.doProcess(request, response);
     }
 
+    /**
+     * Process both GET and POST requests
+     */
     private void doProcess(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        log.info("Start a Number Baseball Game");
+        log.info("NumberBaseballStartServlet.doProcess - Start a Number Baseball Game");
 
         // 세션
         var session = request.getSession();
 
         // create secret number
         var secret = this.gameService.createNewGame(5);
-        log.info("Secret number generated successfully");
+        log.info("NumberBaseballStartServlet.doProcess - Secret number generated successfully");
 
         var statusList = new HashMap<String, NumberBaseballStatus>();
         for (var status : NumberBaseballStatus.values()) {
@@ -65,7 +68,7 @@ public class NumberBaseballStartServlet extends HttpServlet {
         try {
             dispatcher.forward(request, response);
         } catch (ServletException | IOException e) {
-            log.error("Error forwarding to play.jsp: {}", e.getMessage());
+            log.error("NumberBaseballStartServlet.doProcess - Error forwarding to play.jsp: {}", e.getMessage());
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "An internal error occurred.");
         }
     }

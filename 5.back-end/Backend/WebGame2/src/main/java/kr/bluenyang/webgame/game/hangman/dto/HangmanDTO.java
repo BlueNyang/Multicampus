@@ -8,6 +8,7 @@ import java.util.Set;
 
 @Setter
 @Getter
+// View Layer에서 나타낼 Data를 담는 DTO
 public class HangmanDTO {
     private String currentWordState;
     private Set<Character> usedLetters;
