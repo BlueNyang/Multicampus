@@ -11,14 +11,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ApidogFastRequestProjectSetting.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.sync-conflict-20250921-190610-7WS3D36.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/user/UserLoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/css/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,9 +65,9 @@
       <list>
         <option value="Interface" />
         <option value="Jsp File" />
-        <option value="Record" />
-        <option value="Class" />
         <option value="New Servlet" />
+        <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -83,7 +76,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-    <option name="RESET_MODE" value="SOFT" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -103,7 +95,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="Security Analysis" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -128,7 +120,6 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Tomcat Server.Tomcat 10.1.46.executor": "Run",
-    "Tomcat Server.Tomcat 11 Linux.executor": "Run",
     "Tomcat Server.Tomcat 11.0.11.executor": "Run",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "feat/WebGame2",
@@ -136,16 +127,14 @@
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "W:/MyWorks/JAVA_Dev_Full-Stack-Academy/5.back-end/Backend/WebGame2/src/main/java/kr/bluenyang/webgame/controller",
     "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.39655173",
-    "settings.editor.selected.configurable": "ssh.settings",
+    "settings.editor.selected.configurable": "preferences.sourceCode.JAVA",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
   },
@@ -164,11 +153,11 @@
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\WebGame2\src\main\webapp\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/WebGame2/src/main/webapp" />
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\WebGame2\src\main\webapp\WEB-INF" />
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\WebGame\src\main\resources" />
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\MemberControl\src\main\webapp" />
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\MemberControl\src\main\webapp\err" />
+      <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\MemberControl\src\main\webapp\member" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -177,7 +166,6 @@
         <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
           <value>
             <map>
-              <entry key="Tomcat 11 Linux" value="STOPPED" />
               <entry key="Tomcat 11.0.11" value="STOPPED" />
             </map>
           </value>
@@ -185,120 +173,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 11 Linux">
-    <configuration name="Tomcat 11 Linux" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.11" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="COMMON_VM_ARGUMENTS" value="-DDB_DRIVER=oracle.jdbc.OracleDriver -DDB_URL=jdbc:oracle:thin:@//ssh.bluenyang.kr:31521/XEPDB1 -DDB_USERNAME=bluenyang -DDB_PASSWORD=07Wjstksora!1" />
-      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
-      <deployment>
-        <artifact name="Servlet:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/Servlet" />
-          </settings>
-        </artifact>
-        <artifact name="JSP:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/JSP" />
-          </settings>
-        </artifact>
-        <artifact name="MemberControl:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/MemberControl" />
-          </settings>
-        </artifact>
-        <artifact name="Gradle : kr.bluenyang.practice : WebGame-1.0-SNAPSHOT.war (exploded)">
-          <settings>
-            <option name="CONTEXT_PATH" value="/WebGame" />
-          </settings>
-        </artifact>
-        <artifact name="Gradle : kr.bluenyang.webgame : WebGame2-1.2.0.war (exploded)">
-          <settings>
-            <option name="CONTEXT_PATH" value="/WebGame2" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="cf9beced-cb02-43de-9248-3666208d2bcb" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="45947" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="Gradle : kr.bluenyang.practice : WebGame-1.0-SNAPSHOT.war (exploded)" />
-          <artifact name="Gradle : kr.bluenyang.webgame : WebGame2-1.2.0.war (exploded)" />
-          <artifact name="JSP:war exploded" />
-          <artifact name="MemberControl:war exploded" />
-          <artifact name="Servlet:war exploded" />
-        </option>
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Tomcat 11.0.11" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.11" ALTERNATIVE_JRE_ENABLED="false">
       <option name="COMMON_VM_ARGUMENTS" value="-DDB_DRIVER=oracle.jdbc.OracleDriver -DDB_URL=jdbc:oracle:thin:@//ssh.bluenyang.kr:31521/XEPDB1 -DDB_USERNAME=bluenyang -DDB_PASSWORD=07Wjstksora!1" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
@@ -412,87 +287,6 @@
         </option>
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
-      <deployment />
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="21c9e7aa-faf3-459c-8bda-b1070a87efc7" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="45947" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Tomcat Server.Tomcat 11.0.11" />
-      <item itemvalue="Tomcat Server.Tomcat 11 Linux" />
-    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -504,9 +298,6 @@
   </component>
   <component name="StructureViewState">
     <option name="selectedTab" value="JSP" />
-  </component>
-  <component name="SvnConfiguration">
-    <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -530,14 +321,7 @@
       <workItem from="1758366300059" duration="48000" />
       <workItem from="1758366388992" duration="1121000" />
       <workItem from="1758373422961" duration="4000" />
-      <workItem from="1758373745888" duration="20725000" />
-      <workItem from="1758396081563" duration="58000" />
-      <workItem from="1758396151937" duration="24000" />
-      <workItem from="1758396187842" duration="919000" />
-      <workItem from="1758427263216" duration="4655000" />
-      <workItem from="1758431942598" duration="4887000" />
-      <workItem from="1758449547591" duration="285000" />
-      <workItem from="1758449853496" duration="739000" />
+      <workItem from="1758373745888" duration="20836000" />
     </task>
     <task id="LOCAL-00001" summary="chore: webgame2">
       <option name="closed" value="true" />
@@ -595,39 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758394380301</updated>
     </task>
-    <task id="LOCAL-00008" summary="refactor: adjust to MVC for number baseball game service">
+    <task id="LOCAL-00008" summary="fix: the warning messages">
       <option name="closed" value="true" />
-      <created>1758429933100</created>
+      <created>1758394907910</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1758429933100</updated>
+      <updated>1758394907910</updated>
     </task>
-    <task id="LOCAL-00009" summary="fix: remove Unused import statement">
-      <option name="closed" value="true" />
-      <created>1758430030768</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1758430030768</updated>
-    </task>
-    <task id="LOCAL-00010" summary="fix: remove Unused import statement">
-      <option name="closed" value="true" />
-      <created>1758430070154</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1758430070154</updated>
-    </task>
-    <task id="LOCAL-00011" summary="refactor: number baseball mvc">
-      <option name="closed" value="true" />
-      <created>1758448222637</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1758448222637</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,13 +425,7 @@
     <MESSAGE value="refactor: enhancement logger" />
     <MESSAGE value="refactor: 404 page" />
     <MESSAGE value="comment|rename: commenting and remove unused class and rename in wrong placed classes" />
-    <MESSAGE value="refactor: adjust to MVC for number baseball game service" />
-    <MESSAGE value="fix: remove Unused import statement" />
-    <MESSAGE value="refactor: number baseball mvc" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: number baseball mvc" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="fix: the warning messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: the warning messages" />
   </component>
 </project>

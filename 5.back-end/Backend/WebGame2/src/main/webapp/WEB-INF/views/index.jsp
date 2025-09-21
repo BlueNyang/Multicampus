@@ -24,6 +24,18 @@
           </div>
           <p>JAVA 풀스택 개발자 아카데미 6회차_안규태</p>
         </div>
+        <div class="navbar">
+          <c:choose>
+            <c:when test="${empty sessionScope.user}">
+              <a href="<c:url value='${pageContext.request.contextPath}/user/login'/>" class="nav-link">Login</a>
+              <a href="<c:url value='${pageContext.request.contextPath}/user/register'/>" class="nav-link">Register</a>
+            </c:when>
+            <c:otherwise>
+              <span class="nav-user">Welcome, ${sessionScope.user.username}!</span>
+              <a href="<c:url value='${pageContext.request.contextPath}/user/logout'/>" class="nav-link">Logout</a>
+            </c:otherwise>
+          </c:choose>
+        </div>
         <div class="content">
           <button id="hangmanBtn" class="hangman-btn btn">
             Play Hangman
