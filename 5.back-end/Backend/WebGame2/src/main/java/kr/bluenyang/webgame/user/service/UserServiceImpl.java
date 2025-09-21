@@ -15,11 +15,18 @@ public record UserServiceImpl(UserDAO dao) implements UserService {
     public UserDTO login(String username, String password) {
         log.info("UserServiceImple.login - login for user: {}", username);
         var user = dao.findById(username);
+        log.info("UserServiceImple.login - userId: {}, password: {}, username: {}, userEmail: {}",
+                user != null ? user.userId() : "null",
+                user != null ? user.password() : "null",
+                user != null ? user.username() : "null",
+                user != null ? user.userEmail() : "null"
+        );
+        log.info("UserServiceImpl.login - password input: {}", password);
         if (user == null) {
             log.info("UserServiceImpl.login - User not found: {}", username);
             return null;
         }
-        if (!user.password().equals(password)) {
+        if (!password.equals(user.password())) {
             log.info("UserServiceImpl.login - Invalid password for user: {}", username);
             return null;
         }

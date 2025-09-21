@@ -8,6 +8,13 @@
     <title>Multicampus - WebGame</title>
     <link rel="stylesheet" href="<c:url value='/resources/css/common.css'/>"/>
     <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>"/>
+    <%--message가 있으면 alert--%>
+    <c:if test="${not empty sessionScope.msg}">
+      <script>
+        alert("${sessionScope.msg}");
+      </script>
+      <c:remove var="msg" scope="session"/>
+    </c:if>
   </head>
   <body>
     <div id="app">

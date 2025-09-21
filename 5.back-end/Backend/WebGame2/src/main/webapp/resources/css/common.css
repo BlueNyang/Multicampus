@@ -40,6 +40,16 @@ a:hover {
     background-color: #f0f0f0 !important;
 }
 
+.warning {
+    background-color: #fff !important;
+    color: #f55 !important;
+}
+
+.warning:hover {
+    background-color: #f55 !important;
+    color: #fff !important;
+}
+
 .alert {
     padding: 0.5rem 1.5rem;
     border: 1px solid #d0d0d0;

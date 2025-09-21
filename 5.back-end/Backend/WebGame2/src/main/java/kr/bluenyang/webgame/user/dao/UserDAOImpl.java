@@ -96,7 +96,7 @@ public class UserDAOImpl implements UserDAO {
         DAOResult result;
         try {
             con = dbConnect.getConnection();
-            String sql = "INSERT INTO users VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO users (user_id, username, password, user_email) VALUES (?, ?, ?, ?)";
 
             ps = con.prepareStatement(sql);
             ps.setString(1, user.userId());
@@ -167,7 +167,7 @@ public class UserDAOImpl implements UserDAO {
     public DAOResult deleteUser(String userId) {
         // userId로 User 정보를 삭제
         log.info("UserDAO.deleteUser - Deleting user by ID: {}", userId);
-        DAOResult result = null;
+        DAOResult result;
         try {
             con = dbConnect.getConnection();
             String sql = "DELETE FROM users WHERE user_id = ?";

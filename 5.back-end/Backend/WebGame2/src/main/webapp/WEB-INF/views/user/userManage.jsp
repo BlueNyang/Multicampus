@@ -1,19 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
   User: xpsj20
-  Date: 21/09/2025
-  Time: 23:59
+  Date: 22/09/2025
+  Time: 02:06
   To change this template use File | Settings | File Templates.
 --%>
+<%--@elvariable id="user" type="kr.bluenyang.webgame.user.dto.UserDTO"--%>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="errorMessage" value="${sessionScope.errorMessage}"/>
-<c:set var="successMessage" value="${sessionScope.successMessage}"/>
 <c:if test="${not empty errorMessage}">
   <c:remove var="errorMessage" scope="session"/>
-</c:if>
-<c:if test="${not empty successMessage}">
-  <c:remove var="successMessage" scope="session"/>
 </c:if>
 <html>
   <head>
@@ -21,7 +18,7 @@
     <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>"/>
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
     <link rel="stylesheet" href="<c:url value="/resources/css/users.css"/>"/>
-    <title>Login</title>
+    <title>Management Profile</title>
   </head>
   <body>
     <div id="app">
@@ -38,7 +35,7 @@
           </div>
         </div>
         <div class="navbar">
-          <a href="${pageContext.request.contextPath}/" class="nav-link">return to index</a>
+          <a href="${pageContext.request.contextPath}" class="nav-link">return to index</a>
           <div></div>
         </div>
         <c:if test="${errorMessage != null}">
@@ -46,24 +43,31 @@
             <p>${errorMessage}</p>
           </div>
         </c:if>
-        <c:if test="${successMessage != null}">
-          <div class="alert alert-success">
-            <p>${successMessage}</p>
-          </div>
-        </c:if>
         <div class="content">
-          <form name="loginForm" method="post" action="${pageContext.request.contextPath}/user/login">
-            <div class="form-group">
+          <form name="loginForm" method="post" action="${pageContext.request.contextPath}/user/manage">
+            <div class="manage-form-group">
               <label for="userId">ID:</label>
-              <input type="text" id="userId" name="userId" required>
+              <input type="text" id="userId" name="userId" value="${user.userId}" required readonly/>
             </div>
-            <div class="form-group">
-              <label for="password">Password:</label>
-              <input type="password" id="password" name="password" required>
+            <div class="manage-form-group">
+              <label for="currentPassword">Current Password:</label>
+              <input type="password" id="currentPassword" name="currentPassword" required>
             </div>
-            <div class="form-btn-group">
-              <button type="submit" name="action" value="register" class="btn prev">Register</button>
-              <button type="submit" name="action" value="login" class="btn">Login</button>
+            <div class="manage-form-group">
+              <label for="password">Password to change (if needed):</label>
+              <input type="password" id="password" name="password">
+            </div>
+            <div class="manage-form-group">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" value="${user.username}">
+            </div>
+            <div class="manage-form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="userEmail" value="${user.userEmail}">
+            </div>
+            <div class="manage-form-btn-group">
+              <button type="submit" name="action" value="update" class="btn">Update</button>
+              <button type="submit" name="action" value="withdraw" class="btn warning">Withdraw</button>
             </div>
           </form>
         </div>

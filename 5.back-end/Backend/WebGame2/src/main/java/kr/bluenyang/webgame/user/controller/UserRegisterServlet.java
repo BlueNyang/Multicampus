@@ -1,11 +1,6 @@
 package kr.bluenyang.webgame.user.controller;
 
 
-import java.io.IOException;
-import java.io.Serial;
-
-import jakarta.servlet.Servlet;
-import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,6 +10,9 @@ import kr.bluenyang.webgame.user.dto.UserDTO;
 import kr.bluenyang.webgame.user.model.UserServiceResult;
 import kr.bluenyang.webgame.user.service.UserServiceImpl;
 import lombok.extern.slf4j.Slf4j;
+
+import java.io.IOException;
+import java.io.Serial;
 
 @Slf4j
 @WebServlet("/user/register")

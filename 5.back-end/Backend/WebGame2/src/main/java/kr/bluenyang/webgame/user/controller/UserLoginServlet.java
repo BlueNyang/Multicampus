@@ -6,7 +6,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import kr.bluenyang.webgame.user.model.UserServiceResult;
 import kr.bluenyang.webgame.user.service.UserServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 
@@ -50,6 +49,14 @@ public class UserLoginServlet extends HttpServlet {
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        var action = request.getParameter("action");
+        if ("register".equals(action)) {
+            // 회원가입 버튼을 눌렀을 때
+            log.info("UserLoginServlet.doPost - Redirecting to registration page");
+            response.sendRedirect(request.getContextPath() + "/user/register");
+            return;
+        }
+
         // 로그인 처리
         var userid = request.getParameter("userId");
         var password = request.getParameter("password");
