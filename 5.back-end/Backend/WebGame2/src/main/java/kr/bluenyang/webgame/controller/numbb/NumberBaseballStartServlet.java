@@ -35,7 +35,6 @@ public class NumberBaseballStartServlet extends HttpServlet {
     }
 
     private void doProcess(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.setCharacterEncoding("UTF-8");
         log.info("Start a Number Baseball Game");
 
         // 세션

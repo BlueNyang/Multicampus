@@ -2,6 +2,7 @@ package kr.bluenyang.webgame.domain.hangman;
 
 import java.util.*;
 
+// WordBank class to manage categories and words for a Hangman game
 public class WordBank {
 
     // Map for storing categories and their corresponding words

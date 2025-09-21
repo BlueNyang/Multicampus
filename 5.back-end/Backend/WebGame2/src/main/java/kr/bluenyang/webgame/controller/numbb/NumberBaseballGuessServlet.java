@@ -39,8 +39,6 @@ public class NumberBaseballGuessServlet extends HttpServlet {
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        request.setCharacterEncoding("UTF-8");
-
         log.info("Processing a guess in Number Baseball Game");
         // session object
         var session = request.getSession();
