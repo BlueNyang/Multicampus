@@ -1,0 +1,22 @@
+package kr.bluenyang.webgame.common.listener.user;
+
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletContextListener;
+import jakarta.servlet.annotation.WebListener;
+import kr.bluenyang.webgame.user.dao.UserDAOImpl;
+import kr.bluenyang.webgame.user.service.UserService;
+import kr.bluenyang.webgame.common.util.DBConnect;
+
+@WebListener
+public class UserInitializer implements ServletContextListener {
+
+    @Override
+    public void contextInitialized(jakarta.servlet.ServletContextEvent sce) {
+        DBConnect dbConnect = new DBConnect();
+        UserDAOImpl userDAO = new UserDAOImpl(dbConnect);
+        UserService userService = new UserService(userDAO);
+
+        ServletContext servletContext = sce.getServletContext();
+        servletContext.setAttribute("userService", userService);
+    }
+}

@@ -1,6 +1,6 @@
 <%--@elvariable id="attempts" type="java.util.List"--%>
 <%--@elvariable id="secret" type="java.util.List"--%>
-<%--@elvariable id="status" type="kr.bluenyang.webgame.service.numbb.NumberBaseballStatus"--%>
+<%--@elvariable id="status" type="kr.bluenyang.webgame.game.numbb.model.NumberBaseballStatus"--%>
 <%--@elvariable id="statusList" type="java.util.Map"--%>
 <%--@elvariable id="attemptCount" type="java.lang.Integer"--%>
 <%--

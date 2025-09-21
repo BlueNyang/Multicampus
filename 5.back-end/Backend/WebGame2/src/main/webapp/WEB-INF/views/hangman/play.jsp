@@ -1,6 +1,6 @@
-<%--@elvariable id="hangmanGame" type="kr.bluenyang.webgame.dto.hangman.HangmanDTO"--%>
-<%--@elvariable id="secretWord" type="kr.bluenyang.webgame.domain.hangman.SecretWord"--%>
-<%--@elvariable id="result" type="kr.bluenyang.webgame.dto.hangman.HangmanGameResult"--%>
+<%--@elvariable id="hangmanGame" type="kr.bluenyang.webgame.game.hangman.dto.HangmanDTO"--%>
+<%--@elvariable id="secretWord" type="kr.bluenyang.webgame.game.hangman.model.SecretWordVO"--%>
+<%--@elvariable id="result" type="kr.bluenyang.webgame.game.hangman.dto.HangmanGameResult"--%>
 <%--@elvariable id="statusList" type="java.uril.Map"--%>
 <%--@elvariable id="resultList" type="java.uril.Map"--%>
 <%--

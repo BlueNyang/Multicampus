@@ -11,27 +11,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dao/user/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dao/user/UserDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/domain/user/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/user/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/filter/EncodingFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/listener/hangman/HangmanInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/listener/user/UserInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/HangmanGameServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/user/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/util/DBConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/hangman/HangmanGuessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/hangman/HangmanGuessServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/hangman/HangmanStartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/hangman/HangmanStartServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/numbb/NumberBaseballGuessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/numbb/NumberBaseballGuessServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/numbb/NumberBaseballStartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/numbb/NumberBaseballStartServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/user/UserLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/user/UserLoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/domain/hangman/SecretWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/domain/hangman/SecretWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/domain/hangman/WordBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/domain/hangman/WordBank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/hangman/HangmanGameInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/hangman/HangmanGameInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/HangmanGameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/HangmanGameService.java" afterDir="false" />
+    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="refactor: singleton to listener">
+      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/model/SecretWordVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/model/NumberBaseballTryVo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/main/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/hangman/HangmanGuessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/controller/HangmanGuessServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/hangman/HangmanStartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/controller/HangmanStartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/numbb/NumberBaseballGuessServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/controller/NumberBaseballGuessServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/numbb/NumberBaseballStartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/controller/NumberBaseballStartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/controller/user/UserLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/controller/UserLoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dao/user/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dao/user/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/dao/UserDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/domain/hangman/SecretWord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/domain/hangman/WordBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/util/WordBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/domain/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/hangman/HangmanDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/dto/HangmanDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/hangman/HangmanGameInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/dto/HangmanGameInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/hangman/HangmanGameResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/dto/HangmanGameResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/numbb/NumberBaseballGuessResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/dto/NumberBaseballGuessResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/numbb/NumberBaseballTry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/dto/user/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/filter/EncodingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/filter/EncodingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/listener/hangman/HangmanInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/listener/hangman/HangmanInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/listener/user/UserInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/listener/user/UserInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/HangmanGameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/service/HangmanGameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/HangmanGameServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/service/HangmanGameServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/HangmanGameStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/model/HangmanGameStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/HangmanGuessResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/model/HangmanGuessResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/hangman/wordgen/WordGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/hangman/util/WordGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/numbb/NumberBaseballGameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/service/NumberBaseballGameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/numbb/NumberBaseballStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/game/numbb/model/NumberBaseballStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/service/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/util/DBConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/util/DBConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/hangman/play.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/hangman/play.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/num-baseball/play.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/num-baseball/play.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -641,7 +654,23 @@
       <option name="project" value="LOCAL" />
       <updated>1758448222637</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: user login">
+      <option name="closed" value="true" />
+      <created>1758460073191</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1758460073191</updated>
+    </task>
+    <task id="LOCAL-00013" summary="refactor: singleton to listener">
+      <option name="closed" value="true" />
+      <created>1758460088171</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1758460088171</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -682,7 +711,9 @@
     <MESSAGE value="refactor: adjust to MVC for number baseball game service" />
     <MESSAGE value="fix: remove Unused import statement" />
     <MESSAGE value="refactor: number baseball mvc" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: number baseball mvc" />
+    <MESSAGE value="feat: user login" />
+    <MESSAGE value="refactor: singleton to listener" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: singleton to listener" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
