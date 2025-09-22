@@ -11,11 +11,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="feat: update, withdraw user">
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" />
+    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="comment: add comment, remove Unused import">
+      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/js/userManage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cf33ccc3-b7fa-489c-9512-cde905c090c9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cf33ccc3-b7fa-489c-9512-cde905c090c9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/controller/UserLogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/controller/UserLogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/controller/UserManageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/controller/UserManageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/listener/UserInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/listener/UserInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/user/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/user/loginForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/user/userManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/user/userManage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,9 +77,9 @@
         <option value="Interface" />
         <option value="Enum" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="New Servlet" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -117,45 +122,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build WebGame.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build WebGame2.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.1.46.executor&quot;: &quot;Run&quot;,
-    &quot;Tomcat Server.Tomcat 11 Linux.executor&quot;: &quot;Run&quot;,
-    &quot;Tomcat Server.Tomcat 11.0.11.executor&quot;: &quot;Run&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat/WebGame2&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;W:/MyWorks/JAVA_Dev_Full-Stack-Academy/5.back-end/Backend/WebGame2/src/main/java/kr/bluenyang/webgame/controller&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.39655173&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ssh.settings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build WebGame.executor": "Run",
+    "Gradle.Build WebGame2.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 10.1.46.executor": "Run",
+    "Tomcat Server.Tomcat 11 Linux.executor": "Run",
+    "Tomcat Server.Tomcat 11.0.11-WebGame2.executor": "Run",
+    "Tomcat Server.Tomcat 11.0.11.executor": "Debug",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "feat/WebGame2",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "W:/MyWorks/JAVA_Dev_Full-Stack-Academy/5.back-end/Backend/WebGame2/src/main/java/kr/bluenyang/webgame/controller",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.39655173",
+    "settings.editor.selected.configurable": "ssh.settings",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;oracle&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "oracle"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\WebGame2\src\main\java\kr\bluenyang\webgame\controller" />
@@ -180,13 +186,14 @@
             <map>
               <entry key="Tomcat 11 Linux" value="STOPPED" />
               <entry key="Tomcat 11.0.11" value="STOPPED" />
+              <entry key="Tomcat 11.0.11-WebGame2" value="STOPPED" />
             </map>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 11.0.11">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 11.0.11-WebGame2">
     <configuration name="Tomcat 11 Linux" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.11" ALTERNATIVE_JRE_ENABLED="false">
       <option name="COMMON_VM_ARGUMENTS" value="-DDB_DRIVER=oracle.jdbc.OracleDriver -DDB_URL=jdbc:oracle:thin:@//ssh.bluenyang.kr:31521/XEPDB1 -DDB_USERNAME=bluenyang -DDB_PASSWORD=07Wjstksora!1" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
@@ -297,6 +304,95 @@
           <artifact name="JSP:war exploded" />
           <artifact name="MemberControl:war exploded" />
           <artifact name="Servlet:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="Tomcat 11.0.11-WebGame2" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.11" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="21">
+      <option name="COMMON_VM_ARGUMENTS" value="-DDB_DRIVER=oracle.jdbc.OracleDriver -DDB_URL=jdbc:oracle:thin:@//ssh.bluenyang.kr:31521/XEPDB1 -DDB_USERNAME=bluenyang -DDB_PASSWORD=07Wjstksora!1" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="Gradle : kr.bluenyang.webgame : WebGame2-1.2.0.war (exploded)">
+          <settings>
+            <option name="CONTEXT_PATH" value="/WebGame2" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="c97bf371-2b5f-4c1d-bd91-37de8b8b94bb" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="45947" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : kr.bluenyang.webgame : WebGame2-1.2.0.war (exploded)" />
         </option>
       </method>
     </configuration>
@@ -492,6 +588,7 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat Server.Tomcat 11.0.11" />
+      <item itemvalue="Tomcat Server.Tomcat 11.0.11-WebGame2" />
       <item itemvalue="Tomcat Server.Tomcat 11 Linux" />
     </list>
   </component>
@@ -540,7 +637,7 @@
       <workItem from="1758449547591" duration="285000" />
       <workItem from="1758449853496" duration="739000" />
       <workItem from="1758499268832" duration="493000" />
-      <workItem from="1758500010612" duration="530000" />
+      <workItem from="1758500010612" duration="9156000" />
     </task>
     <task id="LOCAL-00001" summary="chore: webgame2">
       <option name="closed" value="true" />
@@ -686,7 +783,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758481182948</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="comment: add comment, remove Unused import">
+      <option name="closed" value="true" />
+      <created>1758500672566</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1758500672566</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -734,7 +839,8 @@
     <MESSAGE value="comment: logging and add comment" />
     <MESSAGE value="choreL xml" />
     <MESSAGE value="feat: update, withdraw user" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update, withdraw user" />
+    <MESSAGE value="comment: add comment, remove Unused import" />
+    <option name="LAST_COMMIT_MESSAGE" value="comment: add comment, remove Unused import" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

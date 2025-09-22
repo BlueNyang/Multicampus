@@ -531,7 +531,7 @@
     <table id="105" parent="2" name="USERS">
       <CreatedTimestamp>2025-08-18.14:40:10</CreatedTimestamp>
       <DetailsLevel>2</DetailsLevel>
-      <ModifiedTimestamp>2025-08-18.14:40:10</ModifiedTimestamp>
+      <ModifiedTimestamp>2025-09-22.11:14:25</ModifiedTimestamp>
       <ObjectId>77141</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
@@ -1119,7 +1119,7 @@
     <column id="211" parent="105" name="PASSWORD">
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StoredType>VARCHAR2(30 byte)|0s</StoredType>
+      <StoredType>VARCHAR2(60 byte)|0s</StoredType>
     </column>
     <column id="212" parent="105" name="USER_EMAIL">
       <Position>4</Position>

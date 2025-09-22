@@ -5,28 +5,30 @@ import kr.bluenyang.webgame.user.dto.UserDTO;
 import kr.bluenyang.webgame.user.model.DAOResult;
 import kr.bluenyang.webgame.user.model.UserServiceResult;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.List;
 
 @Slf4j
-public record UserServiceImpl(UserDAO dao) implements UserService {
+public record UserServiceImpl(UserDAO dao, PasswordEncoder encoder) implements UserService {
 
     @Override
     public UserDTO login(String username, String password) {
         log.info("UserServiceImple.login - login for user: {}", username);
         var user = dao.findById(username);
+
         log.info("UserServiceImple.login - userId: {}, password: {}, username: {}, userEmail: {}",
                 user != null ? user.userId() : "null",
                 user != null ? user.password() : "null",
                 user != null ? user.username() : "null",
                 user != null ? user.userEmail() : "null"
         );
-        log.info("UserServiceImpl.login - password input: {}", password);
+
         if (user == null) {
             log.info("UserServiceImpl.login - User not found: {}", username);
             return null;
         }
-        if (!password.equals(user.password())) {
+        if (!encoder.matches(password, user.password())) {
             log.info("UserServiceImpl.login - Invalid password for user: {}", username);
             return null;
         }
@@ -38,6 +40,10 @@ public record UserServiceImpl(UserDAO dao) implements UserService {
     @Override
     public UserServiceResult registerUser(UserDTO userDTO) {
         log.info("UserServiceImpl.registerUser - userId: {}", userDTO.getUserId());
+        // 비밀번호 암호화 처리
+        userDTO.setPassword(encoder.encode(userDTO.getPassword()));
+
+        // 회원 추가 시도
         var result = dao.addUser(userDTO.toEntity());
 
         if (result == DAOResult.SUCCESS) {
@@ -54,8 +60,13 @@ public record UserServiceImpl(UserDAO dao) implements UserService {
 
     @Override
     public UserServiceResult updateUser(UserDTO userDTO, String verifyPassword) {
+        log.info("UserServiceImpl.updateUser - userId: {}", userDTO.getUserId());
+
         // First, verify the existing password
         var existingUser = dao.findById(userDTO.getUserId());
+
+        // Crypto
+        userDTO.setPassword(encoder.encode(userDTO.getPassword()));
 
         // User 검색
         if (existingUser == null) {
@@ -63,7 +74,7 @@ public record UserServiceImpl(UserDAO dao) implements UserService {
             return UserServiceResult.NOT_FOUND;
         }
         // Password 검증
-        if (!existingUser.password().equals(verifyPassword)) {
+        if (!encoder.matches(verifyPassword, existingUser.password())) {
             log.info("UserServiceImpl.updateUser - invalid password for user: {}", userDTO.getUserId());
             return UserServiceResult.INVALID_ID_OR_PASSWORD;
         }
@@ -88,6 +99,7 @@ public record UserServiceImpl(UserDAO dao) implements UserService {
     public UserServiceResult removeUser(String userId, String verifyPassword) {
         // First, verify the existing password
         log.info("UserServiceImpl.removeUser - userId: {}", userId);
+
         // User 검색
         var user = dao.findById(userId);
         if (user == null) {
@@ -95,7 +107,7 @@ public record UserServiceImpl(UserDAO dao) implements UserService {
             return UserServiceResult.NOT_FOUND;
         }
         // Password 검증
-        if (!user.password().equals(verifyPassword)) {
+        if (!encoder.matches(verifyPassword, user.password())) {
             log.info("UserServiceImpl.removeUser - invalid password for user: {}", userId);
             return UserServiceResult.INVALID_ID_OR_PASSWORD;
         }

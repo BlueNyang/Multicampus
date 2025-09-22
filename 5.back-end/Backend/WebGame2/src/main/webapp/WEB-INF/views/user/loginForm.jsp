@@ -55,15 +55,15 @@
           <form name="loginForm" method="post" action="${pageContext.request.contextPath}/user/login">
             <div class="form-group">
               <label for="userId">ID:</label>
-              <input type="text" id="userId" name="userId" required>
+              <input type="text" id="userId" name="userId">
             </div>
             <div class="form-group">
               <label for="password">Password:</label>
-              <input type="password" id="password" name="password" required>
+              <input type="password" id="password" name="password">
             </div>
             <div class="form-btn-group">
-              <button type="submit" name="action" value="register" class="btn prev">Register</button>
               <button type="submit" name="action" value="login" class="btn">Login</button>
+              <button type="submit" name="action" value="register" class="btn prev">Register</button>
             </div>
           </form>
         </div>
