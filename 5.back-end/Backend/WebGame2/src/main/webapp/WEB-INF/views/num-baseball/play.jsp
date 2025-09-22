@@ -37,7 +37,7 @@
             &lt; Back
           </button>
           <h1>
-            Hangman Game
+            Number Baseball Game
           </h1>
           <button id="resetBtn" class="reset btn">
             New Game
