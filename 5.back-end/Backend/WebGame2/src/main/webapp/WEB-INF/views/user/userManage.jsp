@@ -44,7 +44,7 @@
           </div>
         </c:if>
         <div class="content">
-          <form name="loginForm" method="post" action="${pageContext.request.contextPath}/user/manage">
+          <form name="manageForm" method="post" action="${pageContext.request.contextPath}/user/manage" id="manageForm">
             <div class="manage-form-group">
               <label for="userId">ID:</label>
               <input type="text" id="userId" name="userId" value="${user.userId}" required readonly/>
@@ -66,12 +66,16 @@
               <input type="email" id="email" name="userEmail" value="${user.userEmail}">
             </div>
             <div class="manage-form-btn-group">
-              <button type="submit" name="action" value="update" class="btn">Update</button>
-              <button type="submit" name="action" value="withdraw" class="btn warning">Withdraw</button>
+              <button type="submit" id="updateBtn" name="action" value="update" class="btn">Update</button>
+              <button
+                 type="submit" id="withdrawBtn" name="action" value="withdraw" class="btn warning"
+              >Withdraw
+              </button>
             </div>
           </form>
         </div>
       </div>
     </div>
+    <script src="<c:url value="/resources/js/userManage.js"/>"></script>
   </body>
 </html>
