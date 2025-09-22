@@ -1,7 +1,7 @@
 <%--@elvariable id="hangmanGame" type="kr.bluenyang.webgame.game.hangman.dto.HangmanDTO"--%>
 <%--@elvariable id="secretWord" type="kr.bluenyang.webgame.game.hangman.model.SecretWordVO"--%>
-<%--@elvariable id="statusList" type="java.uril.Map"--%>
-<%--@elvariable id="resultList" type="java.uril.Map"--%>
+<%--@elvariable id="statusList" type="java.util.Map"--%>
+<%--@elvariable id="resultList" type="java.util.Map"--%>
 <%--
   Created by IntelliJ IDEA.
   User: BlueNyang
