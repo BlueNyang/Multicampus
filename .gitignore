@@ -29,3 +29,12 @@ gradle-app.setting
 
 # Cache of project
 .gradletasknamecache
+
+**/.idea/
+**/.vscode/
+**/*.iml
+**/*.ipr
+**/*.iws
+
+**/out/
+**/target/
