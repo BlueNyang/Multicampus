@@ -15,6 +15,8 @@
     <hr/>
     <a onclick="goWebGame()">WebGame Project</a>
     <hr/>
+    <a onclick="goWebGame2()">WebGame Project2</a>
+    <hr/>
     <br/>
     <a href="FirstServlet">1. FirstServlet</a><br/>
     <a href="SecondServlet">1. SecondServlet</a><br/>
@@ -50,6 +52,10 @@
 
       function goWebGame() {
         location.href = "/WebGame";
+      }
+
+      function goWebGame2() {
+        location.href = "/WebGame2";
       }
 
       function goMemberControl() {

@@ -1,0 +1,75 @@
+.stage {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #ececf0;
+    text-align: center;
+}
+
+.current-word {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin-block: 0.5rem;
+}
+
+.current-container {
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 0.75rem;
+}
+
+.current-cat {
+    display: inline-block;
+    text-align: end;
+    font-size: 0.875rem;
+    color: #555;
+    margin: 0.25rem 0;
+    padding: 0;
+}
+
+.result-container {
+    text-align: center;
+    margin-block: 1rem;
+}
+
+.result-container > h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.result-container > p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.5rem 0;
+}
+
+.messagebox {
+    max-width: 42rem;
+    margin-inline: auto;
+    margin-block: 1.5rem
+}
+
+.message-content {
+    padding: 1.5rem;
+    border: 1px solid #d0d0d0;
+    border-radius: 0.75rem;
+}
+
+.message-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block: 1rem;
+}
+
+.message {
+    font-size: 1rem;
+}
+
+.used-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: start;
+}
