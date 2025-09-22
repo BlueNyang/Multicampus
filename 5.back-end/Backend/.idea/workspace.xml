@@ -11,10 +11,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="comment: logging and add comment">
-      <change beforePath="$PROJECT_DIR$/../../4.secure-coding/SecureCoding/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../4.secure-coding/SecureCoding/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../4.secure-coding/SecureCoding/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../4.secure-coding/SecureCoding/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="feat: update, withdraw user">
+      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/controller/UserLogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/controller/UserLogoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/controller/UserManageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/controller/UserManageServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,45 +117,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build WebGame.executor": "Run",
-    "Gradle.Build WebGame2.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.Tomcat 10.1.46.executor": "Run",
-    "Tomcat Server.Tomcat 11 Linux.executor": "Run",
-    "Tomcat Server.Tomcat 11.0.11.executor": "Run",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "feat/WebGame2",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "W:/MyWorks/JAVA_Dev_Full-Stack-Academy/5.back-end/Backend/WebGame2/src/main/java/kr/bluenyang/webgame/controller",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.39655173",
-    "settings.editor.selected.configurable": "ssh.settings",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build WebGame.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build WebGame2.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.1.46.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Tomcat 11 Linux.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.Tomcat 11.0.11.executor&quot;: &quot;Run&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/WebGame2&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;W:/MyWorks/JAVA_Dev_Full-Stack-Academy/5.back-end/Backend/WebGame2/src/main/java/kr/bluenyang/webgame/controller&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.39655173&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ssh.settings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "oracle"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;oracle&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="W:\MyWorks\JAVA_Dev_Full-Stack-Academy\5.back-end\Backend\WebGame2\src\main\java\kr\bluenyang\webgame\controller" />
@@ -538,6 +539,8 @@
       <workItem from="1758431942598" duration="4887000" />
       <workItem from="1758449547591" duration="285000" />
       <workItem from="1758449853496" duration="739000" />
+      <workItem from="1758499268832" duration="493000" />
+      <workItem from="1758500010612" duration="530000" />
     </task>
     <task id="LOCAL-00001" summary="chore: webgame2">
       <option name="closed" value="true" />
@@ -667,7 +670,23 @@
       <option name="project" value="LOCAL" />
       <updated>1758474162893</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="choreL xml">
+      <option name="closed" value="true" />
+      <created>1758481144926</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1758481144926</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: update, withdraw user">
+      <option name="closed" value="true" />
+      <created>1758481182948</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1758481182948</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -713,7 +732,9 @@
     <MESSAGE value="refactor: Restructure packages by domain&#10;&#10;The previous package structure was organized by layer (controller, service, model... etc.)&#10;So, the files for single feature are scattered across multiple directories.&#10;&#10;- Grouped related components into their respective feature packages&#10;- Created a 'common' package for shared util, config, and features" />
     <MESSAGE value="feat: implementation for user register and login" />
     <MESSAGE value="comment: logging and add comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="comment: logging and add comment" />
+    <MESSAGE value="choreL xml" />
+    <MESSAGE value="feat: update, withdraw user" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update, withdraw user" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
