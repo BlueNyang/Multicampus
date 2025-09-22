@@ -37,7 +37,7 @@ public class WordBank {
      * @return a random word from the specified category, or null if the category does not exist or has no words
      */
     public String getRandomWord(String category) {
-        log.info("WordBand.getRandomWord - get random word from category: {}", category);
+        log.info("WordBank.getRandomWord - get random word from category: {}", category);
         List<String> words = categories.get(category);
         if (words != null && !words.isEmpty()) {
             int index = random.nextInt(words.size());
@@ -52,7 +52,7 @@ public class WordBank {
      * @return a random category name, or null if there are no categories
      */
     public String getRandomCategory() {
-        log.info("WordBand.getRandomCategory - get random category");
+        log.info("WordBank.getRandomCategory - get random category");
         String[] categoryArray = getCategories();
         if (categoryArray.length > 0) {
             int index = random.nextInt(categoryArray.length);
