@@ -11,17 +11,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="comment: add comment, remove Unused import">
-      <change afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/resources/js/userManage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cf33ccc3-b7fa-489c-9512-cde905c090c9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cf33ccc3-b7fa-489c-9512-cde905c090c9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/listener/UserInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/common/listener/UserInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/java/kr/bluenyang/webgame/user/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/user/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/user/loginForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/user/userManage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WebGame2/src/main/webapp/WEB-INF/views/user/userManage.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="9b0abb2b-24e2-456a-b703-c4dc4bacf7d1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -637,7 +627,7 @@
       <workItem from="1758449547591" duration="285000" />
       <workItem from="1758449853496" duration="739000" />
       <workItem from="1758499268832" duration="493000" />
-      <workItem from="1758500010612" duration="9156000" />
+      <workItem from="1758500010612" duration="9245000" />
     </task>
     <task id="LOCAL-00001" summary="chore: webgame2">
       <option name="closed" value="true" />
@@ -791,7 +781,23 @@
       <option name="project" value="LOCAL" />
       <updated>1758500672566</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="feat: password encryption">
+      <option name="closed" value="true" />
+      <created>1758509524598</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1758509524598</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: withdraw confirm alert">
+      <option name="closed" value="true" />
+      <created>1758509546914</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1758509546914</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -840,7 +846,9 @@
     <MESSAGE value="choreL xml" />
     <MESSAGE value="feat: update, withdraw user" />
     <MESSAGE value="comment: add comment, remove Unused import" />
-    <option name="LAST_COMMIT_MESSAGE" value="comment: add comment, remove Unused import" />
+    <MESSAGE value="feat: password encryption" />
+    <MESSAGE value="feat: withdraw confirm alert" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: withdraw confirm alert" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
