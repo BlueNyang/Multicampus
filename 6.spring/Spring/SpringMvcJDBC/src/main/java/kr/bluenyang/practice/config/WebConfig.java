@@ -10,33 +10,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
     @Override
-    public void configurePathMatch(PathMatchConfigurer configurer) {
-        configurer.addPathPrefix(
-                "/sec01",
+    public void configurePathMatch(PathMatchConfigurer cfg) {
+        cfg.addPathPrefix(
+                "sec01",
                 c -> c.getPackage().getName().startsWith(
                         "kr.bluenyang.practice.sec01"
                 )
         );
-        configurer.addPathPrefix(
-                "/sec02",
-                c -> c.getPackage().getName().startsWith(
-                        "kr.bluenyang.practice.sec02"
-                )
-        );
-        configurer.addPathPrefix(
-                "/sec03",
-                c -> c.getPackage().getName().startsWith(
-                        "kr.bluenyang.practice.sec03"
-                )
-        );
-        configurer.addPathPrefix(
-                "/sec04",
-                c -> c.getPackage().getName().startsWith(
-                        "kr.bluenyang.practice.sec04"
-                )
-        );
     }
 
+    // Add resource handler for serving static resources
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");

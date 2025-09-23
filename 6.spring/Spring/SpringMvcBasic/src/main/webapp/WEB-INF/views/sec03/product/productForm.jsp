@@ -22,7 +22,7 @@
   </head>
   <body>
     <h3>제품 정보 등록</h3>
-    <form method="post" action="<c:url value='/sec03/product/newProduct' />">
+    <form method="post" action="<c:url value='/sec03/product/newProduct'/>">
       <label for="prdNo">상품번호</label>
       <input type="text" name="prdNo" id="prdNo">
       <label for="prdName">상품명</label>
@@ -36,6 +36,11 @@
       <label for="prdStock">재고</label>
       <input type="text" name="prdStock" id="prdStock">
       <input type="submit" value="등록"> <input type="reset" value="취소">
+
+      <hr/>
+      <br/>
+
+
     </form>
   </body>
 </html>

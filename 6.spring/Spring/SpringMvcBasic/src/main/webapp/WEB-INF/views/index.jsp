@@ -30,16 +30,13 @@
   <body>
     <h2>Index.jsp 입니다</h2>
     <hr/>
+    <a href="/SpringMvcJDBC">SpringMvcJDBC</a>
+    <hr/>
     <a href="<c:url value='/sec01/home'/>">sec01.1.jsp/home</a>
     <a href="<c:url value='/sec01/newView'/>">sec01.2.newView</a>
     <hr/>
-    <a href="<c:url value='/sec02/'/>">sec02.1.index</a>
-    <a href="<c:url value='/sec02/showInfo'/>">sec02.2.showInfo</a>
-    <a href="<c:url value='/sec02/showInfo2'/>">sec02.3.showInfo2</a>
-    <a href="<c:url value='/sec02/showInfo3'/>">sec02.4.showInfo3</a>
-    <a href="<c:url value='/sec02/bookInfoView1'/>">sec02.5.bookInfoView1</a>
-    <a href="<c:url value='/sec02/bookInfoView2'/>">sec02.5.bookInfoView2</a>
+    <a href="<c:url value='/sec02/home'/>">sec02.Request Param & Model</a>
     <hr/>
-    <a href="<c:url value='/sec03/'/>">sec03.Request Model</a>
+    <a href="<c:url value='/sec03/home'/>">sec03.Request Model</a>
   </body>
 </html>

@@ -15,10 +15,14 @@
 
     <form method="post" action="<c:url value='/sec03/student/newStudent2'/>">
       <!-- <form method="post" action="/project/student/newStudent"> -->
-      학번 <input type="text" name="no"><br>
-      성명 <input type="text" name="name"><br>
-      학년 <input type="text" name="year"><br>
-      <input type="submit" value="등록"> <input type="reset" value="취소">
+      <label for="no">학번</label>
+      <input type="text" name="no" id="no"><br>
+      <label for="name">성명</label>
+      <input type="text" name="name" id="name"><br>
+      <label for="year">학년</label>
+      <input type="text" name="year" id="year"><br>
+      <input type="submit" value="등록">
+      <input type="reset" value="취소">
     </form>
   </body>
 </html>
