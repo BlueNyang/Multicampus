@@ -2,11 +2,9 @@ package kr.bluenyang.practice.sec01.dao;
 
 import kr.bluenyang.practice.sec01.dto.MemberDTO;
 import kr.bluenyang.practice.util.DBConnect;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

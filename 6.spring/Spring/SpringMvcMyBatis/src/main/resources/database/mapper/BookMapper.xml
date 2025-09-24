@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.bluenyang.practice.sec02.dao.BookDAO">
+
+    <resultMap id="bookResult" type="kr.bluenyang.practice.sec02.model.Book">
+        <result property="bookNo" column="BOOK_NO"/>
+        <result property="bookName" column="BOOK_TITLE"/>
+        <result property="bookAuthor" column="BOOK_AUTHOR"/>
+        <result property="bookPrice" column="BOOK_PRICE"/>
+        <result property="bookDate" column="BOOK_DATE"/>
+        <result property="bookStock" column="BOOK_STOCK"/>
+        <result property="pubNo" column="PUB_NO"/>
+    </resultMap>
+
+    <!-- 전체 도서 조회: select -->
+    <select id="listAllBooks" resultMap="bookResult">
+        select * from book
+    </select>
+
+    <!-- 도서 상세 조회: select -->
+    <select id="findBookByNo" parameterType="String" resultMap="bookResult">
+        select * from book where book_no = #{bookNo}
+    </select>
+</mapper>

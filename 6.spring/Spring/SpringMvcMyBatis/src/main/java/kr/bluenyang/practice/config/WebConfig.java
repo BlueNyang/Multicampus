@@ -17,6 +17,10 @@ public class WebConfig implements WebMvcConfigurer {
                 "/sec01",
                 c -> c.getPackage().getName().startsWith("kr.bluenyang.practice.sec01")
         );
+        cfg.addPathPrefix(
+                "/sec02",
+                c -> c.getPackage().getName().startsWith("kr.bluenyang.practice.sec02")
+        );
     }
 
     // Add resource handler for serving static resources
