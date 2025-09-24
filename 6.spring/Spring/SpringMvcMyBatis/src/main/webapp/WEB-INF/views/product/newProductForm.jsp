@@ -11,7 +11,7 @@
     <form method="post" action="">
       <table>
         <tr>
-          <td><label for="">상품</label> 번호</td>
+          <td><label for="prdNo">상품</label> 번호</td>
           <td><input type="text" name="prdNo" id="prdNo">
           </td>
         </tr>
