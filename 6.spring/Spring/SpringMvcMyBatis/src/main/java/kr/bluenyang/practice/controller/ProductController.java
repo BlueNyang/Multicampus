@@ -1,0 +1,42 @@
+package kr.bluenyang.practice.controller;
+
+import kr.bluenyang.practice.model.ProductVO;
+import kr.bluenyang.practice.service.ProductService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
+
+@Slf4j
+@Controller
+@RequiredArgsConstructor
+public class ProductController {
+    private final ProductService service;
+
+    @RequestMapping("/")
+    public String viewIndex() {
+        return "index";
+    }
+
+    @RequestMapping("/product/listAllProduct")
+    public String listAllProduct(Model model) {
+        List<ProductVO> prdList = service.listAllProduct();
+        model.addAttribute("prdList", prdList);
+        return "product/productListView";
+    }
+
+    @RequestMapping("/product/detailProduct/{prdNo}")
+    public String detailProduct(@PathVariable String prdNo, Model model) {
+        ProductVO prd = service.findProductByPrdNo(prdNo);
+
+        log.info("prdNo:{}", prd.getPrdNo());
+
+        model.addAttribute("prd", prd);
+
+        return "product/productDetailView";
+    }
+}
