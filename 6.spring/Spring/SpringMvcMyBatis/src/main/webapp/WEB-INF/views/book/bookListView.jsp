@@ -49,7 +49,7 @@
   <body>
     <h3>전체 도서 조회</h3>
     <!--  index 페이지로 이동 링크 추가 -->
-    <a href="<c:url value="/sec02/"/>">홈으로 이동</a>
+    <a href="<c:url value="/"/>">홈으로 이동</a>
     <table>
       <tr>
         <th>도서번호</th>

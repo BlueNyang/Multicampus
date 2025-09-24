@@ -1,6 +1,6 @@
-package kr.bluenyang.practice.sec01.dao;
+package kr.bluenyang.practice.product.dao;
 
-import kr.bluenyang.practice.sec01.model.ProductVO;
+import kr.bluenyang.practice.product.model.ProductVO;
 
 import java.util.ArrayList;
 

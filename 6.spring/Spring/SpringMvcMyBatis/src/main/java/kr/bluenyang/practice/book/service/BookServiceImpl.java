@@ -1,8 +1,8 @@
-package kr.bluenyang.practice.sec02.service;
+package kr.bluenyang.practice.book.service;
 
-import kr.bluenyang.practice.sec02.dao.BookDAO;
-import kr.bluenyang.practice.sec02.model.Book;
-import kr.bluenyang.practice.sec02.model.BookDTO;
+import kr.bluenyang.practice.book.dao.BookDAO;
+import kr.bluenyang.practice.book.model.Book;
+import kr.bluenyang.practice.book.model.BookDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;

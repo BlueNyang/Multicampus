@@ -14,12 +14,12 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void configurePathMatch(PathMatchConfigurer cfg) {
         cfg.addPathPrefix(
-                "/sec01",
-                c -> c.getPackage().getName().startsWith("kr.bluenyang.practice.sec01")
+                "/product",
+                c -> c.getPackage().getName().startsWith("kr.bluenyang.practice.product")
         );
         cfg.addPathPrefix(
-                "/sec02",
-                c -> c.getPackage().getName().startsWith("kr.bluenyang.practice.sec02")
+                "/book",
+                c -> c.getPackage().getName().startsWith("kr.bluenyang.practice.book")
         );
     }
 

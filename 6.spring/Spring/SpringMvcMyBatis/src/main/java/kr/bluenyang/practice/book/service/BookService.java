@@ -1,6 +1,6 @@
-package kr.bluenyang.practice.sec02.service;
+package kr.bluenyang.practice.book.service;
 
-import kr.bluenyang.practice.sec02.model.BookDTO;
+import kr.bluenyang.practice.book.model.BookDTO;
 
 import java.util.List;
 

@@ -3,9 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="kr.bluenyang.practice.sec02.dao.BookDAO">
+<mapper namespace="kr.bluenyang.practice.book.dao.BookDAO">
 
-    <resultMap id="bookResult" type="kr.bluenyang.practice.sec02.model.Book">
+    <resultMap id="bookResult" type="kr.bluenyang.practice.book.model.Book">
         <result property="bookNo" column="BOOK_NO"/>
         <result property="bookName" column="BOOK_TITLE"/>
         <result property="bookAuthor" column="BOOK_AUTHOR"/>

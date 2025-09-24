@@ -1,6 +1,6 @@
-package kr.bluenyang.practice.sec02.dao;
+package kr.bluenyang.practice.book.dao;
 
-import kr.bluenyang.practice.sec02.model.Book;
+import kr.bluenyang.practice.book.model.Book;
 
 import java.util.List;
 

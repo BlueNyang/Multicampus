@@ -15,11 +15,13 @@
     <title>Index Page</title>
   </head>
   <body>
-    <h2>Index.jsp 입니다</h2>
+    <h2>
+      MyBatis 사용 DB 연동
+    </h2>
     <hr/>
-    <a href="<c:url value="/sec01/"/>">Product</a>
+    <a href="<c:url value="/product/listAllProduct"/>">상품 목록 보기</a>
     <br/>
-    <a href="<c:url value="/sec02/"/>">Book</a>
+    <a href="<c:url value="/book/listAllBook"/>">도서 목록 보기</a>
     <hr/>
   </body>
 </html>

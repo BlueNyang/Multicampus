@@ -1,4 +1,4 @@
-<%--@elvariable id="book" type="kr.bluenyang.practice.sec02.model.BookDTO"--%>
+<%--@elvariable id="prd" type="kr.bluenyang.practice.product.model.ProductVO"--%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>">
-    <title>도서 상세 정보 조회</title>
+    <title>상품 상세 정보 조회</title>
     <style>
       body {
         display: flex;
@@ -54,12 +54,12 @@
     </style>
   </head>
   <body>
-    <h3>도서 상세 정보 조회</h3>
+    <h3>상품 상세 정보 조회</h3>
     <div class="links">
       <!--  index 페이지로 이동 링크 추가 -->
-      <a href="<c:url value='/sec02/' />">[홈으로 이동]</a>
-      <a href="<c:url value='/sec02/book/updateBookForm/${prd.prdNo}'/>">[도서 정보 수정]</a><br>
-      <a href="javascript:deleteCheck();">[도서 정보 삭제]</a><br>
+      <a href="<c:url value='/' />">[홈으로 이동]</a>
+      <a href="<c:url value='product/updateProductForm/${prd.prdNo}'/>">[상품 정보 수정]</a><br>
+      <a href="javascript:deleteCheck();">[상품 정보 삭제]</a><br>
     </div>
     <table>
       <tr>
@@ -67,11 +67,11 @@
         <th>내용</th>
       </tr>
       <tr>
-        <td>도서번호</td>
+        <td>상품번호</td>
         <td>${prd.prdNo}</td>
       </tr>
       <tr>
-        <td>도서명</td>
+        <td>상품명</td>
         <td>${prd.prdName}</td>
       </tr>
       <tr>
@@ -97,7 +97,7 @@
       function deleteCheck() {
         let answer = confirm("삭제하시겠습니까?");
         if (answer) {
-          location.href = "/sec01/product/deleteProduct/${prd.prdNo}";
+          location.href = "/product/deleteProduct/${prd.prdNo}";
         }
       }
     </script>

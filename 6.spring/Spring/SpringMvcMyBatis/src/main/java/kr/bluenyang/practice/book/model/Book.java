@@ -1,4 +1,4 @@
-package kr.bluenyang.practice.sec02.model;
+package kr.bluenyang.practice.book.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
