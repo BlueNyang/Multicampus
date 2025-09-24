@@ -36,4 +36,25 @@ Mapper 문서에서는 반드시 Mapper를 표현하는 DTO 정보를 표현해�
     <select id="findProductByPrdNo" parameterType="String" resultMap="prdResult">
         select * from product2 where prd_no = #{prdNo}
     </select>
+
+    <!-- 상품 등록: insert -->
+    <insert id="insertProduct" parameterType="kr.bluenyang.practice.product.model.ProductVO">
+        insert into product2(prd_no, prd_name, prd_price, prd_company, prd_stock)
+        values (#{prdNo}, #{prdName}, #{prdPrice}, #{prdCompany}, #{prdStock})
+    </insert>
+
+    <!-- 상품 수정: update -->
+    <update id="updateProduct" parameterType="kr.bluenyang.practice.product.model.ProductVO">
+        update product2
+        set prd_name = #{prdName},
+        prd_price = #{prdPrice},
+        prd_company = #{prdCompany},
+        prd_stock = #{prdStock}
+        where prd_no = #{prdNo}
+    </update>
+
+    <!-- 상품 삭제: delete -->
+    <delete id="deleteProduct" parameterType="String">
+        delete from product2 where prd_no = #{prdNo}
+    </delete>
 </mapper>

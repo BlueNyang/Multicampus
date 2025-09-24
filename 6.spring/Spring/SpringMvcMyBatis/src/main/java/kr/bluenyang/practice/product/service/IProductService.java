@@ -9,7 +9,7 @@ public interface IProductService {
 
     ProductVO findProductByPrdNo(String prdNo);
 
-    void isertProduct(ProductVO productVO);
+    void insertProduct(ProductVO productVO);
 
     void updateProduct(ProductVO productVO);
 

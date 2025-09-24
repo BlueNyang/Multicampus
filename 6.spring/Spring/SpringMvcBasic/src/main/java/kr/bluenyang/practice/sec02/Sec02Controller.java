@@ -52,13 +52,13 @@ public class Sec02Controller {
     }
 
     @RequestMapping("/redirect")
-    public String redirect(Model model) {
+    public String redirect() {
         log.info("Redirecting to /showInfo");
         return "redirect:showInfo";
     }
 
     @RequestMapping("/redirectParam1")
-    public String redirectParam1(Model model) {
+    public String redirectParam1() {
         log.info("Redirecting with parameters");
         String nation = "Republic of Korea";
         try {

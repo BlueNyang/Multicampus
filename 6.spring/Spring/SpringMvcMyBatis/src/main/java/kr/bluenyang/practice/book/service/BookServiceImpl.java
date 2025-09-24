@@ -4,7 +4,6 @@ import kr.bluenyang.practice.book.dao.BookDAO;
 import kr.bluenyang.practice.book.model.Book;
 import kr.bluenyang.practice.book.model.BookDTO;
 import lombok.RequiredArgsConstructor;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 

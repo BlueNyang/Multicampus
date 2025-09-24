@@ -11,29 +11,29 @@
     <form method="post" action="">
       <table>
         <tr>
-          <td>상품 번호</td>
+          <td><label for="">상품</label> 번호</td>
           <td><input type="text" name="prdNo" id="prdNo">
           </td>
         </tr>
         <tr>
-          <td>상품명</td>
-          <td><input type="text" name="prdName"></td>
+          <td><label for="prdName">상품명</label></td>
+          <td><input type="text" name="prdName" id="prdName"></td>
         </tr>
         <tr>
-          <td>가격</td>
-          <td><input type="text" name="prdPrice"></td>
+          <td><label for="prdPrice">가격</label></td>
+          <td><input type="text" name="prdPrice" id="prdPrice"></td>
         </tr>
         <tr>
-          <td>제조회사</td>
-          <td><input type="text" name="prdCompany"></td>
+          <td><label for="prdCompany">제조회사</label></td>
+          <td><input type="text" name="prdCompany" id="prdCompany"></td>
         </tr>
         <tr>
-          <td>재고</td>
-          <td><input type="text" name="prdStock"></td>
+          <td><label for="prdStock">재고</label></td>
+          <td><input type="text" name="prdStock" id="prdStock"></td>
         </tr>
         <tr>
-          <td>제조일</td>
-          <td><input type="text" name="prdDate"></td>
+          <td><label for="prdDate">제조일</label></td>
+          <td><input type="text" name="prdDate" id="prdDate"></td>
         </tr>
         <tr>
           <td colspan="2"><input type="submit" value="등록">

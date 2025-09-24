@@ -27,17 +27,17 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void isertProduct(ProductVO productVO) {
-
+    public void insertProduct(ProductVO productVO) {
+        dao.insertProduct(productVO);
     }
 
     @Override
     public void updateProduct(ProductVO productVO) {
-
+        dao.updateProduct(productVO);
     }
 
     @Override
     public void deleteProduct(String prdNo) {
-
+        dao.deleteProduct(prdNo);
     }
 }

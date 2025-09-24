@@ -34,4 +34,34 @@ public class ProductController {
 
         return "product/productDetailView";
     }
+
+    @RequestMapping("/updateProductForm/{prdNo}")
+    public String updateProductForm(@PathVariable String prdNo, Model model) {
+        ProductVO prd = service.findProductByPrdNo(prdNo);
+        model.addAttribute("prd", prd);
+        return "product/productUpdateView";
+    }
+
+    @RequestMapping("/updateProduct")
+    public String updateProduct(ProductVO prd) {
+        service.updateProduct(prd);
+        return "redirect:/product/productListView";
+    }
+
+    @RequestMapping("/insertProductForm")
+    public String insertProductForm() {
+        return "product/productInsertView";
+    }
+
+    @RequestMapping("/insertProduct")
+    public String insertProduct(ProductVO prd) {
+        service.insertProduct(prd);
+        return "redirect:/listAllProduct";
+    }
+
+    @RequestMapping("/deleteProduct/{prdNo}")
+    public String deleteProduct(@PathVariable String prdNo) {
+        service.deleteProduct(prdNo);
+        return "redirect:/listAllProduct";
+    }
 }
