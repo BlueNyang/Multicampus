@@ -1,4 +1,4 @@
-<%--@elvariable id="prd" type="kr.bluenyang.practice.model.ProductVO"--%>
+<%--@elvariable id="prd" type="kr.bluenyang.practice.sec01.model.ProductVO"--%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -57,8 +57,8 @@
     <h3>상품 상세 정보 조회</h3>
     <div class="links">
       <!--  index 페이지로 이동 링크 추가 -->
-      <a href="<c:url value='/' />">[홈으로 이동]</a>
-      <a href="<c:url value='/product/updateProductForm/${prd.prdNo}'/>">[상품 정보 수정]</a><br>
+      <a href="<c:url value='/sec01/' />">[홈으로 이동]</a>
+      <a href="<c:url value='product/updateProductForm/${prd.prdNo}'/>">[상품 정보 수정]</a><br>
       <a href="javascript:deleteCheck();">[상품 정보 삭제]</a><br>
     </div>
     <table>
@@ -97,7 +97,7 @@
       function deleteCheck() {
         let answer = confirm("삭제하시겠습니까?");
         if (answer) {
-          location.href = "/mybatis/product/deleteProduct/${prd.prdNo}";
+          location.href = "/sec01/product/deleteProduct/${prd.prdNo}";
         }
       }
     </script>

@@ -1,4 +1,11 @@
-<%@ page contentType="text/html;charset=UTF-8"%>
+<%--
+  Created by IntelliJ IDEA.
+  User: xpsj20
+  Date: 24/09/2025
+  Time: 17:30
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -8,12 +15,11 @@
     <title>Index Page</title>
   </head>
   <body>
-    <h2>
-      MyBatis 사용 DB 연동: 상품 관리
-    </h2>
+    <h2>Index.jsp 입니다</h2>
     <hr/>
-
-    <a href="<c:url value="product/listAllProduct"/>">Whole Product View</a>
+    <a href="<c:url value="/sec01/"/>">Product</a>
+    <br/>
+    <a href="<c:url value="/sec02/"/>">Book</a>
     <hr/>
   </body>
 </html>

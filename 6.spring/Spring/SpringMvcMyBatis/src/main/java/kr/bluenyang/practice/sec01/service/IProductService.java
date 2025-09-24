@@ -1,6 +1,6 @@
-package kr.bluenyang.practice.service;
+package kr.bluenyang.practice.sec01.service;
 
-import kr.bluenyang.practice.model.ProductVO;
+import kr.bluenyang.practice.sec01.model.ProductVO;
 
 import java.util.List;
 

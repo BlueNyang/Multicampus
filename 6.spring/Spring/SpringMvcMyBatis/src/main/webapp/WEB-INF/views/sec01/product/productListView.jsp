@@ -1,8 +1,5 @@
 <%--@elvariable id="prdList" type="java.util.List"--%>
-<%@ page
-   language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"
-%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -60,7 +57,7 @@
 
       <c:forEach var="prd" items="${prdList}">
         <tr>
-          <td><a href="<c:url value="/product/detailProduct/${prd.prdNo}"/>">${prd.prdNo}</a></td>
+          <td><a href="<c:url value="detailProduct/${prd.prdNo}"/>">${prd.prdNo}</a></td>
           <td>${prd.prdName}</td>
           <td>${prd.prdPrice}</td>
           <td>${prd.prdCompany}</td>
@@ -72,6 +69,6 @@
     <br><br>
 
     <!--  index 페이지로 이동 링크 추가 -->
-    <a href="<c:url value="/"/>">홈으로 이동</a>
+    <a href="<c:url value="/sec01/"/>">홈으로 이동</a>
   </body>
 </html>

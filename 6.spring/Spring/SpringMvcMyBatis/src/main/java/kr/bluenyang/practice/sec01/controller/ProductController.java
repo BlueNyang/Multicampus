@@ -1,7 +1,7 @@
-package kr.bluenyang.practice.controller;
+package kr.bluenyang.practice.sec01.controller;
 
-import kr.bluenyang.practice.model.ProductVO;
-import kr.bluenyang.practice.service.ProductService;
+import kr.bluenyang.practice.sec01.model.ProductVO;
+import kr.bluenyang.practice.sec01.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -19,14 +19,14 @@ public class ProductController {
 
     @RequestMapping("/")
     public String viewIndex() {
-        return "index";
+        return "sec01/index";
     }
 
     @RequestMapping("/product/listAllProduct")
     public String listAllProduct(Model model) {
         List<ProductVO> prdList = service.listAllProduct();
         model.addAttribute("prdList", prdList);
-        return "product/productListView";
+        return "sec01/product/productListView";
     }
 
     @RequestMapping("/product/detailProduct/{prdNo}")
@@ -37,6 +37,6 @@ public class ProductController {
 
         model.addAttribute("prd", prd);
 
-        return "product/productDetailView";
+        return "sec01/product/productDetailView";
     }
 }

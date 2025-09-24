@@ -1,7 +1,7 @@
-package kr.bluenyang.practice.service;
+package kr.bluenyang.practice.sec01.service;
 
-import kr.bluenyang.practice.dao.IProductDAO;
-import kr.bluenyang.practice.model.ProductVO;
+import kr.bluenyang.practice.sec01.dao.IProductDAO;
+import kr.bluenyang.practice.sec01.model.ProductVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;

@@ -9,10 +9,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-@MapperScan("kr.bluenyang.practice.dao")
+@MapperScan("kr.bluenyang.practice.*.dao")
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void configurePathMatch(PathMatchConfigurer cfg) {
+        cfg.addPathPrefix(
+                "/sec01",
+                c -> c.getPackage().getName().startsWith("kr.bluenyang.practice.sec01")
+        );
     }
 
     // Add resource handler for serving static resources
