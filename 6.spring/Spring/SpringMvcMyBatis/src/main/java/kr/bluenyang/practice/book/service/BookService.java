@@ -9,9 +9,9 @@ public interface BookService {
 
     BookDTO findBookByNo(String bookNo);
 
-    void insertBook(BookDTO bookDTO);
+    boolean insertBook(BookDTO bookDTO);
 
-    void updateBook(BookDTO bookDTO);
+    boolean updateBook(BookDTO bookDTO);
 
-    void deleteBook(String bookNo);
+    boolean deleteBook(String bookNo);
 }

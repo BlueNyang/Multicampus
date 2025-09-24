@@ -4,6 +4,7 @@ import kr.bluenyang.practice.book.dao.BookDAO;
 import kr.bluenyang.practice.book.model.Book;
 import kr.bluenyang.practice.book.model.BookDTO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -29,17 +30,32 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void insertBook(BookDTO bookDTO) {
-        dao.insertBook(bookDTO.toEntity());
+    public boolean insertBook(BookDTO bookDTO) {
+        try {
+            dao.insertBook(bookDTO.toEntity());
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
     }
 
     @Override
-    public void updateBook(BookDTO bookDTO) {
-        dao.updateBook(bookDTO.toEntity());
+    public boolean updateBook(BookDTO bookDTO) {
+        try {
+            dao.updateBook(bookDTO.toEntity());
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
     }
 
     @Override
-    public void deleteBook(String bookNo) {
-        dao.deleteBook(bookNo);
+    public boolean deleteBook(String bookNo) {
+        try {
+            dao.deleteBook(bookNo);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
     }
 }

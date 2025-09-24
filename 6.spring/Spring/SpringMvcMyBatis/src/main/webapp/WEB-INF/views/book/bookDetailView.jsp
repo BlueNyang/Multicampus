@@ -15,12 +15,12 @@
         width: 80%;
         align-items: center;
         text-align: center;
-        margin: 0 auto;
+        margin-inline: auto;
       }
 
       table {
         width: 50%;
-        margin: auto;
+        margin-inline: auto;
       }
 
       table, th, td {
@@ -57,7 +57,7 @@
     <h3>도서 상세 정보 조회</h3>
     <div class="links">
       <!--  index 페이지로 이동 링크 추가 -->
-      <a href="<c:url value='/' />">[홈으로 이동]</a>
+      <a href="<c:url value='/book/listAllBook' />">[목록으로 이동]</a>
       <a href="<c:url value='/book/updateBookForm/${book.bookNo}'/>">[도서 정보 수정]</a><br>
       <a href="javascript:deleteCheck();">[도서 정보 삭제]</a><br>
     </div>
@@ -101,7 +101,7 @@
       function deleteCheck() {
         let answer = confirm("삭제하시겠습니까?");
         if (answer) {
-          location.href = "/book/deleteBook/${book.bookNo}";
+          location.href = "<c:url value="/book/deleteBook/${book.bookNo}"/>";
         }
       }
     </script>

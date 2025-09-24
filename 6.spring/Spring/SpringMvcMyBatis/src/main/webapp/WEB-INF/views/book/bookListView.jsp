@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%--@elvariable id="bookList" type="java.util.List"--%>
+<%--@elvariable id="msg" type="java.lang.String"--%>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -21,9 +22,16 @@
         margin: 0 auto;
       }
 
+      .nav {
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
       table {
         width: 100%;
         border-collapse: collapse;
+        margin-bottom: 50px;
       }
 
       th, td {
@@ -36,7 +44,7 @@
         background-color: #bbb;
       }
 
-      h3 {
+      h2 {
         text-align: center;
       }
 
@@ -45,11 +53,19 @@
         color: blue;
       }
     </style>
+    <c:if test="${not empty msg}">
+      <script>
+        alert("${msg}");
+      </script>
+    </c:if>
   </head>
   <body>
-    <h3>전체 도서 조회</h3>
+    <h2>전체 도서 조회</h2>
     <!--  index 페이지로 이동 링크 추가 -->
-    <a href="<c:url value="/"/>">홈으로 이동</a>
+    <div class="nav">
+      <a href="<c:url value="/"/>">홈으로 이동</a>
+      <a href="<c:url value="/book/insertBookForm"/>">도서 추가</a>
+    </div>
     <table>
       <tr>
         <th>도서번호</th>

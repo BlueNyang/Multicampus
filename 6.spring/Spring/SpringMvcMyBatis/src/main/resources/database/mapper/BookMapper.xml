@@ -17,11 +17,34 @@
 
     <!-- 전체 도서 조회: select -->
     <select id="listAllBooks" resultMap="bookResult">
-        select * from book
+        select * from book order by book_no
     </select>
 
     <!-- 도서 상세 조회: select -->
     <select id="findBookByNo" parameterType="String" resultMap="bookResult">
         select * from book where book_no = #{bookNo}
     </select>
+
+    <!-- 도서 등록: insert -->
+    <insert id="insertBook" parameterType="kr.bluenyang.practice.book.model.Book">
+        insert into book (book_no, book_name, book_author, book_price, book_date, book_stock, pub_no)
+        values (#{bookNo}, #{bookName}, #{bookAuthor}, #{bookPrice}, #{bookDate}, #{bookStock}, #{pubNo})
+    </insert>
+
+    <!-- 도서 수정: update -->
+    <update id="updateBook" parameterType="kr.bluenyang.practice.book.model.Book">
+        update book
+        set book_name = #{bookName},
+        book_author = #{bookAuthor},
+        book_price = #{bookPrice},
+        book_date = #{bookDate},
+        book_stock = #{bookStock},
+        pub_no = #{pubNo}
+        where book_no = #{bookNo}
+    </update>
+
+    <!-- 도서 삭제: delete -->
+    <delete id="deleteBook" parameterType="String">
+        delete from book where book_no = #{bookNo}
+    </delete>
 </mapper>
