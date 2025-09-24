@@ -38,3 +38,7 @@ gradle-app.setting
 
 **/out/
 **/target/
+
+*.properties
+*.log
+*.tmp

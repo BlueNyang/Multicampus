@@ -14,23 +14,25 @@
     <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>">
     <title>Index JSP</title>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            padding-left: 4rem;
-            width: 80%;
-        }
+      body {
+        display: flex;
+        flex-direction: column;
+        padding-left: 4rem;
+        width: 80%;
+      }
 
-        hr {
-            width: 80%;
-            margin: 1rem 0;
-        }
+      hr {
+        width: 80%;
+        margin: 1rem 0;
+      }
     </style>
   </head>
   <body>
     <h2>Index.jsp 입니다</h2>
     <hr/>
     <a href="/SpringMvcJDBC">SpringMvcJDBC</a>
+    <hr/>
+    <a href="/SpringMvcMyBatis">SpringMvcMyBatis</a>
     <hr/>
     <a href="<c:url value='/sec01/home'/>">sec01.1.jsp/home</a>
     <a href="<c:url value='/sec01/newView'/>">sec01.2.newView</a>
