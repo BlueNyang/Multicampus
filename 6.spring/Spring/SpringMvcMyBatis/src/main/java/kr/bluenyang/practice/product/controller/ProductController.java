@@ -39,7 +39,7 @@ public class ProductController {
     public String updateProductForm(@PathVariable String prdNo, Model model) {
         ProductVO prd = service.findProductByPrdNo(prdNo);
         model.addAttribute("prd", prd);
-        return "product/productUpdateView";
+        return "product/updateProductForm";
     }
 
     @RequestMapping("/updateProduct")
@@ -50,7 +50,7 @@ public class ProductController {
 
     @RequestMapping("/insertProductForm")
     public String insertProductForm() {
-        return "product/productInsertView";
+        return "product/newProductForm";
     }
 
     @RequestMapping("/insertProduct")
