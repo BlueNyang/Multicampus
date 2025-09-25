@@ -27,10 +27,6 @@ public class WebConfig implements WebMvcConfigurer {
         return resolver;
     }
 
-    public void configureDefaultServerletHandling(DefaultServletHandlerConfigurer configurer) {
-        configurer.enable();
-    }
-
     // Configure path prefixes for different packages
     @Override
     public void configurePathMatch(PathMatchConfigurer cfg) {
