@@ -19,6 +19,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<BookDTO> listAllBooks() {
         List<Book> books = dao.listAllBooks();
+        // Convert List<Book> to List<BookDTO>
         return books.stream().map(BookDTO::new).collect(Collectors.toList());
     }
 
@@ -33,6 +34,7 @@ public class BookServiceImpl implements BookService {
         try {
             dao.insertBook(bookDTO.toEntity());
         } catch (Exception e) {
+            // When an exception occurs, return false
             return false;
         }
         return true;
@@ -43,6 +45,7 @@ public class BookServiceImpl implements BookService {
         try {
             dao.updateBook(bookDTO.toEntity());
         } catch (Exception e) {
+            // When an exception occurs, return false
             return false;
         }
         return true;
@@ -53,6 +56,7 @@ public class BookServiceImpl implements BookService {
         try {
             dao.deleteBook(bookNo);
         } catch (Exception e) {
+            // When an exception occurs, return false
             return false;
         }
         return true;

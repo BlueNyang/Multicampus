@@ -11,6 +11,7 @@ import java.sql.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+// DTO (Data Transfer Object) for Book
 public class BookDTO {
     private String bookNo;
     private String bookName;
@@ -20,6 +21,7 @@ public class BookDTO {
     private int bookStock;
     private String pubNo;
 
+    // Constructor to create BookDTO from Book entity
     public BookDTO(Book book) {
         this.bookNo = book.getBookNo();
         this.bookName = book.getBookName();
@@ -30,6 +32,7 @@ public class BookDTO {
         this.pubNo = book.getPubNo();
     }
 
+    // Method to convert BookDTO to Book entity
     public Book toEntity() {
         return new Book(bookNo, bookName, bookAuthor, bookPrice, bookDate, bookStock, pubNo);
     }

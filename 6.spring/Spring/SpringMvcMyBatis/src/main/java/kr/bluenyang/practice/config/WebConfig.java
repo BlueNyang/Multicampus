@@ -11,12 +11,16 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 @MapperScan("kr.bluenyang.practice.*.dao")
 public class WebConfig implements WebMvcConfigurer {
+
+    // Configure path prefixes for different packages
     @Override
     public void configurePathMatch(PathMatchConfigurer cfg) {
+        // Product Package
         cfg.addPathPrefix(
                 "/product",
                 c -> c.getPackage().getName().startsWith("kr.bluenyang.practice.product")
         );
+        // Book Package
         cfg.addPathPrefix(
                 "/book",
                 c -> c.getPackage().getName().startsWith("kr.bluenyang.practice.book")
