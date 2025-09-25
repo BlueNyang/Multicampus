@@ -37,6 +37,11 @@
         text-decoration: none;
         color: blue;
       }
+
+      .product-img {
+        width: auto;
+        height: 100px;
+      }
     </style>
   </head>
   <body>
@@ -49,6 +54,7 @@
         <th>제조사</th>
         <th>재고</th>
         <th>제조일</th>
+        <th>사진</th>
       </tr>
 
       <!-- 반복문 사용해서 모든 데이터 출력 -->
@@ -63,6 +69,8 @@
           <td>${prd.prdCompany}</td>
           <td>${prd.prdStock}</td>
           <td><fmt:formatDate value="${prd.prdDate}" pattern="YYYY-MM-dd"/></td>
+          <td><img src="<c:url value="/images/product/${prd.prdNo}.jpg"/>" alt="${prd.prdName}" class="product-img"/>
+          </td>
         </tr>
       </c:forEach>
     </table>

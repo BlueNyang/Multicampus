@@ -51,17 +51,27 @@
       a {
         flex: 1;
       }
+
+      .product-img {
+        width: auto;
+        height: 180px;
+      }
     </style>
   </head>
   <body>
     <h3>상품 상세 정보 조회</h3>
     <div class="links">
       <!--  index 페이지로 이동 링크 추가 -->
-      <a href="<c:url value='/listAllProduct' />">[목록으로 이동]</a>
+      <a href="<c:url value='/product/listAllProduct'/>">[목록으로 이동]</a>
       <a href="<c:url value='product/updateProductForm/${prd.prdNo}'/>">[상품 정보 수정]</a><br>
       <a href="javascript:deleteCheck();">[상품 정보 삭제]</a><br>
     </div>
     <table>
+      <tr>
+        <td colspan="2">
+          <img class="product-img" src="<c:url value='/images/product/${prd.prdNo}.jpg'/>" alt="상품 이미지">
+        </td>
+      </tr>
       <tr>
         <th>구분</th>
         <th>내용</th>

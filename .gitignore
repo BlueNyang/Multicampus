@@ -42,3 +42,5 @@ gradle-app.setting
 *.properties
 *.log
 *.tmp
+*.config.yml
+application.yml

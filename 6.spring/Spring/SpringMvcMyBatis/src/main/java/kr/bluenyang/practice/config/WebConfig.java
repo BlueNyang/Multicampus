@@ -1,16 +1,35 @@
 package kr.bluenyang.practice.config;
 
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
 @MapperScan("kr.bluenyang.practice.*.dao")
 public class WebConfig implements WebMvcConfigurer {
+
+    // Inject the product images path from application properties
+    @Value("${product.image.path}")
+    private String productImagesPath;
+
+    @Bean
+    public ViewResolver viewResolver() {
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+
+        resolver.setPrefix("/WEB-INF/views/");
+        resolver.setSuffix(".jsp");
+
+        return resolver;
+    }
+
+    public void configureDefaultServerletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
 
     // Configure path prefixes for different packages
     @Override
@@ -31,6 +50,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        registry.addResourceHandler("/images/product/**").addResourceLocations(productImagesPath);
     }
 }
 
