@@ -40,6 +40,12 @@ public class WebConfig implements WebMvcConfigurer {
                 "/book",
                 c -> c.getPackage().getName().startsWith("kr.bluenyang.practice.book")
         );
+        // Ajax Package
+        cfg.addPathPrefix(
+                "/ajax",
+                c -> c.getPackage().getName().startsWith("kr.bluenyang.practice.ajax")
+        );
+
     }
 
     // Add resource handler for serving static resources

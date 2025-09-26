@@ -1,6 +1,6 @@
 <%--@elvariable id="prd" type="kr.bluenyang.practice.product.model.ProductVO"--%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -63,7 +63,7 @@
     <div class="links">
       <!--  index 페이지로 이동 링크 추가 -->
       <a href="<c:url value='/product/listAllProduct'/>">[목록으로 이동]</a>
-      <a href="<c:url value='product/updateProductForm/${prd.prdNo}'/>">[상품 정보 수정]</a><br>
+      <a href="<c:url value='/product/updateProductForm/${prd.prdNo}'/>">[상품 정보 수정]</a><br>
       <a href="javascript:deleteCheck();">[상품 정보 삭제]</a><br>
     </div>
     <table>
@@ -107,7 +107,7 @@
       function deleteCheck() {
         let answer = confirm("삭제하시겠습니까?");
         if (answer) {
-          location.href = "/product/deleteProduct/${prd.prdNo}";
+          location.href = "<c:url value="/product/deleteProduct/${prd.prdNo}"/>";
         }
       }
     </script>

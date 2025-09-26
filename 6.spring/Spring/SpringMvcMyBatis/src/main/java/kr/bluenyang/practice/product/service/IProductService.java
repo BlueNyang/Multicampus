@@ -14,4 +14,6 @@ public interface IProductService {
     void updateProduct(ProductVO productVO);
 
     void deleteProduct(String prdNo);
+
+    String prdNoCheck(String prdNo);
 }

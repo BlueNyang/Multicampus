@@ -40,4 +40,13 @@ public class ProductService implements IProductService {
     public void deleteProduct(String prdNo) {
         dao.deleteProduct(prdNo);
     }
+
+    @Override
+    public String prdNoCheck(String prdNo) {
+        ProductVO check = dao.findProductByPrdNo(prdNo);
+        if (check != null) {
+            return check.getPrdNo();
+        }
+        return null;
+    }
 }

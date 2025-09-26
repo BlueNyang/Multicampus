@@ -3,6 +3,8 @@ package kr.bluenyang.practice.book.model;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.sql.Date;
+
 @Getter
 @AllArgsConstructor
 public class Book {
@@ -12,7 +14,7 @@ public class Book {
     private String bookName;
     private String bookAuthor;
     private int bookPrice;
-    private java.sql.Date bookDate;
+    private Date bookDate;
     private int bookStock;
     private String pubNo;
 }

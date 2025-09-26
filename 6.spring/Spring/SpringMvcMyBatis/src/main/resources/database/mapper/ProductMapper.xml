@@ -39,8 +39,8 @@ Mapper 문서에서는 반드시 Mapper를 표현하는 DTO 정보를 표현해�
 
     <!-- 상품 등록: insert -->
     <insert id="insertProduct" parameterType="kr.bluenyang.practice.product.model.ProductVO">
-        insert into product2(prd_no, prd_name, prd_price, prd_company, prd_stock)
-        values (#{prdNo}, #{prdName}, #{prdPrice}, #{prdCompany}, #{prdStock})
+        insert into product2(prd_no, prd_name, prd_price, prd_company, prd_stock, prd_date)
+        values (#{prdNo}, #{prdName}, #{prdPrice}, #{prdCompany}, #{prdStock}, #{prdDate})
     </insert>
 
     <!-- 상품 수정: update -->
@@ -49,7 +49,8 @@ Mapper 문서에서는 반드시 Mapper를 표현하는 DTO 정보를 표현해�
         set prd_name = #{prdName},
         prd_price = #{prdPrice},
         prd_company = #{prdCompany},
-        prd_stock = #{prdStock}
+        prd_stock = #{prdStock},
+        prd_date = #{prdDate}
         where prd_no = #{prdNo}
     </update>
 

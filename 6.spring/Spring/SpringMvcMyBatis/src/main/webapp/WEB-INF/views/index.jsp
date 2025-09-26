@@ -23,5 +23,11 @@
     <br/>
     <a href="<c:url value="/book/listAllBook"/>">도서 목록 보기</a>
     <hr/>
+    <a href="<c:url value="/ajax/vanillaLoginForm"/>">로그인</a>
+    <br/>
+    <a href="<c:url value="/ajax/loginForm"/>">Ajax 로그인</a>
+    <br/>
+    <a href="<c:url value="/ajax/loginForm2"/>">Ajax 로그인2</a>
+    <br/>
   </body>
 </html>
