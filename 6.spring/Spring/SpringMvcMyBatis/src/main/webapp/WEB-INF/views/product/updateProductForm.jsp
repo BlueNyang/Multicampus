@@ -10,6 +10,12 @@
   </head>
   <body>
     <h3>상품 정보 수정</h3>
+    <!--  index 페이지로 이동 링크 추가 -->
+    <div class="nav">
+      <a href="<c:url value="/detailBook/${prd.prdNo}"/>">나가기</a>
+      <a href="<c:url value="/"/>">홈으로</a>
+      <div></div>
+    </div>
     <form method="post" action="<c:url value='/product/updateProduct'/>">
       <table>
         <tr>

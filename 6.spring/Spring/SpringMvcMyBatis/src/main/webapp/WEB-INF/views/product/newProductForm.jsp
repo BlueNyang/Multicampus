@@ -16,6 +16,12 @@
   </head>
   <body>
     <h3>상품 정보 등록</h3>
+    <!--  index 페이지로 이동 링크 추가 -->
+    <div class="nav">
+      <a href="<c:url value="/listAllProduct"/>">나가기</a>
+      <a href="<c:url value="/"/>">홈으로</a>
+      <div></div>
+    </div>
     <form method="post" action="<c:url value="/product/insertProduct"/>">
       <table>
         <tr>
@@ -46,7 +52,7 @@
         <tr>
           <td colspan="2">
             <input type="submit" value="등록" id="prdNoCheckBtn">
-            <input type="reset" value="취소">
+            <input type="reset" value="초기화">
           </td>
         </tr>
       </table>

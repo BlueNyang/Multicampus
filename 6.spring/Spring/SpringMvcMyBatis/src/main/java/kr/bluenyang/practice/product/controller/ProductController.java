@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Slf4j
@@ -124,5 +127,12 @@ public class ProductController {
     @RequestMapping("/prdSearchForm")
     public String prdSearchForm() {
         return "product/productSearchForm1";
+    }
+
+    @ResponseBody
+    @RequestMapping("/productSearch1")
+    public ArrayList<ProductVO> productSearch1(@RequestParam HashMap<String, Object> param) {
+        log.info("productSearch1 - type: {}, keyword:{}", param.get("type"), param.get("keyword"));
+        return service.searchProduct(param);
     }
 }

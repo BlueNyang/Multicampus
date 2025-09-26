@@ -58,4 +58,17 @@ Mapper 문서에서는 반드시 Mapper를 표현하는 DTO 정보를 표현해�
     <delete id="deleteProduct" parameterType="String">
         delete from product2 where prd_no = #{prdNo}
     </delete>
+
+    <!-- 상품 검색: select -->
+    <select id="searchProduct" parameterType="hashmap" resultMap="prdResult">
+        select * from product2 where
+        <choose>
+            <when test="type != null and type.equals('prdName')">
+                prd_name LIKE '%'||#{keyword}||'%'
+            </when>
+            <when test="type != null and type.equals('prdCompany')">
+                prd_company LIKE '%'||#{keyword}||'%'
+            </when>
+        </choose>
+    </select>
 </mapper>

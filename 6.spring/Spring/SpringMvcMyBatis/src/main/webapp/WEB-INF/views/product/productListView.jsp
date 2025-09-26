@@ -55,6 +55,7 @@
     <h3>전체 상품 조회</h3>
     <div class="nav">
       <a href="<c:url value="/"/>">홈으로 이동</a>
+      <a href="<c:url value="/product/prdSearchForm"/>">검색하기</a>
       <a href="<c:url value="/product/insertProductForm"/>">상품 추가</a>
     </div>
     <table>

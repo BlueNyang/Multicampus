@@ -3,13 +3,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>">
     <title>상품 검색</title>
     <script src="<c:url value='/resources/js/jquery-3.7.1.min.js'/>"></script>
     <script src="<c:url value='/resources/js/ajax/productSearch1.js'/>"></script>
   </head>
   <body>
     <h3>상품 검색</h3>
+    <a href="<c:url value='/product/listAllProduct'/>">목록으로 이동</a>
     <form id="prdSearchFrm1">
       <label for="type"></label>
       <select id="type" name="type">
@@ -28,8 +30,6 @@
     <!-- 검색 결과 출력 -->
     <div id="searchResultBox"></div>
     <br><br>
-
-    <a href="<c:url value='/'/>">메인 화면으로 이동</a>
   </body>
 </html>
 

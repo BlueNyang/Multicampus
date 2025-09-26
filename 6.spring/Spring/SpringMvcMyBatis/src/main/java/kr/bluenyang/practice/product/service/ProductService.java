@@ -3,12 +3,16 @@ package kr.bluenyang.practice.product.service;
 import kr.bluenyang.practice.product.dao.IProductDAO;
 import kr.bluenyang.practice.product.model.ProductVO;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
+@Slf4j
 @Service
 @Repository
 @RequiredArgsConstructor
@@ -48,5 +52,11 @@ public class ProductService implements IProductService {
             return check.getPrdNo();
         }
         return null;
+    }
+
+    @Override
+    public ArrayList<ProductVO> searchProduct(Map<String, Object> condition) {
+        log.info("searchProduct");
+        return dao.searchProduct(condition);
     }
 }

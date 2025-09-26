@@ -103,7 +103,7 @@
     <h2>도서 등록</h2>
     <!--  index 페이지로 이동 링크 추가 -->
     <div class="nav">
-      <a href="<c:url value="/detailBook/${book.bookNo}"/>">나가기</a>
+      <a href="<c:url value="/listAllBook"/>">나가기</a>
       <a href="<c:url value="/"/>">홈으로</a>
       <div></div>
     </div>

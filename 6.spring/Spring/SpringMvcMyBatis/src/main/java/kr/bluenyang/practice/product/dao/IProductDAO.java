@@ -3,9 +3,11 @@ package kr.bluenyang.practice.product.dao;
 import kr.bluenyang.practice.product.model.ProductVO;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public interface IProductDAO {
-    ArrayList<ProductVO> listAllProduct();
+    List<ProductVO> listAllProduct();
 
     ProductVO findProductByPrdNo(String prdNo);
 
@@ -15,4 +17,5 @@ public interface IProductDAO {
 
     void deleteProduct(String prdNo);
 
+    ArrayList<ProductVO> searchProduct(Map<String, Object> map);
 }
