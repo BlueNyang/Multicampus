@@ -26,7 +26,7 @@ public class AjaxController {
     @RequestMapping("/login")
     public String login(@RequestParam String id,
                         @RequestParam String pw) {
-        String result = "";
+        String result;
         if (id.equals("abcd") && pw.equals("1234")) {
             result = "success";
         } else {

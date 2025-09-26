@@ -14,6 +14,7 @@ $(function () {
       }, //요청시 전송될 파라미터, 파라미터명 id, pw
       dataType: "text", //요청후 반환되는 데이터 타입
       success: function (response) {
+        let message;
         if (response === "success") {
           message = "로그인 성공";
         } else {
@@ -21,7 +22,7 @@ $(function () {
         }
         alert(message);
       },
-      error: function (data) {
+      error: function () {
         alert("요청 실패");
       },
       complete: function () {
