@@ -121,8 +121,8 @@
       <input name="bookDate" id="bookDate" type="date"/>
       <label for="bookStock">도서 재고</label>
       <input name="bookStock" id="bookStock" type="number"/>
-      <label for="pubNo">출판사 번호</label>
-      <input name="pubNo" id="pubNo" type="text"/>
+      <label for="pubName">출판사명</label>
+      <input name="pubName" id="pubName" type="text"/>
       <div class="btn-group">
         <input type="submit" class="submit" value="등록"/>
         <input type="reset" class="cancel" value="초기화"/>

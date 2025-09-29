@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,6 +29,18 @@ public class BookServiceImpl implements BookService {
     public BookDTO findBookByNo(String bookNo) {
         Book book = dao.findBookByNo(bookNo);
         return new BookDTO(book);
+    }
+
+    @Override
+    public List<BookDTO> searchBooks(HashMap<String, Object> condition) {
+        if ("bookName".equals(condition.get("searchType"))) {
+            List<Book> books = dao.findBooksByName((String) condition.get("searchValue"));
+            return books.stream().map(BookDTO::new).collect(Collectors.toList());
+        } else if ("pubName".equals(condition.get("searchType"))) {
+            List<Book> books = dao.findBooksByPubName((String) condition.get("searchValue"));
+            return books.stream().map(BookDTO::new).collect(Collectors.toList());
+        }
+        return Collections.emptyList();
     }
 
     @Override

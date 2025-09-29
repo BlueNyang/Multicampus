@@ -26,6 +26,22 @@ public interface BookDAO {
     Book findBookByNo(String bookNo);
 
     /**
+     * Find a book by its book name.
+     *
+     * @param bookName The book name to search for.
+     * @return The Book object if found, otherwise null.
+     */
+    List<Book> findBooksByName(String bookName);
+
+    /**
+     * Find a book by its publisher name.
+     *
+     * @param pubName The publisher name to search for.
+     * @return The Book object if found, otherwise null.
+     */
+    List<Book> findBooksByPubName(String pubName);
+
+    /**
      * Insert a new book record into the database.
      *
      * @param book The Book object to be inserted.

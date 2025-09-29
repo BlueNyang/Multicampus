@@ -16,5 +16,5 @@ public class Book {
     private int bookPrice;
     private Date bookDate;
     private int bookStock;
-    private String pubNo;
+    private String pubName;
 }

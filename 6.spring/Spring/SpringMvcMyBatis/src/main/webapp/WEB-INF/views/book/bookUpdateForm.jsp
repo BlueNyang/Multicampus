@@ -124,8 +124,8 @@
       />
       <label for="bookStock">도서 재고</label>
       <input name="bookStock" id="bookStock" type="number" value="${book.bookStock}"/>
-      <label for="pubNo">출판사 번호</label>
-      <input name="pubNo" id="pubNo" type="text" value="${book.pubNo}"/>
+      <label for="pubName">출판사명</label>
+      <input name="pubName" id="pubName" type="text" value="${book.pubName}"/>
       <div class="btn-group">
         <input type="submit" class="submit" value="수정"/>
         <input type="reset" class="cancel" value="초기화"/>

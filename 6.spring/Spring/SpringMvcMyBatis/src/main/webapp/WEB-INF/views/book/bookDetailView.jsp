@@ -91,8 +91,8 @@
         <td>${book.bookStock}</td>
       </tr>
       <tr>
-        <td>출판사 번호</td>
-        <td>${book.pubNo}</td>
+        <td>출판사명</td>
+        <td>${book.pubName}</td>
       </tr>
     </table>
 

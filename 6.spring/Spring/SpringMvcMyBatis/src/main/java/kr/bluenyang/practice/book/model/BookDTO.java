@@ -19,7 +19,7 @@ public class BookDTO {
     private int bookPrice;
     private Date bookDate;
     private int bookStock;
-    private String pubNo;
+    private String pubName;
 
     // Constructor to create BookDTO from Book entity
     public BookDTO(Book book) {
@@ -29,11 +29,11 @@ public class BookDTO {
         this.bookPrice = book.getBookPrice();
         this.bookDate = book.getBookDate();
         this.bookStock = book.getBookStock();
-        this.pubNo = book.getPubNo();
+        this.pubName = book.getPubName();
     }
 
     // Method to convert BookDTO to Book entity
     public Book toEntity() {
-        return new Book(bookNo, bookName, bookAuthor, bookPrice, bookDate, bookStock, pubNo);
+        return new Book(bookNo, bookName, bookAuthor, bookPrice, bookDate, bookStock, pubName);
     }
 }

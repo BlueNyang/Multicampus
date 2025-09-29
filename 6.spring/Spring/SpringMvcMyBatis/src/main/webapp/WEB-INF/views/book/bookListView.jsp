@@ -64,6 +64,7 @@
     <!--  index 페이지로 이동 링크 추가 -->
     <div class="nav">
       <a href="<c:url value="/"/>">홈으로 이동</a>
+      <a href="<c:url value="searchBookForm"/>">도서 검색</a>
       <a href="<c:url value="/book/insertBookForm"/>">도서 추가</a>
     </div>
     <table>
@@ -74,7 +75,7 @@
         <th>도서가격</th>
         <th>출간일</th>
         <th>도서 재고</th>
-        <th>출판사 번호</th>
+        <th>출판사명</th>
       </tr>
 
       <!-- 반복문 사용해서 모든 데이터 출력 -->
@@ -89,7 +90,7 @@
           <td>${book.bookPrice}</td>
           <td><fmt:formatDate value="${book.bookDate}" pattern="YYYY-MM-dd"/></td>
           <td>${book.bookStock}</td>
-          <td>${book.pubNo}</td>
+          <td>${book.pubName}</td>
         </tr>
       </c:forEach>
     </table>

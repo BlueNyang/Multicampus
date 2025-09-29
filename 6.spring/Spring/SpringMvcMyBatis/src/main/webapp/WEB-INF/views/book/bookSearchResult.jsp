@@ -5,7 +5,7 @@
   Time: 11:36
   To change this template use File | Settings | File Templates.
 --%>
-<%--@elvariable id="prdList" type="java.util.List"--%>
+<%--@elvariable id="bookList" type="java.util.List"--%>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -14,7 +14,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>">
-    <title>Product Search Result</title>
+    <title>Book Search Result</title>
     <style>
       table {
         width: 800px;
@@ -25,42 +25,36 @@
     <table>
       <thead>
         <tr>
-          <th>상품번호</th>
-          <th>상품명</th>
-          <th>제조회사</th>
+          <th>도서번호</th>
+          <th>도서명</th>
+          <th>도서 저자</th>
           <th>가격</th>
-          <th>재고량</th>
-          <th>제조일</th>
-          <th>사진</th>
+          <th>출판일</th>
+          <th>재고</th>
+          <th>출판사명</th>
         </tr>
       </thead>
       <tbody>
         <c:choose>
-          <c:when test="${empty prdList}">
+          <c:when test="${empty bookList}">
             <tr>
               <td colspan="6">검색 결과가 없습니다.</td>
             </tr>
           </c:when>
           <c:otherwise>
-            <c:forEach var="product" items="${prdList}">
+            <c:forEach var="book" items="${bookList}">
               <tr>
                 <td>
-                  <a href="<c:url value="detailProduct/${product.prdNo}"/>">
-                      ${product.prdNo}
+                  <a href="<c:url value="detailBook/${book.bookNo}"/>">
+                      ${book.bookNo}
                   </a>
                 </td>
-                <td>${product.prdName}</td>
-                <td>${product.prdCompany}</td>
-                <td>${product.prdPrice}</td>
-                <td>${product.prdStock}</td>
-                <td><fmt:formatDate value="${product.prdDate}" pattern="yyyy-MM-dd"/></td>
-                <td>
-                  <img
-                     src="<c:url value="/images/product/${product.prdNo}.jpg"/>"
-                     alt="Product Image"
-                     width="100"
-                  />
-                </td>
+                <td>${book.bookName}</td>
+                <td>${book.bookAuthor}</td>
+                <td>${book.bookPrice}</td>
+                <td><fmt:formatDate value="${book.bookDate}" pattern="yyyy-MM-dd"/></td>
+                <td>${book.bookStock}</td>
+                <td>${book.pubName}</td>
               </tr>
             </c:forEach>
           </c:otherwise>

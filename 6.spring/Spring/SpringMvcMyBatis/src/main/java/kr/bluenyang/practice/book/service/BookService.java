@@ -2,6 +2,7 @@ package kr.bluenyang.practice.book.service;
 
 import kr.bluenyang.practice.book.model.BookDTO;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -23,6 +24,14 @@ public interface BookService {
      * @return The BookDTO object if found, otherwise null.
      */
     BookDTO findBookByNo(String bookNo);
+
+    /**
+     * Find books by their name.
+     *
+     * @param condition A HashMap containing search conditions, including "searchType" and "searchValue".
+     * @return List of BookDTO objects matching the book name.
+     */
+    List<BookDTO> searchBooks(HashMap<String, Object> condition);
 
     /**
      * Insert a new book into the system.
