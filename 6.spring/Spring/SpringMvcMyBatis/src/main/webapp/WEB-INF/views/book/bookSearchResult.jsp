@@ -17,7 +17,19 @@
     <title>Book Search Result</title>
     <style>
       table {
-        width: 800px;
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 50px;
+      }
+
+      th, td {
+        border: 1px solid #333;
+        padding: 8px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #bbb;
       }
     </style>
   </head>
@@ -38,7 +50,7 @@
         <c:choose>
           <c:when test="${empty bookList}">
             <tr>
-              <td colspan="6">검색 결과가 없습니다.</td>
+              <td colspan="7">검색 결과가 없습니다.</td>
             </tr>
           </c:when>
           <c:otherwise>

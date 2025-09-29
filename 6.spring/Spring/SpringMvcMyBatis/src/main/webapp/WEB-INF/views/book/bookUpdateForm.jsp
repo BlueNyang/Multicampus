@@ -103,12 +103,12 @@
     <h2>도서 정보 수정</h2>
     <!--  index 페이지로 이동 링크 추가 -->
     <div class="nav">
-      <a href="<c:url value="/detailBook/${book.bookNo}"/>">나가기</a>
+      <a href="<c:url value="/book/detailBook/${book.bookNo}"/>">나가기</a>
       <a href="<c:url value="/"/>">홈으로</a>
       <div></div>
     </div>
 
-    <form name="updateBook" method="post" action="<c:url value="/book/updateBook"/>">
+    <form id="updateBookForm" name="updateBook" method="post" action="<c:url value="/book/updateBook"/>">
       <label for="bookNo">도서번호 (수정 불가)</label>
       <input name="bookNo" id="bookNo" type="text" value="${book.bookNo}" readonly/>
       <label for="bookName">도서명</label>

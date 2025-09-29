@@ -33,8 +33,13 @@ public class BookServiceImpl implements BookService {
     public BookDTO findBookByNo(String bookNo) {
         log.info("BookServiceImpl.findBookByNo - find Book by bookNo: {}", bookNo);
 
-        Book book = dao.findBookByNo(bookNo);
-        return new BookDTO(book);
+        try {
+            Book book = dao.findBookByNo(bookNo);
+            return new BookDTO(book);
+        } catch (Exception e) {
+            log.warn("BookServiceImpl.findBookByNo - No book found with bookNo: {}", bookNo);
+            return null;
+        }
     }
 
     @Override

@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.HashMap;
@@ -121,6 +122,20 @@ public class BookController {
         return "redirect:/book/listAllBook";
     }
 
+    @ResponseBody
+    @RequestMapping("/bookNoCheck")
+    public String bookNoCheck(@RequestParam String bookNo) {
+        log.info("BookController.bookNoCheck - Called");
+
+        BookDTO bookList = service.findBookByNo(bookNo);
+
+        if (bookList != null) {
+            return "duplicated"; // 중복
+        } else {
+            return "available"; // 중복 아님
+        }
+    }
+
     // 도서 검색 폼
     @RequestMapping("/searchBookForm")
     public String searchBookForm() {
@@ -142,6 +157,6 @@ public class BookController {
         model.addAttribute("bookList", bookList);
 
         // 도서 목록 뷰로 포워딩
-        return "book/bookListView";
+        return "book/bookSearchResult";
     }
 }

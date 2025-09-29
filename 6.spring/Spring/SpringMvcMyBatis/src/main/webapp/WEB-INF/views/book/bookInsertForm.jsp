@@ -15,6 +15,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>">
     <title>도서 등록</title>
+    <script src="<c:url value='/resources/js/jquery-3.7.1.min.js'/>"></script>
+    <script src="<c:url value='/resources/js/axios.min.js'/>"></script>
+    <script src="<c:url value='/resources/js/book/bookNoCheck.js'/>"></script>
     <style>
       body {
         width: 60%;
@@ -103,12 +106,12 @@
     <h2>도서 등록</h2>
     <!--  index 페이지로 이동 링크 추가 -->
     <div class="nav">
-      <a href="<c:url value="/listAllBook"/>">나가기</a>
+      <a href="<c:url value="/book/listAllBook"/>">나가기</a>
       <a href="<c:url value="/"/>">홈으로</a>
       <div></div>
     </div>
 
-    <form name="updateBook" method="post" action="<c:url value="/book/insertBook"/>">
+    <form id="insertBookForm" name="insertBook" method="post" action="<c:url value="/book/insertBook"/>">
       <label for="bookNo">도서번호</label>
       <input name="bookNo" id="bookNo" type="text"/>
       <label for="bookName">도서명</label>
@@ -124,7 +127,7 @@
       <label for="pubName">출판사명</label>
       <input name="pubName" id="pubName" type="text"/>
       <div class="btn-group">
-        <input type="submit" class="submit" value="등록"/>
+        <input id="insertBookSubmitBtn" type="submit" class="submit" value="등록"/>
         <input type="reset" class="cancel" value="초기화"/>
       </div>
     </form>
