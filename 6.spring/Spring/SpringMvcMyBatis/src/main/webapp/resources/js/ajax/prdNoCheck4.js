@@ -16,7 +16,14 @@ $(function () {
         }
       }).catch((err) => {
         console.error(err);
-      })
+        return false;
+      });
+
+      if (!confirm("해당 상품번호로 등록하시겠습니까?")) {
+        return false;
+      }
+
+      $("#prdForm").submit();
     }
-  })
-})
+  });
+});

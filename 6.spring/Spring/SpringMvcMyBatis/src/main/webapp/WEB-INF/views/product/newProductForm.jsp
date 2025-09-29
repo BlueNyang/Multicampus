@@ -18,11 +18,11 @@
     <h3>상품 정보 등록</h3>
     <!--  index 페이지로 이동 링크 추가 -->
     <div class="nav">
-      <a href="<c:url value="/listAllProduct"/>">나가기</a>
+      <a href="<c:url value="/product/listAllProduct"/>">나가기</a>
       <a href="<c:url value="/"/>">홈으로</a>
       <div></div>
     </div>
-    <form method="post" action="<c:url value="/product/insertProduct"/>">
+    <form id="prdForm" method="post" action="<c:url value="/product/insertProduct"/>">
       <table>
         <tr>
           <td><label for="prdNo">상품</label> 번호</td>

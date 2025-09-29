@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -62,6 +60,7 @@ public class ProductController {
 
     @RequestMapping("/insertProduct")
     public String insertProduct(ProductVO prd) {
+        log.info("prd:{}", prd);
         service.insertProduct(prd);
         return "redirect:/product/listAllProduct";
     }
@@ -131,8 +130,26 @@ public class ProductController {
 
     @ResponseBody
     @RequestMapping("/productSearch1")
-    public ArrayList<ProductVO> productSearch1(@RequestParam HashMap<String, Object> param) {
+    public List<ProductVO> productSearch1(@RequestParam HashMap<String, Object> param) {
         log.info("productSearch1 - type: {}, keyword:{}", param.get("type"), param.get("keyword"));
         return service.searchProduct(param);
+    }
+
+    @RequestMapping("/prdSearchForm2")
+    public String prdSearchForm2() {
+        return "product/productSearchForm2";
+    }
+
+    @RequestMapping("/productSearch2")
+    public String productSearch2(@RequestParam HashMap<String, Object> param, Model model) {
+        log.info("productSearch2 - type: {}, keyword:{}", param.get("type"), param.get("keyword"));
+        List<ProductVO> prdList = service.searchProduct(param);
+        model.addAttribute("prdList", prdList);
+        return "product/productSearchResultView";
+    }
+
+    @RequestMapping("/prdSearchForm3")
+    public String prdSearchForm3() {
+        return "product/productSearchForm3";
     }
 }

@@ -16,10 +16,18 @@ $(function () {
           alert("사용 가능한 상품번호입니다.");
         } else {
           alert("이미 사용 중인 상품번호입니다.");
+          return false;
         }
       }).catch((err) => {
         console.error(err);
-      })
+      });
+
+      if (!confirm("해당 상품번호로 등록하시겠습니까?")) {
+        return false;
+      }
+
+      $("#prdForm").submit();
+      return true;
     }
-  })
-})
+  });
+});

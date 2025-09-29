@@ -11,7 +11,8 @@
     <style>
       body {
         width: 80%;
-        margin: 0 auto;
+        margin-inline: auto;
+        margin-bottom: 50px;
       }
 
       table {
@@ -56,6 +57,7 @@
     <div class="nav">
       <a href="<c:url value="/"/>">홈으로 이동</a>
       <a href="<c:url value="/product/prdSearchForm"/>">검색하기</a>
+      <a href="<c:url value="/product/prdSearchForm2"/>">검색하기2</a>
       <a href="<c:url value="/product/insertProductForm"/>">상품 추가</a>
     </div>
     <table>

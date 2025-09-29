@@ -21,14 +21,21 @@ $(function () {
             alert("The product number is available.");
           } else {
             alert("The product number is already in use.");
+            return false;
           }
         },
         error: (error) => {
           console.log(error);
           alert("An error occurred while requesting the server.");
+          return false;
         }
-      })
-    }
+      });
 
-  })
-})
+      if (!confirm("해당 상품번호로 등록하시겠습니까?")) {
+        return false;
+      }
+
+      $("#prdForm").submit();
+    }
+  });
+});
