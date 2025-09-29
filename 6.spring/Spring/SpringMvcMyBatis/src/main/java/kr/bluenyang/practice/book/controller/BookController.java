@@ -25,7 +25,7 @@ public class BookController {
     @RequestMapping("/listAllBook")
     public String listAllBook(Model model) {
         log.info("BookController.listAllBook - Called");
-        
+
         // Service를 통해 DB에서 도서 목록 조회
         List<BookDTO> bookList = service.listAllBooks();
         // 조회된 도서 목록을 Model에 저장
@@ -121,6 +121,7 @@ public class BookController {
         return "redirect:/book/listAllBook";
     }
 
+    // 도서 검색 폼
     @RequestMapping("/searchBookForm")
     public String searchBookForm() {
         log.info("BookController.searchBookForm - Called");
@@ -129,6 +130,7 @@ public class BookController {
         return "book/bookSearchForm";
     }
 
+    // 도서 검색 처리
     @RequestMapping("/searchBook")
     public String searchBook(@RequestParam HashMap<String, Object> param, Model model) {
         log.info("BookController.searchBook - Called");
