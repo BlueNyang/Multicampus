@@ -1,15 +1,15 @@
 -- 주문 테이블
 CREATE TABLE ex_order_info (
-   ord_no          VARCHAR(20) PRIMARY KEY,
-   ord_date        TIMESTAMP DEFAULT sysdate,
-   mem_id          VARCHAR(10),
-   ord_receiver    VARCHAR(30),
-   ord_rcvzipcode  VARCHAR(6),
-   ord_rcvaddress1 VARCHAR(50),
-   ord_rcvaddress2 VARCHAR(50),
-   ord_rcvphone    VARCHAR(14),
-   ord_rcvmsg      VARCHAR(30),
-   ord_pay         VARCHAR(30),
+   ord_no           VARCHAR(20) PRIMARY KEY,
+   ord_date         TIMESTAMP DEFAULT sysdate,
+   mem_id           VARCHAR(10),
+   ord_receiver     VARCHAR(30),
+   ord_rcv_zip_code VARCHAR(6),
+   ord_rcv_address1 VARCHAR(50),
+   ord_rcv_address2 VARCHAR(50),
+   ord_rcv_phone    VARCHAR(14),
+   ord_rcv_msg      VARCHAR(30),
+   ord_pay          VARCHAR(30),
    CONSTRAINT fk_ex_order_member FOREIGN KEY ( mem_id )
       REFERENCES ex_member ( mem_id )
 );
