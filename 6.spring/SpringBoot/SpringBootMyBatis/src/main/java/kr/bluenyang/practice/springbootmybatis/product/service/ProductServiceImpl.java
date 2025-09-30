@@ -27,7 +27,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductVO findProductByPrdNo(String prdNo) {
-        return dao.findProductByPrdNo(prdNo);
+            return dao.findProductByPrdNo(prdNo);
     }
 
     @Override

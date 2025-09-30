@@ -8,7 +8,7 @@ Mapper 태그의 문법을 정의하기 위한 DTO 정보를 요구한다.
 Mapper 문서에서는 반드시 Mapper를 표현하는 DTO 정보를 표현해야 한다.
 -->
 <!-- 아래 mapper에서 구현되는 기능은 IProductDAO 추상메소드로 한정된다. -->
-<mapper namespace="kr.bluenyang.practice.product.dao.IProductDAO">
+<mapper namespace="kr.bluenyang.practice.springbootmybatis.product.dao.ProductDAO">
     <!-- 전체 상품 조회: select -->
     <!-- 태그 관련 속성:
             id= 태그 고유 식별자 (id가 추상메소드 명과 동일해야 한다.)
@@ -18,7 +18,7 @@ Mapper 문서에서는 반드시 Mapper를 표현하는 DTO 정보를 표현해�
             statementType= statement 객체의 유형 지정 (기본값: PREPARED)
      -->
     <!-- ResultMap 구성: 반환되는 rs의 Column과 저장해야 하는 DTO의 필드명을 매핑 -->
-    <resultMap id="prdResult" type="kr.bluenyang.practice.product.model.ProductVO">
+    <resultMap id="prdResult" type="kr.bluenyang.practice.springbootmybatis.product.model.ProductVO">
         <result property="prdNo" column="PRD_NO"/>
         <result property="prdName" column="PRD_NAME"/>
         <result property="prdPrice" column="PRD_PRICE"/>
@@ -38,13 +38,13 @@ Mapper 문서에서는 반드시 Mapper를 표현하는 DTO 정보를 표현해�
     </select>
 
     <!-- 상품 등록: insert -->
-    <insert id="insertProduct" parameterType="kr.bluenyang.practice.product.model.ProductVO">
+    <insert id="insertProduct" parameterType="kr.bluenyang.practice.springbootmybatis.product.model.ProductVO">
         insert into product2(prd_no, prd_name, prd_price, prd_company, prd_stock, prd_date)
         values (#{prdNo}, #{prdName}, #{prdPrice}, #{prdCompany}, #{prdStock}, #{prdDate})
     </insert>
 
     <!-- 상품 수정: update -->
-    <update id="updateProduct" parameterType="kr.bluenyang.practice.product.model.ProductVO">
+    <update id="updateProduct" parameterType="kr.bluenyang.practice.springbootmybatis.product.model.ProductVO">
         update product2
         set prd_name = #{prdName},
         prd_price = #{prdPrice},

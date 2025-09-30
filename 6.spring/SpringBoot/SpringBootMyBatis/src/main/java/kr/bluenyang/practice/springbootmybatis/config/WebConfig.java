@@ -19,5 +19,9 @@ public class WebConfig implements WebMvcConfigurer {
                 "/product",
                 HandlerTypePredicate.forBasePackage("kr.bluenyang.practice.springbootmybatis.product")
         );
+        cfg.addPathPrefix(
+                "/file",
+                HandlerTypePredicate.forBasePackage("kr.bluenyang.practice.springbootmybatis.file")
+        );
     }
 }
