@@ -113,7 +113,4 @@ public class FileUploadController {
         ra.addFlashAttribute("originalFileName", originalFileName);
         return "redirect:/file/fileUploadResult";
     }
-
-    @PostMapping("/imageFileUploadForm")
-    public String
 }
