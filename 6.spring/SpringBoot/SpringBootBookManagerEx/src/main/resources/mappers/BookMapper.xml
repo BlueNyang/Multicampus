@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.bluenyang.practice.book.dao.BookDAO">
+
+    <resultMap id="bookResult" type="kr.bluenyang.practice.book.model.Book">
+        <result property="bookNo" column="BOOK_NO"/>
+        <result property="bookName" column="BOOK_NAME"/>
+        <result property="bookAuthor" column="BOOK_AUTHOR"/>
+        <result property="bookPrice" column="BOOK_PRICE"/>
+        <result property="bookDate" column="BOOK_DATE"/>
+        <result property="bookStock" column="BOOK_STOCK"/>
+        <result property="pubName" column="PUB_NAME"/>
+    </resultMap>
+
+    <!-- 전체 도서 조회: select -->
+    <select id="listAllBooks" resultMap="bookResult">
+        SELECT b.book_no, b.book_name, b.book_author, b.book_price, b.book_date, b.book_stock, p.pub_name
+        FROM book b JOIN publisher p ON b.pub_no = p.pub_no
+        ORDER BY b.book_no
+    </select>
+
+    <!-- 도서 상세 조회: select -->
+    <select id="findBookByNo" parameterType="String" resultMap="bookResult">
+        SELECT b.book_no, b.book_name, b.book_author, b.book_price, b.book_date, b.book_stock, p.pub_name
+        FROM book b JOIN publisher p ON b.pub_no = p.pub_no
+        WHERE book_no = #{bookNo}
+    </select>
+
+    <!-- 도서 조건 조회: select -->
+    <select id="findBooksByName" parameterType="String" resultMap="bookResult">
+        SELECT b.book_no, b.book_name, b.book_author, b.book_price, b.book_date, b.book_stock, p.pub_name
+        FROM book b JOIN publisher p ON b.pub_no = p.pub_no
+        WHERE book_name LIKE '%'||#{bookName}||'%'
+    </select>
+    <select id="findBooksByPubName" parameterType="String" resultMap="bookResult">
+        SELECT b.book_no, b.book_name, b.book_author, b.book_price, b.book_date, b.book_stock, p.pub_name
+        FROM book b JOIN publisher p ON b.pub_no = p.pub_no
+        WHERE pub_name LIKE '%'||#{pubName}||'%'
+    </select>
+
+    <!-- 도서 등록: insert -->
+    <insert id="insertBook" parameterType="kr.bluenyang.practice.book.model.Book">
+        INSERT INTO book (book_no, book_name, book_author, book_price, book_date, book_stock, pub_no)
+        VALUES (
+        #{bookNo},
+        #{bookName},
+        #{bookAuthor},
+        #{bookPrice},
+        #{bookDate},
+        #{bookStock},
+        (SELECT pub_no FROM publisher WHERE pub_name = #{pubName})
+        )
+    </insert>
+
+    <!-- 도서 수정: update -->
+    <update id="updateBook" parameterType="kr.bluenyang.practice.book.model.Book">
+        update book
+        set book_name = #{bookName},
+        book_author = #{bookAuthor},
+        book_price = #{bookPrice},
+        book_date = #{bookDate},
+        book_stock = #{bookStock},
+        pub_no = (SELECT pub_no FROM publisher WHERE pub_name = #{pubName})
+        where book_no = #{bookNo}
+    </update>
+
+    <!-- 도서 삭제: delete -->
+    <delete id="deleteBook" parameterType="String">
+        DELETE FROM book WHERE book_no = #{bookNo}
+    </delete>
+</mapper>
