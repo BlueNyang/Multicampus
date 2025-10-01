@@ -29,6 +29,17 @@
   /*   offset-x | offset-y | blur-radius | spread-radius | color */
 }
 
+a {
+  color: #005bff;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 
 
 

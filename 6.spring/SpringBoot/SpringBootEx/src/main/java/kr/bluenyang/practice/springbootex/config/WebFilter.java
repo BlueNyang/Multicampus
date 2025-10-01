@@ -2,9 +2,11 @@ package kr.bluenyang.practice.springbootex.config;
 
 import jakarta.servlet.FilterRegistration;
 import jakarta.servlet.ServletContext;
+import org.springframework.stereotype.Component;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
+@Component
 public class WebFilter implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext servletContext) {

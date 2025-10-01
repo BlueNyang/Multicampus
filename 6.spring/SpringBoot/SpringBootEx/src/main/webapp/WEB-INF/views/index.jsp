@@ -6,33 +6,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>프로젝트 예제 : index 메인 페이지</title>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/css/common.css"/>"/>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/css/main/index.css"/>"/>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/css/main/menu.css"/>"/>
+    <jsp:include page="layout/head.jsp"/>
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/main/slideShow.css"/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/main/tabMenu.css"/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/main/product.css"/>"/>
-    <script src="<c:url value="/js/jquery-3.7.1.min.js"/>"></script>
     <script src="<c:url value="/js/main/subMenu.js"/>"></script>
     <script src="<c:url value="/js/main/slideShow.js"/>"></script>
     <script src="<c:url value="/js/main/tabMenu.js"/>"></script>
     <script src="<c:url value="/js/main/index.js"/>"></script>
-    <script type="text/javascript">
-
-    </script>
   </head>
   <body>
     <div id="wrap"> <!-- 전체 영역 -->
-      <header>
-        <div id="headerBox">
-          <div id="logoBox">
-            <a href="<c:url value="/"/>">
-              <img src="<c:url value="/image/logo.png"/>" id="logoImg" alt="">
-            </a>
-          </div>
-          <div id="topMenuBox">로그인 이벤트 장바구니 고객센터 회원가입</div>
-        </div>
-      </header>
+      <jsp:include page="layout/header.jsp"/>
       <nav>  <!-- 메뉴영역 -->
         <div id="mainMenuBox">
           <ul id="menuItem">
@@ -155,22 +140,7 @@
           </div>
         </article>
       </section>
-      <footer> <!-- footer -->
-        <div id="footerBox">
-          <div id="bottomMenuBox">
-            <ul id="bottomMenuItem">
-              <li><a href="#">회사소개</a></li>
-              <li><a href="#">이용약관</a></li>
-              <li><a href="#">개인정보 처리방침</a></li>
-              <li><a href="#">전자금융거래약관</a></li>
-              <li><a href="#">보안센터</a></li>
-              <li><a href="#">채용정보</a></li>
-            </ul>
-          </div> <!-- bottomMenuBox 끝 -->
-          <div id="companyInfo"><img src="<c:url value="/image/footer.png"/>" alt=""></div>
-          <div id="moveToTopBox"><img src="<c:url value="/image/moveToTop.png"/>" alt="" id="moveToTop"></div>
-        </div>
-      </footer>
+      <jsp:include page="layout/footer.jsp"/>
     </div> <!-- wrap 끝 -->
   </body>
 </html>

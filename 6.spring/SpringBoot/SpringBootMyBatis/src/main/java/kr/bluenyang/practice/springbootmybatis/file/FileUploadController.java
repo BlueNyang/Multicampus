@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -20,13 +21,13 @@ public class FileUploadController {
     @GetMapping("/fileUploadForm")
     public String ViewUploadForm() {
         log.info("FileUploadController.ViewUploadForm - load upload form");
-        return "upload/fileUploadForm";
+        return "file/fileUploadForm";
     }
 
     @GetMapping("/fileUploadResult")
     public String ViewUploadResult() {
         log.info("FileUploadController.ViewUploadResult - load upload result");
-        return "upload/fileUploadResult";
+        return "file/fileUploadResult";
     }
 
     @PostMapping("/fileUpload")
@@ -59,7 +60,7 @@ public class FileUploadController {
     @GetMapping("/fileUploadMultipleResult")
     public String ViewUploadMultipleResult() {
         log.info("FileUploadController.ViewUploadMultipleResult - load upload multiple result");
-        return "upload/fileUploadMultipleResult";
+        return "file/fileUploadMultipleResult";
     }
 
     @PostMapping("/fileUploadMultiple")
@@ -112,5 +113,21 @@ public class FileUploadController {
 
         ra.addFlashAttribute("originalFileName", originalFileName);
         return "redirect:/file/fileUploadResult";
+    }
+
+    /// 비동기통신 요청 처리
+    @GetMapping("/imageFileUploadForm")
+    public String imageFileUploadForm() {
+        return "file/imageFileUploadForm";
+    }
+
+    @ResponseBody
+    @PostMapping("/imageFileUpload")
+    public String imageFileUpload(@RequestParam("uploadFile") MultipartFile file) throws IOException {
+        String uploadPath = "E:/SpringPRJ/upload/";
+        String originalFileName = file.getOriginalFilename();
+        File sendFile = new File(uploadPath + originalFileName);
+        file.transferTo(sendFile);
+        return "success";
     }
 }

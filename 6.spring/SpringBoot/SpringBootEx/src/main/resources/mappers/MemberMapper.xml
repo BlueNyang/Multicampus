@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.bluenyang.practice.springbootex.auth.dao.MemberDAO">
+    <resultMap id="memberResult" type="kr.bluenyang.practice.springbootex.auth.model.Member">
+        <result property="memId" column="mem_id"/>
+        <result property="memPwd" column="mem_pwd"/>
+        <result property="memName" column="mem_name"/>
+        <result property="memEmail" column="mem_email"/>
+        <result property="memJoinDate" column="mem_join_date"/>
+        <result property="memHp" column="mem_hp"/>
+        <result property="memZipCode" column="mem_zip_code"/>
+        <result property="memAddress1" column="mem_address1"/>
+        <result property="memAddress2" column="mem_address2"/>
+    </resultMap>
+
+    <!-- 유저 정보 조회 -->
+    <select id="findMemberById" parameterType="String" resultMap="memberResult">
+        SELECT *
+        FROM ex_member
+        WHERE mem_id = #{memId}
+    </select>
+
+    <insert id="insertMember" parameterType="kr.bluenyang.practice.springbootex.auth.model.Member">
+        INSERT INTO ex_member (mem_id, mem_pwd, mem_name, mem_email, mem_join_date, mem_hp, mem_zip_code, mem_address1,
+        mem_address2)
+        VALUES (#{memId}, #{memPwd}, #{memName}, #{memEmail, jdbcType=VARCHAR}, SYSDATE, #{memHp, jdbcType=VARCHAR},
+        #{memZipCode, jdbcType=VARCHAR},
+        #{memAddress1, jdbcType=VARCHAR}, #{memAddress2, jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateMember" parameterType="kr.bluenyang.practice.springbootex.auth.model.Member">
+        UPDATE ex_member
+        SET mem_pwd = #{memPwd},
+        mem_name = #{memName},
+        mem_email = #{memEmail, jdbcType=VARCHAR},
+        mem_hp = #{memHp, jdbcType=VARCHAR},
+        mem_zip_code = #{memZipCode, jdbcType=VARCHAR},
+        mem_address1 = #{memAddress1, jdbcType=VARCHAR},
+        mem_address2 = #{memAddress2, jdbcType=VARCHAR}
+        WHERE mem_id = #{memId}
+    </update>
+
+    <delete id="deleteMember" parameterType="String">
+        DELETE FROM ex_member
+        WHERE mem_id = #{memId}
+    </delete>
+</mapper>

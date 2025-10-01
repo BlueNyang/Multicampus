@@ -10,9 +10,11 @@ ul {
 
 /**************Top Menu***************/
 #topMenuBox {
+  display: inline-flex;
   float: right; /*오른쪽 정렬*/
   font-weight: bold;
   padding-right: 10px;
+  gap: 20px;
 }
 
 /**************Main Menu**************/

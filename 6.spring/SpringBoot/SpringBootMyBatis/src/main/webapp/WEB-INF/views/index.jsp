@@ -23,5 +23,7 @@
     <br/>
     <a href="<c:url value="/file/fileUploadForm"/>">파일 업로드</a>
     <br/>
+    <a href="<c:url value="/file/fileDownloadList"/>">파일 다운로드</a>
+    <br/>
   </body>
 </html>
