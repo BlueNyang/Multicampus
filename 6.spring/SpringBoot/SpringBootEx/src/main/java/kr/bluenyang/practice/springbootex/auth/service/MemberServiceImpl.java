@@ -7,6 +7,7 @@ import kr.bluenyang.practice.springbootex.auth.model.MemberEditDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 // import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
     private final MemberDAO dao;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public String tryLogin(String id, String pwd) {
@@ -27,8 +29,8 @@ public class MemberServiceImpl implements MemberService {
         }
 
         // Check password using PasswordEncoder
-        // if (!passwordEncoder.matches(pwd, encodedPwd)) {
-        if (pwd.equals(member.getMemPwd())) {
+        if (!passwordEncoder.matches(pwd, member.getMemPwd())) {
+            // if (pwd.equals(member.getMemPwd())) {
             log.info("[tryLogin] Login Success");
             return member.getMemName();
         }
@@ -55,8 +57,8 @@ public class MemberServiceImpl implements MemberService {
         log.info("[joinMember] add New Member");
 
         // dto password encryption
-        // var pwd = dto.getMemPwd();
-        // dto.setMemPwd(passwordEncoder.encode(pwd));
+        var pwd = dto.getMemPwd();
+        dto.setMemPwd(passwordEncoder.encode(pwd));
 
         dao.insertMember(dto.toEntity());
     }
@@ -82,14 +84,14 @@ public class MemberServiceImpl implements MemberService {
             return "no_such_member";
         }
 
-        if (!dto.getMemPwd().equals(member.getMemPwd())) {
+        if (!passwordEncoder.matches(dto.getMemPwd(), member.getMemPwd())) {
             log.info("[updateMember] Incorrect password");
             return "incorrect_password";
         }
 
         // dto password encryption
-        // var newPwd = dto.getNewMemPwd();
-        // dto.setNewMemPwd(passwordEncoder.encode(newPwd));
+        var newPwd = dto.getNewMemPwd();
+        dto.setNewMemPwd(passwordEncoder.encode(newPwd));
 
         dao.updateMember(dto.toEntity());
         return "success";
@@ -103,7 +105,7 @@ public class MemberServiceImpl implements MemberService {
         if (member == null) {
             log.info("[unregisterMember] No such member");
             return "no_such_member";
-        } else if (!dto.getMemPwd().equals(member.getMemPwd())) {
+        } else if (!passwordEncoder.matches(dto.getMemPwd(), member.getMemPwd())) {
             log.info("[unregisterMember] Incorrect password");
             return "incorrect_password";
         }
