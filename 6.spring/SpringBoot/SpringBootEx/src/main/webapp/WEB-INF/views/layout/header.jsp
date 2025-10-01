@@ -5,6 +5,7 @@
   Time: 11:08
   To change this template use File | Settings | File Templates.
 --%>
+<%--@elvariable id="authUser" type="java.lang.String"--%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <header>
@@ -16,10 +17,10 @@
     </div>
     <div id="topMenuBox">
       <c:choose>
-        <c:when test="${not empty sessionScope.authUser}">
+        <c:when test="${not empty authUser}">
           <span>
             <span>환영합니다.</span>
-            <a href="<c:url value="/auth/manage"/>">${sessionScope.authUser}</a>
+            <a href="<c:url value="/auth/manage"/>">${authUser}</a>
             <span>님</span>
           </span>
           <a href="<c:url value="/auth/logout"/>">로그아웃</a>
