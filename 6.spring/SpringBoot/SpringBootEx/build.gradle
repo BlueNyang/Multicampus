@@ -47,7 +47,7 @@ dependencies {
     implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'
 
     // Security - Password Encoding
-    implementation 'org.springframework.security:spring-security-crypto'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
 }
 
 tasks.named('test') {
