@@ -12,7 +12,7 @@ $(function () {
         return false
       } else {
         axios.get(
-          `/SpringMvcMyBatis/book/bookNoCheck`,
+          `/book/bookNoCheck`,
           {params: {bookNo: bookNo}}
         ).then((res) => {
           console.log(res);

@@ -3,9 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="kr.bluenyang.practice.book.dao.BookDAO">
+<mapper namespace="kr.bluenyang.practice.springbootbookmanagerex.book.dao.BookDAO">
 
-    <resultMap id="bookResult" type="kr.bluenyang.practice.book.model.Book">
+    <resultMap id="bookResult" type="kr.bluenyang.practice.springbootbookmanagerex.book.model.Book">
         <result property="bookNo" column="BOOK_NO"/>
         <result property="bookName" column="BOOK_NAME"/>
         <result property="bookAuthor" column="BOOK_AUTHOR"/>
@@ -42,7 +42,7 @@
     </select>
 
     <!-- 도서 등록: insert -->
-    <insert id="insertBook" parameterType="kr.bluenyang.practice.book.model.Book">
+    <insert id="insertBook" parameterType="kr.bluenyang.practice.springbootbookmanagerex.book.model.Book">
         INSERT INTO book (book_no, book_name, book_author, book_price, book_date, book_stock, pub_no)
         VALUES (
         #{bookNo},
@@ -56,7 +56,7 @@
     </insert>
 
     <!-- 도서 수정: update -->
-    <update id="updateBook" parameterType="kr.bluenyang.practice.book.model.Book">
+    <update id="updateBook" parameterType="kr.bluenyang.practice.springbootbookmanagerex.book.model.Book">
         update book
         set book_name = #{bookName},
         book_author = #{bookAuthor},

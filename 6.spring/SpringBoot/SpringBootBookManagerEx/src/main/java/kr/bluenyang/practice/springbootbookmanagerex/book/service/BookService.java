@@ -1,6 +1,6 @@
 package kr.bluenyang.practice.springbootbookmanagerex.book.service;
 
-import kr.bluenyang.practice.book.model.BookDTO;
+import kr.bluenyang.practice.springbootbookmanagerex.book.model.BookDTO;
 
 import java.util.HashMap;
 import java.util.List;

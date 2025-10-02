@@ -1,14 +1,12 @@
 package kr.bluenyang.practice.springbootbookmanagerex.book.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.sql.Date;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 // DTO (Data Transfer Object) for Book

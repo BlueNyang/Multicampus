@@ -1,4 +1,4 @@
-<%--@elvariable id="book" type="kr.bluenyang.practice.book.model.BookDTO"--%>
+<%--@elvariable id="prd" type="kr.bluenyang.practice.product.model.ProductVO"--%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -6,8 +6,8 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>">
-    <title>도서 상세 정보 조회</title>
+    <link rel="stylesheet" href="<c:url value='/css/style.css'/>">
+    <title>상품 상세 정보 조회</title>
     <style>
       body {
         display: flex;
@@ -15,12 +15,12 @@
         width: 80%;
         align-items: center;
         text-align: center;
-        margin-inline: auto;
+        margin: 0 auto;
       }
 
       table {
         width: 50%;
-        margin-inline: auto;
+        margin: auto;
       }
 
       table, th, td {
@@ -51,48 +51,54 @@
       a {
         flex: 1;
       }
+
+      .product-img {
+        width: auto;
+        height: 180px;
+      }
     </style>
   </head>
   <body>
-    <h3>도서 상세 정보 조회</h3>
+    <h3>상품 상세 정보 조회</h3>
     <div class="links">
       <!--  index 페이지로 이동 링크 추가 -->
-      <a href="<c:url value='/book/listAllBook' />">[목록으로 이동]</a>
-      <a href="<c:url value='/book/updateBookForm/${book.bookNo}'/>">[도서 정보 수정]</a><br>
-      <a href="javascript:deleteCheck();">[도서 정보 삭제]</a><br>
+      <a href="<c:url value='/product/listAllProduct'/>">[목록으로 이동]</a>
+      <a href="<c:url value='/product/updateProductForm/${prd.prdNo}'/>">[상품 정보 수정]</a><br>
+      <a href="javascript:deleteCheck();">[상품 정보 삭제]</a><br>
     </div>
     <table>
+      <tr>
+        <td colspan="2">
+          <img class="product-img" src="<c:url value='/images/product/${prd.prdNo}.jpg'/>" alt="상품 이미지">
+        </td>
+      </tr>
       <tr>
         <th>구분</th>
         <th>내용</th>
       </tr>
       <tr>
-        <td>도서번호</td>
-        <td>${book.bookNo}</td>
+        <td>상품번호</td>
+        <td>${prd.prdNo}</td>
       </tr>
       <tr>
-        <td>도서명</td>
-        <td>${book.bookName}</td>
+        <td>상품명</td>
+        <td>${prd.prdName}</td>
       </tr>
       <tr>
-        <td>저 자</td>
-        <td>${book.bookAuthor}</td>
+        <td>가격</td>
+        <td>${prd.prdPrice}</td>
       </tr>
       <tr>
-        <td>도서가격</td>
-        <td>${book.bookPrice}</td>
-      </tr>
-      <tr>
-        <td>출판일</td>
-        <td><fmt:formatDate value="${book.bookDate}" pattern="YYYY-MM-dd"/></td>
+        <td>제조회사</td>
+        <td>${prd.prdCompany}</td>
       </tr>
       <tr>
         <td>재고</td>
-        <td>${book.bookStock}</td>
+        <td>${prd.prdStock}</td>
       </tr>
       <tr>
-        <td>출판사명</td>
-        <td>${book.pubName}</td>
+        <td>제조일</td>
+        <td><fmt:formatDate value="${prd.prdDate}" pattern="YYYY-MM-dd"/></td>
       </tr>
     </table>
 
@@ -101,7 +107,7 @@
       function deleteCheck() {
         let answer = confirm("삭제하시겠습니까?");
         if (answer) {
-          location.href = "<c:url value="/book/deleteBook/${book.bookNo}"/>";
+          location.href = "<c:url value="/product/deleteProduct/${prd.prdNo}"/>";
         }
       }
     </script>

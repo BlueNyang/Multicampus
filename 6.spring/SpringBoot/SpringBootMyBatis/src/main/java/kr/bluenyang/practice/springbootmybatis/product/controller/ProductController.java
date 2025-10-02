@@ -76,7 +76,7 @@ public class ProductController {
     // POST 방식
     @ResponseBody
     @RequestMapping("/prdNoCheck")
-    public String prdNoCheck(@RequestParam String prdNo) {
+    public String prdNoCheck(@RequestParam("prdNo") String prdNo) {
         log.info("prdNoCheck");
         return checkPrdNo(prdNo);
     }
@@ -89,7 +89,7 @@ public class ProductController {
         return checkPrdNo(prdNo);
     }
 
-    // fetch() GET 방식 - 요청 url에 쿼리스트링으로 전달
+    // fetch() POST 방식 - 요청 url에 쿼리스트링으로 전달
     @ResponseBody
     @RequestMapping("/prdNoCheck3")
     public String prdNoCheck3(@RequestParam String prdNo) {

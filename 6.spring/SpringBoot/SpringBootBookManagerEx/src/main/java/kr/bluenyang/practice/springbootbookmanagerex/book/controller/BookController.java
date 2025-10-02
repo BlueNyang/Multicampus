@@ -1,7 +1,7 @@
 package kr.bluenyang.practice.springbootbookmanagerex.book.controller;
 
-import kr.bluenyang.practice.book.model.BookDTO;
-import kr.bluenyang.practice.book.service.BookService;
+import kr.bluenyang.practice.springbootbookmanagerex.book.model.BookDTO;
+import kr.bluenyang.practice.springbootbookmanagerex.book.service.BookService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -17,6 +17,7 @@ import java.util.List;
 
 @Slf4j
 @Controller
+@RequestMapping("/book")
 @RequiredArgsConstructor
 public class BookController {
     // 서비스 Inject

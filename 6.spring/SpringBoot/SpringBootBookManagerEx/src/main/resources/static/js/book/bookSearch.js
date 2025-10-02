@@ -18,7 +18,7 @@ $(function () {
 
       $.ajax({
         type: "POST",
-        url: "/SpringMvcMyBatis/book/searchBook",
+        url: "/book/searchBook",
         data: formData,
         success: function (resp) {
           $("#searchResultBox").html(resp)

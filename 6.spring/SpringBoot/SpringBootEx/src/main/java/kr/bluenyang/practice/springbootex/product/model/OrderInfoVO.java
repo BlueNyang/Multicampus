@@ -1,0 +1,19 @@
+package kr.bluenyang.practice.springbootex.product.model;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class OrderInfoVO {
+    private String ordNo;
+    private String ordDate;
+    private String memId;
+    private String ordRcvReceiver;
+    private String ordRcvZipcode;
+    private String ordRcvAddress1;
+    private String ordRcvAddress2;
+    private String ordRcvPhone;
+    private String ordRcvMsg;
+    private String ordPay;
+}

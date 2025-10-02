@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="<c:url value='/resources/css/style.css'/>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<c:url value='/css/style.css'/>">
     <title>상품 검색</title>
-    <script src="<c:url value='/resources/js/jquery-3.7.1.min.js'/>"></script>
-    <script src="<c:url value='/resources/js/book/bookSearch.js'/>"></script>
+    <script src="<c:url value='/js/jquery-3.7.1.min.js'/>"></script>
+    <script src="<c:url value='/js/book/bookSearch.js'/>"></script>
     <style>
       body {
         width: 80%;

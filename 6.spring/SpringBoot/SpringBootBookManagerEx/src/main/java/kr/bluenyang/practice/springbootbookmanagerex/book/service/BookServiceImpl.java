@@ -1,8 +1,8 @@
 package kr.bluenyang.practice.springbootbookmanagerex.book.service;
 
-import kr.bluenyang.practice.book.dao.BookDAO;
-import kr.bluenyang.practice.book.model.Book;
-import kr.bluenyang.practice.book.model.BookDTO;
+import kr.bluenyang.practice.springbootbookmanagerex.book.dao.BookDAO;
+import kr.bluenyang.practice.springbootbookmanagerex.book.model.Book;
+import kr.bluenyang.practice.springbootbookmanagerex.book.model.BookDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;

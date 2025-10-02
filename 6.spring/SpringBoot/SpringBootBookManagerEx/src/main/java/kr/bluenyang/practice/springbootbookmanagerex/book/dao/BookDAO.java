@@ -1,13 +1,14 @@
 package kr.bluenyang.practice.springbootbookmanagerex.book.dao;
 
-import kr.bluenyang.practice.book.model.Book;
+import kr.bluenyang.practice.springbootbookmanagerex.book.model.Book;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 /**
- * @description : BookDAO interface for managing book record
- * @writer: bluenyang
+ * BookDAO interface for managing book record
  */
+@Mapper
 public interface BookDAO {
 
     /**
