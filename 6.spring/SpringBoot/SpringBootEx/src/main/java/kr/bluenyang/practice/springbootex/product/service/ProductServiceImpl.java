@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
-    ProductDAO dao;
+    private final ProductDAO dao;
 
     @Override
     public List<ProductDTO> inquireAllProduct() {

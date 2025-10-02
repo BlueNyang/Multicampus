@@ -22,7 +22,7 @@
           <tr>
             <td rowspan="9">
               <img
-                 src="<c:url value='/product_images/${prd.prdImg}'/>"
+                 src="<c:url value='/product_images/${product.prdImg}'/>"
                  width="300"
                  height="250"
                  alt=""
@@ -31,27 +31,27 @@
           </tr>
           <tr>
             <td>상품번호</td>
-            <td>${prd.prdNo}</td>
+            <td>${product.prdNo}</td>
           <tr>
             <td>상품명</td>
-            <td>${prd.prdName}</td>
+            <td>${product.prdName}</td>
           </tr>
           <tr>
             <td>가격</td>
             <td>
-              <span id="price" data-price="${prd.prdPrice}">
-                <fmt:formatNumber value="${prd.prdPrice}" type="number" maxFractionDigits="3"/>
+              <span id="price" data-price="${product.prdPrice}">
+                <fmt:formatNumber value="${product.prdPrice}" type="number" maxFractionDigits="3"/>
               </span>
               <span>원</span>
             </td>
           </tr>
           <tr>
             <td>제조회사</td>
-            <td>${prd.prdCompany}</td>
+            <td>${product.prdCompany}</td>
           </tr>
           <tr>
             <td>상품설명</td>
-            <td>${prd.prdDesc}</td>
+            <td>${product.prdDesc}</td>
           </tr>
           <tr>
             <td>
@@ -67,7 +67,7 @@
             <td>구매 예정 금액</td>
             <td>
               <span id="amount">
-                <fmt:formatNumber value="${prd.prdPrice}" type="number" maxFractionDigits="3"/>
+                <fmt:formatNumber value="${product.prdPrice}" type="number" maxFractionDigits="3"/>
               </span> 원
             </td>
           </tr>
@@ -82,7 +82,7 @@
       </form>
 
       <br><br>
-      <a href="<c:url value='/product/productCtgList/${prd.ctgId}'/>">
+      <a href="<c:url value='/product/productCtgList/${product.ctgId}'/>">
         <button>상품 목록 보기</button>
       </a>
 

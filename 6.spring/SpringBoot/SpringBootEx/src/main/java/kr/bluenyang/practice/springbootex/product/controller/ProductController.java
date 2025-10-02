@@ -35,7 +35,7 @@ public class ProductController {
         model.addAttribute("productList", list);
 
         // 카테고리별 product를 보여주는 view로 forwarding
-        return "product/productCtgListView";
+        return "product/productListView";
     }
 
     @GetMapping("/productDetail/{prdId}")

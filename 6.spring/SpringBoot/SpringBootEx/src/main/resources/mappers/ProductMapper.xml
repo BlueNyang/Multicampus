@@ -3,7 +3,7 @@
 
 <mapper namespace="kr.bluenyang.practice.springbootex.product.dao.ProductDAO">
     <resultMap id="prdResult" type="kr.bluenyang.practice.springbootex.product.model.Product">
-        <id property="prdNo" column="prd_no"/>
+        <result property="prdNo" column="prd_no"/>
         <result property="prdName" column="prd_name"/>
         <result property="prdCompany" column="prd_company"/>
         <result property="prdStock" column="prd_stock"/>
@@ -11,8 +11,10 @@
         <result property="prdImg" column="prd_img"/>
         <result property="ctgId" column="ctg_id"/>
 
-        <association property="prdPrice" javaType="kr.bluenyang.practice.springbootex.product.vo.Money">
-            <result property="amount" column="prd_price"/>
+        <association property="prdPrice" javaType="kr.bluenyang.practice.springbootex.product.vo.MoneyVO">
+            <constructor>
+                <arg column="prd_price" javaType="java.lang.Integer"/>
+            </constructor>
         </association>
     </resultMap>
 
