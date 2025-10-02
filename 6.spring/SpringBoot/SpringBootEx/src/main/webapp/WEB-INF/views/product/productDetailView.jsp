@@ -17,7 +17,7 @@
 
       <h3>상품 상세 조회</h3>
       <br><br>
-      <form method="post" action="<c:url value='/product/insertCart'/>">
+      <form method="post" action="<c:url value='/cart/insertCart'/>">
         <table>
           <tr>
             <td rowspan="9">

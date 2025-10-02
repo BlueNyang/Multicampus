@@ -40,7 +40,7 @@
   <div id="mainMenuBox">
     <ul id="menuItem">
       <li><a href="#">SPECIAL</a></li>
-      <li><a href="#">메뉴항목1</a></li>
+      <li><a href="<c:url value="/product"/>">전체 상품</a></li>
       <li><a href="#">메뉴항목2</a></li>
       <li><a href="#">메뉴항목3</a></li>
       <li><a href="#">메뉴항목4</a></li>
