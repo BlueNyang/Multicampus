@@ -11,3 +11,4 @@
 <link rel="stylesheet" type="text/css" href="<c:url value="/css/common/index.css"/>"/>
 <link rel="stylesheet" type="text/css" href="<c:url value="/css/common/menu.css"/>"/>
 <script src="<c:url value="/js/jquery-3.7.1.min.js"/>"></script>
+<script src="<c:url value="/js/main/subMenu.js"/>"></script>

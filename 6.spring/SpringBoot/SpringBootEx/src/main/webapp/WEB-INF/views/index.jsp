@@ -1,23 +1,23 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>프로젝트 예제 : index 메인 페이지</title>
-    <jsp:include page="layout/head.jsp"/>
+    <c:import url="layout/head.jsp"/>
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/main/slideShow.css"/>"/>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/css/main/tabMenu.css"/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value="/css/main/product.css"/>"/>
-    <script src="<c:url value="/js/main/subMenu.js"/>"></script>
-    <script src="<c:url value="/js/main/slideShow.js"/>"></script>
-    <script src="<c:url value="/js/main/tabMenu.js"/>"></script>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/css/common/tabMenu.css"/>"/>
     <script src="<c:url value="/js/main/index.js"/>"></script>
+    <script src="<c:url value="/js/main/tabMenu.js"/>"></script>
+    <script src="<c:url value="/js/main/slideShow.js"/>"></script>
   </head>
   <body>
     <div id="wrap"> <!-- 전체 영역 -->
-      <jsp:include page="layout/header.jsp"/>
+      <c:import url="layout/header.jsp"/>
       <section><!-- 컨텐츠 영역 -->
         <article id="slideShow"> <!-- 슬라이드 쇼 -->
 
@@ -78,7 +78,7 @@
           </div>
         </article>
       </section>
-      <jsp:include page="layout/footer.jsp"/>
+      <c:import url="layout/footer.jsp"/>
     </div> <!-- wrap 끝 -->
   </body>
 </html>

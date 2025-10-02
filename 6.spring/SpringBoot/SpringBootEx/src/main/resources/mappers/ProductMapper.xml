@@ -18,54 +18,51 @@
      -->
     <!-- resultMap 구성 : 반환되는 rs의 컬럼과 저장해야하는 vo 클래스의 필드명을 매핑하는 역할 -->
     <resultMap id="prdResult" type="kr.bluenyang.practice.springbootex.product.model.ProductVO">
-        <result property="prdNo" column="prdNo"/>
-        <result property="prdName" column="prdName"/>
-        <result property="prdPrice" column="prdPrice"/>
-        <result property="prdCompany" column="prdCompany"/>
-        <result property="prdStock" column="prdStock"/>
-        <result property="prdDate" column="prdDate"/>
+        <result property="prdNo" column="prd_no"/>
+        <result property="prdName" column="prd_name"/>
+        <result property="prdPrice" column="prd_price"/>
+        <result property="prdCompany" column="prd_company"/>
+        <result property="prdStock" column="prd_stock"/>
+        <result property="prdDesc" column="prd_desc"/>
+        <result property="prdImg" column="prd_img"/>
+        <result property="ctgId" column="ctg_id"/>
     </resultMap>
 
-    <!-- db에서 반환되는 rs set이 0개 이상임 : 한개의 vo에 레코드를 저장하고 vo를 collection에 저장해야 함
-         collection 구성은 자동 진행함
-
+    <!-- <select id="listAllProduct" resultMap="prdResult"> -->
+    <!--     SELECT * FROM product ORDER BY prdNo -->
+    <!-- </select> -->
     <select id="listAllProduct" resultMap="prdResult">
-        SELECT * FROM product ORDER BY prdNo
-    </select>-->
-    <select id="listAllProduct" resultType="kr.bluenyang.practice.springbootex.product.model.ProductVO">
-        SELECT * FROM product ORDER BY prdNo
+        SELECT * FROM ex_product ORDER BY prd_no
     </select>
-    <!-- 변수자리에 사용할 수 있는 기호 : #{필드명/변수명}, ${필드명/변수명}
-         #{} : preparedStatement의 ?
-         ${} : statement의 변수
-    -->
+    <!-- 변수자리에 사용할 수 있는 기호 : #{필드명/변수명}, ${필드명/변수명} -->
+    <!-- #{} : preparedStatement의 ? -->
+    <!-- ${} : statement의 변수 -->
     <insert id="insertProduct" parameterType="kr.bluenyang.practice.springbootex.product.model.ProductVO">
-        INSERT INTO product (prdNo, prdName, prdPrice, prdCompany, prdStock, prdDate)
-        VALUES (#{prdNo}, #{prdName}, #{prdPrice},#{prdCompany}, #{prdStock}, #{prdDate})
+        INSERT INTO ex_product (prd_no, prd_name, prd_price, prd_company, prd_stock, prd_desc, prd_img, ctg_id)
+        VALUES (#{prdNo}, #{prdName}, #{prdPrice},#{prdCompany}, #{prdStock}, #{prdDesc}, #{prdImg}, #{ctgId})
     </insert>
 
     <!-- 상품 상세정보 조회 -->
-    <select id="detailViewProduct" parameterType="string"
-            resultType="kr.bluenyang.practice.springbootex.product.model.ProductVO">
-        SELECT * FROM product WHERE prdNo= #{prdNo}
+    <select id="detailViewProduct" parameterType="string" resultMap="prdResult">
+        SELECT * FROM ex_product WHERE prd_no=#{prdNo}
     </select>
 
 
     <!-- 상품 정보 수정 -->
     <update id="updateProduct" parameterType="kr.bluenyang.practice.springbootex.product.model.ProductVO">
-        UPDATE product SET prdName=#{prdName}, prdPrice=#{prdPrice}, prdCompany=#{prdCompany}, prdStock=#{prdStock},
-        prdDate=#{prdDate}
-        WHERE prdNo=#{prdNo}
+        UPDATE ex_product SET prd_name=#{prdName}, prd_price=#{prdPrice}, prd_company=#{prdCompany},
+        prd_stock=#{prdStock}, prd_desc=#{prdDesc}, prd_img=#{prdImg}, ctg_id=#{ctgId}
+        WHERE prd_no=#{prdNo}
     </update>
 
     <!-- 상품 정보 삭제 -->
     <delete id="deleteProduct" parameterType="string">
-        DELETE FROM product WHERE prdNo=#{prdNo}
+        DELETE FROM ex_product WHERE prd_no=#{prdNo}
     </delete>
 
     <!-- 상품 번호 중복 확인 -->
     <select id="prdNoCheck" resultType="string" parameterType="string">
-        SELECT prdNo FROM product WHERE prdNo=#{prdNo}
+        SELECT prd_no FROM ex_product WHERE prd_no=#{prdNo}
     </select>
 
     <!-- 상품 검색
@@ -74,15 +71,19 @@
          검색어 : keyword:사용자입력값
     -->
     <select id="productSearch" parameterType="hashmap" resultMap="prdResult">
-        SELECT * FROM product WHERE
+        SELECT * FROM ex_product WHERE
         <choose>
-            <when test="type!=null and type.equals('prdName')">
-                prdName LIKE '%'||#{keyword}||'%'
+            <when test="type != null and type.equals('prdName')">
+                prd_name LIKE '%'||#{keyword}||'%'
             </when>
-            <when test="type!=null and type.equals('prdCompany')">
-                prdCompany LIKE '%'||#{keyword}||'%'
+            <when test="type != null and type.equals('prdCompany')">
+                prd_company LIKE '%'||#{keyword}||'%'
             </when>
         </choose>
+    </select>
+
+    <select id="ctgListProduct" parameterType="string" resultMap="prdResult">
+        SELECT * FROM ex_product WHERE ctg_id=#{ctgId} ORDER BY prd_no
     </select>
 </mapper>
 

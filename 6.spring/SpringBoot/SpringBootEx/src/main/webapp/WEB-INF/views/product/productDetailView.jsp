@@ -1,115 +1,101 @@
-<%--@elvariable id="prd" type="kr.bluenyang.practice.product.model.ProductVO"--%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="<c:url value='/css/style.css'/>">
-    <title>상품 상세 정보 조회</title>
-    <style>
-      body {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        align-items: center;
-        text-align: center;
-        margin: 0 auto;
-      }
-
-      table {
-        width: 50%;
-        margin: auto;
-      }
-
-      table, th, td {
-        border: 1px solid #777;
-        border-collapse: collapse;
-      }
-
-      th, td {
-        padding: 10px;
-      }
-
-      th:first-child {
-        width: 150px;
-      }
-
-      th {
-        background-color: #bbb;
-      }
-
-      .links {
-        width: 60%;
-        display: inline-flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 20px;
-      }
-
-      a {
-        flex: 1;
-      }
-
-      .product-img {
-        width: auto;
-        height: 180px;
-      }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 상세 조회</title>
+    <c:import url="/WEB-INF/views/layout/head.jsp"/>
+    <script src="<c:url value='/js/product/productDetail.js'/>"></script>
   </head>
   <body>
-    <h3>상품 상세 정보 조회</h3>
-    <div class="links">
-      <!--  index 페이지로 이동 링크 추가 -->
-      <a href="<c:url value='/product/listAllProduct'/>">[목록으로 이동]</a>
-      <a href="<c:url value='/product/updateProductForm/${prd.prdNo}'/>">[상품 정보 수정]</a><br>
-      <a href="javascript:deleteCheck();">[상품 정보 삭제]</a><br>
-    </div>
-    <table>
-      <tr>
-        <td colspan="2">
-          <img class="product-img" src="<c:url value='/images/product/${prd.prdNo}.jpg'/>" alt="상품 이미지">
-        </td>
-      </tr>
-      <tr>
-        <th>구분</th>
-        <th>내용</th>
-      </tr>
-      <tr>
-        <td>상품번호</td>
-        <td>${prd.prdNo}</td>
-      </tr>
-      <tr>
-        <td>상품명</td>
-        <td>${prd.prdName}</td>
-      </tr>
-      <tr>
-        <td>가격</td>
-        <td>${prd.prdPrice}</td>
-      </tr>
-      <tr>
-        <td>제조회사</td>
-        <td>${prd.prdCompany}</td>
-      </tr>
-      <tr>
-        <td>재고</td>
-        <td>${prd.prdStock}</td>
-      </tr>
-      <tr>
-        <td>제조일</td>
-        <td><fmt:formatDate value="${prd.prdDate}" pattern="YYYY-MM-dd"/></td>
-      </tr>
-    </table>
+    <div id="wrap">
+      <!--  top -->
+      <c:import url="/WEB-INF/views/layout/header.jsp"/>
 
-    <!-- 삭제 확인 메시지 출력 -->
-    <script>
-      function deleteCheck() {
-        let answer = confirm("삭제하시겠습니까?");
-        if (answer) {
-          location.href = "<c:url value="/product/deleteProduct/${prd.prdNo}"/>";
-        }
-      }
-    </script>
+      <h3>상품 상세 조회</h3>
+      <br><br>
+      <form method="post" action="<c:url value='/product/insertCart'/>">
+        <table>
+          <tr>
+            <td rowspan="9">
+              <img
+                 src="<c:url value='/product_images/${prd.prdImg}'/>"
+                 width="300"
+                 height="250"
+                 alt=""
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>상품번호</td>
+            <td>${prd.prdNo}</td>
+          <tr>
+            <td>상품명</td>
+            <td>${prd.prdName}</td>
+          </tr>
+          <tr>
+            <td>가격</td>
+            <td>
+              <span id="price" data-price="${prd.prdPrice}">
+                <fmt:formatNumber value="${prd.prdPrice}" type="number" maxFractionDigits="3"/>
+              </span>
+              <span>원</span>
+            </td>
+          </tr>
+          <tr>
+            <td>제조회사</td>
+            <td>${prd.prdCompany}</td>
+          </tr>
+          <tr>
+            <td>상품설명</td>
+            <td>${prd.prdDesc}</td>
+          </tr>
+          <tr>
+            <td>
+              <label for="cartQty">주문수량</label>
+            </td>
+            <td>
+              <input type="button" id="minusBtn" value="-">
+              <input type="text" id="cartQty" name="cartQty" value="1" size="1" readonly>
+              <input type="button" id="plusBtn" value="+">
+            </td>
+          </tr>
+          <tr>
+            <td>구매 예정 금액</td>
+            <td>
+              <span id="amount">
+                <fmt:formatNumber value="${prd.prdPrice}" type="number" maxFractionDigits="3"/>
+              </span> 원
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <!-- 로그인 하지 않은 경우에는 [로그인] 버튼  -->
+
+
+            </td>
+          </tr>
+        </table>
+      </form>
+
+      <br><br>
+      <a href="<c:url value='/product/productCtgList/${prd.ctgId}'/>">
+        <button>상품 목록 보기</button>
+      </a>
+
+
+      <!--  bottom -->
+      <c:import url="/WEB-INF/views/layout/footer.jsp"/>
+
+    </div>
   </body>
 </html>
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 package kr.bluenyang.practice.springbootex.product.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.HashMap;
 
 import kr.bluenyang.practice.springbootex.product.model.ProductVO;
@@ -8,7 +8,9 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface ProductDAO {
-    ArrayList<ProductVO> listAllProduct(); // 전체 상품 조회
+    List<ProductVO> listAllProduct(); // 전체 상품 조회
+
+    List<ProductVO> ctgListProduct(String ctgId); // 카테고리별 상품 조회
 
     void insertProduct(ProductVO vo);       // 상품 정보 등록
 
@@ -20,5 +22,5 @@ public interface ProductDAO {
 
     String prdNoCheck(String prdNo);// 상품번호 중복 확인
 
-    ArrayList<ProductVO> productSearch(HashMap<String, Object> map);// 상품검색
+    List<ProductVO> productSearch(HashMap<String, Object> map);// 상품검색
 }

@@ -7,6 +7,7 @@
   <head>
     <meta charset="UTF-8">
     <title>상품 정보 수정</title>
+    <jsp:include page="../layout/head.jsp"/>
   </head>
   <body>
     <h3>상품 정보 수정</h3>

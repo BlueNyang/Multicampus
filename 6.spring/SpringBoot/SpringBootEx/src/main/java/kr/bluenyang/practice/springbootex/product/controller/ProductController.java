@@ -3,13 +3,15 @@ package kr.bluenyang.practice.springbootex.product.controller;
 import kr.bluenyang.practice.springbootex.product.model.ProductVO;
 import kr.bluenyang.practice.springbootex.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/product")
@@ -26,11 +28,18 @@ public class ProductController {
     @RequestMapping("/listAllProduct")
     public String listAllProduct(Model model) {
         // 1. service 메소드 호출
-        ArrayList<ProductVO> prdList = service.listAllProduct();
+        var prdList = service.listAllProduct();
         // 2. model에 prdList 저장
         model.addAttribute("prdList", prdList);
         // 3. 뷰 페이지 결정 후 반환
         return "product/productListView";
+    }
+
+    @GetMapping("/productCtgList/{ctgId}")
+    public String listProductByCtg(@PathVariable String ctgId, Model model) {
+        var prdList = service.ctgListProduct(ctgId);
+        model.addAttribute("prdList", prdList);
+        return "product/productCtgListView";
     }
 
     // 상품 등록 폼 요청
@@ -51,8 +60,8 @@ public class ProductController {
     }
 
     // 상품 상세 정보
-    @RequestMapping("/detailViewProduct/{prdNo}")
-    public String detailViewProduct(@PathVariable String prdNo, Model model) {
+    @RequestMapping("/productDetail/{prdNo}")
+    public String productDetail(@PathVariable String prdNo, Model model) {
         // 1. 상품 번호 전송해서 관련 정보 반환
         ProductVO prd = service.detailViewProduct(prdNo);
         // 2. 반환 정보 모델에 저장
@@ -172,42 +181,17 @@ public class ProductController {
     }
 
     // 상품검색 폼 요청 처리
-    @RequestMapping("/productSearchForm1")
+    @RequestMapping("/productSearchForm")
     public String productSearchForm1() {
-        return "product/productSearchForm1";
+        return "product/productSearchForm";
     }
 
     // 상품 검색 처리
     // 파라미터 2개 전송됨 : 검색기준,검색어 : type:prdName keyword:모니터
     @ResponseBody
-    @RequestMapping("/productSearch1")
-    public ArrayList<ProductVO> productSearch1(@RequestParam HashMap<String, Object> param, Model model) {
-        ArrayList<ProductVO> prdList = service.productSearch(param);
-        // model.addAttribute("prdList",prdList);
-
-        return prdList; // ArrayList 반환
-    }
-
-    // 상품검색 폼2 요청 처리
-    @RequestMapping("/productSearchForm2")
-    public String productSearchForm2() {
-        return "product/productSearchForm2";
-    }
-
-    // 상품 검색 처리2
-    // 파라미터 2개 전송됨 : 검색기준,검색어 : type:prdName keyword:모니터
-    @RequestMapping("/productSearch2")
-    public String productSearch2(@RequestParam HashMap<String, Object> param, Model model) {
-        ArrayList<ProductVO> prdList = service.productSearch(param);
-        model.addAttribute("prdList", prdList);
-
-        return "product/productSearchResultView";
-    }
-
-    // 상품검색 폼3 요청 처리
-    @RequestMapping("/productSearchForm3")
-    public String productSearchForm3() {
-        return "product/productSearchForm3";
+    @RequestMapping("/productSearch")
+    public List<ProductVO> productSearch1(@RequestParam HashMap<String, Object> param, Model model) {
+        return service.productSearch(param); // List 반환
     }
 }
 

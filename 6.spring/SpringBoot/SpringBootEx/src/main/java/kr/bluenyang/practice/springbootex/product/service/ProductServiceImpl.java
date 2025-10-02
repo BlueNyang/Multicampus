@@ -6,8 +6,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -20,15 +20,19 @@ public class ProductServiceImpl implements ProductService {
         return dao.prdNoCheck(prdNo);
     }
 
+    @Override
+    public List<ProductVO> ctgListProduct(String ctgId) {
+        return dao.ctgListProduct(ctgId);
+    }
 
     @Override
-    public ArrayList<ProductVO> productSearch(HashMap<String, Object> map) {
+    public List<ProductVO> productSearch(HashMap<String, Object> map) {
         return dao.productSearch(map);
     }
 
 
     @Override
-    public ArrayList<ProductVO> listAllProduct() {
+    public List<ProductVO> listAllProduct() {
         return dao.listAllProduct();
     }
 
@@ -49,8 +53,10 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductVO detailViewProduct(String prdNo) {
+        var prd = dao.detailViewProduct(prdNo);
 
-        return dao.detailViewProduct(prdNo);
+
+        return prd;
     }
 
 }
