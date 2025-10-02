@@ -7,12 +7,16 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Date;
 
+/**
+ * Member 정보를 수정하기 위한 DTO (Data Transfer Object).
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class MemberEditDTO {
     private String memId;
     private String memPwd;
+    // 새 비밀번호 필드 추가
     private String newMemPwd;
     private String memName;
     private String memEmail;
@@ -25,6 +29,11 @@ public class MemberEditDTO {
     private String memAddress1;
     private String memAddress2;
 
+    /**
+     * DTO를 Entity로 변환.
+     *
+     * @return Member 엔티티
+     */
     public Member toEntity() {
         return new Member(
                 this.memId,

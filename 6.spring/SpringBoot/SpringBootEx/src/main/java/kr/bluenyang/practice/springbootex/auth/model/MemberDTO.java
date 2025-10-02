@@ -7,6 +7,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Date;
 
+/**
+ * DTO (Data Transfer Object) for Member entity.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,6 +20,7 @@ public class MemberDTO {
     private String memEmail;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date memJoinDate;
+    // View에서 휴대폰 번호를 세 부분으로 나누어 출력하기 위한 필드
     private String memHp1;
     private String memHp2;
     private String memHp3;
@@ -47,6 +51,11 @@ public class MemberDTO {
         this.memAddress2 = member.getMemAddress2();
     }
 
+    /**
+     * Convert DTO to Entity.
+     *
+     * @return Member entity
+     */
     public Member toEntity() {
         return new Member(
                 this.memId,

@@ -6,6 +6,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Date;
 
+/**
+ * Member Entity
+ */
 @Getter
 @AllArgsConstructor
 public class Member {

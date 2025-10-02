@@ -20,6 +20,7 @@ public class MemberServiceImpl implements MemberService {
     public String tryLogin(String id, String pwd) {
         Member member = dao.findMemberById(id);
 
+        // Check if member exists
         if (member == null) {
             log.info("[tryLogin] Login Failed - No such user");
             return null;
@@ -40,10 +41,12 @@ public class MemberServiceImpl implements MemberService {
     public String idDupCheck(String id) {
         Member member = dao.findMemberById(id);
 
+        // Check if member exists
         if (member != null) {
             log.info("[idDupCheck] ID is already taken");
             return "duplicated";
         } else {
+            // ID is available
             log.info("[idDupCheck] ID is available");
             return "available";
         }
@@ -57,14 +60,17 @@ public class MemberServiceImpl implements MemberService {
         var pwd = dto.getMemPwd();
         dto.setMemPwd(passwordEncoder.encode(pwd));
 
+        // Save member to database
         dao.insertMember(dto.toEntity());
     }
 
     @Override
     public MemberDTO getMember(String id) {
         log.info("[getMember] Get Member: {}", id);
+        // Get member from database
         Member member = dao.findMemberById(id);
         if (member != null) {
+            // Convert Member entity to MemberDTO
             return new MemberDTO(member);
         }
 
@@ -75,12 +81,16 @@ public class MemberServiceImpl implements MemberService {
     public String updateMember(MemberEditDTO dto) {
         log.info("[updateMember] Update Member: {}", dto.getMemId());
 
+        // Get existing member
         Member member = dao.findMemberById(dto.getMemId());
+
+        // Check if member exists
         if (member == null) {
             log.info("[updateMember] No such member");
             return "no_such_member";
         }
 
+        // Check current password
         if (!passwordEncoder.matches(dto.getMemPwd(), member.getMemPwd())) {
             log.info("[updateMember] Incorrect password");
             return "incorrect_password";
@@ -90,6 +100,7 @@ public class MemberServiceImpl implements MemberService {
         var newPwd = dto.getNewMemPwd();
         dto.setNewMemPwd(passwordEncoder.encode(newPwd));
 
+        // Update member in database
         dao.updateMember(dto.toEntity());
         return "success";
     }
@@ -99,14 +110,18 @@ public class MemberServiceImpl implements MemberService {
         log.info("[unregisterMember] Remove Member: {}", dto.getMemId());
         Member member = dao.findMemberById(dto.getMemId());
 
+        // Check if member exists
         if (member == null) {
             log.info("[unregisterMember] No such member");
             return "no_such_member";
+            // Check current password
         } else if (!passwordEncoder.matches(dto.getMemPwd(), member.getMemPwd())) {
             log.info("[unregisterMember] Incorrect password");
+            // If password is incorrect
             return "incorrect_password";
         }
 
+        // Delete member from database
         dao.deleteMember(dto.getMemId());
         return "success";
     }
