@@ -3,6 +3,9 @@ package kr.bluenyang.practice.springbootex.product.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+/**
+ * Product DTO
+ */
 @Data
 @AllArgsConstructor
 public class ProductDTO {

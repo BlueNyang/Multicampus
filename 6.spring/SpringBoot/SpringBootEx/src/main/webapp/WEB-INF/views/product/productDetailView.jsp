@@ -74,8 +74,19 @@
           <tr>
             <td colspan="2">
               <!-- 로그인 하지 않은 경우에는 [로그인] 버튼  -->
-
-
+              <%--@elvariable id="authUser" type="java.lang.String"--%>
+              <c:if test="${empty authUser}">
+                <button>
+                  <a href="<c:url value="/auth/loginForm"/>">
+                    로그인
+                  </a>
+                </button>
+              </c:if>
+              <c:if test="${not empty authUser}">
+                <input type="hidden" name="prdNo" value="${product.prdNo}">
+                <input type="submit" id="insertCart" value="장바구니 담기"/>
+                <input type="submit" id="insertOrder" value="주문하기"/>
+              </c:if>
             </td>
           </tr>
         </table>
@@ -85,7 +96,6 @@
       <a href="<c:url value='/product/productCtgList/${product.ctgId}'/>">
         <button>상품 목록 보기</button>
       </a>
-
 
       <!--  bottom -->
       <c:import url="/WEB-INF/views/layout/footer.jsp"/>

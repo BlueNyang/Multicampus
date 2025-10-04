@@ -5,6 +5,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+/**
+ * Product Entity
+ */
 @Getter
 @NoArgsConstructor(access = lombok.AccessLevel.PROTECTED)
 public class Product {

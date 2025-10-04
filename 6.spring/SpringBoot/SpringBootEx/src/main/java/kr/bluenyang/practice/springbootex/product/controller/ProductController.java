@@ -20,6 +20,7 @@ public class ProductController {
     public String viewDefaultList(Model model) {
         log.info("view default list");
 
+        // 전체 product를 조회
         var list = service.inquireAllProduct();
         model.addAttribute("productList", list);
 
@@ -31,6 +32,7 @@ public class ProductController {
     public String productCtgList(@PathVariable String ctgId, Model model) {
         log.info("get productCtgList: {}", ctgId);
 
+        // 카테고리별 product를 조회
         var list = service.findProductListByCtgId(ctgId);
         model.addAttribute("productList", list);
 
@@ -42,6 +44,7 @@ public class ProductController {
     public String productDetail(@PathVariable String prdId, Model model) {
         log.info("get productDetail: {}", prdId);
 
+        // 상품 상세 정보를 조회
         var prd = service.findProductByPrdId(prdId);
         model.addAttribute("product", prd);
         return "product/productDetailView";

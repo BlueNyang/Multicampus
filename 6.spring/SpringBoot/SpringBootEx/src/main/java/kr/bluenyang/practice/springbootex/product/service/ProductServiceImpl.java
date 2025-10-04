@@ -18,7 +18,9 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductDTO> inquireAllProduct() {
         log.info("inquireAllProduct");
         try {
+            // Entity List
             var list = dao.getAllProductList();
+            // DTO List
             return list.stream().map(ProductDTO::fromEntity).toList();
         } catch (Exception e) {
             log.error("inquireAllProduct failed: {}", e.getMessage());
@@ -44,11 +46,13 @@ public class ProductServiceImpl implements ProductService {
         try {
             var prd = dao.getProductById(prdId);
 
+            // null check
             if (prd == null) {
                 log.warn("findProductByPrdId({}) is null", prdId);
                 return null;
             }
 
+            // Entity -> DTO
             return ProductDTO.fromEntity(prd);
         } catch (Exception e) {
             log.error("findProductByPrdId({}) failed: {}", prdId, e.getMessage());
