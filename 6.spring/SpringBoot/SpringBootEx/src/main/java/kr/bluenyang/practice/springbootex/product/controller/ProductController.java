@@ -21,7 +21,7 @@ public class ProductController {
         log.info("view default list");
 
         // 전체 product를 조회
-        var list = service.inquireAllProduct();
+        var list = service.getAllProduct();
         model.addAttribute("productList", list);
 
         // 전체 product를 보여주는 view로 forwarding

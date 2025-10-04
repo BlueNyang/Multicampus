@@ -8,6 +8,6 @@ import lombok.Setter;
 public class Cart {
     private int cartNo;
     private String memId;
-    private String prdId;
+    private String prdNo;
     int CartQty;
 }

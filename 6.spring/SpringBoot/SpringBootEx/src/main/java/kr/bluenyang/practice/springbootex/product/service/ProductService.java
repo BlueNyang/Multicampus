@@ -13,7 +13,7 @@ public interface ProductService {
      *
      * @return List of ProductDTO
      */
-    List<ProductDTO> inquireAllProduct();
+    List<ProductDTO> getAllProduct();
 
     /**
      * Get product list by category id

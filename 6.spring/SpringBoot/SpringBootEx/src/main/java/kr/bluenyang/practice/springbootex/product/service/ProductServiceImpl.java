@@ -15,15 +15,15 @@ public class ProductServiceImpl implements ProductService {
     private final ProductDAO dao;
 
     @Override
-    public List<ProductDTO> inquireAllProduct() {
-        log.info("inquireAllProduct");
+    public List<ProductDTO> getAllProduct() {
+        log.info("getAllProduct");
         try {
             // Entity List
             var list = dao.getAllProductList();
             // DTO List
             return list.stream().map(ProductDTO::fromEntity).toList();
         } catch (Exception e) {
-            log.error("inquireAllProduct failed: {}", e.getMessage());
+            log.error("getAllProduct failed: {}", e.getMessage());
             return null;
         }
     }

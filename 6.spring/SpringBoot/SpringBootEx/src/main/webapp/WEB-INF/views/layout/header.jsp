@@ -31,7 +31,7 @@
         </c:otherwise>
       </c:choose>
       <span>이벤트</span>
-      <span>장바구니</span>
+      <a href="<c:url value="/cart"/>">장바구니</a>
       <span>고객센터</span>
     </div>
   </div>
