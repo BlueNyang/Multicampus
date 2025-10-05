@@ -1,13 +1,15 @@
 package kr.bluenyang.practice.springbootex.cart.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@Builder
+@EqualsAndHashCode(of = "cartNo")
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Cart {
     private int cartNo;
     private String memId;
     private String prdNo;
-    int CartQty;
+    private int cartQty;
 }

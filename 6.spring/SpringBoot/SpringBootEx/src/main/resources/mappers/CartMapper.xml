@@ -4,13 +4,58 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="kr.bluenyang.practice.springbootex.cart.dao.CartDAO">
+    <resultMap id="cartItemViewMap" type="kr.bluenyang.practice.springbootex.cart.model.CartItemViewDTO">
+        <result property="cartNo" column="cart_no"/>
+        <result property="memId" column="mem_id"/>
+        <result property="prdNo" column="prd_no"/>
+        <result property="cartQty" column="cart_qty"/>
+        <result property="prdName" column="prd_name"/>
+        <result property="prdPrice" column="prd_price"/>
+        <result property="prdImg" column="prd_img"/>
+    </resultMap>
 
-    <select id="getCartItems" parameterType="String"
-            resultType="kr.bluenyang.practice.springbootex.cart.model.CartItemViewDTO"
-    >
-        SELECT c.cart_no, c.prd_no, c.cart_qty, p.prd_name, p.prd_price, p.prd_img
+    <resultMap id="cartMap" type="kr.bluenyang.practice.springbootex.cart.model.Cart">
+        <result property="cartNo" column="cart_no"/>
+        <result property="memId" column="mem_id"/>
+        <result property="prdNo" column="prd_no"/>
+        <result property="cartQty" column="cart_qty"/>
+    </resultMap>
+
+    <select id="getCartItems" parameterType="String" resultMap="cartItemViewMap">
+        SELECT c.cart_no, c.mem_id, c.prd_no, c.cart_qty, p.prd_name, p.prd_price, p.prd_img
         FROM ex_cart c, ex_product p
         WHERE c.prd_no = p.prd_no AND c.mem_id = #{memId}
         ORDER BY prd_no
     </select>
+
+    <select id="findCartItem" resultMap="cartMap">
+        SELECT *
+        FROM ex_cart
+        WHERE mem_id = #{memId} AND prd_no = #{prdNo}
+    </select>
+
+    <select id="findCartItemByNo" parameterType="String" resultMap="cartMap">
+        SELECT *
+        FROM ex_cart
+        WHERE cart_no = #{cartNo}
+    </select>
+
+    <insert id="insertCartItem" parameterType="kr.bluenyang.practice.springbootex.cart.model.Cart">
+        INSERT INTO ex_cart (mem_id, prd_no, cart_qty)
+        VALUES (#{memId}, #{prdNo}, #{cartQty})
+    </insert>
+
+    <update id="updateCartItem" parameterType="kr.bluenyang.practice.springbootex.cart.model.CartDTO">
+        UPDATE ex_cart
+        SET
+        <if test="cartQty != null">
+            cart_qty = #{cartQty}
+        </if>
+        WHERE cart_no = #{cartNo} AND mem_id = #{memId} AND prd_no = #{prdNo}
+    </update>
+
+    <delete id="deleteCartItem" parameterType="String">
+        DELETE FROM ex_cart
+        WHERE cart_no = #{cartNo}
+    </delete>
 </mapper>

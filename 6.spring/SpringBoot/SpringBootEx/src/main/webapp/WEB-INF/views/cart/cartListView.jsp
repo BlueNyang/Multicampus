@@ -7,11 +7,26 @@
     <meta charset="UTF-8">
     <title>장바구니 목록</title>
     <c:import url="/WEB-INF/views/layout/head.jsp"/>
+    <link rel="stylesheet" href="<c:url value="/css/product/product.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="/css/product/orderForm.css"/>"/>
     <script src="<c:url value='/js/product/cartListView.js' />"></script>
     <style>
       table {
         border: 1px solid #ddd;
         width: 900px;
+      }
+
+      #deleteCartBtn {
+        width: 100%;
+        height: 100%;
+        background-color: #333333;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
       }
 
       .text-right {
@@ -20,6 +35,15 @@
 
       .text-left {
         text-align: left;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .border-t {
+        border-top: 1px solid #000;
+        margin-top: 10px;
       }
     </style>
   </head>
@@ -32,7 +56,7 @@
         <form method="post" action="<c:url value='/product/orderForm'/>">
           <table>
             <tr>
-              <td>
+              <td class="text-center">
                 <input type="checkbox" id="allCheck" name="allCheck">
                 <label for="allCheck">전체 선택</label>
               </td>
@@ -51,33 +75,54 @@
             <%--@elvariable id="cartList" type="java.util.List"--%>
             <c:forEach var="prd" items="${cartList}">
               <tr>
-                <td>
-                  <label for="chkDelete"></label>
-                  <input id="chkDelete" type="checkbox" class="chkDelete" value="${prd.cartNo}">
+                <td class="text-center">
+                  <label>
+                    <input type="checkbox" class="chkDelete" value="${prd.cartNo}">
+                  </label>
                 </td>
-                <td><img src="<c:url value='/prd_images/${prd.prdImg}' />" width="30" height="20" alt=""></td>
-                <td>${prd.prdName }</td>
+                <td>
+                  <img src="<c:url value='/product_images/${prd.prdImg}' />" width="150" height="100" alt="">
+                </td>
+                <td>
+                    ${prd.prdName }
+                </td>
                 <td class="text-right">
-                  <span class="price" data-price=${prd.prdPrice }>
-                    <fmt:formatNumber value="${prd.prdPrice }" pattern="#,###"/>
-                  </span> 원
+                  <span class="price" data-price=${prd.prdPrice}>
+                    <fmt:formatNumber value="${prd.prdPrice}" pattern="#,###"/>
+                  </span>
+                  <span>
+                    원
+                  </span>
                 </td>
-                <td>
-                  <input id="cartQty" type="text" class="cartQty" name="cartQty" value="${prd.cartQty }" size="1">
+                <td class="text-center">
+                  <input
+                     id="cartQty"
+                     type="text"
+                     class="cartQty"
+                     name="cartQty"
+                     value="${prd.cartQty}"
+                     size="1"
+                     readonly
+                  >
                   <input type="hidden" name="cartNo" value="${prd.cartNo}">
                     <%-- <input type="hidden" name="memId" value="${prd.memId}"> --%>
                 </td>
                 <td class="text-right">
-                  <!--금액 계산 로직 추가-->
+                  <span class="itemPrice" data-price=${prd.prdPrice * prd.cartQty}>
+                    <fmt:formatNumber value="${prd.prdPrice * prd.cartQty}" pattern="#,###"/></span>
                   <span>
-                  </span> 원
+                    원
+                  </span>
                 </td>
               </tr>
             </c:forEach>
-            <tr>
+            <tr class="border-t">
               <td colspan="5">총구매예정금액</td>
               <td class="text-right">
-                <span id="total"><!--총 구매예정금액 표시--></span> 원
+                <span id="total"><!--총 구매예정금액 표시--></span>
+                <span>
+                    원
+                </span>
               </td>
             </tr>
           </table>

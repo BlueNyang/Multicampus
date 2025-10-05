@@ -24,14 +24,13 @@
             <span>님</span>
           </span>
           <a href="<c:url value="/auth/logout"/>">로그아웃</a>
+          <a href="<c:url value="/cart"/>">장바구니</a>
         </c:when>
         <c:otherwise>
           <a href="<c:url value="/auth/loginForm"/>">로그인</a>
           <a href="<c:url value="/auth/joinForm"/>">회원가입</a>
         </c:otherwise>
       </c:choose>
-      <span>이벤트</span>
-      <a href="<c:url value="/cart"/>">장바구니</a>
       <span>고객센터</span>
     </div>
   </div>
