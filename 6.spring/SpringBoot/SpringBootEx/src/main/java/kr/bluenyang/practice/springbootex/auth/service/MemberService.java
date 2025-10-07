@@ -1,7 +1,7 @@
 package kr.bluenyang.practice.springbootex.auth.service;
 
-import kr.bluenyang.practice.springbootex.auth.model.MemberDTO;
 import kr.bluenyang.practice.springbootex.auth.model.MemberEditDTO;
+import kr.bluenyang.practice.springbootex.auth.model.MemberVO;
 
 /**
  * Service interface for Member operations.
@@ -18,6 +18,7 @@ public interface MemberService {
 
     /**
      * Check for duplicate member ID.
+     * MemberVO
      *
      * @param id Member ID to check
      * @return "available" if ID is not taken, otherwise "unavailable"
@@ -29,15 +30,15 @@ public interface MemberService {
      *
      * @param dto Member data transfer object containing member details
      */
-    void joinMember(MemberDTO dto);
+    void joinMember(MemberVO dto);
 
     /**
      * Retrieve member details by ID.
      *
      * @param id Member ID
-     * @return MemberDTO containing member details
+     * @return MemberVO containing member details
      */
-    MemberDTO getMember(String id);
+    MemberVO getMember(String id);
 
     /**
      * Update member information.

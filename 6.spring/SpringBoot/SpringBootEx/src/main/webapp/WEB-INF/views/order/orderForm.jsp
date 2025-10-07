@@ -60,7 +60,8 @@
               <td>
                 <input id="hp" type="text" name="hp1" value="" size="3"> -
                 <input id="hp" type="text" name="hp2" value="" size="4"> -
-                <input id="hp" type="text" name="hp3" value="" size="4"></td>
+                <input id="hp" type="text" name="hp3" value="" size="4">
+              </td>
             </tr>
             <tr>
               <th>

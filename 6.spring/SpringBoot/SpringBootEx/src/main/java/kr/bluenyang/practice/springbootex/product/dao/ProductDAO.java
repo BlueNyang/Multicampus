@@ -1,6 +1,6 @@
 package kr.bluenyang.practice.springbootex.product.dao;
 
-import kr.bluenyang.practice.springbootex.product.model.Product;
+import kr.bluenyang.practice.springbootex.product.model.ProductVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public interface ProductDAO {
      *
      * @return List of Product
      */
-    List<Product> getAllProductList();
+    List<ProductVO> getAllProductList();
 
     /**
      * Get product list by category id
@@ -23,7 +23,7 @@ public interface ProductDAO {
      * @param ctgId category id
      * @return List of Product
      */
-    List<Product> getProductListByCtgId(String ctgId);
+    List<ProductVO> getProductListByCtgId(String ctgId);
 
     /**
      * Get product by product id
@@ -31,5 +31,5 @@ public interface ProductDAO {
      * @param productId product id
      * @return Product
      */
-    Product getProductById(String productId);
+    ProductVO getProductById(String productId);
 }

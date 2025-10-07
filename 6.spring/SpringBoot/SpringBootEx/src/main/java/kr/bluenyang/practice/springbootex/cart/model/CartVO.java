@@ -9,16 +9,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CartReqDTO {
+public class CartVO {
+    private int cartNo;
     private String memId;
     private String prdNo;
     private int cartQty;
-
-    public Cart toEntity() {
-        return Cart.builder()
-                .memId(this.memId)
-                .prdNo(this.prdNo)
-                .cartQty(this.cartQty)
-                .build();
-    }
 }

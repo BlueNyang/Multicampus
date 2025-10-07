@@ -1,6 +1,6 @@
 package kr.bluenyang.practice.springbootex.product.service;
 
-import kr.bluenyang.practice.springbootex.product.model.ProductDTO;
+import kr.bluenyang.practice.springbootex.product.model.ProductVO;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public interface ProductService {
      *
      * @return List of ProductDTO
      */
-    List<ProductDTO> getAllProduct();
+    List<ProductVO> getAllProduct();
 
     /**
      * Get product list by category id
@@ -21,7 +21,7 @@ public interface ProductService {
      * @param ctgId category id
      * @return List of ProductDTO
      */
-    List<ProductDTO> findProductListByCtgId(String ctgId);
+    List<ProductVO> findProductListByCtgId(String ctgId);
 
     /**
      * Get product by product id
@@ -29,5 +29,5 @@ public interface ProductService {
      * @param prdId product id
      * @return ProductDTO
      */
-    ProductDTO findProductByPrdId(String prdId);
+    ProductVO findProductByPrdId(String prdId);
 }

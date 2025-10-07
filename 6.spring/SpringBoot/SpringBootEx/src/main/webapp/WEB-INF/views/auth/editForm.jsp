@@ -19,7 +19,7 @@
           <a href="<c:url value="/auth/loginForm"/>">로그인</a>
         </c:when>
         <c:otherwise>
-          <%--@elvariable id="memberInfo" type="kr.bluenyang.practice.springbootex.auth.model.MemberDTO"--%>
+          <%--@elvariable id="memberInfo" type="kr.bluenyang.practice.springbootex.auth.model.MemberVO"--%>
           <section>
             <h1 id="title">회원 정보 수정</h1>
             <form id="editForm" name="editForm" method="post">

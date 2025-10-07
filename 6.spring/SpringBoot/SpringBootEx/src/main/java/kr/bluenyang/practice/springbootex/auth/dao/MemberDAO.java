@@ -1,6 +1,6 @@
 package kr.bluenyang.practice.springbootex.auth.dao;
 
-import kr.bluenyang.practice.springbootex.auth.model.Member;
+import kr.bluenyang.practice.springbootex.auth.model.MemberVO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
@@ -11,21 +11,21 @@ public interface MemberDAO {
      * @param memId 회원 ID
      * @return 회원 정보
      */
-    Member findMemberById(String memId);
+    MemberVO findMemberById(String memId);
 
     /**
      * DB에 회원 정보 삽입
      *
      * @param member 회원 정보
      */
-    void insertMember(Member member);
+    void insertMember(MemberVO member);
 
     /**
      * 회원 정보 수정
      *
      * @param member 회원 정보
      */
-    void updateMember(Member member);
+    void updateMember(MemberVO member);
 
     /**
      * 회원 정보 삭제

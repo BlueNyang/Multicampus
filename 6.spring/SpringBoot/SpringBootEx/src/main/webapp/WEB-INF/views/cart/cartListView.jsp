@@ -117,7 +117,7 @@
               </tr>
             </c:forEach>
             <tr class="border-t">
-              <td colspan="5">총구매예정금액</td>
+              <td colspan="5">총 구매 예정금액</td>
               <td class="text-right">
                 <span id="total"><!--총 구매예정금액 표시--></span>
                 <span>

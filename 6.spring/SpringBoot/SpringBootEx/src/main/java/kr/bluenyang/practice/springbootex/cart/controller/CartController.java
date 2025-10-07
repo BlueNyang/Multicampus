@@ -1,7 +1,7 @@
 package kr.bluenyang.practice.springbootex.cart.controller;
 
 import jakarta.servlet.http.HttpSession;
-import kr.bluenyang.practice.springbootex.cart.model.CartReqDTO;
+import kr.bluenyang.practice.springbootex.cart.model.CartVO;
 import kr.bluenyang.practice.springbootex.cart.service.CartService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
@@ -42,19 +41,19 @@ public class CartController {
     public String insertCart(@RequestParam String prdNo, @RequestParam int cartQty, HttpSession httpSession) {
         log.info("insertCart - Adding item to cart: {}", prdNo);
 
-        CartReqDTO dto = new CartReqDTO();
-        dto.setPrdNo(prdNo);
-        dto.setCartQty(cartQty);
+        CartVO vo = new CartVO();
+        vo.setPrdNo(prdNo);
+        vo.setCartQty(cartQty);
 
         String memId = (String) httpSession.getAttribute("authId");
-        dto.setMemId(memId);
+        vo.setMemId(memId);
 
-        if (service.checkPrdInCart(dto.getPrdNo(), memId)) {
+        if (service.checkPrdInCart(vo.getPrdNo(), memId)) {
             log.info("insertCart - Item already in cart, updating quantity");
-            service.updateCartQuantity(dto);
+            service.updateCartQuantity(vo);
         } else {
             log.info("insertCart - Item not in cart, adding new item");
-            service.insertCartItem(dto);
+            service.insertCartItem(vo);
         }
 
         return "redirect:/cart";
@@ -71,9 +70,9 @@ public class CartController {
         }
 
         String memId = (String) httpSession.getAttribute("authId");
-        int deletedCount = service.deleteCartItems(chkBoxArr, memId);
+        service.deleteCartItems(chkBoxArr, memId);
 
-        log.info("deleteFromCart - Deleted {} items from cart", deletedCount);
-        return deletedCount;
+        log.info("deleteFromCart - Deleted items from cart");
+        return chkBoxArr.size();
     }
 }
