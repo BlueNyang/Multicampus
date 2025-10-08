@@ -53,7 +53,7 @@
       <c:import url="/WEB-INF/views/layout/header.jsp"/>
       <section>
         <h3>장바구니 목록</h3>
-        <form method="post" action="<c:url value='/product/orderForm'/>">
+        <form method="post" action="<c:url value='/order/orderForm'/>">
           <table>
             <tr>
               <td class="text-center">

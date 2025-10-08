@@ -52,4 +52,6 @@ public interface CartService {
      * @return true if the product is in the cart, false otherwise
      */
     boolean checkPrdInCart(String prdNo, String memId);
+
+    void clearCart(String memId);
 }

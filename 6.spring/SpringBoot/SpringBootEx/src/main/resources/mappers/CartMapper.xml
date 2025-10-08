@@ -61,4 +61,9 @@
             #{item}
         </foreach>
     </delete>
+
+    <delete id="clearCart" parameterType="String">
+        DELETE FROM ex_cart
+        WHERE mem_id = #{memId}
+    </delete>
 </mapper>

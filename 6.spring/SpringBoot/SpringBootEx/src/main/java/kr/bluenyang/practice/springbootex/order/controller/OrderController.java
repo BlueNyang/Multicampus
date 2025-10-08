@@ -1,7 +1,9 @@
 package kr.bluenyang.practice.springbootex.order.controller;
 
 import jakarta.servlet.http.HttpSession;
-import kr.bluenyang.practice.springbootex.cart.service.CartService;
+import kr.bluenyang.practice.springbootex.auth.service.MemberService;
+import kr.bluenyang.practice.springbootex.order.model.OrderInfoVO;
+import kr.bluenyang.practice.springbootex.order.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -15,7 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequiredArgsConstructor
 @RequestMapping("/order")
 public class OrderController {
-    private final CartService cartService;
+    private final MemberService memberService;
+    private final OrderService orderService;
 
     // 주문서 작성 요청 처리 - 카트 목록 보기에서 요청 발생
     // 주문서 회원정보, cart 상품 목록 정보가 필요
@@ -32,9 +35,24 @@ public class OrderController {
             return "redirect:/auth/loginForm";
         }
 
-        cartService.prepareOrderForm(cartNo, cartQty, memId);
+        var cartList = orderService.prepareOrderForm(cartNo, cartQty, memId);
 
+        model.addAttribute("memDTO", memberService.getMember(memId));
+        model.addAttribute("cartList", cartList);
 
-        return null;
+        return "order/orderForm";
+    }
+
+    @PostMapping("/orderComplete")
+    public String orderInsert(OrderInfoVO vo,
+                              @RequestParam String hp1,
+                              @RequestParam String hp2,
+                              @RequestParam String hp3) {
+        String hp = hp1 + "-" + hp2 + "-" + hp3;
+        vo.setOrdRcvPhone(hp);
+
+        orderService.completeOrder(vo);
+
+        return "order/orderCompleteView";
     }
 }

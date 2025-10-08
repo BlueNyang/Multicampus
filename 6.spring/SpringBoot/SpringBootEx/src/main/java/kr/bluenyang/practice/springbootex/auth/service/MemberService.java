@@ -1,6 +1,6 @@
 package kr.bluenyang.practice.springbootex.auth.service;
 
-import kr.bluenyang.practice.springbootex.auth.model.MemberEditDTO;
+import kr.bluenyang.practice.springbootex.auth.model.MemberDTO;
 import kr.bluenyang.practice.springbootex.auth.model.MemberVO;
 
 /**
@@ -38,21 +38,21 @@ public interface MemberService {
      * @param id Member ID
      * @return MemberVO containing member details
      */
-    MemberVO getMember(String id);
+    MemberDTO getMember(String id);
 
     /**
      * Update member information.
      *
-     * @param dto MemberEditDTO containing updated member details
+     * @param dto MemberDTO containing updated member details
      * @return "success" if update is successful, otherwise an error message
      */
-    String updateMember(MemberEditDTO dto);
+    String updateMember(MemberDTO dto);
 
     /**
      * Unregister a member.
      *
-     * @param dto MemberEditDTO containing member ID and password for verification
+     * @param dto MemberDTO containing member ID and password for verification
      * @return "success" if unregistration is successful, otherwise an error message
      */
-    String unregisterMember(MemberEditDTO dto);
+    String unregisterMember(MemberDTO dto);
 }

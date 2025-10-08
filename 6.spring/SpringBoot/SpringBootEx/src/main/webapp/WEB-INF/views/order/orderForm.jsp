@@ -31,15 +31,18 @@
 
       <section>
         <br>
-        <form method="post" action="<c:url value='/product/orderComplete'/>">
+        <form method="post" action="<c:url value='/order/orderComplete'/>">
           <!-- (1) 주문자 정보 -->
           <h3>주문자 정보</h3>
           <table>
             <tr>
               <th>주문자</th>
-              <td class="w-200"></td>
+              <td class="w-200">
+                ${memDTO.memName}
+                <input type="hidden" name="memId" value="${memDTO.memId}">
+              </td>
               <th>연락처</th>
-              <td></td>
+              <td>${memDTO.memHp1} - ${memDTO.memHp2} - ${memDTO.memHp3}</td>
             </tr>
           </table>
           <br>
@@ -49,39 +52,39 @@
           <table>
             <tr>
               <th>
-                <label for="ordRcvReceiver">수령인</label>
+                <label for="ordReceiver">수령인</label>
               </th>
               <td class="w-200">
-                <input id="ordRcvReceiver" type="text" name="ordRcvReceiver" value="">
+                <input id="ordReceiver" type="text" name="ordReceiver" value="${memDTO.memName}">
               </td>
               <th>
                 <label for="hp">연락처</label>
               </th>
               <td>
-                <input id="hp" type="text" name="hp1" value="" size="3"> -
-                <input id="hp" type="text" name="hp2" value="" size="4"> -
-                <input id="hp" type="text" name="hp3" value="" size="4">
+                <input id="hp" type="text" name="hp1" value="${memDTO.memHp1}" size="3"> -
+                <input id="hp" type="text" name="hp2" value="${memDTO.memHp2}" size="4"> -
+                <input id="hp" type="text" name="hp3" value="${memDTO.memHp3}" size="4">
               </td>
             </tr>
             <tr>
               <th>
-                <label for="ordRcvZipcode">배송지 주소</label>
+                <label for="ordRcvZipCode">배송지 주소</label>
               </th>
               <td colspan="3">
                 <input
-                   type="text" id="ordRcvZipcode" name="ordRcvZipcode" size="5"
-                   value="$" readonly
+                   type="text" id="ordRcvZipCode" name="ordRcvZipCode" size="5"
+                   value="${memDTO.memZipCode}" readonly
                 >
                 <input type="button" id="searchZipBtn" name="searchZipBtn" value="우편번호 찾기"><br>
                 <label for="ordRcvAddress1"></label>
                 <input
                    type="text" id="ordRcvAddress1" name="ordRcvAddress1" placeholder="주소 입력" size="70"
-                   value="" readonly
+                   value="${memDTO.memAddress1}" readonly
                 > <br>
                 <label for="ordRcvAddress2"></label>
                 <input
                    type="text" id="ordRcvAddress2" name="ordRcvAddress2" placeholder="상세 주소 입력" size="70"
-                   value=""
+                   value="${memDTO.memAddress2}"
                 >
               </td>
             </tr>
@@ -117,7 +120,7 @@
               <tr>
                 <td>${prd.prdNo}</td>
                 <td>
-                  <img src="<c:url value='/prd_images/${prd.prdImg}' />" width="50" height="30" alt="">
+                  <img src="<c:url value='/product_images/${prd.prdImg}'/>" width="auto" height="80" alt="">
                 </td>
                 <td>${prd.prdName }</td>
                 <td class="text-right"><fmt:formatNumber value="${prd.prdPrice }" pattern="#,###"/> 원</td>
