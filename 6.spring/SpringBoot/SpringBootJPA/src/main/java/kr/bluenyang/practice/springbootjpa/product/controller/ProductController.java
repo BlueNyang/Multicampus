@@ -1,0 +1,139 @@
+package kr.bluenyang.practice.springbootjpa.product.controller;
+
+import kr.bluenyang.practice.springbootjpa.product.model.ProductDTO;
+import kr.bluenyang.practice.springbootjpa.product.service.ProductService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashMap;
+import java.util.List;
+
+@Slf4j
+@Controller
+@RequiredArgsConstructor
+@RequestMapping("/product")
+public class ProductController {
+    private final ProductService service;
+
+    @RequestMapping("/listAllProduct")
+    public String listAllProduct(Model model) {
+        List<ProductDTO> prdList = service.listAllProduct();
+        model.addAttribute("prdList", prdList);
+        return "product/productListView";
+    }
+
+    @RequestMapping("/detailProduct/{prdNo}")
+    public String detailProduct(@PathVariable String prdNo, Model model) {
+        ProductDTO prd = service.findProductByPrdNo(prdNo);
+
+        log.info("prdNo:{}", prd.getPrdNo());
+
+        model.addAttribute("prd", prd);
+
+        return "product/productDetailView";
+    }
+
+    @RequestMapping("/updateProductForm/{prdNo}")
+    public String updateProductForm(@PathVariable String prdNo, Model model) {
+        ProductDTO prd = service.findProductByPrdNo(prdNo);
+        model.addAttribute("prd", prd);
+
+        return "product/updateProductForm";
+    }
+
+    @RequestMapping("/updateProduct")
+    public String updateProduct(ProductDTO prd) {
+
+        service.updateProduct(prd);
+        return "redirect:/product/listAllProduct";
+    }
+
+    @RequestMapping("/insertProductForm")
+    public String insertProductForm() {
+        return "product/newProductForm";
+    }
+
+    @RequestMapping("/insertProduct")
+    public String insertProduct(ProductDTO prd) {
+        log.info("prd:{}", prd);
+        service.insertProduct(prd);
+        return "redirect:/product/listAllProduct";
+    }
+
+    @RequestMapping("/deleteProduct/{prdNo}")
+    public String deleteProduct(@PathVariable String prdNo) {
+        service.deleteProduct(prdNo);
+        return "redirect:/product/listAllProduct";
+    }
+
+    /// //////////////////////////////////////////////////////
+    // AJAX
+    // POST 방식
+    @ResponseBody
+    @RequestMapping("/prdNoCheck")
+    public String prdNoCheck(@RequestParam("prdNo") String prdNo) {
+        log.info("prdNoCheck");
+        return checkPrdNo(prdNo);
+    }
+
+    // GET 방식
+    @ResponseBody
+    @RequestMapping("/prdNoCheck2/{prdNo}")
+    public String prdNoCheck2(@PathVariable String prdNo) {
+        log.info("prdNoCheck2");
+        return checkPrdNo(prdNo);
+    }
+
+    // fetch() POST 방식 - 요청 url에 쿼리스트링으로 전달
+    @ResponseBody
+    @RequestMapping("/prdNoCheck3")
+    public String prdNoCheck3(@RequestParam String prdNo) {
+        log.info("prdNoCheck3");
+        return checkPrdNo(prdNo);
+    }
+
+    // axios GET 방식
+    @ResponseBody
+    @RequestMapping("/prdNoCheck4/{prdNo}")
+    public String prdNoCheck4(@PathVariable String prdNo) {
+        log.info("prdNoCheck4");
+        return checkPrdNo(prdNo);
+    }
+
+    // fetch() GET 방식 - 요청 url에 쿼리스트링으로 전달
+    @ResponseBody
+    @RequestMapping("/prdNoCheck5")
+    public String prdNoCheck5(@RequestParam String prdNo) {
+        log.info("prdNoCheck5");
+        return checkPrdNo(prdNo);
+    }
+
+    private String checkPrdNo(String prdNo) {
+        String prdNo_result = service.prdNoCheck(prdNo);
+        log.info("prdNo_result:{}", prdNo_result);
+        String result = "available";
+        if (prdNo_result != null) {
+            result = "unavailable";
+        }
+        return result;
+    }
+
+    @RequestMapping("/prdSearchForm")
+    public String prdSearchForm2() {
+        return "product/productSearchForm";
+    }
+
+    @RequestMapping("/productSearch")
+    public String productSearch2(@RequestParam HashMap<String, Object> param, Model model) {
+        log.info("productSearch2 - type: {}, keyword:{}", param.get("type"), param.get("keyword"));
+        List<ProductDTO> prdList = service.searchProduct(param);
+        model.addAttribute("prdList", prdList);
+        return "product/productSearchResultView";
+    }
+}
