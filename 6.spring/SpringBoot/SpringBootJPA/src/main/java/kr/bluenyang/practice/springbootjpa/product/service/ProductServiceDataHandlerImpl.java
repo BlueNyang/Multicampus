@@ -13,7 +13,7 @@ import java.util.Optional;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class ProductServiceDataHandleImpl implements ProductServiceDataHandle {
+public class ProductServiceDataHandlerImpl implements ProductServiceDataHandler {
     private final ProductDAO dao;
 
     @Override
