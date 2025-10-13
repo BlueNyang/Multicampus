@@ -1,23 +1,29 @@
 package kr.bluenyang.practice.springbootjpaex.member.service;
 
+import kr.bluenyang.practice.springbootjpaex.member.model.ChangePwdReqDTO;
+import kr.bluenyang.practice.springbootjpaex.member.model.LoginReqDTO;
 import kr.bluenyang.practice.springbootjpaex.member.model.MemberDTO;
 
-import java.util.HashMap;
+import java.util.Optional;
 
 public interface MemberService {
     // 로그인 체크
-    public String loginCheck(HashMap<String, Object> map);
+    Optional<String> tryLogin(LoginReqDTO dto);
 
     // id 중복체크
-    public String idCheck(String id);
+    String idCheck(String id);
 
     // 회원가입
-    public void insertMember(MemberDTO dto);
+    void insertMember(MemberDTO dto);
 
     // 회원정보 수정 Form
-    public MemberDTO myInfoUpdateForm(String memId);
+    MemberDTO getMemberInfo(String memId);
 
     // 회원정보 수정
-    public void myInfoUpdate(MemberDTO myInfo);
+    String updateMember(MemberDTO dto);
+
+    String changePassword(ChangePwdReqDTO dto);
+
+    String unregisterMember(MemberDTO dto);
 }
 

@@ -63,28 +63,6 @@ $(function () {
       return;
     }
 
-    // 새 비밀번호 입력 시 일치 확인
-    const $newMemPwd = $('#newMemPwd');
-    const newPassword = $newMemPwd.val()?.trim() || "";
-    const $confirmPwd = $('#confirmPwd');
-    const confirmPassword = $confirmPwd.val()?.trim() || "";
-
-    if (newPassword !== "" || confirmPassword !== "") {
-      if (newPassword === "") {
-        alert("새로운 비밀번호를 입력해주세요.");
-        $newMemPwd.focus();
-        return;
-      } else if (confirmPassword === "") {
-        alert("비밀번호 확인을 입력해주세요.");
-        $confirmPwd.focus();
-        return;
-      } else if (newPassword !== confirmPassword) {
-        alert("새로운 비밀번호와 비밀번호 확인이 일치하지 않습니다.");
-        $confirmPwd.focus();
-        return;
-      }
-    }
-
     // 이름 입력 확인
     const $memName = $('#memName');
     const name = $memName.val()?.trim() || "";
@@ -94,16 +72,15 @@ $(function () {
       return;
     }
 
+    const memHp = $("#memHp1").val()?.trim() + "-" + $("#memHp2").val()?.trim() + "-" + $("#memHp3").val()?.trim();
+
     // 폼 데이터 객체 생성
     const memData = {
       memId: $("#memId").val().trim(),
       memPwd: currentPassword,
-      newMemPwd: newPassword,
       memName: name,
       memEmail: $("#memEmail").val()?.trim() || "",
-      memHp1: $("#memHp1").val()?.trim() || "",
-      memHp2: $("#memHp2").val()?.trim() || "",
-      memHp3: $("#memHp3").val()?.trim() || "",
+      memHp: memHp,
       memZipCode: $("#memZipCode").val()?.trim() || "",
       memAddress1: $("#memAddress1").val()?.trim() || "",
       memAddress2: $("#memAddress2").val()?.trim() || ""
@@ -111,35 +88,35 @@ $(function () {
 
     // AJAX 요청
     $.ajax({
-      url: '/auth/edit',
-      type: 'POST',
-      contentType: 'application/json',
-      data: JSON.stringify(memData),
-      success: function (resp) {
-        if (resp === 'success') {
-          alert("정보가 성공적으로 수정되었습니다. 다시 로그인해주세요.");
-          window.location.href = '/auth/logout'
-        } else if (resp === 'no_such_member') {
-          alert("존재하지 않는 회원입니다.");
-          window.location.href = '/';
-        } else if (resp === 'incorrect_password') {
-          alert("현재 비밀번호가 일치하지 않습니다.");
-          $memPwd.focus();
-        } else {
-          alert("정보 수정에 실패했습니다. 다시 시도해주세요.");
-        }
-      },
-      error: function (xhr) {
-        if (xhr.status === 400) {
-          alert(xhr.responseText || "Invalid request.");
-        } else if (xhr.status === 401) {
-          alert("현재 비밀번호가 일치하지 않습니다.");
-          $memPwd.focus();
-        } else {
-          alert("An error occurred while updating your information. Please try again later.");
-        }
-      }
-    }); // end of ajax
+             url: '/auth/edit',
+             type: 'POST',
+             contentType: 'application/json',
+             data: JSON.stringify(memData),
+             success: function (resp) {
+               if (resp === 'success') {
+                 alert("정보가 성공적으로 수정되었습니다.");
+                 window.location.href = '/';
+               } else if (resp === 'no_such_member') {
+                 alert("존재하지 않는 회원입니다.");
+                 window.location.href = '/';
+               } else if (resp === 'incorrect_password') {
+                 alert("현재 비밀번호가 일치하지 않습니다.");
+                 $memPwd.focus();
+               } else {
+                 alert("정보 수정에 실패했습니다. 다시 시도해주세요.");
+               }
+             },
+             error: function (xhr) {
+               if (xhr.status === 400) {
+                 alert(xhr.responseText || "Invalid request.");
+               } else if (xhr.status === 401) {
+                 alert("현재 비밀번호가 일치하지 않습니다.");
+                 $memPwd.focus();
+               } else {
+                 alert("An error occurred while updating your information. Please try again later.");
+               }
+             }
+           }); // end of ajax
   }); // end of submit
 
   $editForm.on('reset', (e) => {
@@ -148,4 +125,8 @@ $(function () {
       window.location.href = '/';
     }
   }); // end of reset
+
+  $("#changePwd").on('click', function () {
+    window.location.href = '/auth/changePwdForm';
+  })
 });

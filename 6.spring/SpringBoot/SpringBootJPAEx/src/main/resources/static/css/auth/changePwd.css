@@ -1,0 +1,15 @@
+.text-success {
+  color: #28a745 !important;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+.no-underline {
+  border: none !important;
+}
+
+.align-center {
+  text-align: center !important;
+}

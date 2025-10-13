@@ -5,14 +5,16 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Optional;
+
 public interface MemberRepository extends JpaRepository<Member, String> {
 
     /**
-     * 로그인 체크용 메서드
+     * Method for login: retrieve encrypted password by member ID
      *
-     * @param memId 아이디
-     * @return 암호화된 비밀번호(존재하지 않으면 null)
+     * @param memId user ID
+     * @return Encrypted password if user exists, else empty
      */
     @Query("SELECT m.memPwd FROM Member m WHERE m.memId = :memId")
-    String getPwdByMemId(@Param("memId") String memId);
+    Optional<String> getPwdByMemId(@Param("memId") String memId);
 }
