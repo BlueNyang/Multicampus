@@ -34,8 +34,8 @@ public class MemberEditDTO {
      *
      * @return Member 엔티티
      */
-    public Member toEntity() {
-        return new Member(
+    public MemberVO toVO() {
+        return new MemberVO(
                 this.memId,
                 this.newMemPwd.isEmpty() ? this.memPwd : this.newMemPwd,
                 this.memName,

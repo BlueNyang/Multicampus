@@ -1,4 +1,4 @@
-package kr.bluenyang.practice.springbootex.product.vo;
+package kr.bluenyang.practice.springbootex.product.model;
 
 public record MoneyVO(int amount) {
     public MoneyVO {

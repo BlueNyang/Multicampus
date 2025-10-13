@@ -1,7 +1,7 @@
 package kr.bluenyang.practice.springbootex.product.service;
 
 import kr.bluenyang.practice.springbootex.product.dao.ProductDAO;
-import kr.bluenyang.practice.springbootex.product.model.ProductDTO;
+import kr.bluenyang.practice.springbootex.product.model.ProductVO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -15,13 +15,11 @@ public class ProductServiceImpl implements ProductService {
     private final ProductDAO dao;
 
     @Override
-    public List<ProductDTO> getAllProduct() {
+    public List<ProductVO> getAllProduct() {
         log.info("getAllProduct");
         try {
-            // Entity List
-            var list = dao.getAllProductList();
-            // DTO List
-            return list.stream().map(ProductDTO::fromEntity).toList();
+            // VO List
+            return dao.getAllProductList();
         } catch (Exception e) {
             log.error("getAllProduct failed: {}", e.getMessage());
             return null;
@@ -29,11 +27,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductDTO> findProductListByCtgId(String ctgId) {
+    public List<ProductVO> findProductListByCtgId(String ctgId) {
         log.info("findProductListByCtgId({}) invoked.", ctgId);
         try {
-            var list = dao.getProductListByCtgId(ctgId);
-            return list.stream().map(ProductDTO::fromEntity).toList();
+            return dao.getProductListByCtgId(ctgId);
         } catch (Exception e) {
             log.error("findProductListByCtgId({}) failed: {}", ctgId, e.getMessage());
             return null;
@@ -41,7 +38,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductDTO findProductByPrdId(String prdId) {
+    public ProductVO findProductByPrdId(String prdId) {
         log.info("findProductByPrdId({}) invoked.", prdId);
         try {
             var prd = dao.getProductById(prdId);
@@ -52,8 +49,7 @@ public class ProductServiceImpl implements ProductService {
                 return null;
             }
 
-            // Entity -> DTO
-            return ProductDTO.fromEntity(prd);
+            return prd;
         } catch (Exception e) {
             log.error("findProductByPrdId({}) failed: {}", prdId, e.getMessage());
             return null;

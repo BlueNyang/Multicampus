@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="kr.bluenyang.practice.springbootex.product.dao.ProductDAO">
-    <resultMap id="prdResult" type="kr.bluenyang.practice.springbootex.product.model.Product">
+    <resultMap id="prdResult" type="kr.bluenyang.practice.springbootex.product.model.ProductVO">
         <result property="prdNo" column="prd_no"/>
         <result property="prdName" column="prd_name"/>
         <result property="prdCompany" column="prd_company"/>
@@ -11,7 +11,7 @@
         <result property="prdImg" column="prd_img"/>
         <result property="ctgId" column="ctg_id"/>
 
-        <association property="prdPrice" javaType="kr.bluenyang.practice.springbootex.product.vo.MoneyVO">
+        <association property="prdPrice" javaType="kr.bluenyang.practice.springbootex.product.model.MoneyVO">
             <constructor>
                 <arg column="prd_price" javaType="java.lang.Integer"/>
             </constructor>

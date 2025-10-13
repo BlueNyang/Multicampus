@@ -1,9 +1,8 @@
 package kr.bluenyang.practice.springbootex.auth.service;
 
 import kr.bluenyang.practice.springbootex.auth.dao.MemberDAO;
-import kr.bluenyang.practice.springbootex.auth.model.Member;
-import kr.bluenyang.practice.springbootex.auth.model.MemberDTO;
 import kr.bluenyang.practice.springbootex.auth.model.MemberEditDTO;
+import kr.bluenyang.practice.springbootex.auth.model.MemberVO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -18,7 +17,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public String tryLogin(String id, String pwd) {
-        Member member = dao.findMemberById(id);
+        var member = dao.findMemberById(id);
 
         // Check if member exists
         if (member == null) {
@@ -39,7 +38,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public String idDupCheck(String id) {
-        Member member = dao.findMemberById(id);
+        var member = dao.findMemberById(id);
 
         // Check if member exists
         if (member != null) {
@@ -53,7 +52,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public void joinMember(MemberDTO dto) {
+    public void joinMember(MemberVO dto) {
         log.info("[joinMember] add New Member");
 
         // dto password encryption
@@ -61,20 +60,14 @@ public class MemberServiceImpl implements MemberService {
         dto.setMemPwd(passwordEncoder.encode(pwd));
 
         // Save member to database
-        dao.insertMember(dto.toEntity());
+        dao.insertMember(dto);
     }
 
     @Override
-    public MemberDTO getMember(String id) {
+    public MemberVO getMember(String id) {
         log.info("[getMember] Get Member: {}", id);
         // Get member from database
-        Member member = dao.findMemberById(id);
-        if (member != null) {
-            // Convert Member entity to MemberDTO
-            return new MemberDTO(member);
-        }
-
-        return null;
+        return dao.findMemberById(id);
     }
 
     @Override
@@ -82,7 +75,7 @@ public class MemberServiceImpl implements MemberService {
         log.info("[updateMember] Update Member: {}", dto.getMemId());
 
         // Get existing member
-        Member member = dao.findMemberById(dto.getMemId());
+        var member = dao.findMemberById(dto.getMemId());
 
         // Check if member exists
         if (member == null) {
@@ -101,14 +94,14 @@ public class MemberServiceImpl implements MemberService {
         dto.setNewMemPwd(passwordEncoder.encode(newPwd));
 
         // Update member in database
-        dao.updateMember(dto.toEntity());
+        dao.updateMember(dto.toVO());
         return "success";
     }
 
     @Override
     public String unregisterMember(MemberEditDTO dto) {
         log.info("[unregisterMember] Remove Member: {}", dto.getMemId());
-        Member member = dao.findMemberById(dto.getMemId());
+        var member = dao.findMemberById(dto.getMemId());
 
         // Check if member exists
         if (member == null) {

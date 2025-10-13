@@ -14,7 +14,7 @@
         <result property="prdImg" column="prd_img"/>
     </resultMap>
 
-    <resultMap id="cartMap" type="kr.bluenyang.practice.springbootex.cart.model.Cart">
+    <resultMap id="cartMap" type="kr.bluenyang.practice.springbootex.cart.model.CartVO">
         <result property="cartNo" column="cart_no"/>
         <result property="memId" column="mem_id"/>
         <result property="prdNo" column="prd_no"/>
@@ -34,28 +34,31 @@
         WHERE mem_id = #{memId} AND prd_no = #{prdNo}
     </select>
 
-    <select id="findCartItemByNo" parameterType="String" resultMap="cartMap">
+    <select id="findCartItemByNo" parameterType="Integer" resultMap="cartMap">
         SELECT *
         FROM ex_cart
         WHERE cart_no = #{cartNo}
     </select>
 
-    <insert id="insertCartItem" parameterType="kr.bluenyang.practice.springbootex.cart.model.Cart">
+    <insert id="insertCartItem" parameterType="kr.bluenyang.practice.springbootex.cart.model.CartVO">
         INSERT INTO ex_cart (mem_id, prd_no, cart_qty)
         VALUES (#{memId}, #{prdNo}, #{cartQty})
     </insert>
 
-    <update id="updateCartItem" parameterType="kr.bluenyang.practice.springbootex.cart.model.CartDTO">
+    <update id="updateCartItem" parameterType="kr.bluenyang.practice.springbootex.cart.model.CartVO">
         UPDATE ex_cart
         SET
         <if test="cartQty != null">
             cart_qty = #{cartQty}
         </if>
-        WHERE cart_no = #{cartNo} AND mem_id = #{memId} AND prd_no = #{prdNo}
+        WHERE cart_no = #{cartNo} AND mem_id = #{memId}
     </update>
 
-    <delete id="deleteCartItem" parameterType="String">
+    <delete id="deleteCartItem" parameterType="java.util.List">
         DELETE FROM ex_cart
-        WHERE cart_no = #{cartNo}
+        WHERE cart_no IN
+        <foreach collection="list" item="item" index="i" open="(" separator="," close=")">
+            #{item}
+        </foreach>
     </delete>
 </mapper>

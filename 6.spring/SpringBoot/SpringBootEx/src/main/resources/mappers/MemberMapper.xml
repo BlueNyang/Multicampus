@@ -4,7 +4,7 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="kr.bluenyang.practice.springbootex.auth.dao.MemberDAO">
-    <resultMap id="memberResult" type="kr.bluenyang.practice.springbootex.auth.model.Member">
+    <resultMap id="memberResult" type="kr.bluenyang.practice.springbootex.auth.model.MemberVO">
         <result property="memId" column="mem_id"/>
         <result property="memPwd" column="mem_pwd"/>
         <result property="memName" column="mem_name"/>
@@ -23,7 +23,7 @@
         WHERE mem_id = #{memId}
     </select>
 
-    <insert id="insertMember" parameterType="kr.bluenyang.practice.springbootex.auth.model.Member">
+    <insert id="insertMember" parameterType="kr.bluenyang.practice.springbootex.auth.model.MemberVO">
         INSERT INTO ex_member (mem_id, mem_pwd, mem_name, mem_email, mem_join_date, mem_hp, mem_zip_code, mem_address1,
         mem_address2)
         VALUES (#{memId}, #{memPwd}, #{memName}, #{memEmail, jdbcType=VARCHAR}, SYSDATE, #{memHp, jdbcType=VARCHAR},
@@ -31,7 +31,7 @@
         #{memAddress1, jdbcType=VARCHAR}, #{memAddress2, jdbcType=VARCHAR})
     </insert>
 
-    <update id="updateMember" parameterType="kr.bluenyang.practice.springbootex.auth.model.Member">
+    <update id="updateMember" parameterType="kr.bluenyang.practice.springbootex.auth.model.MemberVO">
         UPDATE ex_member
         SET mem_pwd = #{memPwd},
         mem_name = #{memName},

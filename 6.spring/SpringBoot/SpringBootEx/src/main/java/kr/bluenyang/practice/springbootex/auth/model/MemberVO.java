@@ -2,16 +2,20 @@ package kr.bluenyang.practice.springbootex.auth.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Date;
 
 /**
- * Member Entity
+ * Member VO
  */
 @Getter
+@Setter
+@NoArgsConstructor
 @AllArgsConstructor
-public class Member {
+public class MemberVO {
     private String memId;
     private String memPwd;
     private String memName;

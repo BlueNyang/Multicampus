@@ -1,8 +1,8 @@
 package kr.bluenyang.practice.springbootex.auth.controller;
 
 import jakarta.servlet.http.HttpSession;
-import kr.bluenyang.practice.springbootex.auth.model.MemberDTO;
 import kr.bluenyang.practice.springbootex.auth.model.MemberEditDTO;
+import kr.bluenyang.practice.springbootex.auth.model.MemberVO;
 import kr.bluenyang.practice.springbootex.auth.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -83,7 +83,7 @@ public class AuthController {
     // Join 처리
     @ResponseBody
     @PostMapping("/join")
-    public String join(@RequestBody MemberDTO joinData) {
+    public String join(@RequestBody MemberVO joinData) {
         log.info("[join] Join: {}", joinData.getMemId());
         try {
             // 회원 가입 시도
