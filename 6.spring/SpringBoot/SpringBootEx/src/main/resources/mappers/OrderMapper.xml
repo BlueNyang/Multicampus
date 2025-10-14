@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.bluenyang.practice.springbootex.order.dao.OrderDAO">
+    <insert id="insertOrderInfo" parameterType="kr.bluenyang.practice.springbootex.order.model.OrderInfoVO">
+        INSERT INTO ex_order_info (ord_no, mem_id, ord_receiver, ord_rcv_zip_code, ord_rcv_address1, ord_rcv_address2,
+        ord_rcv_phone, ord_rcv_msg, ord_pay)
+        VALUES (#{ordNo}, #{memId}, #{ordReceiver}, #{ordRcvZipCode}, #{ordRcvAddress1}, #{ordRcvAddress2},
+        #{ordRcvPhone}, #{ordRcvMsg}, #{ordPay})
+    </insert>
+
+    <insert id="insertOrderProduct">
+        INSERT INTO ex_order_product (ord_no, prd_no, ord_qty)
+        SELECT #{ordNo}, prd_no, cart_qty
+        FROM ex_cart WHERE mem_id = #{memId}
+    </insert>
+</mapper>

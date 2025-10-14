@@ -109,4 +109,10 @@ public class CartServiceImpl implements CartService {
         log.info("checkPrdInCart - product found in cart");
         return true;
     }
+
+    @Override
+    public void clearCart(String memId) {
+        log.info("clearCart");
+        cartDAO.clearCart(memId);
+    }
 }

@@ -8,12 +8,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.sql.Date;
 
 /**
- * Member 정보를 수정하기 위한 DTO (Data Transfer Object).
+ * Member 정보를 수정/조회하기 위한 DTO (Data Transfer Object).
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MemberEditDTO {
+public class MemberDTO {
     private String memId;
     private String memPwd;
     // 새 비밀번호 필드 추가
@@ -45,6 +45,24 @@ public class MemberEditDTO {
                 this.memZipCode,
                 this.memAddress1,
                 this.memAddress2
+        );
+    }
+
+    public static MemberDTO fromVO(MemberVO vo) {
+        String[] hpParts = vo.getMemHp() != null ? vo.getMemHp().split("-") : new String[]{"", "", ""};
+        return new MemberDTO(
+                vo.getMemId(),
+                vo.getMemPwd(),
+                "", // newMemPwd는 빈 문자열로 초기화
+                vo.getMemName(),
+                vo.getMemEmail(),
+                vo.getMemJoinDate(),
+                hpParts.length > 0 ? hpParts[0] : "",
+                hpParts.length > 1 ? hpParts[1] : "",
+                hpParts.length > 2 ? hpParts[2] : "",
+                vo.getMemZipCode(),
+                vo.getMemAddress1(),
+                vo.getMemAddress2()
         );
     }
 }

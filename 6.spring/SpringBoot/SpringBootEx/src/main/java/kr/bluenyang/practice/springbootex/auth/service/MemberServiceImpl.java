@@ -1,7 +1,7 @@
 package kr.bluenyang.practice.springbootex.auth.service;
 
 import kr.bluenyang.practice.springbootex.auth.dao.MemberDAO;
-import kr.bluenyang.practice.springbootex.auth.model.MemberEditDTO;
+import kr.bluenyang.practice.springbootex.auth.model.MemberDTO;
 import kr.bluenyang.practice.springbootex.auth.model.MemberVO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -64,14 +64,15 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public MemberVO getMember(String id) {
+    public MemberDTO getMember(String id) {
         log.info("[getMember] Get Member: {}", id);
         // Get member from database
-        return dao.findMemberById(id);
+        var vo = dao.findMemberById(id);
+        return MemberDTO.fromVO(vo);
     }
 
     @Override
-    public String updateMember(MemberEditDTO dto) {
+    public String updateMember(MemberDTO dto) {
         log.info("[updateMember] Update Member: {}", dto.getMemId());
 
         // Get existing member
@@ -99,7 +100,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public String unregisterMember(MemberEditDTO dto) {
+    public String unregisterMember(MemberDTO dto) {
         log.info("[unregisterMember] Remove Member: {}", dto.getMemId());
         var member = dao.findMemberById(dto.getMemId());
 

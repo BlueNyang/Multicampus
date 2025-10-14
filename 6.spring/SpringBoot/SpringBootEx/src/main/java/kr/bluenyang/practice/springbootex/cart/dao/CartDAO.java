@@ -20,4 +20,6 @@ public interface CartDAO {
     void updateCartItem(CartVO updateAttrDTO);
 
     void deleteCartItem(List<String> cartNo);
+
+    void clearCart(String memId);
 }

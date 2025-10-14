@@ -16,7 +16,8 @@
       <!-- top.jsp import -->
       <c:import url="/WEB-INF/views/layout/header.jsp"/>
       <br>
-      <h3>상품 조회</h3>  <br>
+      <h3>상품 조회</h3>
+      <br>
       <table>
         <tr>
           <th>상품 번호</th>
@@ -49,8 +50,8 @@
                      src="<c:url value='/product_images/${product.prdImg}'/>"
                      alt="Product Image"
                      class="product-img"
-                     width="auto"
-                     height="150"
+                     width="180"
+                     height="auto"
                   />
                 </c:when>
                 <c:otherwise>

@@ -1,7 +1,7 @@
 package kr.bluenyang.practice.springbootex.auth.controller;
 
 import jakarta.servlet.http.HttpSession;
-import kr.bluenyang.practice.springbootex.auth.model.MemberEditDTO;
+import kr.bluenyang.practice.springbootex.auth.model.MemberDTO;
 import kr.bluenyang.practice.springbootex.auth.model.MemberVO;
 import kr.bluenyang.practice.springbootex.auth.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -116,7 +116,7 @@ public class AuthController {
     // Edit 처리
     @ResponseBody
     @PostMapping("/edit")
-    public String edit(@RequestBody MemberEditDTO member) {
+    public String edit(@RequestBody MemberDTO member) {
         log.info("[edit] Edit Member: {}", member.getMemId());
         try {
             // 회원 정보 수정 시도
@@ -131,7 +131,7 @@ public class AuthController {
     // Unregister 처리
     @ResponseBody
     @PostMapping("/unregister")
-    public String unregister(@RequestBody MemberEditDTO member, HttpSession session) {
+    public String unregister(@RequestBody MemberDTO member, HttpSession session) {
         log.info("[unregister] Unregister Member");
 
         // 세션에서 인증된 사용자 ID 가져오기
