@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public interface ProductServiceDataHandle {
+public interface ProductServiceDataHandler {
     List<Product> listAllProduct();
 
     Optional<Product> findProductByPrdNo(String prdNo);

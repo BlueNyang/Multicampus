@@ -11,9 +11,9 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, String> {
     @Query("""
             SELECT p
-            FROM Product p
-            WHERE (:type='prdName' AND p.prdName LIKE CONCAT('%', :keyword, '%'))
-                 OR (:type='prdCompany' AND p.prdCompany LIKE CONCAT('%', :keyword, '%'))
+              FROM Product p
+              WHERE (:type = 'prdName' AND p.prdName LIKE concat('%', :keyword, '%'))
+                 OR (:type = 'prdCompany'AND p.prdCompany LIKE concat('%',:keyword,'%'))
             """)
     List<Product> searchProducts(@Param("type") String type,
                                  @Param("keyword") String keyword);
