@@ -20,7 +20,7 @@
         <c:when test="${not empty authUser}">
           <span>
             <span>환영합니다.</span>
-            <a href="<c:url value="/auth/manage"/>">${authUser}</a>
+            <a href="<c:url value="/auth/myPage"/>">${authUser}</a>
             <span>님</span>
           </span>
           <a href="<c:url value="/auth/logout"/>">로그아웃</a>

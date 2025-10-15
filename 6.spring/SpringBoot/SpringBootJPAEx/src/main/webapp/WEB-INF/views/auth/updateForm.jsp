@@ -42,26 +42,11 @@
                 </tr>
                 <tr>
                   <th>
-                    <label for="memPwd">현재 비밀번호*</label>
+                    <label for="memPwd">비밀번호*</label>
                   </th>
                   <td>
-                    <input type="password" id="memPwd" name="memPwd" placeholder="비밀번호 입력">
-                  </td>
-                </tr>
-                <tr>
-                  <th>
-                    <label for="newMemPwd">새 비밀번호(변경 시)</label>
-                  </th>
-                  <td>
-                    <input type="password" id="newMemPwd" name="newMemPwd" placeholder="비밀번호 입력">
-                  </td>
-                </tr>
-                <tr>
-                  <th>
-                    <label for="newMemPwdConfirm">새 비밀번호 확인</label>
-                  </th>
-                  <td>
-                    <input type="password" id="newMemPwdConfirm" name="newMemPwdConfirm" placeholder="비밀번호 확인">
+                    <input type="password" id="memPwd" name="memPwd" value="">
+                    <input type="button" id="changePwd" name="changePwd" value="비밀번호변경">
                   </td>
                 </tr>
                 <tr>

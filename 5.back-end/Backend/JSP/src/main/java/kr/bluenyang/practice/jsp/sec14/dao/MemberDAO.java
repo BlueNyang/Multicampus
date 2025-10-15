@@ -25,6 +25,7 @@ public class MemberDAO {
             Context ctx = new InitialContext();
             Context envContext = (Context) ctx.lookup("java:/comp/env");
             ds = (DataSource) envContext.lookup("jdbc/OracleXE");
+            System.out.println("DBCP DataSource 로드 성공!");
         } catch (NamingException e) {
             System.out.println(e.getMessage());
         }

@@ -35,7 +35,7 @@
             </a>
 
 
-            <a href="<c:url value='/member/myInfoUpdateForm'/>">
+            <a href="<c:url value='/auth/myInfoUpdateForm'/>">
               <span>내정보수정</span>
             </a>
 
