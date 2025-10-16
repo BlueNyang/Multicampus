@@ -1,13 +1,1 @@
 @import "tailwindcss";
-
-a {
-  @apply text-red-500;
-}
-
-ul {
-  @apply list-none;
-}
-
-table {
-  @apply mx-auto;
-}

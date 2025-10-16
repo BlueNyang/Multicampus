@@ -27,7 +27,10 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductVO findProductByPrdNo(String prdNo) {
-            return dao.findProductByPrdNo(prdNo);
+        var product = dao.findProductByPrdNo(prdNo);
+
+        return product.orElse(null);
+
     }
 
     @Override
@@ -47,11 +50,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public String prdNoCheck(String prdNo) {
-        ProductVO check = dao.findProductByPrdNo(prdNo);
-        if (check != null) {
-            return check.getPrdNo();
+        var check = dao.findProductByPrdNo(prdNo);
+        if (check.isPresent()) {
+            return "unavailable";
         }
-        return null;
+        return "available";
     }
 
     @Override

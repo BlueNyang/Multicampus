@@ -1,5 +1,7 @@
+import { Header } from "@/components/Header";
+import { ProductListItem } from "@/components/ProductListItem";
 import type { Product } from "@/types/productList.type";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -8,13 +10,14 @@ export const Route = createFileRoute("/product/productList")({
 });
 
 function RouteComponent() {
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [products, setProducts] = useState<Product[]>([]);
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost:8080/product/productList"
-      );
+      const response = await axios.get(`${API_URL}/product/productList`);
+
       setProducts(response.data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -27,8 +30,8 @@ function RouteComponent() {
 
   return (
     <>
-      <h3>상품 조회</h3>
-      <br />
+      <h3 className="text-center text-2xl font-bold">상품 조회</h3>
+      <Header />
       <div className="mx-auto w-fit overflow-hidden rounded-xl border border-neutral-600">
         <table className="table-auto divide-y divide-neutral-600">
           <thead className="bg-neutral-300">
@@ -49,38 +52,12 @@ function RouteComponent() {
           </thead>
           <tbody className="divide-y divide-neutral-300">
             {products.map((product) => (
-              <tr className="divide-x divide-neutral-300">
-                <td className="px-6 py-3 font-normal whitespace-nowrap">
-                  {product.prdNo}
-                </td>
-                <td className="px-6 py-3 font-normal whitespace-nowrap">
-                  <Link to={`/product/productDetail/${product.prdNo}`}>
-                    {product.prdName}
-                  </Link>
-                </td>
-                <td className="px-6 py-3 font-normal whitespace-nowrap">
-                  {product.prdPrice.toLocaleString()}원
-                </td>
-                <td className="px-6 py-3 font-normal whitespace-nowrap">
-                  {product.prdCompany}
-                </td>
-                <td className="px-6 py-3 font-normal whitespace-nowrap">
-                  {product.prdStock}
-                </td>
-                <td className="px-6 py-3 font-normal whitespace-nowrap">
-                  {product.prdDate}
-                </td>
-                <td className="px-6 py-3 font-normal whitespace-nowrap">
-                  <Link to={`/product/productUpdate/${product.prdNo}`}>
-                    수정
-                  </Link>
-                </td>
-                <td className="px-6 py-3 font-normal whitespace-nowrap">
-                  <Link to={`/product/productDelete/${product.prdNo}`}>
-                    삭제
-                  </Link>
-                </td>
-              </tr>
+              <ProductListItem
+                product={product}
+                onDelete={async () => {
+                  await fetchProducts();
+                }}
+              />
             ))}
           </tbody>
         </table>
