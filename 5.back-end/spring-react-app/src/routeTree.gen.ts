@@ -10,7 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductProductSearchRouteImport } from './routes/product/productSearch'
 import { Route as ProductProductListRouteImport } from './routes/product/productList'
+import { Route as ProductProductInsertRouteImport } from './routes/product/productInsert'
+import { Route as ProductProductUpdatePrdNoRouteImport } from './routes/product/productUpdate/$prdNo'
 import { Route as ProductProductDetailPrdNoRouteImport } from './routes/product/productDetail/$prdNo'
 
 const IndexRoute = IndexRouteImport.update({
@@ -18,11 +21,27 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductProductSearchRoute = ProductProductSearchRouteImport.update({
+  id: '/product/productSearch',
+  path: '/product/productSearch',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProductProductListRoute = ProductProductListRouteImport.update({
   id: '/product/productList',
   path: '/product/productList',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductProductInsertRoute = ProductProductInsertRouteImport.update({
+  id: '/product/productInsert',
+  path: '/product/productInsert',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductProductUpdatePrdNoRoute =
+  ProductProductUpdatePrdNoRouteImport.update({
+    id: '/product/productUpdate/$prdNo',
+    path: '/product/productUpdate/$prdNo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ProductProductDetailPrdNoRoute =
   ProductProductDetailPrdNoRouteImport.update({
     id: '/product/productDetail/$prdNo',
@@ -32,36 +51,63 @@ const ProductProductDetailPrdNoRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/product/productInsert': typeof ProductProductInsertRoute
   '/product/productList': typeof ProductProductListRoute
+  '/product/productSearch': typeof ProductProductSearchRoute
   '/product/productDetail/$prdNo': typeof ProductProductDetailPrdNoRoute
+  '/product/productUpdate/$prdNo': typeof ProductProductUpdatePrdNoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/product/productInsert': typeof ProductProductInsertRoute
   '/product/productList': typeof ProductProductListRoute
+  '/product/productSearch': typeof ProductProductSearchRoute
   '/product/productDetail/$prdNo': typeof ProductProductDetailPrdNoRoute
+  '/product/productUpdate/$prdNo': typeof ProductProductUpdatePrdNoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/product/productInsert': typeof ProductProductInsertRoute
   '/product/productList': typeof ProductProductListRoute
+  '/product/productSearch': typeof ProductProductSearchRoute
   '/product/productDetail/$prdNo': typeof ProductProductDetailPrdNoRoute
+  '/product/productUpdate/$prdNo': typeof ProductProductUpdatePrdNoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/product/productList' | '/product/productDetail/$prdNo'
+  fullPaths:
+    | '/'
+    | '/product/productInsert'
+    | '/product/productList'
+    | '/product/productSearch'
+    | '/product/productDetail/$prdNo'
+    | '/product/productUpdate/$prdNo'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/product/productList' | '/product/productDetail/$prdNo'
+  to:
+    | '/'
+    | '/product/productInsert'
+    | '/product/productList'
+    | '/product/productSearch'
+    | '/product/productDetail/$prdNo'
+    | '/product/productUpdate/$prdNo'
   id:
     | '__root__'
     | '/'
+    | '/product/productInsert'
     | '/product/productList'
+    | '/product/productSearch'
     | '/product/productDetail/$prdNo'
+    | '/product/productUpdate/$prdNo'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ProductProductInsertRoute: typeof ProductProductInsertRoute
   ProductProductListRoute: typeof ProductProductListRoute
+  ProductProductSearchRoute: typeof ProductProductSearchRoute
   ProductProductDetailPrdNoRoute: typeof ProductProductDetailPrdNoRoute
+  ProductProductUpdatePrdNoRoute: typeof ProductProductUpdatePrdNoRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -73,11 +119,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/product/productSearch': {
+      id: '/product/productSearch'
+      path: '/product/productSearch'
+      fullPath: '/product/productSearch'
+      preLoaderRoute: typeof ProductProductSearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/product/productList': {
       id: '/product/productList'
       path: '/product/productList'
       fullPath: '/product/productList'
       preLoaderRoute: typeof ProductProductListRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product/productInsert': {
+      id: '/product/productInsert'
+      path: '/product/productInsert'
+      fullPath: '/product/productInsert'
+      preLoaderRoute: typeof ProductProductInsertRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product/productUpdate/$prdNo': {
+      id: '/product/productUpdate/$prdNo'
+      path: '/product/productUpdate/$prdNo'
+      fullPath: '/product/productUpdate/$prdNo'
+      preLoaderRoute: typeof ProductProductUpdatePrdNoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/product/productDetail/$prdNo': {
@@ -92,8 +159,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ProductProductInsertRoute: ProductProductInsertRoute,
   ProductProductListRoute: ProductProductListRoute,
+  ProductProductSearchRoute: ProductProductSearchRoute,
   ProductProductDetailPrdNoRoute: ProductProductDetailPrdNoRoute,
+  ProductProductUpdatePrdNoRoute: ProductProductUpdatePrdNoRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

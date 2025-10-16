@@ -1,8 +1,11 @@
 import { createRootRoute, Outlet } from "@tanstack/react-router";
-import "@/styles/root.css";
 
 function RootLayout() {
-  return <Outlet />;
+  return (
+    <div className="mx-auto max-w-7xl p-8 text-center">
+      <Outlet />
+    </div>
+  );
 }
 
 export const Route = createRootRoute({
