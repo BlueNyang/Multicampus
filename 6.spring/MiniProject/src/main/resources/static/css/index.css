@@ -109,12 +109,12 @@ header nav .util li a svg {
   overflow: hidden;
 }
 
-.swiper {
+.container > .banner-wrap > div.swiper {
   width: 100%;
   padding-top: 10px;
   margin-bottom: 170px;
   background: #000;
-  overflow: visible !important;
+  overflow: visible;
   position: relative;
 }
 
@@ -129,7 +129,7 @@ header nav .util li a svg {
 }
 
 .banner-wrap .swiper-slide {
-  width: 750px;
+  width: 52%;
   height: auto;
   flex-shrink: 0;
   position: relative;
@@ -151,8 +151,8 @@ header nav .util li a svg {
 }
 
 .banner-alt-wrapper {
-  width: 550px;
-  bottom: -125px;
+  width: 37%;
+  bottom: -115px;
   position: absolute;
   left: 0;
   z-index: 3;
@@ -166,8 +166,8 @@ header nav .util li a svg {
 .title-box {
   width: 100%;
   padding-inline: 80px;
-  height: 80px;
-  font-size: 32px;
+  height: 85px;
+  font-size: 28px;
   background-color: black;
   color: white;
   display: inline-flex;
@@ -176,7 +176,6 @@ header nav .util li a svg {
   align-items: center;
   overflow: hidden;
   transition: all 0.3s ease;
-  line-height: 26px;
 }
 
 .alt-title {
@@ -189,8 +188,8 @@ header nav .util li a svg {
 .desc-box {
   width: 100%;
   padding-inline: 80px;
-  height: 80px;
-  font-size: 32px;
+  height: 85px;
+  font-size: 28px;
   background-color: black;
   color: white;
   display: inline-flex;
