@@ -1,4 +1,4 @@
-package kr.bluenyang.practice.springbootreact.config;
+package kr.bluenyang.practice.miniproject.config;
 
 import jakarta.servlet.FilterRegistration;
 import jakarta.servlet.ServletContext;
