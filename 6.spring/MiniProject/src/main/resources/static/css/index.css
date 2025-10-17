@@ -105,5 +105,104 @@ header nav .util li a svg {
 }
 
 .banner-wrap {
+  width: 100%;
   overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 10px;
+  margin-bottom: 170px;
+  background: #000;
+  overflow: visible !important;
+  position: relative;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+
+.banner-wrap .swiper-slide {
+  width: 750px;
+  height: auto;
+  flex-shrink: 0;
+  position: relative;
+  transition-property: transform;
+}
+
+.swiper-slide > a {
+  position: static;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.swiper-slide > a > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-alt-wrapper {
+  width: 550px;
+  bottom: -125px;
+  position: absolute;
+  left: 0;
+  z-index: 3;
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  gap: 10px;
+}
+
+.title-box {
+  width: 100%;
+  padding-inline: 80px;
+  height: 80px;
+  font-size: 32px;
+  background-color: black;
+  color: white;
+  display: inline-flex;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  line-height: 26px;
+}
+
+.alt-title {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.desc-box {
+  width: 100%;
+  padding-inline: 80px;
+  height: 80px;
+  font-size: 32px;
+  background-color: black;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.alt-desc {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
