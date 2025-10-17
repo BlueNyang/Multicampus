@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Gothic+A1&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arimo", "Gothic A1", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+div {
+  display: block;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-inline: 0.67em;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+ul li {
+  list-style: none;
+}
+
+.wrap {
+  max-width: 2560px;
+  min-width: 1280px;
+  margin: 0 auto;
+  height: 100%;
+}

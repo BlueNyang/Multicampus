@@ -4,35 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main</title>
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
     <div class="wrap">
       <header id="header">
         <!-- Logo -->
-        <h1><a href="#">Logo</a></h1>
+        <h1 class="header-logo">
+          <a href="#">Logo</a>
+        </h1>
 
         <!-- Navigation -->
         <nav>
+          <div></div>
           <!-- Menu Items -->
-          <ul>
-            <li><a href="#">WOMEN</a></li>
-            <li><a href="#">MEN</a></li>
-            <li><a href="#">LIFE</a></li>
+          <ul class="menu">
+            <li>
+              <a class="menu-item" href="#">WOMEN</a>
+            </li>
+            <li>
+              <a class="menu-item" href="#">MEN</a>
+            </li>
+            <li>
+              <a class="menu-item" href="#">LIFE</a>
+            </li>
           </ul>
 
           <!-- Utils -->
-          <ul class="utils">
-            <li><a href="#">Search</a></li>
-            <li><a href="#">Join</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Cart</a></li>
+          <ul class="util">
+            <li>
+              <a class="" href="#" data-icon="search">
+                <span class="sr-only">Search</span>
+                <span class="tool-tip">Search</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-icon="join">
+                <span class="sr-only">Join</span>
+                <span class="tool-tip">Join</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-icon="login">
+                <span class="sr-only">Login</span>
+                <span class="tool-tip">Login</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" data-icon="cart">
+                <span class="sr-only">Cart</span>
+                <span class="tool-tip">Cart</span>
+              </a>
+            </li>
           </ul>
         </nav>
       </header>
-      <main>
+      <main class="container main">
         <!-- banner -->
-        <section id="banner">
+        <section id="banner-wrap">
           <!-- Swiper -->
+          <div class="swiper">
+            <div class="swiper-wrapper"></div>
+          </div>
         </section>
         <!-- content -->
       </main>
@@ -40,5 +74,6 @@
         <p>Footer</p>
       </footer>
     </div>
+    <script src="/js/icon.js"></script>
   </body>
 </html>
