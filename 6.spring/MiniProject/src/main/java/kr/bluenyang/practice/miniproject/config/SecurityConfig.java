@@ -1,4 +1,4 @@
-package kr.bluenyang.practice.springbootreact.config;
+package kr.bluenyang.practice.miniproject.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
