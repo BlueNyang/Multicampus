@@ -2,5 +2,7 @@
   "search": "/icons/search.svg",
   "join": "/icons/person.svg",
   "login": "/icons/login.svg",
-  "cart": "/icons/cart.svg"
+  "cart": "/icons/cart.svg",
+  "next": "/icons/next.svg",
+  "prev": "/icons/prev.svg"
 }

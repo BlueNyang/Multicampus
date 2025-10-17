@@ -7,9 +7,9 @@
         return {};
       });
 
-    const utils = document.querySelectorAll("a[data-icon]");
+    const utils = document.querySelectorAll("a[data-icon], span[data-icon]");
     utils.forEach(async (util) => {
-      const iconType = util.attributes["data-icon"].value; // join, login, cart
+      const iconType = util.dataset.icon; // join, login, cart
       const iconFile = iconMeta[iconType];
 
       if (iconFile) {

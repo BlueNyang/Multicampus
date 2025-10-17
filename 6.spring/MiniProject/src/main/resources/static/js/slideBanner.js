@@ -21,11 +21,13 @@ let swiper;
 
   document.addEventListener("DOMContentLoaded", async () => {
     const resp = await fetch("/get/slides");
-    const slideImgs = await resp.json();
+    if (resp.status === 200) {
+      const slideImgs = await resp.json();
 
-    addBannerItems(slideImgs);
-    if (slideImgs.length <= 3) {
       addBannerItems(slideImgs);
+      if (slideImgs.length <= 3) {
+        addBannerItems(slideImgs);
+      }
     }
 
     swiper = new Swiper(".swiper", {
