@@ -6,8 +6,8 @@ plugins {
 }
 
 group = 'kr.bluenyang.practice'
-version = '1.0.0'
-description = 'SpringBootReact'
+version = '0.0.1-SNAPSHOT'
+description = 'SpringBootSecure'
 
 java {
     toolchain {
@@ -27,31 +27,26 @@ repositories {
 
 dependencyManagement {
     dependencies {
+        dependency "org.apache.commons:commons-lang3:3.19.0"
         dependency "ch.qos.logback:logback-core:1.5.19"
     }
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+    runtimeOnly 'com.oracle.database.jdbc:ojdbc17'
     annotationProcessor 'org.projectlombok:lombok'
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    // Tomcat Jasper for JSP
-    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
-
-    // JSP Configuration
-    implementation 'jakarta.servlet:jakarta.servlet-api'
-    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
-    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.13'
 }
 
 tasks.named('test') {

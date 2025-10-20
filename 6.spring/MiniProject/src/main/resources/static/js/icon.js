@@ -7,16 +7,16 @@
         return {};
       });
 
-    const utils = document.querySelectorAll("a[data-icon], span[data-icon]");
-    utils.forEach(async (util) => {
-      const iconType = util.dataset.icon; // join, login, cart
+    const iconElements = document.querySelectorAll("[data-icon]");
+    iconElements.forEach(async (element) => {
+      const iconType = element.dataset.icon; // join, login, cart
       const iconFile = iconMeta[iconType];
 
       if (iconFile) {
         await fetch(`${iconFile}`)
           .then(async (response) => await response.text())
           .then((svgContent) => {
-            util.insertAdjacentHTML("afterbegin", svgContent);
+            element.insertAdjacentHTML("afterbegin", svgContent);
           })
           .catch((error) => {
             console.error(`Error fetching icon (${iconFile}):`, error);

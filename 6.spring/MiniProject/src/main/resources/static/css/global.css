@@ -30,6 +30,13 @@ ul li {
   list-style: none;
 }
 
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
 .wrap {
   max-width: 2560px;
   min-width: 640px;
