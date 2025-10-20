@@ -104,6 +104,7 @@ header nav .util li a svg {
   padding-bottom: 300px;
 }
 
+/* Banner */
 .banner-wrap {
   width: 100%;
   overflow: hidden;
@@ -204,4 +205,65 @@ header nav .util li a svg {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* Contents */
+.content {
+  min-width: 640px;
+  padding-top: 60px;
+  padding-inline: 30px;
+  overflow: hidden;
+}
+
+.product-list-wrap {
+  margin-inline: -30px;
+}
+
+.btn-group {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  right: 30px;
+  margin-top: -40px;
+  background-color: #fff;
+}
+
+.btn-group button {
+  position: static;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.btn-group button span {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #b1b1b1;
+  border-radius: 3px;
+}
+
+.swiper-prev-btn {
+  margin-top: -20px;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  color: black;
+}
+
+.swiper-next-btn {
+  margin-left: -1px;
+  margin-top: -20px;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  color: black;
+}
+
+.swiper-btn.disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
 }
