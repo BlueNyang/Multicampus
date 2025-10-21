@@ -14,7 +14,6 @@ import java.util.Map;
 
 @Slf4j
 @Service
-@Repository
 @RequiredArgsConstructor
 public class ProductService implements IProductService {
     private final IProductDAO dao;
