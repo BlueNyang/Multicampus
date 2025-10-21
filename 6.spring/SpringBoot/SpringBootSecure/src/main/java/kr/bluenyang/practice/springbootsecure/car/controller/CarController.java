@@ -1,7 +1,7 @@
 package kr.bluenyang.practice.springbootsecure.car.controller;
 
-import com.spring_boot_react.project.domain.Car;
-import com.spring_boot_react.project.domain.CarRepository;
+import kr.bluenyang.practice.springbootsecure.car.domain.Car;
+import kr.bluenyang.practice.springbootsecure.car.repository.CarRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
