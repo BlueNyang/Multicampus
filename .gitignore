@@ -44,3 +44,4 @@ gradle-app.setting
 *.tmp
 *.config.yml
 application.yml
+application.yaml
