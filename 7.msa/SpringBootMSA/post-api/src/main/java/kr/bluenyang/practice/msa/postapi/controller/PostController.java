@@ -4,6 +4,7 @@ import kr.bluenyang.practice.msa.postapi.model.Comment;
 import kr.bluenyang.practice.msa.postapi.model.Post;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,9 @@ import java.util.Map;
 public class PostController {
     private final RestTemplate restTemplate;
 
+    @Value("${server.port}")
+    private String serverPort;
+
     @GetMapping("/posts")
     public Post[] posts() {
         return restTemplate.getForObject(
@@ -28,6 +32,8 @@ public class PostController {
 
     @GetMapping("/posts/{postId}")
     public Map<String, Object> post(@PathVariable String postId) {
+        log.info("server response: {}", "http://localhost:" + serverPort);
+
         var url = String.format("https://jsonplaceholder.typicode.com/posts/%s", postId);
         log.info("url: {}", url);
         var post = restTemplate.getForObject(url, Post.class);
