@@ -7,17 +7,17 @@ spring:
         webflux:
           routes:
             - id: greeting_route
-              uri: http://localhost:8081
+              uri: lb://post-api
               predicates:
                 - Path=/greeting/**
 
             - id: posts_route
-              uri: http://localhost:8081
+              uri: lb://post-api
               predicates:
                 - Path=/posts/**
 
             - id: comments_route
-              uri: http://localhost:8082
+              uri: lb://comment-api
               predicates:
                 - Path=/comments/**
 
