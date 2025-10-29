@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: greeting_route
+              uri: http://localhost:8081
+              predicates:
+                - Path=/greeting/**
+
+            - id: posts_route
+              uri: http://localhost:8081
+              predicates:
+                - Path=/posts/**
+
+            - id: comments_route
+              uri: http://localhost:8082
+              predicates:
+                - Path=/comments/**
+
+server:
+  port: 8080
