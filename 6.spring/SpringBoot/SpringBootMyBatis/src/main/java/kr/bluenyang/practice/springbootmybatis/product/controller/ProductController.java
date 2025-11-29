@@ -22,6 +22,7 @@ public class ProductController {
 
     @RequestMapping("/listAllProduct")
     public String listAllProduct(Model model) {
+        log.info("listAllProduct method");
         List<ProductVO> prdList = service.listAllProduct();
         model.addAttribute("prdList", prdList);
         return "product/productListView";

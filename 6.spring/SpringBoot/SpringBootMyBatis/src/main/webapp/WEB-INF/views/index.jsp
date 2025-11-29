@@ -5,25 +5,13 @@
   Time: 17:30
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="<c:url value='/css/style.css'/>">
-    <title>Index Page</title>
+    <title>Hello JSP in Spring Boot</title>
   </head>
   <body>
-    <h2>
-      MyBatis 사용 DB 연동
-    </h2>
-    <hr/>
-    <a href="<c:url value="/product/listAllProduct"/>">상품 목록 보기</a>
-    <br/>
-    <a href="<c:url value="/file/fileUploadForm"/>">파일 업로드</a>
-    <br/>
-    <a href="<c:url value="/file/fileDownloadList"/>">파일 다운로드</a>
-    <br/>
+    <h2>${message}</h2>
   </body>
 </html>
